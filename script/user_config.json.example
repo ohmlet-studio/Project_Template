@@ -1,0 +1,10 @@
+{
+  "repo_url": "https://github.com/organization/repository.git",
+  "git_username": "github_username",
+  "git_email": "user@example.com",
+  "ntu_name": "John Doe",
+  "batch_delay_seconds": 60,
+  "max_file_size_mb": 100,
+  "server_port": 8080,
+  "server_host": "0.0.0.0"
+}
