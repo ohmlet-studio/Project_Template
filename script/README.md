@@ -110,6 +110,7 @@ python run_server.py
 
 Download the shortcut:
 ![Link to shortcut on proton drive](https://drive.proton.me/urls/RK1AM9BV6G#U6A4tla0upeX)
+(or faire un coucou à olig)
 
 ## Commit Format
 
