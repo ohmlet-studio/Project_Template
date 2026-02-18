@@ -1,40 +1,32 @@
-[gd_scene format=4 uid="uid://dompofcqtehyu"]
+[gd_scene format=4 uid="uid://csap2vbo2cdrp"]
 
-[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://vertex_snapping.gdshader" id="1_83113"]
-[ext_resource type="Script" uid="uid://cy3gwigvuvlrr" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="2_thuo0"]
-[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="3_m8iwr"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
-size = Vector3(50, 0, 50)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_6b5j0"]
-size = Vector2(50, 50)
+[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="1_xqjo8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y6yk4"]
 render_priority = 0
-shader = ExtResource("1_83113")
+shader = ExtResource("1_xqjo8")
 shader_parameter/affine_mapping = false
 shader_parameter/color = Color(0.43502194, 0.18080056, 0.009064561, 1)
 shader_parameter/alpha_scissor = 0.5
-shader_parameter/jitter = 0.25
+shader_parameter/jitter = 0.70000003325
 shader_parameter/resolution = Vector2i(320, 240)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_26k56"]
 render_priority = 0
-shader = ExtResource("1_83113")
+shader = ExtResource("1_xqjo8")
 shader_parameter/affine_mapping = false
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/alpha_scissor = 0.5
-shader_parameter/jitter = 0.25
+shader_parameter/jitter = 0.7
 shader_parameter/resolution = Vector2i(320, 240)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7yta4"]
 render_priority = 0
-shader = ExtResource("1_83113")
+shader = ExtResource("1_xqjo8")
 shader_parameter/affine_mapping = false
 shader_parameter/color = Color(0.65052783, 0, 0.067678414, 1)
 shader_parameter/alpha_scissor = 0.5
-shader_parameter/jitter = 0.25
+shader_parameter/jitter = 0.7
 shader_parameter/resolution = Vector2i(320, 240)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3xq6d"]
@@ -117,113 +109,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3xq6d")
 
-[sub_resource type="BoxMesh" id="BoxMesh_i1cfu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqjo8"]
+size = Vector3(0.49783325, 0.18891859, 1.108551)
 
-[sub_resource type="Gradient" id="Gradient_t6m8x"]
+[node name="Node3D" type="RigidBody3D" unique_id=406272985]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o7yir"]
-gradient = SubResource("Gradient_t6m8x")
-fill_from = Vector2(0.401099, 1)
-fill_to = Vector2(0.450549, 0)
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_msuu0"]
-panorama = SubResource("GradientTexture2D_o7yir")
-
-[sub_resource type="Sky" id="Sky_4ggmq"]
-sky_material = SubResource("PanoramaSkyMaterial_msuu0")
-
-[sub_resource type="Environment" id="Environment_4mccc"]
-sky = SubResource("Sky_4ggmq")
-ambient_light_source = 3
-fog_enabled = true
-fog_density = 0.02
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
-
-[node name="main" type="Node3D" unique_id=1125609813]
-
-[node name="Floor" type="StaticBody3D" parent="." unique_id=1685762692]
-
-[node name="Collider" type="CollisionShape3D" parent="Floor" unique_id=1385578758]
-shape = SubResource("BoxShape3D_caja7")
-
-[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=902546820]
-mesh = SubResource("PlaneMesh_6b5j0")
-
-[node name="Bed single" type="MeshInstance3D" parent="." unique_id=1100966573]
-transform = Transform3D(17.597107, 24.296947, 2.8964218e-06, 0, -3.5762785e-06, 29.999996, 24.296947, -17.597105, -2.0977386e-06, 6.9793644, 0.43743634, 0.18999982)
+[node name="Bed single" type="MeshInstance3D" parent="." unique_id=1794458374]
+transform = Transform3D(35, 0, 0, 0, -1.5298986e-06, 35, 0, -35, -1.5298986e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ratey")
 
-[node name="Bed single2" type="MeshInstance3D" parent="." unique_id=17421461]
-transform = Transform3D(24.479586, 17.342136, 2.0673433e-06, 1.726402e-13, -3.5762785e-06, 29.999994, 17.342136, -24.479584, -2.9181938e-06, 5.1926403, 0.43743634, -2.1436796)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Bed single3" type="MeshInstance3D" parent="." unique_id=505035276]
-transform = Transform3D(28.946507, 7.8803263, 9.394074e-07, 1.2192557e-13, -3.576279e-06, 29.999994, 7.8803263, -28.946505, -3.4506918e-06, 2.457859, 0.43743634, -3.5293016)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Bed single4" type="MeshInstance3D" parent="." unique_id=168845304]
-transform = Transform3D(29.456875, -5.682631, -6.7742275e-07, -3.6906167e-14, -3.5762787e-06, 29.999994, -5.6826305, -29.456871, -3.5115322e-06, -0.6415577, 0.43743634, -3.6751559)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Bed single5" type="MeshInstance3D" parent="." unique_id=241898314]
-transform = Transform3D(29.92442, -1.3073254, -1.6791205, 2.049613, 11.339129, 27.698786, -0.57238436, -27.74373, 11.399883, 0.6655307, 2.2610404, -5.542577)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Bed single6" type="MeshInstance3D" parent="." unique_id=971926968]
-transform = Transform3D(26.223686, 12.701766, -7.1402197, 2.049613, 11.339128, 27.698782, 14.426248, -24.69997, 9.0440035, 4.43195, 2.2610404, -4.951435)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Bed single8" type="MeshInstance3D" parent="." unique_id=1000922121]
-transform = Transform3D(29.655437, 2.981864, -3.415093, -0.31692362, 23.906258, 18.121525, 4.522601, -17.877323, 23.663193, 2.6693225, 4.1694574, -5.5874267)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Bed single9" type="MeshInstance3D" parent="." unique_id=15403914]
-transform = Transform3D(24.303545, 10.828118, -13.859617, -0.3169234, 23.906258, 18.121525, 17.585125, -14.534166, 19.481289, 5.8051543, 4.1694574, -3.9525077)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Bed single10" type="MeshInstance3D" parent="." unique_id=2010940475]
-transform = Transform3D(28.60972, 2.5322, -8.6644125, -0.067959905, 28.855068, 8.208558, 9.026592, -7.8085194, 27.523582, 4.709029, 8.05546, -5.9211063)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Bed single7" type="MeshInstance3D" parent="." unique_id=514417191]
-transform = Transform3D(17.938667, 21.758911, -10.234905, 2.0496135, 11.339128, 27.698782, 23.958355, -17.261902, 5.2937155, 7.0836444, 2.2610404, -2.9922218)
-mesh = SubResource("ArrayMesh_ratey")
-
-[node name="Cube" type="MeshInstance3D" parent="." unique_id=1913347432]
-transform = Transform3D(8.608, 5.25034, 0.847749, -5.28845, 8.62094, 0.306904, -0.563037, -0.704172, 10.0782, -12.3987, 6.30559, 0)
-mesh = SubResource("BoxMesh_i1cfu")
-
-[node name="Cube2" type="MeshInstance3D" parent="." unique_id=868127992]
-transform = Transform3D(2.3394, -7.04204, 6.8789, 0.399539, 7.13256, 7.16585, -9.83616, -1.38514, 1.92713, 9.80706, 5.95309, -16.603)
-mesh = SubResource("BoxMesh_i1cfu")
-
-[node name="Cube3" type="MeshInstance3D" parent="." unique_id=1584482029]
-transform = Transform3D(4.27484, -1.58703, 4.62899, 3.90354, 4.81261, -1.9549, -2.95104, 4.067, 4.11962, 14.8415, 5.95309, 8.53617)
-mesh = SubResource("BoxMesh_i1cfu")
-
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=2014989891]
-transform = Transform3D(1, 0, 0, 0, -0.993258, 0.115925, 0, -0.115925, -0.993258, 1.99157, 9.78125, -4.48814)
-shadow_enabled = true
-
-[node name="Enivroment" type="WorldEnvironment" parent="." unique_id=359188081]
-environment = SubResource("Environment_4mccc")
-
-[node name="Basic FPS Player" type="CharacterBody3D" parent="." unique_id=744001423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-script = ExtResource("2_thuo0")
-SPEED = 2.0
-ACCEL = 20.0
-HEAD_BOB_FREQUENCY = 0.1
-HEAD_BOB_AMPLITUDE = 0.015
-KEY_BIND_UP = "up"
-KEY_BIND_LEFT = "left"
-KEY_BIND_RIGHT = "right"
-KEY_BIND_DOWN = "down"
-KEY_BIND_JUMP = "jump"
-
-[node name="Head" parent="Basic FPS Player" unique_id=1014996556 instance=ExtResource("3_m8iwr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic FPS Player" unique_id=1204485127]
-shape = SubResource("CapsuleShape3D_li7ud")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1389184399]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, -0.11071718, 0.16767836)
+shape = SubResource("BoxShape3D_xqjo8")

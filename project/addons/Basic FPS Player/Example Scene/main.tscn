@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://vupfism0y8ub"]
 
-[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://vertex_snapping.gdshader" id="1_1juj6"]
+[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="1_1juj6"]
 [ext_resource type="Script" uid="uid://cy3gwigvuvlrr" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_fpauf"]
 [ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_uri1i"]
 
@@ -159,11 +159,11 @@ transform = Transform3D(24.479586, 17.342136, 2.0673433e-06, 1.726402e-13, -3.57
 mesh = SubResource("ArrayMesh_ratey")
 
 [node name="Bed single3" type="MeshInstance3D" parent="." unique_id=505035276]
-transform = Transform3D(28.946507, 7.8803263, 9.394074e-07, 1.2192557e-13, -3.576279e-06, 29.999994, 7.8803263, -28.946505, -3.4506918e-06, 2.457859, 0.43743634, -3.5293016)
+transform = Transform3D(29.711237, 4.152382, 4.950024e-07, 5.6594957e-14, -3.5762796e-06, 29.999998, 4.152383, -29.711239, -3.5418554e-06, 2.457859, 0.43743634, -3.5293016)
 mesh = SubResource("ArrayMesh_ratey")
 
 [node name="Bed single4" type="MeshInstance3D" parent="." unique_id=168845304]
-transform = Transform3D(29.456875, -5.682631, -6.7742275e-07, -3.6906167e-14, -3.5762787e-06, 29.999994, -5.6826305, -29.456871, -3.5115322e-06, -0.6415577, 0.43743634, -3.6751559)
+transform = Transform3D(29.456875, -5.682631, -6.7742275e-07, -3.6906167e-14, -3.5762787e-06, 29.999994, -5.6826305, -29.456871, -3.5115322e-06, -0.6415577, 0.43743634, -3.696127)
 mesh = SubResource("ArrayMesh_ratey")
 
 [node name="Bed single5" type="MeshInstance3D" parent="." unique_id=241898314]

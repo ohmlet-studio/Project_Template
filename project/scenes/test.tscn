@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://dompofcqtehyu"]
+
+[ext_resource type="Texture2D" uid="uid://bq1xnhtfrdebe" path="res://assets/textures/placeholders/flooplan.jpg" id="1_j5jx5"]
+[ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scenes/activate_environment.gd" id="2_pn65j"]
+[ext_resource type="Script" uid="uid://cy3gwigvuvlrr" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="2_thuo0"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="3_m8iwr"]
+[ext_resource type="PackedScene" uid="uid://dwm1xoebr81f3" path="res://assets/models/placeholders/Low Poly Furniture/Beds/Bed Double.fbx" id="4_lpvoh"]
+[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scenes/apply_shader_to_children.gd" id="4_n74k2"]
+[ext_resource type="PackedScene" uid="uid://bd4icnmbgdm6v" path="res://assets/models/placeholders/Low Poly Furniture/Carpets/Carpet A.fbx" id="5_at5dv"]
+[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="5_si7kk"]
+[ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="6_ff6ho"]
+[ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="7_7yos8"]
+[ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="8_5jxlq"]
+[ext_resource type="PackedScene" uid="uid://cvyogf1rmgwux" path="res://assets/models/placeholders/Low Poly Furniture/Doors/Door B.fbx" id="9_xrtyr"]
+[ext_resource type="PackedScene" uid="uid://d18t6hcvbpmjn" path="res://assets/models/placeholders/Low Poly Furniture/Drawers/Drawer A.fbx" id="10_daiq8"]
+[ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="11_c6rvn"]
+[ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="12_n74k2"]
+[ext_resource type="PackedScene" uid="uid://bxv3k6wbj7361" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp A.fbx" id="13_si7kk"]
+[ext_resource type="PackedScene" uid="uid://fub00bqgpqau" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp C.fbx" id="14_pn65j"]
+[ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="15_5f8cm"]
+[ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="16_xrtyr"]
+[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="17_daiq8"]
+[ext_resource type="PackedScene" uid="uid://c4p340s2kgiq8" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window C.fbx" id="18_c6rvn"]
+[ext_resource type="PackedScene" uid="uid://crnvfun4vvka6" path="res://assets/models/placeholders/Low Poly Furniture/Shelves/Shelf B.fbx" id="19_daiq8"]
+[ext_resource type="PackedScene" uid="uid://cbax3qbrpcgjd" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window B.fbx" id="19_n74k2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
+size = Vector3(50, 0, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcd4p"]
+albedo_texture = ExtResource("1_j5jx5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6b5j0"]
+size = Vector2(7, 7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i1cfu"]
+
+[sub_resource type="Gradient" id="Gradient_t6m8x"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o7yir"]
+gradient = SubResource("Gradient_t6m8x")
+fill_from = Vector2(0.401099, 1)
+fill_to = Vector2(0.450549, 0)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_msuu0"]
+panorama = SubResource("GradientTexture2D_o7yir")
+
+[sub_resource type="Sky" id="Sky_4ggmq"]
+sky_material = SubResource("PanoramaSkyMaterial_msuu0")
+
+[sub_resource type="Environment" id="Environment_4mccc"]
+sky = SubResource("Sky_4ggmq")
+ambient_light_source = 3
+fog_density = 0.02
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pn65j"]
+render_priority = 0
+shader = ExtResource("5_si7kk")
+shader_parameter/affine_mapping = false
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.7
+shader_parameter/resolution = Vector2i(320, 240)
+
+[node name="main" type="Node3D" unique_id=1125609813]
+
+[node name="Room" type="Node3D" parent="." unique_id=938973325]
+
+[node name="Floor" type="StaticBody3D" parent="Room" unique_id=1685762692]
+
+[node name="Collider" type="CollisionShape3D" parent="Room/Floor" unique_id=1385578758]
+shape = SubResource("BoxShape3D_caja7")
+
+[node name="Mesh" type="MeshInstance3D" parent="Room/Floor" unique_id=902546820]
+material_override = SubResource("StandardMaterial3D_jcd4p")
+mesh = SubResource("PlaneMesh_6b5j0")
+
+[node name="Mesh2" type="MeshInstance3D" parent="Room/Floor" unique_id=1125516451]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 52.699867, 0, 0)
+material_override = SubResource("StandardMaterial3D_jcd4p")
+mesh = SubResource("PlaneMesh_6b5j0")
+
+[node name="Furniture" type="Node3D" parent="Room/Floor" unique_id=1577200493]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -12.735776, 0, 4.548494)
+
+[node name="Environment" type="Node3D" parent="." unique_id=1343892450]
+
+[node name="Decor" type="Node3D" parent="Environment" unique_id=1455122092]
+visible = false
+
+[node name="Cube" type="MeshInstance3D" parent="Environment/Decor" unique_id=1913347432]
+transform = Transform3D(8.608, 5.25034, 0.847749, -5.28845, 8.62094, 0.306904, -0.563037, -0.704172, 10.0782, -16.032043, 6.30559, 0)
+mesh = SubResource("BoxMesh_i1cfu")
+
+[node name="Cube2" type="MeshInstance3D" parent="Environment/Decor" unique_id=868127992]
+transform = Transform3D(2.3394, -7.04204, 6.8789, 0.399539, 7.13256, 7.16585, -9.83616, -1.38514, 1.92713, 9.80706, 5.95309, -16.603)
+mesh = SubResource("BoxMesh_i1cfu")
+
+[node name="Cube3" type="MeshInstance3D" parent="Environment/Decor" unique_id=1584482029]
+transform = Transform3D(4.27484, -1.58703, 4.62899, 3.90354, 4.81261, -1.9549, -2.95104, 4.067, 4.11962, 14.8415, 5.95309, 8.53617)
+mesh = SubResource("BoxMesh_i1cfu")
+
+[node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=2014989891]
+transform = Transform3D(0.26288852, -0.17172426, -0.9494211, 0.068173535, -0.9782676, 0.19581863, -0.9624147, -0.11620385, -0.24546829, -6.289403, 5.8933, -0.7181077)
+light_color = Color(1, 0.85882354, 0.7294118, 1)
+shadow_enabled = true
+
+[node name="Environment" type="WorldEnvironment" parent="Environment" unique_id=359188081]
+environment = SubResource("Environment_4mccc")
+script = ExtResource("2_pn65j")
+
+[node name="Basic FPS Player" type="CharacterBody3D" parent="." unique_id=744001423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("2_thuo0")
+SPEED = 2.0
+ACCEL = 20.0
+JUMP_VELOCITY = 0.0
+HEAD_BOB_FREQUENCY = 0.1
+HEAD_BOB_AMPLITUDE = 0.015
+KEY_BIND_UP = "up"
+KEY_BIND_LEFT = "left"
+KEY_BIND_RIGHT = "right"
+KEY_BIND_DOWN = "down"
+KEY_BIND_JUMP = "jump"
+
+[node name="Head" parent="Basic FPS Player" unique_id=1014996556 instance=ExtResource("3_m8iwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic FPS Player" unique_id=1204485127]
+shape = SubResource("CapsuleShape3D_li7ud")
+
+[node name="Furniture" type="Node3D" parent="." unique_id=51728901]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("4_n74k2")
+material = SubResource("ShaderMaterial_pn65j")
+
+[node name="Bed Double" parent="Furniture" unique_id=391249092 instance=ExtResource("4_lpvoh")]
+transform = Transform3D(1.9470713e-07, 0, 0.99999976, 0, 0.99999976, 0, -0.99999976, 0, 1.9470713e-07, -3.9437299, 1.5441424, 7.439236)
+
+[node name="Carpet A" parent="Furniture" unique_id=2003015819 instance=ExtResource("5_at5dv")]
+transform = Transform3D(0.35568956, 0, 1.457218, 0, 1.4999999, 0, -1.457218, 0, 0.35568956, -1.8505433, 0.17411497, 2.704088)
+
+[node name="Chair E" parent="Furniture" unique_id=839900882 instance=ExtResource("6_ff6ho")]
+transform = Transform3D(-3.496911e-08, 0, -0.79999995, 0, 0.79999995, 0, 0.79999995, 0, -3.496911e-08, -7.705287, 2.0123367, -0.7382519)
+
+[node name="Chair A" parent="Furniture" unique_id=79390672 instance=ExtResource("7_7yos8")]
+transform = Transform3D(-4.3711367e-08, 0, -0.99999976, 0, 0.99999976, 0, 0.99999976, 0, -4.3711367e-08, 10.650064, 1.9513532, 1.8793216)
+
+[node name="Chair D" parent="Furniture" unique_id=849979717 instance=ExtResource("8_5jxlq")]
+transform = Transform3D(1.2499999, 0, 0, 0, 1.2499999, 0, 0, 0, 1.2499999, 7.5803027, 1.3873894, 10.1123295)
+
+[node name="Door B" parent="Furniture" unique_id=84755802 instance=ExtResource("9_xrtyr")]
+transform = Transform3D(0.56568545, 0, -0.56568545, 0, 0.7999999, 0, 0.56568545, 0, 0.56568545, 1.7399322, 3.8741846, -7.953583)
+
+[node name="Drawer A" parent="Furniture" unique_id=1994972306 instance=ExtResource("10_daiq8")]
+transform = Transform3D(0.99999976, 0, 5.9211885e-15, 0, 0.99999976, 0, -5.9211885e-15, 0, 0.99999976, 7.940918, 2.155719, -3.003763)
+
+[node name="Monitor" parent="Furniture" unique_id=90349282 instance=ExtResource("11_c6rvn")]
+transform = Transform3D(-0.2661503, 0, 0.7544293, 0, 0.79999983, 0, -0.7544293, 0, -0.2661503, -10.473899, 4.4855437, 0.4035685)
+
+[node name="Pc" parent="Furniture" unique_id=1949966939 instance=ExtResource("12_n74k2")]
+transform = Transform3D(-2.6226829e-08, 0, 0.59999985, 0, 0.59999985, 0, -0.59999985, 0, -2.6226829e-08, -9.989846, 1.4304782, 0.999646)
+
+[node name="Lamp A" parent="Furniture" unique_id=815688312 instance=ExtResource("13_si7kk")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -6.1049767, 4.8970685, -8.547621)
+
+[node name="Lamp C" parent="Furniture" unique_id=1742033607 instance=ExtResource("14_pn65j")]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -10.475743, 4.6942306, -3.5166833)
+
+[node name="Lamp B" parent="Furniture" unique_id=1955105548 instance=ExtResource("15_5f8cm")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.6162915, 4.94547, 9.680994)
+
+[node name="Radiator B" parent="Furniture" unique_id=1845731733 instance=ExtResource("16_xrtyr")]
+transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -5.1444683, 2.249854, -11.244384)
+
+[node name="Desk" parent="Furniture" unique_id=1266782047 instance=ExtResource("17_daiq8")]
+transform = Transform3D(-3.4969105e-08, 0, 0.7999999, 0, 0.7999999, 0, -0.7999999, 0, -3.4969105e-08, -9.4295635, 2.2028742, -2.840871)
+
+[node name="Window C" parent="Furniture" unique_id=727599421 instance=ExtResource("18_c6rvn")]
+transform = Transform3D(-0.99999976, 0, -8.742273e-08, 0, 0.99999976, 0, 8.742273e-08, 0, -0.99999976, 0.05419254, 6.4351535, 11.857753)
+
+[node name="Window B" parent="Furniture" unique_id=880910903 instance=ExtResource("19_n74k2")]
+transform = Transform3D(-4.3711363e-08, 0, 0.99999976, 0, 0.99999976, 0, -0.99999976, 0, -4.3711363e-08, -12.0669365, 6.255399, -1.2878151)
+
+[node name="Shelf B" parent="Furniture" unique_id=528564047 instance=ExtResource("19_daiq8")]
+transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, 10.241462, 4.207643, 5.9416103)
