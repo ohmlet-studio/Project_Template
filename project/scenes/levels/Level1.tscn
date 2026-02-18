@@ -1,28 +1,27 @@
 [gd_scene format=3 uid="uid://dompofcqtehyu"]
 
 [ext_resource type="Texture2D" uid="uid://bq1xnhtfrdebe" path="res://assets/textures/placeholders/flooplan.jpg" id="1_j5jx5"]
-[ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scenes/activate_environment.gd" id="2_pn65j"]
-[ext_resource type="Script" uid="uid://cy3gwigvuvlrr" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="2_thuo0"]
-[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="3_m8iwr"]
-[ext_resource type="PackedScene" uid="uid://dwm1xoebr81f3" path="res://assets/models/placeholders/Low Poly Furniture/Beds/Bed Double.fbx" id="4_lpvoh"]
-[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scenes/apply_shader_to_children.gd" id="4_n74k2"]
-[ext_resource type="PackedScene" uid="uid://bd4icnmbgdm6v" path="res://assets/models/placeholders/Low Poly Furniture/Carpets/Carpet A.fbx" id="5_at5dv"]
+[ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="2_pn65j"]
+[ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/Player.tscn" id="3_si7kk"]
+[ext_resource type="PackedScene" uid="uid://dwm1xoebr81f3" path="res://assets/models/Placeholders/Low Poly Furniture/Beds/Bed Double.fbx" id="4_lpvoh"]
+[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_children.gd" id="4_n74k2"]
+[ext_resource type="PackedScene" uid="uid://bd4icnmbgdm6v" path="res://assets/models/Placeholders/Low Poly Furniture/Carpets/Carpet A.fbx" id="5_at5dv"]
 [ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="5_si7kk"]
-[ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="6_ff6ho"]
-[ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="7_7yos8"]
-[ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="8_5jxlq"]
-[ext_resource type="PackedScene" uid="uid://cvyogf1rmgwux" path="res://assets/models/placeholders/Low Poly Furniture/Doors/Door B.fbx" id="9_xrtyr"]
-[ext_resource type="PackedScene" uid="uid://d18t6hcvbpmjn" path="res://assets/models/placeholders/Low Poly Furniture/Drawers/Drawer A.fbx" id="10_daiq8"]
-[ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="11_c6rvn"]
-[ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="12_n74k2"]
-[ext_resource type="PackedScene" uid="uid://bxv3k6wbj7361" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp A.fbx" id="13_si7kk"]
-[ext_resource type="PackedScene" uid="uid://fub00bqgpqau" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp C.fbx" id="14_pn65j"]
-[ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="15_5f8cm"]
-[ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="16_xrtyr"]
-[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="17_daiq8"]
-[ext_resource type="PackedScene" uid="uid://c4p340s2kgiq8" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window C.fbx" id="18_c6rvn"]
-[ext_resource type="PackedScene" uid="uid://crnvfun4vvka6" path="res://assets/models/placeholders/Low Poly Furniture/Shelves/Shelf B.fbx" id="19_daiq8"]
-[ext_resource type="PackedScene" uid="uid://cbax3qbrpcgjd" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window B.fbx" id="19_n74k2"]
+[ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="6_ff6ho"]
+[ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="7_7yos8"]
+[ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/Placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="8_5jxlq"]
+[ext_resource type="PackedScene" uid="uid://cvyogf1rmgwux" path="res://assets/models/Placeholders/Low Poly Furniture/Doors/Door B.fbx" id="9_xrtyr"]
+[ext_resource type="PackedScene" uid="uid://d18t6hcvbpmjn" path="res://assets/models/Placeholders/Low Poly Furniture/Drawers/Drawer A.fbx" id="10_daiq8"]
+[ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/Placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="11_c6rvn"]
+[ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/Placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="12_n74k2"]
+[ext_resource type="PackedScene" uid="uid://bxv3k6wbj7361" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp A.fbx" id="13_si7kk"]
+[ext_resource type="PackedScene" uid="uid://fub00bqgpqau" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp C.fbx" id="14_pn65j"]
+[ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/Placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="15_5f8cm"]
+[ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/Placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="16_xrtyr"]
+[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/Placeholders/Low Poly Furniture/Tables/Desk.fbx" id="17_daiq8"]
+[ext_resource type="PackedScene" uid="uid://c4p340s2kgiq8" path="res://assets/models/Placeholders/Low Poly Furniture/Windows/Window C.fbx" id="18_c6rvn"]
+[ext_resource type="PackedScene" uid="uid://crnvfun4vvka6" path="res://assets/models/Placeholders/Low Poly Furniture/Shelves/Shelf B.fbx" id="19_daiq8"]
+[ext_resource type="PackedScene" uid="uid://cbax3qbrpcgjd" path="res://assets/models/Placeholders/Low Poly Furniture/Windows/Window B.fbx" id="19_n74k2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
 size = Vector3(50, 0, 50)
@@ -53,8 +52,6 @@ sky = SubResource("Sky_4ggmq")
 ambient_light_source = 3
 fog_density = 0.02
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pn65j"]
 render_priority = 0
 shader = ExtResource("5_si7kk")
@@ -74,11 +71,6 @@ shader_parameter/resolution = Vector2i(320, 240)
 shape = SubResource("BoxShape3D_caja7")
 
 [node name="Mesh" type="MeshInstance3D" parent="Room/Floor" unique_id=902546820]
-material_override = SubResource("StandardMaterial3D_jcd4p")
-mesh = SubResource("PlaneMesh_6b5j0")
-
-[node name="Mesh2" type="MeshInstance3D" parent="Room/Floor" unique_id=1125516451]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 52.699867, 0, 0)
 material_override = SubResource("StandardMaterial3D_jcd4p")
 mesh = SubResource("PlaneMesh_6b5j0")
 
@@ -111,25 +103,8 @@ shadow_enabled = true
 environment = SubResource("Environment_4mccc")
 script = ExtResource("2_pn65j")
 
-[node name="Basic FPS Player" type="CharacterBody3D" parent="." unique_id=744001423]
+[node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_si7kk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-script = ExtResource("2_thuo0")
-SPEED = 2.0
-ACCEL = 20.0
-JUMP_VELOCITY = 0.0
-HEAD_BOB_FREQUENCY = 0.1
-HEAD_BOB_AMPLITUDE = 0.015
-KEY_BIND_UP = "up"
-KEY_BIND_LEFT = "left"
-KEY_BIND_RIGHT = "right"
-KEY_BIND_DOWN = "down"
-KEY_BIND_JUMP = "jump"
-
-[node name="Head" parent="Basic FPS Player" unique_id=1014996556 instance=ExtResource("3_m8iwr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic FPS Player" unique_id=1204485127]
-shape = SubResource("CapsuleShape3D_li7ud")
 
 [node name="Furniture" type="Node3D" parent="." unique_id=51728901]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://c75mpd4nm0j8t"]
+
+[ext_resource type="Script" uid="uid://dwq3813m6hbpt" path="res://scripts/Menus/settings_menu.gd" id="1"]
+
+[node name="SettingsMenu" type="Control" unique_id=2087371895]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=2145758577]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=83621874]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="CenterContainer" unique_id=854992318]
+custom_minimum_size = Vector2(520, 10)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/Panel" unique_id=1770532645]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin" unique_id=1144110867]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="TitleRow" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox" unique_id=146289215]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/Panel/Margin/VBox/TitleRow" unique_id=1710183571]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="CenterContainer/Panel/Margin/VBox/TitleRow" unique_id=1011255166]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+tooltip_text = "Close"
+text = "X"
+
+[node name="Grid" type="GridContainer" parent="CenterContainer/Panel/Margin/VBox" unique_id=1667560633]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 17
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/Grid" unique_id=1468218973]
+layout_mode = 2
+text = "General"
+horizontal_alignment = 2
+
+[node name="MasterSlider" type="HSlider" parent="CenterContainer/Panel/Margin/VBox/Grid" unique_id=281746581]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="VoiceLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/Grid" unique_id=204239070]
+layout_mode = 2
+text = "Voices"
+horizontal_alignment = 2
+
+[node name="VoiceSlider" type="HSlider" parent="CenterContainer/Panel/Margin/VBox/Grid" unique_id=1396362244]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/Grid" unique_id=1164167460]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 2
+
+[node name="MusicSlider" type="HSlider" parent="CenterContainer/Panel/Margin/VBox/Grid" unique_id=114943735]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SfxLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/Grid" unique_id=1649613858]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 2
+
+[node name="SfxSlider" type="HSlider" parent="CenterContainer/Panel/Margin/VBox/Grid" unique_id=799661091]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0

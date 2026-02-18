@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://g77fwioa2yhl"]
+
+[ext_resource type="Script" uid="uid://cy3gwigvuvlrr" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_v6fml"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_3li8b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1596461741]
+script = ExtResource("1_v6fml")
+SPEED = 2.0
+ACCEL = 20.0
+JUMP_VELOCITY = 0.0
+HEAD_BOB_FREQUENCY = 0.1
+HEAD_BOB_AMPLITUDE = 0.015
+KEY_BIND_UP = "up"
+KEY_BIND_LEFT = "left"
+KEY_BIND_RIGHT = "right"
+KEY_BIND_DOWN = "down"
+KEY_BIND_JUMP = "jump"
+
+[node name="Head" parent="." unique_id=592444330 instance=ExtResource("2_3li8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116003952]
+shape = SubResource("CapsuleShape3D_li7ud")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=824610214]
+current = true

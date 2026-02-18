@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ceauub3uvaq3b"]
+
+[ext_resource type="Script" uid="uid://ba8ehwigy3tts" path="res://scripts/viewport.gd" id="1_c6dvc"]
+[ext_resource type="PackedScene" uid="uid://dompofcqtehyu" path="res://scenes/Levels/Level1.tscn" id="2_611at"]
+[ext_resource type="PackedScene" uid="uid://c75mpd4nm0j8t" path="res://scenes/Menus/settings_menu.tscn" id="3_k24pf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mjkpp"]
+viewport_path = NodePath("CanvasLayer/SubViewport")
+
+[node name="Viewport" type="Node2D" unique_id=1316760191]
+script = ExtResource("1_c6dvc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1435602787]
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer" unique_id=1387275179]
+size = Vector2i(328, 185)
+
+[node name="Level1" parent="CanvasLayer/SubViewport" unique_id=1125609813 instance=ExtResource("2_611at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015396714, 0.015347958, -6.866455e-05)
+
+[node name="Level2" parent="CanvasLayer/SubViewport" unique_id=1973502121 instance=ExtResource("2_611at")]
+transform = Transform3D(0.689986, 0, -0.7238227, 0, 1, 0, 0.7238227, 0, 0.689986, 1.9786496, 0.015347958, -6.0769053)
+
+[node name="Level3" parent="CanvasLayer/SubViewport" unique_id=1789323093 instance=ExtResource("2_611at")]
+transform = Transform3D(0.7123691, 0, 0.70180506, 0, 1, 0, -0.70180506, 0, 0.7123691, 3.0603185, 0.015347958, 5.5986643)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1925727974]
+z_index = -4096
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = SubResource("ViewportTexture_mjkpp")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="." unique_id=263671933]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -574.0
+offset_bottom = 519.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsMenu" parent="Control" unique_id=2087371895 instance=ExtResource("3_k24pf")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 574.0
+offset_right = 1152.0
+offset_bottom = 129.0
