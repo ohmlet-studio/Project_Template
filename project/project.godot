@@ -23,6 +23,10 @@ window/stretch/mode="viewport"
 
 movie_writer/movie_file="/home/ruben/Desktop/brackeys/video.avi"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/sudden_fade_plugin/plugin.cfg")
+
 [input]
 
 up={
