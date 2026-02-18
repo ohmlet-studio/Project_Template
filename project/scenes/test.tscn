@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dompofcqtehyu"]
 
 [ext_resource type="Texture2D" uid="uid://bq1xnhtfrdebe" path="res://assets/textures/placeholders/flooplan.jpg" id="1_j5jx5"]
-[ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scenes/activate_environment.gd" id="2_pn65j"]
+[ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="2_pn65j"]
 [ext_resource type="Script" uid="uid://cy3gwigvuvlrr" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="2_thuo0"]
 [ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="3_m8iwr"]
 [ext_resource type="PackedScene" uid="uid://dwm1xoebr81f3" path="res://assets/models/placeholders/Low Poly Furniture/Beds/Bed Double.fbx" id="4_lpvoh"]
-[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scenes/apply_shader_to_children.gd" id="4_n74k2"]
+[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_children.gd" id="4_n74k2"]
 [ext_resource type="PackedScene" uid="uid://bd4icnmbgdm6v" path="res://assets/models/placeholders/Low Poly Furniture/Carpets/Carpet A.fbx" id="5_at5dv"]
 [ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="5_si7kk"]
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="6_ff6ho"]
