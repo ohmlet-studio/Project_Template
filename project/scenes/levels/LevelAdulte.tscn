@@ -28,29 +28,29 @@ transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.799999
 [node name="Chair A" parent="Room/Furniture" index="2" unique_id=1447814586 instance=ExtResource("4_ck67t")]
 transform = Transform3D(-4.3711367e-08, 0, -0.99999976, 0, 0.99999976, 0, 0.99999976, 0, -4.3711367e-08, 10.650064, 1.9513532, 1.8793216)
 
-[node name="Drawer A" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="3" unique_id=1948667269 instance=ExtResource("6_nptf7")]
+[node name="Drawer A" parent="Room/Furniture" index="3" unique_id=1948667269 instance=ExtResource("6_nptf7")]
 transform = Transform3D(0.99999976, 0, 5.9211885e-15, 0, 0.99999976, 0, -5.9211885e-15, 0, 0.99999976, 7.940918, 2.155719, -3.003763)
 
-[node name="Monitor" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="4" unique_id=1789032021 instance=ExtResource("7_b5sfl")]
+[node name="Monitor" parent="Room/Furniture" index="4" unique_id=1789032021 instance=ExtResource("7_b5sfl")]
 transform = Transform3D(-0.2661503, 0, 0.75442916, 0, 0.79999983, 0, -0.75442916, 0, -0.2661503, -10.473897, 4.4855437, 1.2504245)
 
-[node name="Pc" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="5" unique_id=540395698 instance=ExtResource("8_l035v")]
+[node name="Pc" parent="Room/Furniture" index="5" unique_id=540395698 instance=ExtResource("8_l035v")]
 transform = Transform3D(-2.6226829e-08, 0, 0.59999985, 0, 0.59999985, 0, -0.59999985, 0, -2.6226829e-08, -9.989845, 1.4304782, 2.1975439)
 
-[node name="Lamp C" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="6" unique_id=187436066 instance=ExtResource("9_jfxol")]
+[node name="Lamp C" parent="Room/Furniture" index="6" unique_id=187436066 instance=ExtResource("9_jfxol")]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -10.475741, 4.6942296, -2.6698272)
 
-[node name="Lamp B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="7" unique_id=1726968374 instance=ExtResource("10_o0v86")]
+[node name="Lamp B" parent="Room/Furniture" index="7" unique_id=1726968374 instance=ExtResource("10_o0v86")]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.061109, 4.94547, 14.351041)
 
-[node name="Radiator B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="8" unique_id=1144257814 instance=ExtResource("11_a8qax")]
+[node name="Radiator B" parent="Room/Furniture" index="8" unique_id=1144257814 instance=ExtResource("11_a8qax")]
 transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -5.1444683, 2.249854, -11.244384)
 
-[node name="Desk" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="9" unique_id=660806617 instance=ExtResource("12_qwc3n")]
+[node name="Desk" parent="Room/Furniture" index="9" unique_id=660806617 instance=ExtResource("12_qwc3n")]
 transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.79999983, 0, -3.49691e-08, -9.429562, 2.2028737, -1.9940147)
 
-[node name="Shelf B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="12" unique_id=1956975081 instance=ExtResource("15_5micf")]
+[node name="Shelf B" parent="Room/Furniture" index="10" unique_id=1956975081 instance=ExtResource("15_5micf")]
 transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, 10.241462, 4.207643, 5.9416103)
 
-[node name="adulte_lit" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="13" unique_id=1005375489 instance=ExtResource("16_y8cxe")]
+[node name="adulte_lit" parent="Room/Furniture" index="11" unique_id=1005375489 instance=ExtResource("16_y8cxe")]
 transform = Transform3D(-3.333333, 0, -2.9140924e-07, 0, 3.333333, 0, 2.9140924e-07, 0, -3.333333, -3.2527697, 1.560633, 11.470072)
