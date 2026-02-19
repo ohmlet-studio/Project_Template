@@ -15,8 +15,8 @@ func _ready() -> void:
 	picked = false
 
 func _on_interact() -> void:
-	picked = not picked
-	if has_been_scanned :
+	if has_been_scanned and Manager.is_all_picked:
+		picked = not picked
 		_origin_obj_transparency(picked)
 		_show_hand_obj(picked)
 

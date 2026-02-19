@@ -85,10 +85,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -349.0
-offset_top = -317.0
+offset_left = -205.0
+offset_top = -203.0
+offset_right = 307.0
+offset_bottom = 309.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.4, 0.4)
 texture = SubResource("ViewportTexture_r8wao")
 
 [node name="SubViewport" type="SubViewport" parent="inHandUI" unique_id=1844445340]

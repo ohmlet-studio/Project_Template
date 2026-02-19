@@ -275,3 +275,6 @@ mesh = SubResource("QuadMesh_3owl0")
 transform = Transform3D(-1.3731929e-07, 2.5450623e-08, -3.1949997, 0.5822424, 3.1414986, 0, 3.1414986, -0.5822424, -1.3965784e-07, 11.4884815, 5.7844267, 0.042756185)
 material_override = SubResource("StandardMaterial3D_u65tb")
 mesh = SubResource("QuadMesh_3owl0")
+
+[node name="PortalBed" parent="Room/Interactable/Static/Door" parent_id_path=PackedInt32Array(322101260) index="3" unique_id=33721493]
+metadata/_edit_group_ = true
