@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://b13ku4ha6ywfi" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactors/raycast_interactor_3d.gd" id="3_qu4a1"]
 [ext_resource type="Script" uid="uid://cjv0cckxt2gv4" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactors/grabbable_raycast_interactor_3d.gd" id="4_70d11"]
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_mdl7e"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1596461741]
@@ -23,13 +25,16 @@ KEY_BIND_JUMP = "jump"
 [node name="Head" parent="." unique_id=592444330 instance=ExtResource("2_3li8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
 
-[node name="RayCastInteractor3D" type="RayCast3D" parent="Head/Camera3D" parent_id_path=PackedInt32Array(592444330, 1489952706) index="0" unique_id=1756534528]
+[node name="Camera3D" parent="Head" index="0" unique_id=18288272]
+attributes = SubResource("CameraAttributesPractical_mdl7e")
+
+[node name="RayCastInteractor3D" type="RayCast3D" parent="Head/Camera3D" index="0" unique_id=1756534528]
 target_position = Vector3(0, 0, -1)
 debug_shape_custom_color = Color(0.9607843, 1, 0, 1)
 script = ExtResource("3_qu4a1")
 metadata/_custom_type_script = "uid://b13ku4ha6ywfi"
 
-[node name="GrabbableRayCastInteractor3D" type="RayCast3D" parent="Head/Camera3D" parent_id_path=PackedInt32Array(592444330, 1489952706) index="1" unique_id=447318011]
+[node name="GrabbableRayCastInteractor3D" type="RayCast3D" parent="Head/Camera3D" index="1" unique_id=447318011]
 target_position = Vector3(0, 0, -1)
 debug_shape_custom_color = Color(0, 0.9529412, 0, 1)
 script = ExtResource("4_70d11")

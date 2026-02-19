@@ -40,19 +40,22 @@ script = ExtResource("1_c6dvc")
 canvas_item_default_texture_filter = 0
 size = Vector2i(1200, 678)
 
-[node name="Level1" parent="CanvasLayer/SubViewport" unique_id=1125609813 instance=ExtResource("2_611at")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015396714, 0.015347958, -6.866455e-05)
+[node name="World" type="Node3D" parent="CanvasLayer/SubViewport" unique_id=592194623]
 
-[node name="Floor" type="StaticBody3D" parent="CanvasLayer/SubViewport" unique_id=1835376304]
-
-[node name="Collider" type="CollisionShape3D" parent="CanvasLayer/SubViewport/Floor" unique_id=1239050556]
-shape = SubResource("BoxShape3D_611at")
-
-[node name="Player" parent="CanvasLayer/SubViewport" unique_id=1596461741 instance=ExtResource("3_1wiy7")]
+[node name="Player" parent="CanvasLayer/SubViewport/World" unique_id=1596461741 instance=ExtResource("3_1wiy7")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1589148, 0)
 SPEED = 1.0
 HEAD_BOB_AMPLITUDE = 0.007
+KEY_BIND_PAUSE = "ui_pause"
+
+[node name="Level1" parent="CanvasLayer/SubViewport/World" unique_id=1125609813 instance=ExtResource("2_611at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015396714, 0.015347958, -6.866455e-05)
+
+[node name="Floor" type="StaticBody3D" parent="CanvasLayer/SubViewport/World" unique_id=1835376304]
+
+[node name="Collider" type="CollisionShape3D" parent="CanvasLayer/SubViewport/World/Floor" unique_id=1239050556]
+shape = SubResource("BoxShape3D_611at")
 
 [node name="Sun" type="DirectionalLight3D" parent="CanvasLayer/SubViewport" unique_id=1555084007]
 transform = Transform3D(0.26288852, -0.17172426, -0.9494211, 0.068173535, -0.9782676, 0.19581862, -0.9624147, -0.11620386, -0.24546827, -6.289403, 5.8933, -0.7181077)
@@ -118,3 +121,6 @@ layout_mode = 1
 offset_left = 574.0
 offset_right = 1152.0
 offset_bottom = 129.0
+
+[editable path="CanvasLayer/SubViewport/World/Player"]
+[editable path="CanvasLayer/SubViewport/World/Player/Head"]

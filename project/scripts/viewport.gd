@@ -3,18 +3,18 @@ extends Node
 @onready var viewport = $CanvasLayer/SubViewport
 @onready var dot_cursor: Control = $CanvasLayer/SubViewport/Control/CenterContainer/DotCursor
 @export var use_camera_2: bool = false
+@onready var player = $CanvasLayer/SubViewport/World/Player
 
 func _ready():
 	GlobalInteractionEvents.interactable_focused.connect(_on_interactable_focused)
 	GlobalInteractionEvents.interactable_unfocused.connect(_on_interactable_unfocused)
 	
+	CameraManager.curCamera = $CanvasLayer/SubViewport/World/Player/Head/Camera3D
+	player.action_back.connect(_on_game_paused)
 	%SettingsMenu.closed.connect(_on_pause_menu_closed)
 
 func _input(event):
-	if Input.is_key_pressed(KEY_ESCAPE):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		%SettingsMenu.show()
-	elif viewport and is_inside_tree():
+	if viewport and is_inside_tree():
 		viewport.push_input(event)
 
 func _process(delta: float) -> void:
@@ -25,6 +25,10 @@ func _process(delta: float) -> void:
 		$PlayingView.texture = $CanvasLayer/SubViewport.get_texture()
 	
 	$PlayingView.material.set_shader_parameter("color_mask", $CanvasLayer/MaskViewport.get_texture())
+
+func _on_game_paused():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	%SettingsMenu.show()
 
 func _unhandled_input(event):
 	if viewport and is_inside_tree():

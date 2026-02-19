@@ -27,7 +27,8 @@ func _ready() -> void:
 	
 	
 func blur_camera() -> void:
-	var origin_camera: Camera3D = get_window().get_camera_3d()
+	var origin_camera: Camera3D = CameraManager.curCamera
+	
 	origin_camera.attributes.dof_blur_far_enabled = true
 	origin_camera.attributes.dof_blur_near_enabled = true
 	origin_camera.attributes.dof_blur_far_distance = 2.0

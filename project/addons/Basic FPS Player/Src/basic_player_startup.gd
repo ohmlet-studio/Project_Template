@@ -52,6 +52,7 @@ func _enter_tree():
 @export var KEY_BIND_RIGHT := "ui_right"
 @export var KEY_BIND_DOWN := "ui_down"
 @export var KEY_BIND_JUMP := "ui_accept"
+@export var KEY_BIND_PAUSE := "pause"
 
 @export_category("Advanced")
 @export var UPDATE_PLAYER_ON_PHYS_STEP := true	# When check player is moved and rotated in _physics_process (fixed fps)
@@ -72,6 +73,8 @@ var head_start_pos : Vector3
 
 # Current player tick, used in head bob calculation
 var tick = 0
+
+signal action_back
 
 func _ready():
 	if Engine.is_editor_hint():
@@ -115,6 +118,9 @@ func _input(event):
 	# Listen for mouse movement and check if mouse is captured
 	if event is InputEventMouseMotion && Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		set_rotation_target(event.relative)
+
+	if Input.is_action_just_pressed("pause"):
+		action_back.emit()
 
 func set_rotation_target(mouse_motion : Vector2):
 	# Add player target to the mouse -x input
