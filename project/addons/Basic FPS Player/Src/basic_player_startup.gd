@@ -105,8 +105,6 @@ func _physics_process(delta):
 		if velocity && is_on_floor():
 			head_bob_motion()
 		reset_head_bob(delta)
-		
-	print(self.rotation)
 
 func _process(delta):
 	if Engine.is_editor_hint():

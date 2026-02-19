@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c75mpd4nm0j8t" path="res://scenes/menus/settings_menu.tscn" id="3_k24pf"]
 [ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="3_ygjfp"]
 [ext_resource type="Environment" uid="uid://bywldyytpakno" path="res://ressources/mask_camera_env.tres" id="5_1wiy7"]
-[ext_resource type="Script" uid="uid://78yumdgtlfv0" path="res://scripts/dot_cursor.gd" id="5_u1u68"]
+[ext_resource type="Script" path="res://scripts/dot_cursor.gd" id="5_u1u68"]
 [ext_resource type="Shader" uid="uid://c3sudo22dlh0m" path="res://shaders/sobel.gdshader" id="8_u1u68"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_611at"]

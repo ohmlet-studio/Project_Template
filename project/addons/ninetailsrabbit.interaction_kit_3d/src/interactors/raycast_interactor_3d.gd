@@ -10,9 +10,7 @@ var focused: bool = false
 var interacting: bool = false
 var global_interaction_events
 
-
 func _unhandled_input(_event: InputEvent):
-
 	if InputMap.has_action(interact_input_action) \
 		and Input.is_action_just_pressed(interact_input_action) \
 		and current_interactable \
@@ -32,9 +30,8 @@ func _unhandled_input(_event: InputEvent):
 		and Input.is_action_just_pressed(scan_input_action) \
 		and current_interactable \
 		and not interacting:
-			
+			print("scan")
 			scan(current_interactable)
-			
 		
 
 func _enter_tree():

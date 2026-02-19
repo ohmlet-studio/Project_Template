@@ -11,10 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="10_o0v86"]
 [ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="11_a8qax"]
 [ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="12_qwc3n"]
+[ext_resource type="PackedScene" uid="uid://d10wrpnqg1pkx" path="res://scenes/pickable_object/level1/test_obj.tscn" id="14_wx5tf"]
 [ext_resource type="PackedScene" uid="uid://crnvfun4vvka6" path="res://assets/models/placeholders/Low Poly Furniture/Shelves/Shelf B.fbx" id="15_5micf"]
 [ext_resource type="PackedScene" uid="uid://drwkw7dxe6tcg" path="res://assets/models/final/bed/adulte_lit.fbx" id="16_y8cxe"]
 
 [node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
+show_static_objects = true
 
 [node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
 script = null
@@ -54,3 +56,6 @@ transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.799999
 
 [node name="adulte_lit" parent="Room/Furniture" index="11" unique_id=1005375489 instance=ExtResource("16_y8cxe")]
 transform = Transform3D(-3.333333, 0, -2.9140924e-07, 0, 3.333333, 0, 2.9140924e-07, 0, -3.333333, -3.2527697, 1.560633, 11.470072)
+
+[node name="TestObj" parent="." index="3" unique_id=1972186688 instance=ExtResource("14_wx5tf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.639105, 1.3412488, -1.0829709)

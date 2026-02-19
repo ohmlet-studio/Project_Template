@@ -134,6 +134,7 @@ func _apply_outline_shader() -> void:
 
 
 func _remove_outline_shader() -> void:
+	return
 	if outline_on_focus and interactable_mesh:
 		var material: StandardMaterial3D = interactable_mesh.get_active_material(0)
 		
@@ -153,7 +154,9 @@ func on_interacted() -> void:
 
 
 func on_focused() -> void:
-	_apply_outline_shader()
+	# TODO hint interactable
+	#_apply_outline_shader()
+	pass
 	
 
 func on_unfocused() -> void:

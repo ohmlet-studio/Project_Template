@@ -6,15 +6,32 @@
 [sub_resource type="GDScript" id="GDScript_wkp01"]
 script/source = "extends Node3D
 
+signal opened
+signal closed
 
-# Called when the node enters the scene tree for the first time.
+@onready var collision_shape = $Node3D/lid/StaticBody3D/CollisionShape3D
+
+@export var lid_shown: bool = true:
+	set(value):
+		lid_shown = value
+		if is_node_ready():
+			$Node3D/lid.visible = value
+			collision_shape.disabled = !value
+
 func _ready() -> void:
-	pass # Replace with function body.
+	# Apply initial values
+	$Node3D/lid.visible = lid_shown
+	collision_shape.disabled = !lid_shown
 
+	
+	$Door3D.opened.connect(func(): opened.emit())
+	$Door3D.closed.connect(func(): closed.emit())
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func open():
+	$Door3D.open()
+
+func close():
+	$Door3D.close()
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_meu7c"]

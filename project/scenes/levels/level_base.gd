@@ -4,9 +4,9 @@ extends Node3D
 @onready var _static_objects: Node3D = $Room/Interactable/Static
 @onready var _collision_shape: CollisionShape3D = $Room/room/CSGBakedMeshInstance3D/StaticBody3D/CollisionShape3D
 
-@export var hide_static_objects: bool = true:
+@export var show_static_objects: bool = true:
 	set(value):
-		hide_static_objects = value
+		show_static_objects = value
 		if is_node_ready():
 			_static_objects.visible = value
 
@@ -17,5 +17,5 @@ extends Node3D
 			_collision_shape.disabled = !value
 
 func _ready() -> void:
-	_static_objects.visible = hide_static_objects
+	_static_objects.visible = show_static_objects
 	_collision_shape.disabled = !enable_hitbox
