@@ -1,9 +1,13 @@
 extends Node
 
 @onready var viewport = $CanvasLayer/SubViewport
+@onready var dot_cursor: Control = $CanvasLayer/SubViewport/Control/CenterContainer/DotCursor
 @export var use_camera_2: bool = false
 
 func _ready():
+	GlobalInteractionEvents.interactable_focused.connect(_on_interactable_focused)
+	GlobalInteractionEvents.interactable_unfocused.connect(_on_interactable_unfocused)
+	
 	%SettingsMenu.closed.connect(_on_pause_menu_closed)
 
 func _input(event):
@@ -29,3 +33,8 @@ func _unhandled_input(event):
 func _on_pause_menu_closed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
+func _on_interactable_focused(interactable: Interactable3D) -> void:
+	dot_cursor.focused = true
+
+func _on_interactable_unfocused(_interactable: Interactable3D) -> void:
+	dot_cursor.focused = false

@@ -170,3 +170,7 @@ func on_canceled_interaction() -> void:
 		
 	_remove_outline_shader()
 #endregion
+
+
+func _on_focused() -> void:
+	pass # Replace with function body.

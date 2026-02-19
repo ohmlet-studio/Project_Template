@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c75mpd4nm0j8t" path="res://scenes/menus/settings_menu.tscn" id="3_k24pf"]
 [ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="3_ygjfp"]
 [ext_resource type="Environment" uid="uid://bywldyytpakno" path="res://ressources/mask_camera_env.tres" id="5_1wiy7"]
-[ext_resource type="Shader" uid="uid://c3sudo22dlh0m" path="res://shaders/sobel.gdshader" id="8_u1u68"]
+[ext_resource type="Script" uid="uid://78yumdgtlfv0" path="res://scripts/dot_cursor.gd" id="5_u1u68"]
+[ext_resource type="Shader" path="res://shaders/sobel.gdshader" id="8_u1u68"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_611at"]
 size = Vector3(50, 0, 50)
@@ -61,6 +62,26 @@ shadow_enabled = true
 [node name="Environment" type="WorldEnvironment" parent="CanvasLayer/SubViewport" unique_id=361939799]
 environment = SubResource("Environment_x537r")
 script = ExtResource("3_ygjfp")
+
+[node name="Control" type="Control" parent="CanvasLayer/SubViewport" unique_id=2083149148]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/SubViewport/Control" unique_id=942237872]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DotCursor" type="Control" parent="CanvasLayer/SubViewport/Control/CenterContainer" unique_id=441371766]
+layout_mode = 2
+script = ExtResource("5_u1u68")
 
 [node name="MaskViewport" type="SubViewport" parent="CanvasLayer" unique_id=632110184]
 size = Vector2i(600, 339)

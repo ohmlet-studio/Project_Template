@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="8_hnhv5"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="9_86um8"]
 [ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="10_hpass"]
-[ext_resource type="PackedScene" uid="uid://cvyogf1rmgwux" path="res://assets/models/placeholders/Low Poly Furniture/Doors/Door B.fbx" id="11_srkvl"]
 [ext_resource type="PackedScene" uid="uid://d18t6hcvbpmjn" path="res://assets/models/placeholders/Low Poly Furniture/Drawers/Drawer A.fbx" id="12_pgakm"]
 [ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="13_s7ois"]
 [ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="14_rw0oh"]
@@ -15,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://4f2pysl7d3r1" path="res://assets/models/final/bed/adulte_lit.fbx" id="18_bspq0"]
 [ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="19_86oi8"]
 [ext_resource type="PackedScene" uid="uid://dwyo87xe7yyh1" path="res://scenes/levels/EmptyRoom/Walls.tscn" id="19_bspq0"]
+[ext_resource type="PackedScene" uid="uid://byac8f8k1u372" path="res://assets/models/final/static/door.tscn" id="19_dqba7"]
+[ext_resource type="Script" uid="uid://bee122ap2e1m1" path="res://scenes/levels/EmptyRoom/show_on_ready.gd" id="19_usw5k"]
 [ext_resource type="PackedScene" uid="uid://c4p340s2kgiq8" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window C.fbx" id="20_nd5kg"]
 [ext_resource type="Texture2D" uid="uid://cj643nuufea1c" path="res://assets/textures/misc/white_falloff.png" id="21_dqba7"]
 [ext_resource type="PackedScene" uid="uid://cbax3qbrpcgjd" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window B.fbx" id="21_qx1hq"]
@@ -51,9 +52,6 @@ transform = Transform3D(-4.3711367e-08, 0, -0.99999976, 0, 0.99999976, 0, 0.9999
 [node name="Chair D" parent="Room/Furniture" unique_id=539828529 instance=ExtResource("10_hpass")]
 transform = Transform3D(1.2499996, 0, 0, 0, 1.2499996, 0, 0, 0, 1.2499996, 4.50673, 1.3873894, 9.550092)
 
-[node name="Door B" parent="Room/Furniture" unique_id=994248032 instance=ExtResource("11_srkvl")]
-transform = Transform3D(0.56568545, 0, -0.56568545, 0, 0.7999999, 0, 0.56568545, 0, 0.56568545, 1.7399322, 3.8741846, -7.953583)
-
 [node name="Drawer A" parent="Room/Furniture" unique_id=182370753 instance=ExtResource("12_pgakm")]
 transform = Transform3D(0.99999976, 0, 5.9211885e-15, 0, 0.99999976, 0, -5.9211885e-15, 0, 0.99999976, 7.940918, 2.155719, -3.003763)
 
@@ -88,6 +86,17 @@ transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.799999
 transform = Transform3D(-3.333333, 0, -2.9140924e-07, 0, 3.333333, 0, 2.9140924e-07, 0, -3.333333, -3.2527697, 1.560633, 11.470072)
 
 [node name="Walls" parent="Room" unique_id=1303527287 instance=ExtResource("19_bspq0")]
+visible = false
+script = ExtResource("19_usw5k")
+
+[node name="Interactable" type="Node3D" parent="Room" unique_id=1217517487]
+
+[node name="Static" type="Node3D" parent="Room/Interactable" unique_id=1037730109]
+
+[node name="Door" parent="Room/Interactable/Static" unique_id=322101260 instance=ExtResource("19_dqba7")]
+transform = Transform3D(0.17677669, 0, -0.17677669, 0, 0.25, 0, 0.17677669, 0, 0.17677669, 0.98670065, 0, -1.918923)
+
+[node name="Grabbable" type="Node3D" parent="Room/Interactable" unique_id=736710538]
 
 [node name="Environment" type="Node3D" parent="." unique_id=1343892450]
 
