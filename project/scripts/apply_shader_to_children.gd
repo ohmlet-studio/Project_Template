@@ -3,6 +3,9 @@ extends Node3D
 @export var material: Material
 
 func _ready() -> void:
+	if not material:
+		return
+	
 	var children = get_children()
 	for child in children:
 		var mesh = child.get_child(0)

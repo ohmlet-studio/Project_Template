@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://burwq8hhnul3n"]
+
+[ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_children.gd" id="1_4cq84"]
+[ext_resource type="PackedScene" uid="uid://dwyo87xe7yyh1" path="res://scenes/levels/EmptyRoom/Walls.tscn" id="17_7aof2"]
+[ext_resource type="Script" uid="uid://bee122ap2e1m1" path="res://scenes/levels/EmptyRoom/show_on_ready.gd" id="18_q11wm"]
+[ext_resource type="PackedScene" uid="uid://byac8f8k1u372" path="res://assets/models/final/static/door.tscn" id="19_jxjyj"]
+
+[node name="LevelBase" type="Node3D" unique_id=1125609813]
+
+[node name="Room" type="Node3D" parent="." unique_id=938973325]
+
+[node name="Furniture" type="Node3D" parent="Room" unique_id=51728901]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("1_4cq84")
+
+[node name="Walls" parent="Room" unique_id=1303527287 instance=ExtResource("17_7aof2")]
+script = ExtResource("18_q11wm")
+
+[node name="Interactable" type="Node3D" parent="Room" unique_id=1217517487]
+
+[node name="Static" type="Node3D" parent="Room/Interactable" unique_id=1037730109]
+
+[node name="Door" parent="Room/Interactable/Static" unique_id=322101260 instance=ExtResource("19_jxjyj")]
+transform = Transform3D(0.17677669, 0, -0.17677669, 0, 0.25, 0, 0.17677669, 0, 0.17677669, 0.98670065, 0, -1.918923)
+
+[node name="Grabbable" type="Node3D" parent="Room/Interactable" unique_id=736710538]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1343892450]
