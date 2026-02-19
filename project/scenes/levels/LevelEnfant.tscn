@@ -57,7 +57,7 @@ transform = Transform3D(1.2549998, 0, 0, 0, 1.2549998, 0, 0, 0, 1.2549998, 7.814
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -10.331079, 4.6324186, -3.184595)
 
 [node name="Lamp B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="7" unique_id=1726968374 instance=ExtResource("10_jy1lg")]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 7.1006403, 5.082739, 14.891414)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 3.7181776, 5.082739, 14.891414)
 
 [node name="Radiator B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="8" unique_id=1144257814 instance=ExtResource("11_h8kw8")]
 transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -5.1444683, 2.249854, -11.244384)
