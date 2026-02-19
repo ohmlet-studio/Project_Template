@@ -8,12 +8,22 @@
 
 config_version=5
 
+[Brackeys]
+
+config/ninetailsrabbit.interaction_kit_3d/interactables_collision_layer=6
+config/ninetailsrabbit.interaction_kit_3d/grabbables_collision_layer=7
+
 [application]
 
 config/name="Brackeys"
 run/main_scene="uid://ceauub3uvaq3b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalInteractionEvents="*uid://xca2kvqtvbts"
+ScanInteractableLayer="*uid://bcseri36yyy3n"
 
 [display]
 
@@ -25,7 +35,7 @@ movie_writer/movie_file="/home/ruben/Desktop/brackeys/video.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/sudden_fade_plugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/ninetailsrabbit.interaction_kit_3d/plugin.cfg", "res://addons/sudden_fade_plugin/plugin.cfg")
 
 [input]
 
