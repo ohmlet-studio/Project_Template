@@ -105,14 +105,14 @@ size = Vector3(0.040182196, 0.014368933, 0.0980793)
 script = SubResource("GDScript_wkp01")
 
 [node name="frame" type="MeshInstance3D" parent="." unique_id=266307868]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -2.7195892, 4.7953234, 0)
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -2.7195892, 4.7953234, 0)
 mesh = SubResource("ArrayMesh_q7kgg")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=255497130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2761798, 6, 0)
 
 [node name="lid" type="MeshInstance3D" parent="Node3D" unique_id=2043315330]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -2.4434094, -1.2046766, 0)
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -2.4434094, -1.2046766, 0)
 mesh = SubResource("ArrayMesh_uq7il")
 
 [node name="Interactable3D" type="Area3D" parent="Node3D/lid" unique_id=760323939]
