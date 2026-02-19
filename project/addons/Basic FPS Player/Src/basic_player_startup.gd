@@ -54,6 +54,7 @@ func _enter_tree():
 @export var KEY_BIND_JUMP := "ui_accept"
 @export var KEY_BIND_PAUSE := "pause"
 
+
 @export_category("Advanced")
 @export var UPDATE_PLAYER_ON_PHYS_STEP := true	# When check player is moved and rotated in _physics_process (fixed fps)
 												# Otherwise player is updated in _process (uncapped)

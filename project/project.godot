@@ -24,7 +24,7 @@ config/icon="res://icon.svg"
 
 GlobalInteractionEvents="*uid://xca2kvqtvbts"
 ScanInteractableLayer="*uid://bcseri36yyy3n"
-CameraManager="*uid://dw50seclqk6li"
+Manager="*uid://dw50seclqk6li"
 
 [display]
 

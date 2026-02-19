@@ -7,6 +7,7 @@ signal scan_ended(object: Node3D)
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var marker_3d: Marker3D = $Camera3D/Marker3D
 
+var is_cur_scan: bool = false
 
 var current_object: Node3D:
 	set(new_object):
@@ -18,16 +19,15 @@ var current_object: Node3D:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed(&"ui_cancel"):
+	if Input.is_action_just_pressed(&"interact") and is_cur_scan :
 		end_scan()
-
 
 func _ready() -> void:
 	set_process_unhandled_input(current_object != null)
 	
 	
 func blur_camera() -> void:
-	var origin_camera: Camera3D = CameraManager.curCamera
+	var origin_camera: Camera3D = Manager.curCamera
 	
 	origin_camera.attributes.dof_blur_far_enabled = true
 	origin_camera.attributes.dof_blur_near_enabled = true
@@ -35,7 +35,7 @@ func blur_camera() -> void:
 
 
 func recover_camera() -> void:
-	var origin_camera: Camera3D = get_window().get_camera_3d()
+	var origin_camera: Camera3D = Manager.curCamera
 	origin_camera.attributes.dof_blur_far_enabled = false
 	origin_camera.attributes.dof_blur_near_enabled = false
 	
@@ -43,6 +43,9 @@ func recover_camera() -> void:
 func scan(node: Node3D) -> void:
 	if current_object:
 		return
+	
+	is_cur_scan = true
+	
 	
 	scan_started.emit(current_object)
 	blur_camera()
@@ -59,6 +62,8 @@ func scan(node: Node3D) -> void:
 
 func end_scan() -> void:
 	recover_camera()
+	
+	is_cur_scan = false
 	
 	if current_object:
 		scan_ended.emit(current_object)

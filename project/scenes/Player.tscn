@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cy3gwigvuvlrr" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_v6fml"]
 [ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_3li8b"]
 [ext_resource type="Script" uid="uid://b13ku4ha6ywfi" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactors/raycast_interactor_3d.gd" id="3_qu4a1"]
-[ext_resource type="Script" uid="uid://cjv0cckxt2gv4" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactors/grabbable_raycast_interactor_3d.gd" id="4_70d11"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_mdl7e"]
 
@@ -33,12 +32,6 @@ target_position = Vector3(0, 0, -1)
 debug_shape_custom_color = Color(0.9607843, 1, 0, 1)
 script = ExtResource("3_qu4a1")
 metadata/_custom_type_script = "uid://b13ku4ha6ywfi"
-
-[node name="GrabbableRayCastInteractor3D" type="RayCast3D" parent="Head/Camera3D" index="1" unique_id=447318011]
-target_position = Vector3(0, 0, -1)
-debug_shape_custom_color = Color(0, 0.9529412, 0, 1)
-script = ExtResource("4_70d11")
-metadata/_custom_type_script = "uid://cjv0cckxt2gv4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116003952]
 shape = SubResource("CapsuleShape3D_li7ud")

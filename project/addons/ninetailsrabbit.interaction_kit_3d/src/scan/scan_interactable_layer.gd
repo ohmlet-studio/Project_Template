@@ -15,9 +15,10 @@ func _ready() -> void:
 	control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	scan_interactable.scan_ended.connect(on_scan_ended)
 
-
 func scan(target: Node3D) -> void:
 	show()
+	## Block player movement
+	Manager.globPlayer.set_physics_process(false)
 	
 	original_mouse_mode = Input.mouse_mode
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -28,8 +29,8 @@ func scan(target: Node3D) -> void:
 
 
 func on_scan_ended(target: Node3D) -> void:
+	Input.mouse_mode = original_mouse_mode
+	Manager.globPlayer.set_physics_process(true)
 	hide()
 	scan_ended.emit(target)
 	control.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
-	Input.mouse_mode = original_mouse_mode

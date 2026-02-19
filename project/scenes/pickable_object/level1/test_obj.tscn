@@ -46,6 +46,7 @@ shadow_mesh = SubResource("ArrayMesh_guu6o")
 size = Vector3(0.006798893, 0.0052407635, 0.0054331897)
 
 [node name="TestObj" type="Node3D" unique_id=1972186688]
+metadata/has_been_scanned = false
 
 [node name="Mug" type="MeshInstance3D" parent="." unique_id=2070976790]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)

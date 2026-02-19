@@ -5,17 +5,27 @@ extends Node
 @export var use_camera_2: bool = false
 @onready var player = $CanvasLayer/SubViewport/World/Player
 
+var is_scanning: bool = false
+var current_scanned_interactable: Interactable3D = null
+
 func _ready():
 	GlobalInteractionEvents.interactable_focused.connect(_on_interactable_focused)
 	GlobalInteractionEvents.interactable_unfocused.connect(_on_interactable_unfocused)
+	GlobalInteractionEvents.interactable_interacted.connect(_on_interactable_interacted)
 	
-	CameraManager.curCamera = $CanvasLayer/SubViewport/World/Player/Head/Camera3D
+	Manager.curCamera = $CanvasLayer/SubViewport/World/Player/Head/Camera3D
+	Manager.globPlayer = %Player
 	player.action_back.connect(_on_game_paused)
 	%SettingsMenu.closed.connect(_on_pause_menu_closed)
 
 func _input(event):
 	if viewport and is_inside_tree():
+		if is_scanning and event.is_action_pressed("interact"):
+			_unscan()
+			get_viewport().set_input_as_handled()
+			return
 		viewport.push_input(event)
+
 
 func _process(delta: float) -> void:
 	%ColorMaskCamera3D.global_transform = %Player.get_camera.global_transform
@@ -42,3 +52,18 @@ func _on_interactable_focused(interactable: Interactable3D) -> void:
 
 func _on_interactable_unfocused(_interactable: Interactable3D) -> void:
 	dot_cursor.focused = false
+
+
+func _on_interactable_interacted(interactable: Interactable3D) -> void:
+	if not interactable.scannable:
+		return
+	# Block player
+	is_scanning = true
+	current_scanned_interactable = interactable
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _unscan() -> void:
+	is_scanning = false
+	current_scanned_interactable = null
+	ScanInteractableLayer.scan_interactable.end_scan()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
