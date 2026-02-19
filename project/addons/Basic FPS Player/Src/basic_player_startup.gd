@@ -4,6 +4,10 @@ extends CharacterBody3D
 var BasicFPSPlayerScene : PackedScene = preload("basic_player_head.tscn")
 var addedHead = false
 
+var get_camera: Camera3D:
+	get():
+		return $Head.get_node("Camera3D")
+
 func _enter_tree():
 	
 	if find_child("Head"):
