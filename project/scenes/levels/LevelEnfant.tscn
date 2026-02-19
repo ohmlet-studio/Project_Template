@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://df2xyiccdro13" path="res://assets/models/final/carpet/enfant_carpet.fbx" id="4_cvd65"]
 [ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="5_ugcos"]
 [ext_resource type="PackedScene" uid="uid://dkwjm7vdtjqpp" path="res://assets/models/final/commode/commode2.fbx" id="7_dyyc4"]
-[ext_resource type="PackedScene" uid="uid://fub00bqgpqau" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp C.fbx" id="9_nik0u"]
+[ext_resource type="PackedScene" uid="uid://fv6wlm56vh0s" path="res://assets/models/final/lamp/small_lamp.fbx" id="8_dyyc4"]
 [ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="10_jy1lg"]
 [ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="11_h8kw8"]
 [ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="12_0i7gq"]
@@ -34,8 +34,8 @@ transform = Transform3D(1.2499996, 0, 0, 0, 1.2499996, 0, 0, 0, 1.2499996, -0.80
 [node name="commode2" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="5" unique_id=653389449 instance=ExtResource("7_dyyc4")]
 transform = Transform3D(1.2549998, 0, 0, 0, 1.2549998, 0, 0, 0, 1.2549998, 7.81435, 2.1559994, -3.0039992)
 
-[node name="Lamp C" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="6" unique_id=187436066 instance=ExtResource("9_nik0u")]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -10.475741, 4.6942296, -2.6698272)
+[node name="small_lamp" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="6" unique_id=1052416340 instance=ExtResource("8_dyyc4")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -10.331079, 4.6324186, -3.184595)
 
 [node name="Lamp B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="7" unique_id=1726968374 instance=ExtResource("10_jy1lg")]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 7.1006403, 5.082739, 14.891414)
