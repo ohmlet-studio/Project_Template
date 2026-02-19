@@ -66,7 +66,7 @@ interactable_mesh = NodePath("../Mug")
 metadata/_custom_type_script = "uid://v8xxtslsavt7"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable3D" unique_id=41460960]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -0.1308137, 0.0065118303, -7.0625454e-08)
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -0.1308137, 0.0065118303, -7.0625454e-08)
 shape = SubResource("BoxShape3D_mpiml")
 
 [node name="inHandUI" type="Control" parent="." unique_id=1167937798]
