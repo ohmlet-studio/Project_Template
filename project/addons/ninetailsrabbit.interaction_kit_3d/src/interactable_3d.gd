@@ -164,6 +164,8 @@ func on_unfocused() -> void:
 
 
 func on_scanned() -> void:
+	get_parent().has_been_scanned = true
+	scannable = false
 	_remove_outline_shader()
 
 

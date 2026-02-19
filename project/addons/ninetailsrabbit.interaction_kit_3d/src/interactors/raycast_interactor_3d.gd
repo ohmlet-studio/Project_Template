@@ -16,7 +16,7 @@ func _unhandled_input(_event: InputEvent):
 		and current_interactable \
 		and not interacting:
 			
-		interact(current_interactable)
+			interact(current_interactable)
 		
 	
 	if InputMap.has_action(cancel_interact_input_action) \
@@ -33,7 +33,7 @@ func _unhandled_input(_event: InputEvent):
 			print("scan")
 			scan(current_interactable)
 		
-
+	
 func _enter_tree():
 	enabled = true
 	exclude_parent = true
@@ -86,6 +86,7 @@ func interact(interactable: Interactable3D = current_interactable):
 		interacting = interactable.lock_player_on_interact
 		
 		interactable.interacted.emit()
+		print("here")
 		
 		if global_interaction_events:
 			global_interaction_events.interactable_interacted.emit(interactable)
