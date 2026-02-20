@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://fb6h3jbticc" path="res://assets/models/final/posters/mcr.png" id="12_sfirk"]
 [ext_resource type="Texture2D" uid="uid://681dofbqicd6" path="res://assets/models/final/posters/lapin3.png" id="13_l8lak"]
 [ext_resource type="Texture2D" uid="uid://f0e5kuk16guo" path="res://assets/models/final/posters/lapin2.jpg" id="14_p0520"]
+[ext_resource type="Texture2D" uid="uid://4jmh6jl8ogyb" path="res://assets/models/final/posters/natalie.jpg" id="14_sfirk"]
+[ext_resource type="Texture2D" uid="uid://pl5dslhwlo8k" path="res://assets/models/final/posters/pic1.JPG" id="15_l8lak"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glxvj"]
 albedo_texture = ExtResource("11_w00vy")
@@ -30,10 +32,16 @@ center_offset = Vector3(0, -0.01, 0)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ey66"]
 albedo_texture = ExtResource("13_l8lak")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8lak"]
+albedo_texture = ExtResource("14_sfirk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0520"]
+albedo_texture = ExtResource("15_l8lak")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybcah"]
 albedo_texture = ExtResource("14_p0520")
 
-[node name="LevelBase" unique_id=1125609813 instance=ExtResource("1_vjdto")]
+[node name="LevelBase2" unique_id=1125609813 instance=ExtResource("1_vjdto")]
 
 [node name="commode" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="0" unique_id=1052609487 instance=ExtResource("2_cvd65")]
 transform = Transform3D(-4.3711363e-08, 0, -0.99999946, 0, 0.99999946, 0, 0.99999946, 0, -4.3711363e-08, 10.369865, 4.272593, 6.173694)
@@ -72,13 +80,26 @@ transform = Transform3D(2.5315156, -0.049514826, -0.00036037905, 0.04951585, 2.5
 material_override = SubResource("StandardMaterial3D_1ey66")
 mesh = SubResource("QuadMesh_a564u")
 
-[node name="Poster3" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="11" unique_id=779441032]
+[node name="Art" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="11" unique_id=1228589637]
+transform = Transform3D(0.04917912, -0.007111006, 1.766301, 0.033921663, 1.7666634, 0.006167982, -1.7659895, 0.03373657, 0.049306285, -8.048494, 3.4734926, 14.496405)
+material_override = SubResource("StandardMaterial3D_l8lak")
+mesh = SubResource("QuadMesh_a564u")
+
+[node name="Art2" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="12" unique_id=1269683074]
+transform = Transform3D(0.03414978, -0.0031269097, 1.6363525, 0.023555113, 0.7768521, 0.005714197, -1.2262985, 0.014834932, 0.04567867, -8.10562, 2.7312603, 13.487982)
+material_override = SubResource("StandardMaterial3D_p0520")
+mesh = SubResource("QuadMesh_a564u")
+
+[node name="Poster3" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="13" unique_id=779441032]
 transform = Transform3D(2.5315156, -0.049514826, -0.00036037905, 0.04951585, 2.5314965, 0.009734366, 0.00016994594, -0.00973955, 2.5319815, 9.351532, 7.2941422, -5.3543954)
 material_override = SubResource("StandardMaterial3D_ybcah")
 mesh = SubResource("QuadMesh_a564u")
 
-[node name="Desk" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="12" unique_id=660806617 instance=ExtResource("12_0i7gq")]
+[node name="Desk" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="14" unique_id=660806617 instance=ExtResource("12_0i7gq")]
 transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.79999983, 0, -3.49691e-08, -9.429562, 2.2028737, -1.9940147)
+
+[node name="PortalBed" parent="Room/Interactable/Static/Door" parent_id_path=PackedInt32Array(322101260) index="3" unique_id=33721493]
+metadata/_edit_group_ = true
 
 [node name="CSGBakedMeshInstance3D" parent="Room/room" parent_id_path=PackedInt32Array(1525725687) index="0" unique_id=484489248]
 transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 0, 0, 0)
