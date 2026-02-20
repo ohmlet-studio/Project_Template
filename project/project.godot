@@ -25,6 +25,7 @@ config/icon="res://icon.svg"
 GlobalInteractionEvents="*uid://xca2kvqtvbts"
 ScanInteractableLayer="*uid://bcseri36yyy3n"
 Manager="*res://scripts/manager/manager.gd"
+SubtitlesScene="*uid://bciil8v6ykx2e"
 
 [display]
 
@@ -36,7 +37,7 @@ movie_writer/movie_file="/home/ruben/Desktop/brackeys/video.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/ninetailsrabbit.interaction_kit_3d/plugin.cfg", "res://addons/portals/plugin.cfg", "res://addons/sudden_fade_plugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/ninetailsrabbit.interaction_kit_3d/plugin.cfg", "res://addons/portals/plugin.cfg", "res://addons/rubonnek.subtitles_importer/plugin.cfg", "res://addons/sudden_fade_plugin/plugin.cfg")
 
 [input]
 

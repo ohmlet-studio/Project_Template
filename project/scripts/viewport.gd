@@ -24,7 +24,8 @@ func _ready():
 
 func _input(event):
 	if viewport and is_inside_tree():
-		if is_scanning and event.is_action_pressed("interact"):
+		if is_scanning and event.is_action_pressed("interact") and not SubtitlesScene.audio_player.playing:
+			print("again here")
 			_unscan()
 			get_viewport().set_input_as_handled()
 			return

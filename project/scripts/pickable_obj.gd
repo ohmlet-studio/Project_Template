@@ -42,7 +42,13 @@ var picked: bool = false
 
 @export var has_been_scanned: bool = false
 
-# TODO play clip here
+@export var dialog_audio: AudioStream:
+	set(value):
+		dialog_audio = value
+
+@export var dialog_subtitle: String :
+	set(value):
+		dialog_subtitle = value
 
 # TODO color thingy
 @export var scale_scanned: float = 3.0 
@@ -139,6 +145,9 @@ func on_scanned() -> void:
 	_scan_tween = create_tween()
 	_scan_tween.tween_property(color_sphere, "scale", Vector3.ONE * scale_scanned, 4.0)
 	_scan_tween.tween_callback(func(): _tween_done = true)
+	
+	SubtitlesScene.sub_load_from_file(dialog_subtitle)
+	SubtitlesScene.play_dialog(dialog_audio)
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
