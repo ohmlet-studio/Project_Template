@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da6y88x3ln4rp"
-path.s3tc="res://.godot/imported/canabi.jpg-74e49a1524f26ac4160b4234ffcf1f51.s3tc.ctex"
+uid="uid://b0xlmpkslrc20"
+path.s3tc="res://.godot/imported/d20.jpg-5ff53bc8f1fc769f67fb82029a75e4ac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/memory_objects/lighter.fbm/canabi.jpg"
-dest_files=["res://.godot/imported/canabi.jpg-74e49a1524f26ac4160b4234ffcf1f51.s3tc.ctex"]
+source_file="res://assets/models/memory_objects/D20.fbm/d20.jpg"
+dest_files=["res://.godot/imported/d20.jpg-5ff53bc8f1fc769f67fb82029a75e4ac.s3tc.ctex"]
 
 [params]
 

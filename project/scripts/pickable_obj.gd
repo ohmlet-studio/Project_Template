@@ -1,18 +1,103 @@
+@tool
 extends Node
 
-@export var has_been_scanned: bool = true
+var object_material : Material
+var clone_2d_view: Node3D
+var clone_inspect_view: Node3D
+var scanned_object_instance: Node3D # never scale this, scale in blender and apply transform
+var picked: bool = false
 
-@onready var origObj = $Lighter
 @onready var handObjView = $inHandUI
-@onready var inter = $Interactable3D
-@onready var picked: bool
+@onready var subviewport: SubViewport = $inHandUI/SubViewport
+@onready var interactable_3d: Interactable3D = $Interactable3D
 
-# Called when the node enters the scene tree for the first time.
+@export var object_name: String = "":
+	set(value):
+		object_name = value
+		_set_object_name(value)
+
+@export var object_to_scan: PackedScene:
+	set(value):
+		object_to_scan = value
+		_set_object_to_scan(value)
+
+@export var scale_2d_view: float = 1.0:
+	set(value):
+		scale_2d_view = value
+		if clone_2d_view:
+			clone_2d_view.scale = Vector3.ONE * value
+
+@export var inspect_scale: float = 1.0:
+	set(value):
+		inspect_scale = value
+		if clone_inspect_view:
+			clone_inspect_view.scale = Vector3.ONE * value
+			
+@export var default_inspect_rotation: Vector3 = Vector3.ZERO:
+	set(value):
+		default_inspect_rotation = value
+		if clone_inspect_view:
+			clone_inspect_view.rotation = value
+
+@export var has_been_scanned: bool = false
+
 func _ready() -> void:
-	# duplicate material for handled obj
-	origObj.set_surface_override_material(0, origObj.get_active_material(0).duplicate())
-	inter.interacted.connect(_on_interact)
+	_set_object_name(object_name)
+	_set_object_to_scan(object_to_scan)
+	clone_inspect_view.scale = Vector3.ONE * inspect_scale
+	clone_2d_view.scale = Vector3.ONE * scale_2d_view
+	clone_inspect_view.rotation = default_inspect_rotation
+
+	if Engine.is_editor_hint():
+		return
+		
+	interactable_3d.interacted.connect(_on_interact)
 	picked = false
+
+func _set_object_name(value: String) -> void:
+	if not is_node_ready():
+		return
+	var interactable_3d = get_node_or_null("Interactable3D")
+	if not interactable_3d:
+		return
+	interactable_3d.id = value
+	interactable_3d.title = value
+
+func _set_object_to_scan(value: PackedScene) -> void:
+	if not is_node_ready():
+		return
+	var interactable_3d = get_node_or_null("Interactable3D")
+	var subviewport = get_node_or_null("inHandUI/SubViewport")
+	if not interactable_3d or not subviewport:
+		return
+
+	if clone_2d_view:
+		clone_2d_view.queue_free()
+	if scanned_object_instance:
+		scanned_object_instance.queue_free()
+	if clone_inspect_view:
+		clone_inspect_view.queue_free()
+	if not value:
+		return
+
+	scanned_object_instance = value.instantiate()
+	self.add_child(scanned_object_instance)
+
+	var origMesh = scanned_object_instance.get_child(0)
+	print(origMesh)
+	object_material = origMesh.get_active_material(0).duplicate()
+	origMesh.set_layer_mask_value(2, true)
+	origMesh.set_surface_override_material(0, object_material)
+
+	clone_2d_view = scanned_object_instance.duplicate()
+	subviewport.add_child(clone_2d_view)
+	clone_2d_view.scale = Vector3.ONE * scale_2d_view
+
+	clone_inspect_view = scanned_object_instance.duplicate()
+	self.add_child(clone_inspect_view)
+	clone_inspect_view.scale = Vector3.ONE * inspect_scale
+	clone_inspect_view.position = Vector3.DOWN * 100
+	interactable_3d.target_scannable_object = clone_inspect_view
 
 func _on_interact() -> void:
 	if has_been_scanned and Manager.is_all_picked:
@@ -20,15 +105,11 @@ func _on_interact() -> void:
 		_origin_obj_transparency(picked)
 		_show_hand_obj(picked)
 
-#### Called when object picked or dropped
 func _origin_obj_transparency(pick: bool) -> void:
 	if pick:
-		# set origin obj transparent
-		origObj.get_surface_override_material(0).albedo_color.a = 0.1
-		origObj.get_surface_override_material(0).transparency = true
+		object_material.albedo_color.a = 0.1
 	else:
-		origObj.get_surface_override_material(0).albedo_color.a = 1
-		origObj.get_surface_override_material(0).transparency = false
+		object_material.albedo_color.a = 1
 
 func _show_hand_obj(pick: bool) -> void:
 	if pick:
@@ -36,6 +117,5 @@ func _show_hand_obj(pick: bool) -> void:
 	else:
 		handObjView.hide()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

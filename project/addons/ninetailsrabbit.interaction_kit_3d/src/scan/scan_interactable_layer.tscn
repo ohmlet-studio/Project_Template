@@ -34,17 +34,9 @@ render_target_update_mode = 4
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1000, 0)
 
-[node name="MouseRotatorComponent3D" parent="Control/SubViewportContainer/SubViewport/ScanInteractable" index="0" unique_id=1932417512]
-reset_rotation_on_release = true
-
-[node name="Camera3D" parent="Control/SubViewportContainer/SubViewport/ScanInteractable" index="1" unique_id=27487211]
-attributes = null
-
 [node name="OmniLight3D" type="OmniLight3D" parent="Control/SubViewportContainer/SubViewport/ScanInteractable" unique_id=381367077]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.8)
 light_color = Color(1, 1, 0.745098, 1)
 light_energy = 0.7
 distance_fade_enabled = true
 distance_fade_begin = 5.0
-
-[editable path="Control/SubViewportContainer/SubViewport/ScanInteractable"]

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://d10wrpnqg1pkx"]
+[gd_scene format=4 uid="uid://bof6aevkj2jqx"]
 
 [ext_resource type="Script" uid="uid://v8xxtslsavt7" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactable_3d.gd" id="1_15gre"]
 [ext_resource type="Script" uid="uid://b0aoai0xdgu2b" path="res://scripts/pickable_obj.gd" id="1_r8wao"]
