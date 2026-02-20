@@ -2,7 +2,7 @@ extends Node
 
 @export var has_been_scanned: bool = true
 
-@onready var origObj = $Mug
+@onready var origObj = $Lighter
 @onready var handObjView = $inHandUI
 @onready var inter = $Interactable3D
 @onready var picked: bool

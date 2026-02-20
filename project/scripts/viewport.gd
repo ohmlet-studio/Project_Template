@@ -1,7 +1,8 @@
 extends Node
 
 @onready var viewport = $CanvasLayer/SubViewport
-@onready var dot_cursor: Control = $CanvasLayer/SubViewport/Control/CenterContainer/DotCursor
+@onready var interactable_information: RichTextLabel = %InterInfo
+@onready var dot_cursor: Control = $CanvasLayer/SubViewport/InteractableInfo/Control/CenterContainer/DotCursor
 @export var use_camera_2: bool = false
 @onready var player = $CanvasLayer/SubViewport/World/Player
 
@@ -9,6 +10,8 @@ var is_scanning: bool = false
 var current_scanned_interactable: Interactable3D = null
 
 func _ready():
+	interactable_information.text = ""
+	
 	GlobalInteractionEvents.interactable_focused.connect(_on_interactable_focused)
 	GlobalInteractionEvents.interactable_unfocused.connect(_on_interactable_unfocused)
 	GlobalInteractionEvents.interactable_interacted.connect(_on_interactable_interacted)
@@ -44,10 +47,14 @@ func _on_pause_menu_closed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _on_interactable_focused(interactable: Interactable3D) -> void:
-	dot_cursor.focused = true
+	if not is_scanning:
+		dot_cursor.focused = true
+		interactable_information.text = "[i]%s[/i]" % interactable.title
 
 func _on_interactable_unfocused(_interactable: Interactable3D) -> void:
 	dot_cursor.focused = false
+	interactable_information.clear()
+	interactable_information.text = ""
 
 
 func _on_interactable_interacted(interactable: Interactable3D) -> void:
@@ -55,8 +62,11 @@ func _on_interactable_interacted(interactable: Interactable3D) -> void:
 		return
 	# Block player
 	is_scanning = true
+	
 	current_scanned_interactable = interactable
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	interactable_information.clear()
+	interactable_information.text = ""
 
 func _unscan() -> void:
 	is_scanning = false
