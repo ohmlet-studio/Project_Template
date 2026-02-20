@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cdxmehdqaom2n" path="res://assets/models/final/posters/pan.png" id="22_5xdie"]
 [ext_resource type="Texture2D" uid="uid://d2svwgemdkbp1" path="res://assets/models/final/posters/undertale.jpg" id="23_0mht6"]
 [ext_resource type="Texture2D" uid="uid://2rrwtsclpqi0" path="res://assets/models/final/posters/riot.png" id="23_hxggu"]
-[ext_resource type="Texture2D" uid="uid://odroqrlffxet" path="res://assets/models/final/posters/jeune_et_con.jpg" id="23_ul5uw"]
+[ext_resource type="Texture2D" uid="uid://cggmmta7uhtci" path="res://assets/models/final/posters/rage.jpg" id="23_w3bfv"]
 [ext_resource type="Texture2D" uid="uid://dgn66aenq6s6x" path="res://assets/models/final/posters/3daysgrace.png" id="24_jw3fa"]
 [ext_resource type="Texture2D" uid="uid://bupufa6b6putn" path="res://assets/models/final/posters/system-of-a-down-toxicity.jpg" id="24_phtah"]
 [ext_resource type="Texture2D" uid="uid://clieoe8ibg3xb" path="res://assets/models/final/posters/pride.png" id="24_wrf2l"]
@@ -70,8 +70,8 @@ albedo_texture = ExtResource("21_k0f5r")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljb6c"]
 albedo_texture = ExtResource("22_5xdie")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrgwe"]
-albedo_texture = ExtResource("23_ul5uw")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phtah"]
+albedo_texture = ExtResource("23_w3bfv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhast"]
 albedo_texture = ExtResource("24_phtah")
@@ -198,7 +198,7 @@ mesh = SubResource("QuadMesh_3owl0")
 
 [node name="saez" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="20" unique_id=1057030215]
 transform = Transform3D(-2.2736588, 0.4641748, -0.012096688, 0.66874504, 1.5781522, 0.0027682902, 0.012386256, -0.0005258283, -2.3699667, -9.965531, 5.3853445, 4.774492)
-material_override = SubResource("StandardMaterial3D_jrgwe")
+material_override = SubResource("StandardMaterial3D_phtah")
 mesh = SubResource("QuadMesh_3owl0")
 
 [node name="systemofadown" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="21" unique_id=524437237]

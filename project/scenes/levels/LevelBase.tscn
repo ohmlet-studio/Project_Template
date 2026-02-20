@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://cw1r4c1d7beyv" path="res://addons/portals/scripts/portal_3d.gd" id="6_yb3n6"]
 [ext_resource type="Material" uid="uid://dcfkcyddxkglf" path="res://addons/portals/materials/editor-preview-portal-material.tres" id="7_7sgl3"]
 [ext_resource type="Script" uid="uid://bxcel82b180o3" path="res://addons/portals/scripts/portal_boxmesh.gd" id="8_d8oet"]
-[ext_resource type="Script" uid="uid://bosf84uqpujql" path="res://scenes/levels/sneak_hide_doors.gd" id="9_7sgl3"]
+[ext_resource type="Script" path="res://scenes/levels/sneak_hide_doors.gd" id="9_7sgl3"]
+[ext_resource type="PackedScene" uid="uid://dmhipsa8vwdb6" path="res://assets/models/final/room.fbx" id="11_d8oet"]
 [ext_resource type="PackedScene" uid="uid://byac8f8k1u372" path="res://assets/models/final/static/door.tscn" id="19_jxjyj"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yb3n6"]
@@ -284,5 +285,9 @@ material = SubResource("ShaderMaterial_e7klb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=486586280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20734978, 0, 0.57653546)
+visible = false
 layers = 3
 mesh = SubResource("SphereMesh_7sgl3")
+
+[node name="room" parent="." unique_id=1384537949 instance=ExtResource("11_d8oet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.77144516)
