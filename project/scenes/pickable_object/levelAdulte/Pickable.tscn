@@ -21,6 +21,7 @@ flip_faces = true
 script = ExtResource("1_s5pbp")
 
 [node name="Interactable3D" type="Area3D" parent="." unique_id=1609274884]
+collision_layer = 512
 script = ExtResource("2_8kydj")
 scannable = true
 metadata/_custom_type_script = "uid://v8xxtslsavt7"

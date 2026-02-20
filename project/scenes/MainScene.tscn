@@ -38,7 +38,7 @@ script = ExtResource("1_c6dvc")
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer" unique_id=1387275179]
 canvas_item_default_texture_filter = 0
-size = Vector2i(360, 203)
+size = Vector2i(720, 406)
 
 [node name="World" type="Node3D" parent="CanvasLayer/SubViewport" unique_id=592194623]
 

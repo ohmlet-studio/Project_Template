@@ -122,10 +122,21 @@ func can_be_interacted() -> bool:
 func on_interacted() -> void:
 	if can_be_interacted():
 		if is_open:
-			close()
+			try_close()
 		else:
-			open()
+			try_open()
+
+func try_close():
+	if get_parent() is PortalDoor:
+		get_parent().close()
+	else:
+		close()
 		
+func try_open():
+	if get_parent() is PortalDoor:
+		get_parent().open()
+	else:
+		open()
 
 func on_tried_to_open_locked_door() -> void:
 	if is_locked and animation_player.has_animation(locked_door_animation) and can_be_interacted():

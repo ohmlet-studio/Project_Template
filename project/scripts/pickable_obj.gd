@@ -150,7 +150,7 @@ func _on_scan_ended(scanned_object: Node3D) -> void:
 	if scanned_object and scanned_object.get_meta("scan_owner", null) == self:
 		if _scan_tween:
 			_scan_tween.kill()
-		_scan_tween = create_tween()  # 👈 missing this
+		_scan_tween = create_tween()
 		_scan_tween.tween_method(
 			func(v): color_radius = v,
 			_base_radius * 20.0, 0.0, 1.0

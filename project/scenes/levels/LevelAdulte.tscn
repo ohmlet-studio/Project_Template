@@ -48,7 +48,7 @@ transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -1
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.061109, 4.94547, 14.351041)
 
 [node name="Radiator B" parent="Room/Furniture" index="8" unique_id=1144257814 instance=ExtResource("11_a8qax")]
-transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -5.1444683, 2.249854, -11.244384)
+transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -4.996886, 2.249854, -11.069493)
 
 [node name="Desk" parent="Room/Furniture" index="9" unique_id=660806617 instance=ExtResource("12_qwc3n")]
 transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.79999983, 0, -3.49691e-08, -9.429562, 2.2028737, -1.9940147)
@@ -57,10 +57,10 @@ transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.799999
 transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, 10.241462, 4.207643, 5.9416103)
 
 [node name="adulte_lit" parent="Room/Furniture" index="11" unique_id=1005375489 instance=ExtResource("16_y8cxe")]
-transform = Transform3D(-3.333333, 0, -2.9140924e-07, 0, 3.333333, 0, 2.9140924e-07, 0, -3.333333, -3.2527697, 1.560633, 11.470072)
+transform = Transform3D(-3.333333, 0, -2.9140924e-07, 0, 3.333333, 0, 2.9140924e-07, 0, -3.333333, -3.2527697, 1.8656406, 12.52329)
 
 [node name="Carnet" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="0" unique_id=1972186688 instance=ExtResource("14_wx5tf")]
-transform = Transform3D(-0.77086914, 0, 0.6369936, 0, 1, 0, -0.6369936, 0, -0.77086914, -0.14382267, 0.7351031, 2.6334386)
+transform = Transform3D(-0.77086914, 0, 0.6369936, 0, 1, 0, -0.6369936, 0, -0.77086914, -0.14382267, 0.7739902, 2.6334386)
 object_name = "carnet"
 object_to_scan = ExtResource("15_yg4ca")
 scale_2d_view = 1.8

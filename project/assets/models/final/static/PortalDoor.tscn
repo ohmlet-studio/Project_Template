@@ -1,38 +1,11 @@
-[gd_scene format=4 uid="uid://1xrgkqtgiixs"]
+[gd_scene format=4 uid="uid://byac8f8k1u372"]
 
-[ext_resource type="Script" uid="uid://v8xxtslsavt7" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactable_3d.gd" id="1_wkp01"]
-[ext_resource type="Script" uid="uid://cby7cfgiecmtb" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/doors/door.gd" id="1_ycg47"]
-
-[sub_resource type="GDScript" id="GDScript_wkp01"]
-script/source = "extends Node3D
-
-signal opened
-signal closed
-
-@onready var collision_shape = $Node3D/lid/StaticBody3D/CollisionShape3D
-
-@export var lid_shown: bool = true:
-	set(value):
-		lid_shown = value
-		if is_node_ready():
-			$Node3D/lid.visible = value
-			collision_shape.disabled = !value
-
-func _ready() -> void:
-	# Apply initial values
-	$Node3D/lid.visible = lid_shown
-	collision_shape.disabled = !lid_shown
-
-	
-	$Door3D.opened.connect(func(): opened.emit())
-	$Door3D.closed.connect(func(): closed.emit())
-
-func open():
-	$Door3D.open()
-
-func close():
-	$Door3D.close()
-"
+[ext_resource type="Script" uid="uid://v8xxtslsavt7" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactable_3d.gd" id="1_fq4yo"]
+[ext_resource type="Script" uid="uid://drnrycbov3gba" path="res://assets/models/final/static/portal_door.gd" id="1_hhy8b"]
+[ext_resource type="Script" uid="uid://cby7cfgiecmtb" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/doors/door.gd" id="2_hhy8b"]
+[ext_resource type="Script" uid="uid://cw1r4c1d7beyv" path="res://addons/portals/scripts/portal_3d.gd" id="3_krffb"]
+[ext_resource type="Material" uid="uid://dcfkcyddxkglf" path="res://addons/portals/materials/editor-preview-portal-material.tres" id="4_5sphs"]
+[ext_resource type="Script" uid="uid://bxcel82b180o3" path="res://addons/portals/scripts/portal_boxmesh.gd" id="5_ituva"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_meu7c"]
 resource_name = "Brown 3"
@@ -118,39 +91,97 @@ size = Vector3(0.049072266, 0.017822266, 0.0980793)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wkp01"]
 size = Vector3(0.040182196, 0.014368933, 0.0980793)
 
-[node name="Door" type="Node3D" unique_id=322101260]
-script = SubResource("GDScript_wkp01")
+[sub_resource type="ArrayMesh" id="ArrayMesh_ftjik"]
+_surfaces = [{
+"aabb": AABB(-0.575, -1.35, -1, 1.15, 2.7, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAIA/AACAPw=="),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAQABAABAAUAAQADAAUABQADAAcAAwACAAcABwACAAYAAgAAAAYABgAAAAQABAAFAAYABgAFAAcAAAABAAIAAgABAAMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("MzMTv83MrD8AAAAAMzMTP83MrD8AAAAAMzMTv83MrL8AAAAAMzMTP83MrL8AAAAAMzMTv83MrD8AAIC/MzMTP83MrD8AAIC/MzMTv83MrL8AAIC/MzMTP83MrL8AAIC//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgA==")
+}]
+script = ExtResource("5_ituva")
+size = Vector3(1.15, 2.7, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gn61q"]
+size = Vector3(1.15, 2.7, 1)
+
+[node name="PortalDoor" type="Node3D" unique_id=322101260]
+script = ExtResource("1_hhy8b")
 
 [node name="frame" type="MeshInstance3D" parent="." unique_id=266307868]
-transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -2.7195892, 4.7953234, 0)
+transform = Transform3D(26, 0, 0, 0, -1.136496e-06, 26, 0, -26, -1.136496e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_q7kgg")
 
-[node name="Node3D" type="Node3D" parent="." unique_id=255497130]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2761798, 6, 0)
+[node name="Pivot" type="Node3D" parent="." unique_id=255497130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66825247, 0, 0)
 
-[node name="lid" type="MeshInstance3D" parent="Node3D" unique_id=2043315330]
-transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -2.4434094, -1.2046766, 0)
+[node name="lid" type="MeshInstance3D" parent="Pivot" unique_id=2043315330]
+transform = Transform3D(26, 0, 0, 0, -1.136496e-06, 26, 0, -26, -1.136496e-06, -0.66785055, 0, 0)
 mesh = SubResource("ArrayMesh_uq7il")
 
-[node name="Interactable3D" type="Area3D" parent="Node3D/lid" unique_id=760323939]
+[node name="Interactable3D" type="Area3D" parent="Pivot/lid" unique_id=760323939]
 transform = Transform3D(0.010000001, 0, 0, 0, -1.1920932e-09, -0.010000002, 0, 0.010000002, -1.1920932e-09, 0.027195895, 5.716472e-09, -0.04795324)
-script = ExtResource("1_wkp01")
+collision_layer = 513
+script = ExtResource("1_fq4yo")
 id = "door"
 metadata/_custom_type_script = "uid://v8xxtslsavt7"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/lid/Interactable3D" unique_id=1279115860]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/lid/Interactable3D" unique_id=1279115860]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -2.285596, 5.146361, 0.0019712418)
 shape = SubResource("BoxShape3D_ycg47")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/lid" unique_id=623095290]
+[node name="StaticBody3D" type="StaticBody3D" parent="Pivot/lid" unique_id=623095290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043399334, -1.971284e-05, 0.0035103746)
+collision_layer = 513
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/lid/StaticBody3D" unique_id=1130437977]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/lid/StaticBody3D" unique_id=1130437977]
 shape = SubResource("BoxShape3D_wkp01")
 
+[node name="Portal" type="Node3D" parent="." unique_id=1112853643 groups=["portals"]]
+process_priority = 100
+process_physics_priority = 100
+transform = Transform3D(1, 0, 9.2983235e-08, 0, 1, 0, -9.2983235e-08, 0, 1, 0.10849285, 0.0629804, -0.0431152)
+script = ExtResource("3_krffb")
+_portal_mesh_path = NodePath("Portal3D_Mesh")
+_teleport_area_path = NodePath("TeleportArea")
+_teleport_collider_path = NodePath("TeleportArea/Collider")
+portal_size = Vector2(1.15, 2.7)
+portal_frame_width = 0.0
+viewport_size_mode = 0
+view_direction = 1
+portal_render_layer = 524288
+is_teleport = true
+teleport_direction = 0
+rigidbody_boost = 2.0
+teleport_tolerance = 0.5
+teleport_interactions = 3
+teleport_collision_mask = 32768
+start_deactivated = false
+metadata/_custom_type_script = "uid://cw1r4c1d7beyv"
+metadata/_edit_group_ = true
+
+[node name="Portal3D_Mesh" type="MeshInstance3D" parent="Portal" unique_id=269849278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.05, 0, 0, 0)
+layers = 524288
+material_override = ExtResource("4_5sphs")
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_ftjik")
+
+[node name="TeleportArea" type="Area3D" parent="Portal" unique_id=33476983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52582884)
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Collider" type="CollisionShape3D" parent="Portal/TeleportArea" unique_id=698988886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+shape = SubResource("BoxShape3D_gn61q")
+
 [node name="Door3D" type="Node3D" parent="." unique_id=394730194 node_paths=PackedStringArray("interactable", "pivot_point")]
-script = ExtResource("1_ycg47")
-interactable = NodePath("../Node3D/lid/Interactable3D")
-open_angle_rotation = Vector3(0, -85, 0)
-pivot_point = NodePath("../Node3D")
+script = ExtResource("2_hhy8b")
+interactable = NodePath("../Pivot/lid/Interactable3D")
+pivot_point = NodePath("../Pivot")
 metadata/_custom_type_script = "uid://cby7cfgiecmtb"
