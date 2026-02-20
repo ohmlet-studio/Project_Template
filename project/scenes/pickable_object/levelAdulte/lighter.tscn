@@ -211,7 +211,7 @@ mesh = SubResource("ArrayMesh_0hb4r")
 [node name="Interactable3D" type="Area3D" parent="." unique_id=1609274884 node_paths=PackedStringArray("target_scannable_object", "interactable_mesh")]
 script = ExtResource("2_vo2v6")
 id = "Lighter"
-title = "lighterb"
+title = "lighter"
 scannable = true
 target_scannable_object = NodePath("../Lighter")
 interactable_mesh = NodePath("../Lighter")
