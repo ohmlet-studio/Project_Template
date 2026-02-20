@@ -20,7 +20,7 @@ func _ready() -> void:
 	_static_objects.visible = show_static_objects
 	_collision_shape.disabled = !enable_hitbox
 	# Set no picked object at begin
-	Manager.is_all_picked = false
+	Manager.is_all_scanned = false
 	_create_furniture_collisions()
 	
 func _create_furniture_collisions() -> void:

@@ -149,7 +149,6 @@ func _remove_outline_shader() -> void:
 func on_interacted() -> void:
 	if number_of_times_can_be_interacted > 0:
 		times_interacted += 1
-		
 	_remove_outline_shader()
 
 

@@ -25,7 +25,6 @@ func _ready():
 func _input(event):
 	if viewport and is_inside_tree():
 		if is_scanning and event.is_action_pressed("interact") and not SubtitlesScene.audio_player.playing:
-			print("again here")
 			_unscan()
 			get_viewport().set_input_as_handled()
 			return
@@ -55,7 +54,7 @@ func _on_interactable_focused(interactable: Interactable3D) -> void:
 		if "has_been_scanned" in interactable.get_parent():
 			if not interactable.get_parent().has_been_scanned:
 				interactable_information.text = "[font_size=35][i][E] to scan %s[/i][/font_size]" % interactable.title
-			elif interactable.get_parent().has_been_scanned and Manager.is_all_picked:
+			elif interactable.get_parent().has_been_scanned and Manager.is_all_scanned:
 				interactable_information.text = "[font_size=35][i][E] to pick %s[/i][/font_size]" % interactable.title
 
 func _on_interactable_unfocused(_interactable: Interactable3D) -> void:

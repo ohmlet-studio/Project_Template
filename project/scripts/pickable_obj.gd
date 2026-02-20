@@ -114,10 +114,14 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	interactable_3d.target_scannable_object = clone_inspect_view
 
 func _on_interact() -> void:
-	if has_been_scanned and Manager.is_all_picked:
+	if has_been_scanned and Manager.is_all_scanned:
 		picked = not picked
 		_origin_obj_transparency(picked)
 		_show_hand_obj(picked)
+	if picked:
+		if not Manager.is_one_picked:
+			Manager.is_one_picked = true
+		Manager.pick_obj_name = object_name
 
 func _origin_obj_transparency(pick: bool) -> void:
 	if pick:
@@ -165,3 +169,9 @@ func _process(delta: float) -> void:
 	
 	var scale_value = clamp(dist / max_distance, min_scale, 1.0) if not has_been_scanned else scale_scanned
 	color_sphere.scale = Vector3.ONE * (scale_value + breath)
+	
+	## Check if another object is picked and if it is self
+	if Manager.is_one_picked and not Manager.pick_obj_name.is_empty():
+		## double check picked in case, just to make sure there's no knots in code
+		if picked and Manager.pick_obj_name != object_name:
+			_on_interact()
