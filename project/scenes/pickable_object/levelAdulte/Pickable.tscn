@@ -19,8 +19,6 @@ flip_faces = true
 
 [node name="Pickable" type="Node3D" unique_id=1972186688]
 script = ExtResource("1_s5pbp")
-default_inspect_rotation = null
-scale_scanned = null
 
 [node name="Interactable3D" type="Area3D" parent="." unique_id=1609274884]
 script = ExtResource("2_8kydj")

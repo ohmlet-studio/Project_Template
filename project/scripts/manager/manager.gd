@@ -4,7 +4,7 @@ var curCamera: Camera3D
 var globPlayer: CharacterBody3D
 
 ## Object pick handle
-var maxObj = 1  		## number of object inside level
+var maxObj = 3  		## number of object inside level
 var is_all_picked: bool
 signal object_picked
 var pickObj_count = 0

@@ -141,12 +141,15 @@ func on_scanned() -> void:
 	_scan_tween.tween_callback(func(): _tween_done = true)
 
 func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+		
 	_breath_time += delta
 	var breath = sin(_breath_time * 2.0) * 0.05
 
 	if has_been_scanned and not _tween_done:
 		return  # let the tween play out
-		
+
 	var dist = Manager.globPlayer.global_position.distance_to(self.global_position)
 	var max_distance = 1.5
 	var min_scale = 0.1
