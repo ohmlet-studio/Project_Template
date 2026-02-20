@@ -42,12 +42,12 @@ var picked: bool = false
 
 @export var has_been_scanned: bool = false
 
-# TODO play clip here
+@export var color_radius: float = 1.0
 
-# TODO color thingy
-@export var scale_scanned: float = 3.0 
-
-# TODO ???
+var _base_radius: float = 0.0
+var _breath_time: float = 0.0
+var _scan_tween: Tween
+var _interact_tween: Tween
 
 func _ready() -> void:
 	_set_object_name(object_name)
@@ -55,11 +55,14 @@ func _ready() -> void:
 	clone_inspect_view.scale = Vector3.ONE * inspect_scale
 	clone_2d_view.scale = Vector3.ONE * scale_2d_view
 	clone_inspect_view.rotation = default_inspect_rotation
+	_base_radius = color_radius
 
 	if Engine.is_editor_hint():
 		return
 		
 	interactable_3d.interacted.connect(_on_interact)
+	ScanInteractableLayer.scan_ended.connect(_on_scan_ended)
+	interactable_3d.scanned.connect(_on_scan_started)
 	picked = false
 
 func _set_object_name(value: String) -> void:
@@ -104,6 +107,7 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	self.add_child(clone_inspect_view)
 	clone_inspect_view.scale = Vector3.ONE * inspect_scale
 	clone_inspect_view.position = Vector3.DOWN * 100
+	clone_inspect_view.set_meta("scan_owner", self)
 	interactable_3d.target_scannable_object = clone_inspect_view
 
 func _on_interact() -> void:
@@ -116,9 +120,7 @@ func _origin_obj_transparency(pick: bool) -> void:
 	var mesh = scanned_object_instance.get_child(0)
 	var material: Material = mesh.get_surface_override_material(0)
 	var color: Color = material.get_shader_parameter("color")
-	
 	color.a = 0.5 if pick else 1
-	
 	material.set_shader_parameter("color", color)
 
 func _show_hand_obj(pick: bool) -> void:
@@ -126,35 +128,43 @@ func _show_hand_obj(pick: bool) -> void:
 		handObjView.show()
 	else:
 		handObjView.hide()
-		
-var _breath_time: float = 0.0
-var _tween_done: bool = false
-var _scan_tween: Tween
 
-func on_scanned() -> void:
+func _on_scan_started() -> void:
+	Manager.object_picked.emit()
+	
 	has_been_scanned = true
-	_tween_done = false
 	
 	if _scan_tween:
 		_scan_tween.kill()
 	
 	_scan_tween = create_tween()
-	_scan_tween.tween_property(color_sphere, "scale", Vector3.ONE * scale_scanned, 4.0)
-	_scan_tween.tween_callback(func(): _tween_done = true)
+
+	_scan_tween.tween_method(
+		func(v):
+			color_radius = v,
+			color_radius, _base_radius * 20.0, 2.0
+	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+
+
+func _on_scan_ended(scanned_object: Node3D) -> void:
+	if scanned_object and scanned_object.get_meta("scan_owner", null) == self:
+		if _scan_tween:
+			_scan_tween.kill()
+		_scan_tween = create_tween()  # 👈 missing this
+		_scan_tween.tween_method(
+			func(v): color_radius = v,
+			_base_radius * 20.0, 0.0, 1.0
+		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 		
 	_breath_time += delta
-	var breath = sin(_breath_time * 2.0) * 0.05
-
-	if has_been_scanned and not _tween_done:
-		return  # let the tween play out
 
 	var dist = Manager.globPlayer.global_position.distance_to(self.global_position)
-	var max_distance = 1.5
-	var min_scale = 0.1
+	var proximity_factor = clamp(dist / 1.5, 0.0, 1.0) if not has_been_scanned else 1.0
+	var breath = sin(_breath_time * 2.0) * 0.1 + 0.9
+
+	color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
 	
-	var scale_value = clamp(dist / max_distance, min_scale, 1.0) if not has_been_scanned else scale_scanned
-	color_sphere.scale = Vector3.ONE * (scale_value + breath)

@@ -164,19 +164,13 @@ func on_unfocused() -> void:
 
 
 func on_scanned() -> void:
-	get_parent().on_scanned()
-	Manager.object_picked.emit()
 	scannable = false
 	_remove_outline_shader()
 
 
-func on_canceled_interaction() -> void:
+func on_canceled_interaction() -> void:	
 	if times_interacted < number_of_times_can_be_interacted:
 		activate()
 		
 	_remove_outline_shader()
 #endregion
-
-
-func _on_focused() -> void:
-	pass # Replace with function body.
