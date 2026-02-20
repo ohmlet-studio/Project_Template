@@ -95,7 +95,6 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	print(origMesh)
 	object_material = origMesh.get_active_material(0).duplicate()
 	origMesh.set_layer_mask_value(2, true)
-	origMesh.set_surface_override_material(0, object_material)
 
 	clone_2d_view = scanned_object_instance.duplicate()
 	subviewport.add_child(clone_2d_view)
@@ -114,10 +113,13 @@ func _on_interact() -> void:
 		_show_hand_obj(picked)
 
 func _origin_obj_transparency(pick: bool) -> void:
-	if pick:
-		object_material.albedo_color.a = 0.1
-	else:
-		object_material.albedo_color.a = 1
+	var mesh = scanned_object_instance.get_child(0)
+	var material: Material = mesh.get_surface_override_material(0)
+	var color: Color = material.get_shader_parameter("color")
+	
+	color.a = 0.5 if pick else 1
+	
+	material.set_shader_parameter("color", color)
 
 func _show_hand_obj(pick: bool) -> void:
 	if pick:
