@@ -119,7 +119,7 @@ albedo_texture = ExtResource("24_wrf2l")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u65tb"]
 albedo_texture = ExtResource("22_2thrm")
 
-[node name="LevelBase2" unique_id=1125609813 instance=ExtResource("1_nxnrf")]
+[node name="LevelAdo" unique_id=1125609813 instance=ExtResource("1_nxnrf")]
 
 [node name="blackcarpet" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="0" unique_id=434238784 instance=ExtResource("3_nxnrf")]
 transform = Transform3D(-0.20571904, 0, -3.2134213, 0, 3.2199993, 0, 3.2134213, 0, -0.20571904, 0.18218407, 0.022696253, 10.541526)

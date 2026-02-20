@@ -44,6 +44,13 @@ transform = Transform3D(-2.6226829e-08, 0, 0.59999985, 0, 0.59999985, 0, -0.5999
 [node name="Lamp C" parent="Room/Furniture" index="6" unique_id=187436066 instance=ExtResource("9_jfxol")]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -10.475741, 4.6942296, -2.6698272)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Furniture/Lamp C" index="1" unique_id=433037440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9164336, 0)
+light_color = Color(0.8910537, 0.6656812, 0.43832183, 1)
+light_energy = 0.2
+light_cull_mask = 4294967293
+shadow_enabled = true
+
 [node name="Lamp B" parent="Room/Furniture" index="7" unique_id=1726968374 instance=ExtResource("10_o0v86")]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.061109, 4.94547, 14.351041)
 

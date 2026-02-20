@@ -129,11 +129,20 @@ func _on_interact() -> void:
 		Manager.pick_obj_name = object_name
 
 func _origin_obj_transparency(pick: bool) -> void:
+	# legacy code for older shader
+	# var mesh = scanned_object_instance.get_child(0)
+	# var material: Material = mesh.get_surface_override_material(0)
+	# var color: Color = material.get_shader_parameter("color")
+	# color.a = 0.5 if pick else 1
+	# material.set_shader_parameter("color", color)
+
 	var mesh = scanned_object_instance.get_child(0)
-	var material: Material = mesh.get_surface_override_material(0)
-	var color: Color = material.get_shader_parameter("color")
-	color.a = 0.5 if pick else 1
-	material.set_shader_parameter("color", color)
+	var material: StandardMaterial3D = mesh.get_surface_override_material(0)
+	# or mesh.get_active_material(0) if no override is set
+
+	if material:
+		material.albedo_color.a = 0.5 if pick else 1.0
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 
 func _show_hand_obj(pick: bool) -> void:
 	if pick:

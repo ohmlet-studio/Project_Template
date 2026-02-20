@@ -10,6 +10,11 @@
 radius = 0.24804688
 height = 1.6533203
 
+[sub_resource type="SphereMesh" id="SphereMesh_3li8b"]
+flip_faces = true
+radius = 30.0
+height = 60.0
+
 [node name="Player" type="CharacterBody3D" unique_id=1596461741]
 disable_mode = 2
 collision_layer = 32769
@@ -45,5 +50,10 @@ shape = SubResource("CapsuleShape3D_li7ud")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=824610214]
 current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1441221660]
+visible = false
+layers = 2
+mesh = SubResource("SphereMesh_3li8b")
 
 [editable path="Head"]

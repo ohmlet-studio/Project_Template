@@ -5,7 +5,6 @@ class_name Pickable
 @onready var interactable_information: RichTextLabel = %InterInfo
 @onready var dot_cursor: Control = $InteractableInfo/Control/CenterContainer/DotCursor
 @export var use_camera_2: bool = false
-@onready var player = $CanvasLayer/SubViewport/World/Player
 
 var is_scanning: bool = false
 var current_scanned_interactable: Interactable3D = null
@@ -17,14 +16,12 @@ func _ready():
 	GlobalInteractionEvents.interactable_unfocused.connect(_on_interactable_unfocused)
 	GlobalInteractionEvents.interactable_interacted.connect(_on_interactable_interacted)
 	
-	Manager.curCamera = $CanvasLayer/SubViewport/World/Player/Head/Camera3D
-	Manager.globPlayer = %Player
-	player.action_back.connect(_on_game_paused)
+	Manager.globPlayer.action_back.connect(_on_game_paused)
 	%SettingsMenu.closed.connect(_on_pause_menu_closed)
 
 func _input(event):
 	if viewport and is_inside_tree():
-		if is_scanning and event.is_action_pressed("interact") and not SubtitlesScene.audio_player.playing:
+		if is_scanning and event.is_action_pressed("interact"):
 			_unscan()
 			get_viewport().set_input_as_handled()
 			return
@@ -32,7 +29,7 @@ func _input(event):
 
 
 func _process(delta: float) -> void:
-	%ColorMaskCamera3D.global_transform = %Player.get_camera.global_transform
+	%ColorMaskCamera3D.global_transform = Manager.globPlayer.get_camera.global_transform
 	if use_camera_2:
 		$PlayingView.texture = $CanvasLayer/MaskViewport.get_texture()
 	else:

@@ -39,8 +39,8 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:CSGBakedMeshInstance3D": {
-"generate/physics": true
+"PATH:Room": {
+"mesh_instance/cast_shadow": 2
 }
 }
 }

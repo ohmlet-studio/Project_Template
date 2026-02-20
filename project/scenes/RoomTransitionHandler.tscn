@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ccgki3uqs0doo"]
+
+[ext_resource type="PackedScene" uid="uid://btfc2xv0asp01" path="res://scenes/levels/LevelAdo.tscn" id="1_wks6e"]
+[ext_resource type="PackedScene" uid="uid://4y0tiqlqpf8s" path="res://scenes/levels/LevelEnfant.tscn" id="2_ilqm7"]
+[ext_resource type="PackedScene" uid="uid://c1slrw45k6y3h" path="res://scenes/levels/LevelSpecial.tscn" id="3_ehv8f"]
+[ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/Player.tscn" id="3_t0nsw"]
+[ext_resource type="PackedScene" uid="uid://c2hburnp68gfh" path="res://scenes/levels/LevelAdulte.tscn" id="4_ehv8f"]
+[ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="5_h6gdu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dhyot"]
+size = Vector3(181.38867, 0, 50)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j22r2"]
+
+[sub_resource type="Sky" id="Sky_x537r"]
+sky_material = SubResource("ProceduralSkyMaterial_j22r2")
+
+[sub_resource type="Environment" id="Environment_6s3e6"]
+sky = SubResource("Sky_x537r")
+ambient_light_source = 3
+ambient_light_color = Color(5.390644e-06, 0.9414602, 0.16701081, 1)
+ambient_light_energy = 13.82
+fog_enabled = true
+fog_light_color = Color(1, 1, 1, 1)
+fog_light_energy = 0.25
+
+[node name="RoomTransitionHandler" type="Node3D" unique_id=724203233]
+
+[node name="Rooms" type="Node3D" parent="." unique_id=1259779974]
+
+[node name="LevelAdulte" parent="Rooms" unique_id=1125609813 instance=ExtResource("4_ehv8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16538334, 0, 0)
+
+[node name="LevelAdo" parent="Rooms" unique_id=542756532 instance=ExtResource("1_wks6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="LevelSpecial" parent="Rooms" unique_id=1292554290 instance=ExtResource("3_ehv8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.25842, 0, 0)
+
+[node name="LevelEnfant" parent="Rooms" unique_id=47264178 instance=ExtResource("2_ilqm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.487831, 0, 0)
+
+[node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1589148, 0)
+SPEED = 1.0
+HEAD_BOB_AMPLITUDE = 0.007
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1915962777]
+
+[node name="Collider" type="CollisionShape3D" parent="Floor" unique_id=1223602291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.694336, 0, 0)
+shape = SubResource("BoxShape3D_dhyot")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1301622396]
+transform = Transform3D(0.26415655, -0.61046857, -0.7466924, -0.063082136, -0.7834698, 0.61821985, -0.9624147, -0.116203874, -0.24546833, -8.853243, 7.3603745, -0.7181077)
+light_color = Color(1, 0.85882354, 0.7294118, 1)
+light_volumetric_fog_energy = 4.349
+light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=1567210214]
+environment = SubResource("Environment_6s3e6")
+script = ExtResource("5_h6gdu")

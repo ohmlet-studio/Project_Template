@@ -44,12 +44,12 @@ albedo_texture = ExtResource("15_l8lak")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybcah"]
 albedo_texture = ExtResource("14_p0520")
 
-[node name="LevelBase2" unique_id=1125609813 instance=ExtResource("1_vjdto")]
+[node name="LevelEnfant" unique_id=1125609813 instance=ExtResource("1_vjdto")]
 
 [node name="commode" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="0" unique_id=1052609487 instance=ExtResource("2_cvd65")]
 transform = Transform3D(-4.3711363e-08, 0, -0.99999946, 0, 0.99999946, 0, 0.99999946, 0, -4.3711363e-08, 10.369865, 4.272593, 6.173694)
 
-[node name="enfant_lit" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="1" unique_id=1344959018 instance=ExtResource("3_w00vy")]
+[node name="enfant_lit" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="1" unique_id=1156863885 instance=ExtResource("3_w00vy")]
 transform = Transform3D(-3.3296444, 0, -0.048643902, 0, 3.3299994, 0, 0.048643902, 0, -3.3296444, -5.1594143, 1.44, 11.787027)
 
 [node name="enfant_carpet" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="2" unique_id=439005773 instance=ExtResource("4_cvd65")]
@@ -110,3 +110,9 @@ transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.799999
 
 [node name="books" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="17" unique_id=1607287762 instance=ExtResource("20_a564u")]
 transform = Transform3D(-0.8399713, 0, -0.13018449, 0, 0.8499999, 0, 0.13018449, 0, -0.8399713, 6.2085304, 6.706524, -4.980131)
+
+[node name="Room" parent="room" parent_id_path=PackedInt32Array(952250540) index="0" unique_id=958283466]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+surface_material_override/3 = null

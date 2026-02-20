@@ -651,7 +651,8 @@ func _setup_cameras() -> void:
 		
 		# Ensure that portals don't see other portals.
 		portal_camera.cull_mask = portal_camera.cull_mask ^ portal_render_layer
-		
+		portal_camera.cull_mask &= ~(1 << 1)  # Hide layer 2 (0-indexed: bit 1)
+
 		portal_viewport.add_child(portal_camera, true)
 		portal_camera.global_position = exit_portal.global_position
 		

@@ -88,6 +88,10 @@ func _ready():
 	head_start_pos = $Head.position
 	
 	set_meta("teleport_root", ".")
+	
+	Manager.globPlayer = self
+	Manager.curCamera = get_camera
+
 
 func _physics_process(delta):
 	if Engine.is_editor_hint():

@@ -1,5 +1,6 @@
 extends Node
 
+@export var apply_shaders: bool 
 @export var material: ShaderMaterial
 
 func get_all_children(in_node, arr := []):
@@ -9,6 +10,9 @@ func get_all_children(in_node, arr := []):
 	return arr
 
 func _ready() -> void:
+	if not apply_shaders:
+		return
+	
 	for child in get_all_children(get_tree().root):
 		if child is MeshInstance3D:
 			if child.get_layer_mask_value(3):

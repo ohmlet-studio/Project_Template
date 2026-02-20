@@ -33,6 +33,7 @@ func _on_portal_teleport(teleportable: Node3D) -> void:
 	other_door.close_instant()
 
 func _connect_portals(target: PortalDoor) -> void:
+	print("connect portal")
 	if not target:
 		return
 	if not target.is_node_ready():
