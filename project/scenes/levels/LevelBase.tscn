@@ -156,19 +156,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o7fi3")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivuo3"]
-albedo_color = Color(0.9144257, 0.87966263, 0.8530295, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yb3n6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gcb1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7sgl3"]
 albedo_texture = ExtResource("7_yb3n6")
-uv1_scale = Vector3(4, 4, 4)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mitw8"]
-albedo_texture = ExtResource("8_7sgl3")
 uv1_scale = Vector3(6, 6, 6)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1fvm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8oet"]
+albedo_texture = ExtResource("8_7sgl3")
+uv1_scale = Vector3(7, 7, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivuo3"]
 albedo_texture = ExtResource("7_yb3n6")
+uv1_scale = Vector3(10, 10, 10)
 
 [node name="LevelBase" type="Node3D" unique_id=1125609813]
 script = ExtResource("1_22e06")
@@ -211,7 +211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.77144516)
 [node name="Room" type="MeshInstance3D" parent="room" unique_id=958283466]
 transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_14pi3")
-surface_material_override/0 = SubResource("StandardMaterial3D_ivuo3")
-surface_material_override/1 = SubResource("StandardMaterial3D_8gcb1")
-surface_material_override/2 = SubResource("StandardMaterial3D_mitw8")
-surface_material_override/3 = SubResource("StandardMaterial3D_q1fvm")
+surface_material_override/0 = SubResource("StandardMaterial3D_yb3n6")
+surface_material_override/1 = SubResource("StandardMaterial3D_7sgl3")
+surface_material_override/2 = SubResource("StandardMaterial3D_d8oet")
+surface_material_override/3 = SubResource("StandardMaterial3D_ivuo3")
