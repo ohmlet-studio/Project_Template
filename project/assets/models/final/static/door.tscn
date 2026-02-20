@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://1xrgkqtgiixs"]
+[gd_scene format=4 uid="uid://dmwujdsavac43"]
 
 [ext_resource type="Script" uid="uid://v8xxtslsavt7" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactable_3d.gd" id="1_wkp01"]
 [ext_resource type="Script" uid="uid://cby7cfgiecmtb" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/doors/door.gd" id="1_ycg47"]

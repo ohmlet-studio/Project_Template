@@ -19,8 +19,11 @@ extends Node3D
 func _ready() -> void:
 	_static_objects.visible = show_static_objects
 	_collision_shape.disabled = !enable_hitbox
-	# Set no picked object at begin
-	Manager.is_all_scanned = false
+	
+	# Set no picked object at beginning
+	# commented out as it was causing crashes, on it now
+	#Manager.is_all_picked = false
+	
 	_create_furniture_collisions()
 	
 

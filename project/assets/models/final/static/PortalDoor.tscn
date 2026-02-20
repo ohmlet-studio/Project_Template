@@ -88,7 +88,7 @@ shadow_mesh = SubResource("ArrayMesh_11uw3")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycg47"]
 size = Vector3(0.049072266, 0.017822266, 0.0980793)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wkp01"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhy8b"]
 size = Vector3(0.040182196, 0.014368933, 0.0980793)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ftjik"]
@@ -138,8 +138,9 @@ shape = SubResource("BoxShape3D_ycg47")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043399334, -1.971284e-05, 0.0035103746)
 collision_layer = 513
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/lid/StaticBody3D" unique_id=1130437977]
-shape = SubResource("BoxShape3D_wkp01")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/lid/StaticBody3D" unique_id=1906795118]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, -3.5527137e-15, 0, 3.5527137e-15, 0.99999994, 0, 0, 0)
+shape = SubResource("BoxShape3D_hhy8b")
 
 [node name="Portal" type="Node3D" parent="." unique_id=1112853643 groups=["portals"]]
 process_priority = 100
@@ -156,7 +157,7 @@ view_direction = 1
 portal_render_layer = 524288
 is_teleport = true
 teleport_direction = 0
-rigidbody_boost = 2.0
+rigidbody_boost = 0.0
 teleport_tolerance = 0.5
 teleport_interactions = 3
 teleport_collision_mask = 32768

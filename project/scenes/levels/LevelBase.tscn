@@ -156,7 +156,7 @@ transform = Transform3D(-1.311341e-08, 0, 0.29999995, 0, 0.29999995, 0, -0.29999
 script = ExtResource("1_4cq84")
 material = SubResource("ShaderMaterial_e7klb")
 
-[node name="room" parent="." unique_id=1384537949 instance=ExtResource("11_d8oet")]
+[node name="room" parent="." unique_id=1486009596 instance=ExtResource("11_d8oet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.77144516)
 
 [node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="room" unique_id=484489248]
