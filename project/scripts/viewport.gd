@@ -2,7 +2,7 @@ extends Node
 
 @onready var viewport = $CanvasLayer/SubViewport
 @onready var interactable_information: RichTextLabel = %InterInfo
-@onready var dot_cursor: Control = $CanvasLayer/SubViewport/InteractableInfo/Control/CenterContainer/DotCursor
+@onready var dot_cursor: Control = $InteractableInfo/Control/CenterContainer/DotCursor
 @export var use_camera_2: bool = false
 @onready var player = $CanvasLayer/SubViewport/World/Player
 
@@ -49,7 +49,10 @@ func _on_pause_menu_closed():
 func _on_interactable_focused(interactable: Interactable3D) -> void:
 	if not is_scanning:
 		dot_cursor.focused = true
-		interactable_information.text = "[i]%s[/i]" % interactable.title
+		if not interactable.get_parent().has_been_scanned:
+			interactable_information.text = "[font_size=35][i][E] to scan %s[/i][/font_size]" % interactable.title
+		elif interactable.get_parent().has_been_scanned and Manager.is_all_picked:
+			interactable_information.text = "[font_size=35][i][E] to pick %s[/i][/font_size]" % interactable.title
 
 func _on_interactable_unfocused(_interactable: Interactable3D) -> void:
 	dot_cursor.focused = false

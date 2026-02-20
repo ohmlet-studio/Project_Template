@@ -206,12 +206,13 @@ has_been_scanned = false
 
 [node name="Lighter" type="MeshInstance3D" parent="." unique_id=1113897366]
 transform = Transform3D(10, 0, 0, 0, -2.4517718e-07, -24.625, 0, 5.609, -1.0763929e-06, -0.0069384053, -0.019859731, -0.0067505985)
+layers = 5
 mesh = SubResource("ArrayMesh_0hb4r")
 
 [node name="Interactable3D" type="Area3D" parent="." unique_id=1609274884 node_paths=PackedStringArray("target_scannable_object", "interactable_mesh")]
 script = ExtResource("2_vo2v6")
-id = "Lighter"
-title = "lighterb"
+id = "lighter"
+title = "lighter"
 scannable = true
 target_scannable_object = NodePath("../Lighter")
 interactable_mesh = NodePath("../Lighter")
@@ -252,6 +253,7 @@ transparent_bg = true
 
 [node name="Lighter2" type="MeshInstance3D" parent="inHandUI/SubViewport" unique_id=2132457357]
 transform = Transform3D(10, 0, 0, 0, -2.4517718e-07, -24.625, 0, 5.609, -1.0763929e-06, -0.0069384053, -0.019859731, -0.0067505985)
+layers = 5
 mesh = SubResource("ArrayMesh_0hb4r")
 
 [node name="Camera3D" type="Camera3D" parent="inHandUI/SubViewport" unique_id=1115116186]
