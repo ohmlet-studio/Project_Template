@@ -1,0 +1,8 @@
+1
+00:00:00,001 --> 00:00:03,500
+Mon bon vieux sac de la fac, il en a vécu des choses hein ?
+
+2
+00:00:03,500 --> 00:00:06,000
+Eh ben il va encore en vivre un paquet.
+
