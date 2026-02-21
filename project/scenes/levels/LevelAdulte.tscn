@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://c2hburnp68gfh"]
+
+[ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_6rgy2"]
+[ext_resource type="PackedScene" uid="uid://b01pwdfvsow80" path="res://assets/models/final/carpet/adulte_carpet.fbx" id="2_ox3cy"]
+[ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="3_7sakj"]
+[ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="4_ck67t"]
+[ext_resource type="PackedScene" uid="uid://dxenntoejob6r" path="res://assets/models/final/commode/commode3.fbx" id="5_7sakj"]
+[ext_resource type="PackedScene" uid="uid://h7fer3yu8lmd" path="res://assets/models/final/smolthings/cactus.fbx" id="6_ck67t"]
+[ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="7_b5sfl"]
+[ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="8_l035v"]
+[ext_resource type="PackedScene" uid="uid://fub00bqgpqau" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp C.fbx" id="9_jfxol"]
+[ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="10_o0v86"]
+[ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="11_a8qax"]
+[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="12_qwc3n"]
+[ext_resource type="PackedScene" uid="uid://clqxls1t5rgxi" path="res://assets/models/final/commode/commode4.fbx" id="13_7sakj"]
+[ext_resource type="Texture2D" uid="uid://bsdt8edpn0xgo" path="res://assets/models/final/posters/Pink_Floyd_The_Wall.jpg" id="13_l035v"]
+[ext_resource type="Texture2D" uid="uid://fb6h3jbticc" path="res://assets/models/final/posters/mcr.png" id="14_jfxol"]
+[ext_resource type="PackedScene" uid="uid://c5kq47url5vdc" path="res://assets/models/final/smolthings/carton2.fbx" id="14_nptf7"]
+[ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="14_wx5tf"]
+[ext_resource type="PackedScene" uid="uid://d3k2vidgd2m2k" path="res://assets/models/final/smolthings/carton1.fbx" id="15_b5sfl"]
+[ext_resource type="PackedScene" uid="uid://wj2f3dnal8wr" path="res://assets/models/memory_objects/carnet.fbx" id="15_yg4ca"]
+[ext_resource type="PackedScene" uid="uid://dlsymbkqwsx2t" path="res://assets/models/memory_objects/trumpet.fbx" id="16_6rgy2"]
+[ext_resource type="PackedScene" uid="uid://drwkw7dxe6tcg" path="res://assets/models/final/bed/adulte_lit.fbx" id="16_y8cxe"]
+[ext_resource type="PackedScene" uid="uid://ctjlx7kjvfh2w" path="res://assets/models/final/smolthings/carton3.fbx" id="17_l035v"]
+[ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="17_ox3cy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l035v"]
+albedo_texture = ExtResource("13_l035v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ul5uw"]
+albedo_texture = ExtResource("14_jfxol")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jfxol"]
+material = SubResource("StandardMaterial3D_ul5uw")
+size = Vector2(0.795, 1)
+center_offset = Vector3(0, -0.01, 0)
+
+[node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
+
+[node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
+script = null
+
+[node name="adulte_carpet" parent="Room/Furniture" index="0" unique_id=290818238 instance=ExtResource("2_ox3cy")]
+transform = Transform3D(2.2639208, 0, -3.981338, 0, 4.579998, 0, 3.981338, 0, 2.263922, 1.154367, 0.021666361, 1.7078851)
+
+[node name="Chair E" parent="Room/Furniture" index="1" unique_id=665257031 instance=ExtResource("3_7sakj")]
+transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, -7.7052865, 2.0123367, 0.108604126)
+
+[node name="Chair A" parent="Room/Furniture" index="2" unique_id=1447814586 instance=ExtResource("4_ck67t")]
+transform = Transform3D(-4.3711367e-08, 0, -0.99999976, 0, 0.99999976, 0, 0.99999976, 0, -4.3711367e-08, 10.650064, 1.9513532, 1.8793216)
+
+[node name="Monitor" parent="Room/Furniture" index="3" unique_id=1789032021 instance=ExtResource("7_b5sfl")]
+transform = Transform3D(-0.2661503, 0, 0.75442916, 0, 0.79999983, 0, -0.75442916, 0, -0.2661503, -10.473897, 4.4855437, 1.2504245)
+
+[node name="Pc" parent="Room/Furniture" index="4" unique_id=540395698 instance=ExtResource("8_l035v")]
+transform = Transform3D(-2.6226829e-08, 0, 0.59999985, 0, 0.59999985, 0, -0.59999985, 0, -2.6226829e-08, -9.989845, 1.4304782, 2.1975439)
+
+[node name="Lamp C" parent="Room/Furniture" index="5" unique_id=187436066 instance=ExtResource("9_jfxol")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -10.475741, 4.6942296, -2.6698272)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Furniture/Lamp C" index="1" unique_id=433037440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9164336, 0)
+light_color = Color(0.8910537, 0.6656812, 0.43832183, 1)
+light_energy = 0.2
+light_cull_mask = 4294967293
+shadow_enabled = true
+
+[node name="Lamp B" parent="Room/Furniture" index="6" unique_id=1726968374 instance=ExtResource("10_o0v86")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.061109, 4.94547, 14.867827)
+
+[node name="thewall" type="MeshInstance3D" parent="Room/Furniture/Lamp B" index="2" unique_id=483732180]
+transform = Transform3D(3.6418366, 0.7079012, 0, -0.7079012, 3.6418366, 0, 0, 0, 3.7099998, -13.597075, 3.0835571, -19.928583)
+material_override = SubResource("StandardMaterial3D_l035v")
+mesh = SubResource("QuadMesh_jfxol")
+
+[node name="Radiator B" parent="Room/Furniture" index="7" unique_id=1144257814 instance=ExtResource("11_a8qax")]
+transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -4.996886, 2.249854, -11.069493)
+
+[node name="Desk" parent="Room/Furniture" index="8" unique_id=660806617 instance=ExtResource("12_qwc3n")]
+transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.79999983, 0, -3.49691e-08, -9.429562, 2.2028737, -1.9940147)
+
+[node name="cactus" parent="Room/Furniture" index="9" unique_id=857450535 instance=ExtResource("6_ck67t")]
+transform = Transform3D(1.0467224, 0, -0.08289356, 0, 1.0499997, 0, 0.08289356, 0, 1.0467224, 9.856947, 4.3652515, -3.9327412)
+
+[node name="carton1" parent="Room/Furniture" index="10" unique_id=286019381 instance=ExtResource("15_b5sfl")]
+transform = Transform3D(2.4969428, 0, -2.2082536, 0, 3.3333325, 0, 2.2082536, 0, 2.4969428, 10.029813, 0.6673268, -0.3103975)
+
+[node name="commode3" parent="Room/Furniture" index="11" unique_id=343250214 instance=ExtResource("5_7sakj")]
+transform = Transform3D(1.213, 0, 4.309442e-15, 0, 1.213, 0, -4.309442e-15, 0, 1.213, 7.6399884, 2.1328955, -3.114399)
+
+[node name="commode4" parent="Room/Furniture" index="12" unique_id=1817300773 instance=ExtResource("13_7sakj")]
+transform = Transform3D(-3.49691e-08, 0, -0.79999983, 0, 0.79999983, 0, 0.79999983, 0, -3.49691e-08, 10.299028, 4.2216477, 5.9243226)
+
+[node name="carton2" parent="Room/Furniture/commode4" index="3" unique_id=499506477 instance=ExtResource("14_nptf7")]
+transform = Transform3D(-1.4770075e-07, 0, 3.378999, 0, 3.378999, 0, -3.378999, 0, -1.4770075e-07, 1.861423, 6.250925, -0.5684166)
+
+[node name="carton3" parent="Room/Furniture/commode4" index="4" unique_id=2123540825 instance=ExtResource("17_l035v")]
+transform = Transform3D(0.3668385, 0, 1.0855242, 0, 1.1458335, 0, -1.0855242, 0, 0.3668385, 0.13094568, 6.005083, -0.7727413)
+
+[node name="adulte_lit" parent="Room/Furniture" index="13" unique_id=1005375489 instance=ExtResource("16_y8cxe")]
+transform = Transform3D(-3.333333, 0, -2.9140924e-07, 0, 3.333333, 0, 2.9140924e-07, 0, -3.333333, -3.2527697, 1.8656406, 12.52329)
+
+[node name="Carnet" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="0" unique_id=1972186688 instance=ExtResource("14_wx5tf")]
+transform = Transform3D(-0.77086914, 0, 0.6369936, 0, 1, 0, -0.6369936, 0, -0.77086914, -0.14382267, 0.7739902, 2.6334386)
+object_name = "carnet"
+object_to_scan = ExtResource("15_yg4ca")
+scale_2d_view = 1.8
+inspect_scale = 2.5
+default_inspect_rotation = Vector3(90, 0, 0)
+
+[node name="Trumpet" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="1" unique_id=812892577 instance=ExtResource("14_wx5tf")]
+transform = Transform3D(0.15692325, -0.38699013, -0.908633, 0.98406774, -0.016593222, 0.17701815, -0.08358139, -0.92193466, 0.3782206, 1.715733, 1.1790702, -1.0509461)
+object_name = "trumpet"
+object_to_scan = ExtResource("16_6rgy2")
+scale_2d_view = 2.0
+inspect_scale = 2.0
+default_inspect_rotation = Vector3(0, 90, 0)
+
+[node name="Lighter" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="2" unique_id=1803530018 instance=ExtResource("14_wx5tf")]
+transform = Transform3D(-0.07550129, -0.80772585, 0.5847039, 0.99199396, -0.0013138428, 0.12627862, -0.10123028, 0.5895571, 0.80135816, -2.6091168, 1.0543598, -1.1408888)
+object_name = "lighter"
+object_to_scan = ExtResource("17_ox3cy")
+scale_2d_view = 7.0
+inspect_scale = 7.0
+default_inspect_rotation = Vector3(0, 90, 0)
+
+[node name="Room" parent="room" parent_id_path=PackedInt32Array(952250540) index="0" unique_id=958283466]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+surface_material_override/3 = null

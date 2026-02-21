@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bciil8v6ykx2e"]
+
+[ext_resource type="Script" uid="uid://cynrh7cb6dv3t" path="res://scripts/runtime_subtitle.gd" id="1_0cb4r"]
+
+[node name="Subtitles" type="Control" unique_id=1516935989]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_0cb4r")
+
+[node name="SubLabel" type="Label" parent="." unique_id=576510109]
+layout_mode = 0
+offset_left = -326.0
+offset_top = -14.0
+offset_right = 366.0
+offset_bottom = 37.0
+horizontal_alignment = 1
+
+[node name="DialogPlayer" type="AudioStreamPlayer" parent="." unique_id=461900810]
+bus = &"Voice"

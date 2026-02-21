@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://ulmi6uj7knqj"]
+
+[ext_resource type="Script" uid="uid://b0aoai0xdgu2b" path="res://scripts/pickable_obj.gd" id="1_s5pbp"]
+[ext_resource type="Script" uid="uid://v8xxtslsavt7" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactable_3d.gd" id="2_8kydj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g7mpl"]
+radius = 0.45248723
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8wao"]
+viewport_path = NodePath("inHandUI/SubViewport")
+
+[sub_resource type="Environment" id="Environment_8kydj"]
+background_color = Color(0, 0, 0, 0)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s5pbp"]
+flip_faces = true
+
+[node name="Pickable" type="Node3D" unique_id=1972186688]
+script = ExtResource("1_s5pbp")
+
+[node name="Interactable3D" type="Area3D" parent="." unique_id=1609274884]
+collision_layer = 512
+script = ExtResource("2_8kydj")
+scannable = true
+metadata/_custom_type_script = "uid://v8xxtslsavt7"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable3D" unique_id=41460960]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_g7mpl")
+
+[node name="inHandUI" type="Control" parent="." unique_id=1167937798]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="inHandUI" unique_id=1292005186]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -205.0
+offset_top = -203.0
+offset_right = 307.0
+offset_bottom = 309.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("ViewportTexture_r8wao")
+
+[node name="SubViewport" type="SubViewport" parent="inHandUI" unique_id=1844445340]
+own_world_3d = true
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="inHandUI/SubViewport" unique_id=1115116186]
+transform = Transform3D(0.006513669, -0.1128796, 0.9935874, 0.021458438, 0.9933954, 0.11271712, -0.9997486, 0.020586628, 0.008892869, 0.7675929, 0.6601874, 0.4117597)
+environment = SubResource("Environment_8kydj")
+
+[node name="ColorSphere" type="MeshInstance3D" parent="." unique_id=375854603]
+layers = 2
+mesh = SubResource("SphereMesh_s5pbp")

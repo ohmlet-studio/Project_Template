@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dwyo87xe7yyh1"]
+
+[ext_resource type="PackedScene" uid="uid://dmhipsa8vwdb6" path="res://assets/models/final/room.fbx" id="1_v1g6r"]
+
+[node name="Walls" type="StaticBody3D" unique_id=1232411267]
+
+[node name="room" parent="." unique_id=635909425 instance=ExtResource("1_v1g6r")]
+transform = Transform3D(1.005, 0, 0, 0, 1.005, 0, 0, 0, 1.005, 0, 0, 0.7919164)

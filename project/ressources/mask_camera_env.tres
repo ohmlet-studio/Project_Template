@@ -1,0 +1,12 @@
+[gd_resource type="Environment" format=3 uid="uid://bywldyytpakno"]
+
+[resource]
+background_mode = 1
+background_energy_multiplier = 16.0
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+glow_strength = 0.16
+adjustment_brightness = 9.15
+adjustment_contrast = 1.25
+adjustment_saturation = 2.0

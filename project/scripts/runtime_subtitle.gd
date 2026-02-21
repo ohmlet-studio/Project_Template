@@ -1,0 +1,71 @@
+extends Node
+
+signal dialog_finished
+
+#@export var audio_player: AudioStreamPlayer
+#@export var subtitle_label: Label
+
+@onready var audio_player: AudioStreamPlayer = $DialogPlayer
+@onready var subtitle_label: Label = $SubLabel
+
+var subtitle_data: Subtitles = Subtitles.new()
+var current_time: float = 0.0
+
+
+func _ready() -> void:
+	#je sais c'est moche et je devrai créer un audio controller
+	#self.subtitle_label = get_child(0)
+	#audio_player = get_child(1)
+	pass
+
+# Load and play audio dialog
+func play_dialog(dialog : AudioStream) -> void:
+	if audio_player == null:
+		return
+	if dialog == null:
+		print("Runtime subtitle: failed to load audio stream", )
+		return
+	audio_player.stream = dialog
+	audio_player.play()
+	#await audio_player.finished
+	#dialog_finished.emit()
+	
+
+# Load and parse a subtitle file at runtime
+func sub_load_from_file(srt_path : String) -> void:
+	var subtitle_path: String = srt_path
+	var error: Error = subtitle_data.load_from_file(subtitle_path)
+
+	if error == OK:
+		print("Successfully loaded subtitle file")
+		print("  Entries: ", subtitle_data.get_entry_count())
+		print("  Duration: ", subtitle_data.get_total_duration(), " seconds")
+	else:
+		printerr("Failed to load subtitle file: ", error)
+
+
+
+## Example 4: Sync subtitles with audio playback (optimized with entry ID caching)
+var _last_entry_id: int = -1
+
+
+func _process(_p_delta: float) -> void:
+	if audio_player == null or subtitle_label == null:
+		return
+
+	# Get current playback position
+	current_time = audio_player.get_playback_position()
+
+	# Optimized approach: Use get_entry_id_at_time() to avoid string allocations
+	# Only update the label text when the subtitle actually changes
+	var current_entry_id: int = subtitle_data.get_entry_id_at_time(current_time)
+
+	if current_entry_id != _last_entry_id:
+		_last_entry_id = current_entry_id
+
+		if current_entry_id == -1:
+			# No subtitle active
+			subtitle_label.text = ""
+		else:
+			# Get the subtitle text only when it changed
+			subtitle_label.text = subtitle_data.get_entry_text(current_entry_id)

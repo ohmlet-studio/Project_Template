@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bme3qagw22mny"]
+
+[ext_resource type="Script" uid="uid://8deqcv03lovl" path="res://scripts/menus/title_scene.gd" id="1_duloj"]
+[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="2_rkk5p"]
+[ext_resource type="PackedScene" uid="uid://ceauub3uvaq3b" path="res://scenes/MainScene.tscn" id="3_rkk5p"]
+
+[sub_resource type="Theme" id="Theme_yhdlg"]
+
+[sub_resource type="Shader" id="Shader_yhdlg"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+uniform float lod: hint_range(0.0, 5) = 3.5;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment(){
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, lod);
+	COLOR = color;
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2kpb"]
+shader = SubResource("Shader_yhdlg")
+shader_parameter/lod = 3.5
+
+[node name="TitleScene" type="Control" unique_id=839849655]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_duloj")
+
+[node name="background" type="Panel" parent="." unique_id=1428979622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2143244152]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.75
+offset_top = -59.75
+offset_right = 96.75
+offset_bottom = 59.75
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yhdlg")
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=1257293123]
+layout_mode = 2
+text = "start"
+
+[node name="settings" type="Button" parent="VBoxContainer" unique_id=1320571876]
+layout_mode = 2
+text = "settings"
+
+[node name="credits" type="Button" parent="VBoxContainer" unique_id=158698122]
+layout_mode = 2
+text = "credits"
+
+[node name="Credits" type="Control" parent="." unique_id=1808715601]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="fade" type="Panel" parent="Credits" unique_id=2097368771]
+material = SubResource("ShaderMaterial_k2kpb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1171.0
+offset_bottom = 666.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FadeTransitionManager" type="ColorRect" parent="." unique_id=991963967]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_rkk5p")
+next_scene = ExtResource("3_rkk5p")
+metadata/_custom_type_script = "uid://c6215vuol8ms2"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]

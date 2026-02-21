@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://g77fwioa2yhl"]
+
+[ext_resource type="Script" uid="uid://cy3gwigvuvlrr" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_v6fml"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_3li8b"]
+[ext_resource type="Script" uid="uid://b13ku4ha6ywfi" path="res://addons/ninetailsrabbit.interaction_kit_3d/src/interactors/raycast_interactor_3d.gd" id="3_qu4a1"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_mdl7e"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
+radius = 0.24804688
+height = 1.6533203
+
+[sub_resource type="SphereMesh" id="SphereMesh_3li8b"]
+flip_faces = true
+radius = 30.0
+height = 60.0
+
+[node name="Player" type="CharacterBody3D" unique_id=1596461741]
+disable_mode = 2
+collision_layer = 32769
+collision_mask = 32769
+script = ExtResource("1_v6fml")
+SPEED = 2.0
+ACCEL = 20.0
+JUMP_VELOCITY = 0.0
+HEAD_BOB_FREQUENCY = 0.1
+HEAD_BOB_AMPLITUDE = 0.015
+KEY_BIND_UP = "up"
+KEY_BIND_LEFT = "left"
+KEY_BIND_RIGHT = "right"
+KEY_BIND_DOWN = "down"
+KEY_BIND_JUMP = "jump"
+
+[node name="Head" parent="." unique_id=592444330 instance=ExtResource("2_3li8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
+
+[node name="Camera3D" parent="Head" index="0" unique_id=18288272]
+attributes = SubResource("CameraAttributesPractical_mdl7e")
+
+[node name="RayCastInteractor3D" type="RayCast3D" parent="Head/Camera3D" index="0" unique_id=1756534528]
+target_position = Vector3(0, 0, -1.2)
+collision_mask = 512
+debug_shape_custom_color = Color(0.9607843, 1, 0, 1)
+script = ExtResource("3_qu4a1")
+metadata/_custom_type_script = "uid://b13ku4ha6ywfi"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116003952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17333984, 0)
+shape = SubResource("CapsuleShape3D_li7ud")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=824610214]
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1441221660]
+visible = false
+layers = 2
+mesh = SubResource("SphereMesh_3li8b")
+
+[editable path="Head"]

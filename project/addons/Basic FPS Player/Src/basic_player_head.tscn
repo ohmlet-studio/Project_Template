@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://kmyakts4l64t"]
+
+[node name="Head" type="Node3D" unique_id=503580874]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=18288272]
+cull_mask = 1048573
+current = true
