@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://c2hburnp68gfh"]
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_6rgy2"]
+[ext_resource type="AudioStream" uid="uid://b8ykfu82e2wy0" path="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-0.mp3" id="2_4dapm"]
 [ext_resource type="PackedScene" uid="uid://b01pwdfvsow80" path="res://assets/models/final/carpet/adulte_carpet.fbx" id="2_ox3cy"]
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="3_7sakj"]
+[ext_resource type="AudioStream" uid="uid://cs1evaag8lhry" path="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-1.mp3" id="3_gxi1g"]
+[ext_resource type="AudioStream" uid="uid://cby051ttp246s" path="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-2.mp3" id="4_5micf"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="4_ck67t"]
 [ext_resource type="PackedScene" uid="uid://dxenntoejob6r" path="res://assets/models/final/commode/commode3.fbx" id="5_7sakj"]
+[ext_resource type="AudioStream" uid="uid://bprojpmi7auvu" path="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-3.mp3" id="5_y8cxe"]
 [ext_resource type="PackedScene" uid="uid://h7fer3yu8lmd" path="res://assets/models/final/smolthings/cactus.fbx" id="6_ck67t"]
 [ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="7_b5sfl"]
 [ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="8_l035v"]
@@ -23,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://drwkw7dxe6tcg" path="res://assets/models/final/bed/adulte_lit.fbx" id="16_y8cxe"]
 [ext_resource type="PackedScene" uid="uid://ctjlx7kjvfh2w" path="res://assets/models/final/smolthings/carton3.fbx" id="17_l035v"]
 [ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="17_ox3cy"]
+[ext_resource type="PackedScene" uid="uid://bqyddhi6x2moy" path="res://assets/models/memory_objects/backpack.fbx" id="24_jfxol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l035v"]
 albedo_texture = ExtResource("13_l035v")
@@ -36,6 +41,7 @@ size = Vector2(0.795, 1)
 center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
+level_musics = Array[AudioStream]([ExtResource("2_4dapm"), ExtResource("3_gxi1g"), ExtResource("4_5micf"), ExtResource("5_y8cxe"), ExtResource("2_4dapm"), ExtResource("3_gxi1g"), ExtResource("4_5micf"), ExtResource("5_y8cxe")])
 
 [node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
 script = null
@@ -68,7 +74,7 @@ shadow_enabled = true
 [node name="Lamp B" parent="Room/Furniture" index="6" unique_id=1726968374 instance=ExtResource("10_o0v86")]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.061109, 4.94547, 14.867827)
 
-[node name="thewall" type="MeshInstance3D" parent="Room/Furniture/Lamp B" index="2" unique_id=483732180]
+[node name="thewall" type="MeshInstance3D" parent="Room/Furniture/Lamp B" index="1" unique_id=483732180]
 transform = Transform3D(3.6418366, 0.7079012, 0, -0.7079012, 3.6418366, 0, 0, 0, 3.7099998, -13.597075, 3.0835571, -19.928583)
 material_override = SubResource("StandardMaterial3D_l035v")
 mesh = SubResource("QuadMesh_jfxol")
@@ -124,8 +130,11 @@ scale_2d_view = 7.0
 inspect_scale = 7.0
 default_inspect_rotation = Vector3(0, 90, 0)
 
-[node name="Room" parent="room" parent_id_path=PackedInt32Array(952250540) index="0" unique_id=958283466]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-surface_material_override/3 = null
+[node name="Backpack" parent="Room/Interactable" parent_id_path=PackedInt32Array(1217517487) index="2" unique_id=1778933891 instance=ExtResource("14_wx5tf")]
+transform = Transform3D(0.8624767, -0.074420735, -0.5005952, -0.03454448, 0.9781657, -0.20493527, 0.5049164, 0.19404468, 0.84107435, -2.094914, 0.31972378, 1.4866227)
+object_name = "carnet"
+object_to_scan = ExtResource("24_jfxol")
+scale_2d_view = 1.8
+inspect_scale = 1.8
+default_inspect_rotation = Vector3(0, 170, 0)
+color_radius = 0.0

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cd3wxqq2iks3x" path="res://scenes/room_transition_handler.gd" id="1_h6gdu"]
 [ext_resource type="PackedScene" uid="uid://btfc2xv0asp01" path="res://scenes/levels/LevelAdo.tscn" id="1_wks6e"]
 [ext_resource type="PackedScene" uid="uid://4y0tiqlqpf8s" path="res://scenes/levels/LevelEnfant.tscn" id="2_ilqm7"]
+[ext_resource type="AudioStream" uid="uid://ocqbh024p6i" path="res://assets/audio/INTRO/VOICE/Voix entrée pièce intro.mp3" id="3_dhyot"]
 [ext_resource type="PackedScene" uid="uid://c1slrw45k6y3h" path="res://scenes/levels/LevelSpecial.tscn" id="3_ehv8f"]
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/Player.tscn" id="3_t0nsw"]
 [ext_resource type="PackedScene" uid="uid://c2hburnp68gfh" path="res://scenes/levels/LevelAdulte.tscn" id="4_ehv8f"]
@@ -33,17 +34,20 @@ script = ExtResource("1_h6gdu")
 [node name="LevelAdulte" parent="Rooms" unique_id=1125609813 node_paths=PackedStringArray("next_room") instance=ExtResource("4_ehv8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16538334, 0, 0)
 next_room = NodePath("../LevelAdo")
+entering_sound = ExtResource("3_dhyot")
+level_musics = null
 
-[node name="LevelAdo" parent="Rooms" unique_id=542756532 node_paths=PackedStringArray("next_room") instance=ExtResource("1_wks6e")]
+[node name="LevelAdo" parent="Rooms" unique_id=542756532 instance=ExtResource("1_wks6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
-next_room = NodePath("../LevelSpecial")
+level_musics = null
 
-[node name="LevelSpecial" parent="Rooms" unique_id=1292554290 node_paths=PackedStringArray("next_room") instance=ExtResource("3_ehv8f")]
+[node name="LevelSpecial" parent="Rooms" unique_id=1292554290 instance=ExtResource("3_ehv8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.25842, 0, 0)
-next_room = NodePath("../LevelEnfant")
+level_musics = null
 
 [node name="LevelEnfant" parent="Rooms" unique_id=47264178 instance=ExtResource("2_ilqm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.487831, 0, 0)
+level_musics = null
 
 [node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
 unique_name_in_owner = true

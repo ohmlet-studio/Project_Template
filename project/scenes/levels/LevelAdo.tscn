@@ -286,9 +286,3 @@ mesh = SubResource("QuadMesh_3owl0")
 
 [node name="room" parent="." index="3" unique_id=952250540]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010465384, 1.1920929e-07, 0.77542)
-
-[node name="Room" parent="room" index="0" unique_id=958283466]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-surface_material_override/3 = null

@@ -9,7 +9,8 @@ var clone_2d_view: Node3D
 var clone_inspect_view: Node3D
 var scanned_object_instance: Node3D # never scale this, scale in blender and apply transform
 var picked: bool = false
-var scanned: bool 
+var is_being_scanned: bool = false 
+var scanned: bool
 
 @onready var handObjView = $inHandUI
 @onready var subviewport: SubViewport = $inHandUI/SubViewport
@@ -48,6 +49,8 @@ var scanned: bool
 @export var has_been_scanned: bool = false
 
 @export var color_radius: float = 1.0
+
+@export_category("Dialog when inspected")
 
 @export var dialog_audio: AudioStream:
 	set(value):
@@ -110,7 +113,7 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	var origMesh = scanned_object_instance.get_child(0)
 	print(origMesh)
 	object_material = origMesh.get_active_material(0).duplicate()
-	origMesh.set_layer_mask_value(2, true)
+	origMesh.set_layer_mask_value(1, true)
 
 	clone_2d_view = scanned_object_instance.duplicate()
 	subviewport.add_child(clone_2d_view)
@@ -124,7 +127,7 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	interactable_3d.target_scannable_object = clone_inspect_view
 
 func _on_interact() -> void:
-	if has_been_scanned and Manager.current_room.all_room_object_scanned():
+	if has_been_scanned and Manager.current_room.all_objects_scanned():
 		picked = not picked
 		_origin_obj_transparency(picked)
 		_show_hand_obj(picked)
@@ -170,6 +173,7 @@ func _on_scan_started() -> void:
 			color_radius, _base_radius * 20.0, 2.0
 	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 
+	CrossfadePlayer.stop(2.0)
 	SubtitlesScene.sub_load_from_file(dialog_subtitle)
 	SubtitlesScene.play_dialog(dialog_audio)
 
@@ -183,7 +187,7 @@ func _on_scan_ended(scanned_object: Node3D) -> void:
 			_base_radius * 20.0, 0.0, 1.0
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	
-	scan_ended.emit()
+		scan_ended.emit()
 	
 
 func _process(delta: float) -> void:

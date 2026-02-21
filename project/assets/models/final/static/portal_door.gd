@@ -4,6 +4,8 @@ class_name PortalDoor
 signal opened
 signal closed
 
+signal teleported_player
+
 @onready var portal = $Portal
 @onready var door = $Door3D
 @onready var door_lid = $Pivot/lid
@@ -28,6 +30,7 @@ func _ready() -> void:
 	_connect_portals.call_deferred(other_door)
 
 func _on_portal_teleport(teleportable: Node3D) -> void:
+	teleported_player.emit()
 	await get_tree().create_timer(1.5).timeout
 	close()
 	other_door.close_instant()

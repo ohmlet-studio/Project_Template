@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://cympb37pbvqnq" path="res://scripts/apply_shader_to_meshes.gd" id="1_4cq84"]
 [ext_resource type="Script" uid="uid://d3rq32nsjoxr5" path="res://scenes/levels/level_base.gd" id="1_22e06"]
 [ext_resource type="PackedScene" uid="uid://c4p340s2kgiq8" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window C.fbx" id="2_e7klb"]
+[ext_resource type="AudioStream" uid="uid://b8ykfu82e2wy0" path="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-0.mp3" id="2_mitw8"]
+[ext_resource type="AudioStream" uid="uid://cs1evaag8lhry" path="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-1.mp3" id="3_q1fvm"]
 [ext_resource type="PackedScene" uid="uid://cbax3qbrpcgjd" path="res://assets/models/placeholders/Low Poly Furniture/Windows/Window B.fbx" id="3_wyida"]
+[ext_resource type="AudioStream" uid="uid://cby051ttp246s" path="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-2.mp3" id="4_7es1f"]
 [ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="4_dr2ln"]
+[ext_resource type="AudioStream" uid="uid://bprojpmi7auvu" path="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-3.mp3" id="5_28yxk"]
 [ext_resource type="Texture2D" uid="uid://ce7kds7l22ohd" path="res://assets/models/final/room.fbm/plaster.jpg" id="7_yb3n6"]
 [ext_resource type="Texture2D" uid="uid://qec580l8t1r8" path="res://assets/models/final/room.fbm/parket.jpg" id="8_7sgl3"]
 [ext_resource type="Texture2D" uid="uid://bp6q74of32gcm" path="res://assets/models/final/room.fbm/vintagepapierpeint.png" id="9_d8oet"]
@@ -299,6 +303,7 @@ _data = {
 
 [node name="LevelBase" type="Node3D" unique_id=1125609813]
 script = ExtResource("1_22e06")
+level_musics = Array[AudioStream]([ExtResource("2_mitw8"), ExtResource("3_q1fvm"), ExtResource("4_7es1f"), ExtResource("5_28yxk")])
 
 [node name="Room" type="Node3D" parent="." unique_id=938973325]
 
@@ -318,13 +323,13 @@ other_door = NodePath("../PortalDoorBed")
 transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, 2.6860678, 1.3334157, 3.7548685)
 other_door = NodePath("../PortalDoorMain")
 
-[node name="Grabbable" type="Node3D" parent="Room/Interactable" unique_id=736710538]
-
-[node name="Window C" parent="Room" unique_id=1567670714 instance=ExtResource("2_e7klb")]
+[node name="Window C" parent="Room/Interactable/Static" unique_id=1567670714 instance=ExtResource("2_e7klb")]
 transform = Transform3D(-0.29999995, 0, -2.622682e-08, 0, 0.29999995, 0, 2.622682e-08, 0, -0.29999995, 0.016257763, 1.9369272, 5.080475)
 
-[node name="Window B" parent="Room" unique_id=1329570843 instance=ExtResource("3_wyida")]
+[node name="Window B" parent="Room/Interactable/Static" unique_id=1329570843 instance=ExtResource("3_wyida")]
 transform = Transform3D(-1.311341e-08, 0, 0.29999995, 0, 0.29999995, 0, -0.29999995, 0, -1.311341e-08, -3.4695458, 1.8766195, -0.13228774)
+
+[node name="Grabbable" type="Node3D" parent="Room/Interactable" unique_id=736710538]
 
 [node name="Environment" type="Node3D" parent="." unique_id=1343892450]
 
