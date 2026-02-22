@@ -3,12 +3,12 @@
 importer="rubonnek.subtitle_importer"
 type="Resource"
 uid="uid://dfcbeqhp28l5c"
-path="res://.godot/imported/Voix N&B bis sans sac ENG.srt-44cc7dbcdc44f8cbb64650e2186f6701.res"
+path="res://.godot/imported/Voix_NB_bis_sans_sac_ENG.srt-8da15fa38fc0300cb99ef3d046ea83a2.res"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac ENG.srt"
-dest_files=["res://.godot/imported/Voix N&B bis sans sac ENG.srt-44cc7dbcdc44f8cbb64650e2186f6701.res"]
+source_file="res://assets/audio/INTRO/VOICE/Voix_NB_bis_sans_sac_ENG.srt"
+dest_files=["res://.godot/imported/Voix_NB_bis_sans_sac_ENG.srt-8da15fa38fc0300cb99ef3d046ea83a2.res"]
 
 [params]
 

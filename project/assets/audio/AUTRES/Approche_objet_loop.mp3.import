@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dyhhechtfsosu"
-path="res://.godot/imported/Approche objet (loop).mp3-a264a85bcc1012b7824de9a641509f5f.mp3str"
+path="res://.godot/imported/Approche_objet_loop.mp3-11bdd1e34466262bc4c364de40cbb800.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/AUTRES/Approche objet (loop).mp3"
-dest_files=["res://.godot/imported/Approche objet (loop).mp3-a264a85bcc1012b7824de9a641509f5f.mp3str"]
+source_file="res://assets/audio/AUTRES/Approche_objet_loop.mp3"
+dest_files=["res://.godot/imported/Approche_objet_loop.mp3-11bdd1e34466262bc4c364de40cbb800.mp3str"]
 
 [params]
 

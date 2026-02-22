@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bkqt1si4gvri7"
-path="res://.godot/imported/Bruit de fond fixe + clic.mp3-4d2a0aee3d0676955e24afe602967eee.mp3str"
+path="res://.godot/imported/Bruit_de_fond_fixe__clic.mp3-9c645851947e8de3ef58a0b0285e4b37.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/OUTRO/MUSIC/Bruit de fond fixe + clic.mp3"
-dest_files=["res://.godot/imported/Bruit de fond fixe + clic.mp3-4d2a0aee3d0676955e24afe602967eee.mp3str"]
+source_file="res://assets/audio/OUTRO/MUSIC/Bruit_de_fond_fixe__clic.mp3"
+dest_files=["res://.godot/imported/Bruit_de_fond_fixe__clic.mp3-9c645851947e8de3ef58a0b0285e4b37.mp3str"]
 
 [params]
 

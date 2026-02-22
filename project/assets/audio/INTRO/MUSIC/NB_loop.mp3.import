@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dvgk6ekh5u4r1"
-path="res://.godot/imported/N&B (loop).mp3-3dc515648f8a2af9a7e6d6ed96c341c3.mp3str"
+path="res://.godot/imported/NB_loop.mp3-89f4aa70c29fc2d0aad54915350ebf40.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/MUSIC/N&B (loop).mp3"
-dest_files=["res://.godot/imported/N&B (loop).mp3-3dc515648f8a2af9a7e6d6ed96c341c3.mp3str"]
+source_file="res://assets/audio/INTRO/MUSIC/NB_loop.mp3"
+dest_files=["res://.godot/imported/NB_loop.mp3-89f4aa70c29fc2d0aad54915350ebf40.mp3str"]
 
 [params]
 

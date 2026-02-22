@@ -3,12 +3,12 @@
 importer="rubonnek.subtitle_importer"
 type="Resource"
 uid="uid://duqsbkxhvuumk"
-path="res://.godot/imported/Voix fin ENG.srt-637b7900a29955f73f5ac6e138c0d010.res"
+path="res://.godot/imported/Voix_fin_ENG.srt-d7189fea4943f867c38579745e7bb07f.res"
 
 [deps]
 
-source_file="res://assets/audio/OUTRO/VOICE/Voix fin ENG.srt"
-dest_files=["res://.godot/imported/Voix fin ENG.srt-637b7900a29955f73f5ac6e138c0d010.res"]
+source_file="res://assets/audio/OUTRO/VOICE/Voix_fin_ENG.srt"
+dest_files=["res://.godot/imported/Voix_fin_ENG.srt-d7189fea4943f867c38579745e7bb07f.res"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="rubonnek.subtitle_importer"
 type="Resource"
 uid="uid://c4j7b16vpicxt"
-path="res://.godot/imported/Voix N&B ENG.srt-7f3cc0c97fdc2cb3e8593c6f1131d53d.res"
+path="res://.godot/imported/Voix_NB_ENG.srt-16d341f4088173f37298e5705265f49e.res"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/VOICE/Voix N&B ENG.srt"
-dest_files=["res://.godot/imported/Voix N&B ENG.srt-7f3cc0c97fdc2cb3e8593c6f1131d53d.res"]
+source_file="res://assets/audio/INTRO/VOICE/Voix_NB_ENG.srt"
+dest_files=["res://.godot/imported/Voix_NB_ENG.srt-16d341f4088173f37298e5705265f49e.res"]
 
 [params]
 

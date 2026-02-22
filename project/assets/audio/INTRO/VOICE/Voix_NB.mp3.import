@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bfnoqx6qkmn50"
-path="res://.godot/imported/Voix N&B.mp3-c6d6a2578f20ba232a4eccc368b3afa0.mp3str"
+path="res://.godot/imported/Voix_NB.mp3-c94542a77437d981264e28d6034c0586.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/VOICE/Voix N&B.mp3"
-dest_files=["res://.godot/imported/Voix N&B.mp3-c6d6a2578f20ba232a4eccc368b3afa0.mp3str"]
+source_file="res://assets/audio/INTRO/VOICE/Voix_NB.mp3"
+dest_files=["res://.godot/imported/Voix_NB.mp3-c94542a77437d981264e28d6034c0586.mp3str"]
 
 [params]
 

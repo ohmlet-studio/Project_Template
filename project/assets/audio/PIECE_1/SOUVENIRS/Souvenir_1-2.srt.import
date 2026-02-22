@@ -3,12 +3,12 @@
 importer="rubonnek.subtitle_importer"
 type="Resource"
 uid="uid://ccvv70vsyxh8v"
-path="res://.godot/imported/Souvenir 1-2.srt-0d97ddcadd5c554e77ccf36e8d62d6c0.res"
+path="res://.godot/imported/Souvenir_1-2.srt-ee1620ebcaef5e1129898226276c7cd8.res"
 
 [deps]
 
-source_file="res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-2.srt"
-dest_files=["res://.godot/imported/Souvenir 1-2.srt-0d97ddcadd5c554e77ccf36e8d62d6c0.res"]
+source_file="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2.srt"
+dest_files=["res://.godot/imported/Souvenir_1-2.srt-ee1620ebcaef5e1129898226276c7cd8.res"]
 
 [params]
 

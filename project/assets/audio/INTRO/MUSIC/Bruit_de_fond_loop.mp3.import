@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b0qoce63n3tul"
-path="res://.godot/imported/Bruit de fond (loop).mp3-4324b3ae9c6c6d0bb3d0089fae4b0b8f.mp3str"
+path="res://.godot/imported/Bruit_de_fond_loop.mp3-13d4e8d6ec74a82534d174064d39c326.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/MUSIC/Bruit de fond (loop).mp3"
-dest_files=["res://.godot/imported/Bruit de fond (loop).mp3-4324b3ae9c6c6d0bb3d0089fae4b0b8f.mp3str"]
+source_file="res://assets/audio/INTRO/MUSIC/Bruit_de_fond_loop.mp3"
+dest_files=["res://.godot/imported/Bruit_de_fond_loop.mp3-13d4e8d6ec74a82534d174064d39c326.mp3str"]
 
 [params]
 

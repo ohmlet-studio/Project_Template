@@ -3,12 +3,12 @@
 importer="rubonnek.subtitle_importer"
 type="Resource"
 uid="uid://cvw86j7wqofb3"
-path="res://.godot/imported/Voix entrée pièce intro ENG.srt-64572f7219cbfa8a64f238f5c5bbf472.res"
+path="res://.godot/imported/Voix_entree_piece_intro_ENG.srt-f41777055a056c3a3b5951bca5edff5c.res"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/VOICE/Voix entrée pièce intro ENG.srt"
-dest_files=["res://.godot/imported/Voix entrée pièce intro ENG.srt-64572f7219cbfa8a64f238f5c5bbf472.res"]
+source_file="res://assets/audio/INTRO/VOICE/Voix_entree_piece_intro_ENG.srt"
+dest_files=["res://.godot/imported/Voix_entree_piece_intro_ENG.srt-f41777055a056c3a3b5951bca5edff5c.res"]
 
 [params]
 

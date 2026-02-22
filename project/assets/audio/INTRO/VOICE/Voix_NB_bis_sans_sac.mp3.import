@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dpg0mjtgx0gog"
-path="res://.godot/imported/Voix N&B bis sans sac.mp3-91d34a03db45729f8f4f1bbb36e4d9d8.mp3str"
+path="res://.godot/imported/Voix_NB_bis_sans_sac.mp3-1b6f0f156993a5298aafb68c6d885b8e.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac.mp3"
-dest_files=["res://.godot/imported/Voix N&B bis sans sac.mp3-91d34a03db45729f8f4f1bbb36e4d9d8.mp3str"]
+source_file="res://assets/audio/INTRO/VOICE/Voix_NB_bis_sans_sac.mp3"
+dest_files=["res://.godot/imported/Voix_NB_bis_sans_sac.mp3-1b6f0f156993a5298aafb68c6d885b8e.mp3str"]
 
 [params]
 

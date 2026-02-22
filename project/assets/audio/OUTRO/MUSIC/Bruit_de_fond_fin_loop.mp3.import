@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cd73gp7o030r7"
-path="res://.godot/imported/Bruit de fond fin (loop).mp3-78b52659e832fc4260acfd72fe4263f4.mp3str"
+path="res://.godot/imported/Bruit_de_fond_fin_loop.mp3-10afe4fe51ff7a2cb53d626543c204f8.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/OUTRO/MUSIC/Bruit de fond fin (loop).mp3"
-dest_files=["res://.godot/imported/Bruit de fond fin (loop).mp3-78b52659e832fc4260acfd72fe4263f4.mp3str"]
+source_file="res://assets/audio/OUTRO/MUSIC/Bruit_de_fond_fin_loop.mp3"
+dest_files=["res://.godot/imported/Bruit_de_fond_fin_loop.mp3-10afe4fe51ff7a2cb53d626543c204f8.mp3str"]
 
 [params]
 

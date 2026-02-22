@@ -3,12 +3,12 @@
 importer="rubonnek.subtitle_importer"
 type="Resource"
 uid="uid://i16f3xqsr8ys"
-path="res://.godot/imported/Voix sac ENG.srt-ef3de08e8ce81114338df1a8541b1142.res"
+path="res://.godot/imported/Voix_sac_ENG.srt-238d52286736c6308a72864f110cdcbd.res"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/VOICE/Voix sac ENG.srt"
-dest_files=["res://.godot/imported/Voix sac ENG.srt-ef3de08e8ce81114338df1a8541b1142.res"]
+source_file="res://assets/audio/INTRO/VOICE/Voix_sac_ENG.srt"
+dest_files=["res://.godot/imported/Voix_sac_ENG.srt-238d52286736c6308a72864f110cdcbd.res"]
 
 [params]
 
