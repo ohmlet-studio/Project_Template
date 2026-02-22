@@ -1,10 +1,623 @@
 [gd_scene format=3 uid="uid://dima7ycw5mpo3"]
 
 [ext_resource type="Script" uid="uid://ghrtttggnl0t" path="res://scripts/final_scene.gd" id="1_rq84w"]
+[ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="2_7t0yn"]
+[ext_resource type="PackedScene" uid="uid://wj2f3dnal8wr" path="res://assets/models/memory_objects/carnet.fbx" id="3_s7xj3"]
+[ext_resource type="AudioStream" uid="uid://b1h3fg1ve503h" path="res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-1.mp3" id="4_uqpra"]
+[ext_resource type="Texture2D" uid="uid://73sk3xesg448" path="res://assets/textures/misc/volumetric_fog_quad_mesh_texture.webp" id="5_8omca"]
+[ext_resource type="Texture2D" uid="uid://qec580l8t1r8" path="res://assets/models/final/room.fbm/parket.jpg" id="5_50der"]
+[ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="5_ja34e"]
+[ext_resource type="PackedScene" uid="uid://dlsymbkqwsx2t" path="res://assets/models/memory_objects/trumpet.fbx" id="7_kefhw"]
+[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="9_50der"]
+[ext_resource type="AudioStream" uid="uid://bak80uergkxsf" path="res://assets/audio/OUTRO/MUSIC/Affichage objets et haïku (loop).mp3" id="10_kefhw"]
+[ext_resource type="Script" uid="uid://dy5lobbq15mcu" path="res://scripts/label_anim.gd" id="10_ydepa"]
+[ext_resource type="AudioStream" uid="uid://1uu0xo4oamru" path="res://assets/audio/AUTRES/FX/Clic.mp3" id="12_ytkeu"]
+[ext_resource type="PackedScene" uid="uid://bciil8v6ykx2e" path="res://scenes/global/subtitles.tscn" id="13_wutmx"]
+[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="14_ayjh5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja34e"]
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("5_8omca")
+billboard_mode = 1
+proximity_fade_enabled = true
+distance_fade_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_50der"]
+material = SubResource("StandardMaterial3D_ja34e")
+size = Vector2(2, 2)
 
 [sub_resource type="Environment" id="Environment_i4xxx"]
+background_mode = 1
 
-[node name="FinalScene" type="Control" unique_id=86593980]
+[sub_resource type="CylinderMesh" id="CylinderMesh_8omca"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kefhw"]
+resource_name = "Floor"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_50der")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+uv1_scale = Vector3(4.805, 4.805, 4.805)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uqpra"]
+material = SubResource("StandardMaterial3D_kefhw")
+
+[sub_resource type="Animation" id="Animation_ydepa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Lights/Light1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Lights/Light1:light_energy")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Haiku:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/Fog/Fog1:mesh:material:albedo_color")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ytkeu"]
+resource_name = "Start"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Lights/Light1:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.4333333, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Haiku:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/Fog/Fog1:mesh:material:albedo_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4189395, 2.9593785),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.14117648)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ytkeu"]
+_data = {
+&"RESET": SubResource("Animation_ydepa"),
+&"Start": SubResource("Animation_ytkeu")
+}
+
+[sub_resource type="Animation" id="Animation_wutmx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Lights/Light2:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SubViewportContainer/SubViewport/Fog/Fog2:mesh:material:albedo_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ayjh5"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Lights/Light2:light_energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SubViewportContainer/SubViewport/Fog/Fog2:mesh:material:albedo_color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.14117648)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ydly"]
+_data = {
+&"RESET": SubResource("Animation_wutmx"),
+&"start": SubResource("Animation_ayjh5")
+}
+
+[sub_resource type="Animation" id="Animation_cxsjm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Lights/Light3:light_energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SubViewportContainer/SubViewport/Fog/Fog3:mesh:material:albedo_color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3wo1y"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Lights/Light3:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SubViewportContainer/SubViewport/Fog/Fog3:mesh:material:albedo_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.14117648)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i13qe"]
+_data = {
+&"RESET": SubResource("Animation_cxsjm"),
+&"start": SubResource("Animation_3wo1y")
+}
+
+[sub_resource type="Animation" id="Animation_2ydly"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Objects/Slot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.0249062, 0.19550681, -2.636619)]
+}
+
+[sub_resource type="Animation" id="Animation_i13qe"]
+resource_name = "anim"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Objects/Slot:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.0249062, 0.19550681, -2.636619), Vector3(-2.0249062, 0.49088764, -2.636619)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ag7rs"]
+_data = {
+&"RESET": SubResource("Animation_2ydly"),
+&"anim": SubResource("Animation_i13qe")
+}
+
+[sub_resource type="Animation" id="Animation_ag7rs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Objects/Slot2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.082675934, 0.20973927, -3.1940079)]
+}
+
+[sub_resource type="Animation" id="Animation_f5we8"]
+resource_name = "anim"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Objects/Slot2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.082675934, 0.20973927, -3.1940079), Vector3(-0.082675934, 0.5658298, -3.1940079)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gib7m"]
+_data = {
+&"RESET": SubResource("Animation_ag7rs"),
+&"anim": SubResource("Animation_f5we8")
+}
+
+[sub_resource type="Animation" id="Animation_2kifw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Objects/Slot3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.9500897, 0.28359103, -2.694835)]
+}
+
+[sub_resource type="Animation" id="Animation_7ct35"]
+resource_name = "anim"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Objects/Slot3:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.9500897, 0.28359103, -2.694835), Vector3(1.9500897, 0.62631893, -2.694835)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_flbg3"]
+_data = {
+&"RESET": SubResource("Animation_2kifw"),
+&"anim": SubResource("Animation_7ct35")
+}
+
+[sub_resource type="Animation" id="Animation_gib7m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Lights/DeskLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SubViewportContainer/SubViewport/Desk/Desk_001:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ExitButton/Exit:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ExitButton/Exit:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.508564, -0.6451671, -1.67549)]
+}
+
+[sub_resource type="Animation" id="Animation_flbg3"]
+resource_name = "anim"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SubViewportContainer/SubViewport/Lights/DeskLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SubViewportContainer/SubViewport/Desk/Desk_001:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.050127387, 0, 1.4059103)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ExitButton/Exit:visible")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ExitButton/Exit:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.02, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.508564, -0.6451671, -1.67549), Vector3(1.508564, -0.6451671, -0.9147045)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tvilf"]
+_data = {
+&"RESET": SubResource("Animation_gib7m"),
+&"anim": SubResource("Animation_flbg3")
+}
+
+[sub_resource type="Animation" id="Animation_tvilf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ExitButton/Exit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.508564, -0.6451671, -0.9147045)]
+}
+
+[sub_resource type="Animation" id="Animation_j2eq1"]
+resource_name = "anim"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ExitButton/Exit:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.508564, -0.6451671, -0.9147045), Vector3(1.508564, -0.5216929, -0.9147045)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ti6a7"]
+_data = {
+&"RESET": SubResource("Animation_tvilf"),
+&"anim": SubResource("Animation_j2eq1")
+}
+
+[sub_resource type="Animation" id="Animation_ti6a7"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_3umha"]
+resource_name = "anim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ExitButton/Exit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.508564, -0.5216929, -0.9147045), Vector3(1.508564, -0.73860717, -0.9147045)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ExitButton/Exit:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SubViewportContainer/SubViewport/Desk/Desk_001:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.26666668, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.050127387, 0, 1.4059103), Vector3(-0.050127387, 0, -0.0067436695)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SubViewportContainer/SubViewport/Lights/Light1:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SubViewportContainer/SubViewport/Lights/Light2:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../SubViewportContainer/SubViewport/Lights/Light3:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../SubViewportContainer/SubViewport/Lights/DeskLight:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.3, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nd8fg"]
+_data = {
+&"RESET": SubResource("Animation_ti6a7"),
+&"anim": SubResource("Animation_3umha")
+}
+
+[sub_resource type="PackedScene" id="PackedScene_2ydly"]
+
+[node name="FinalScene" type="Control" unique_id=86593980 node_paths=PackedStringArray("pickable_slot3")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +625,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rq84w")
+pickable_slot3 = NodePath("Carnet")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=809016304]
 layout_mode = 1
@@ -27,23 +641,228 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1779409992]
-transform = Transform3D(1, 0, 0, 0, 1, 5.9604645e-08, 0, -5.9604645e-08, 1, 0, 0.025175095, 0.93501854)
+transform = Transform3D(1, 0, 0, 0, 0.9766423, 0.21487178, 0, -0.21487178, 0.9766423, 0, 1.7711561, 4.9350185)
 cull_mask = 1048573
+fov = 29.6
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=2102030353]
-transform = Transform3D(-0.36669192, -0.54573643, 0.7534646, -0.23881549, 0.8379569, 0.49070913, -0.89916867, 6.628799e-08, -0.43760234, 1.6350305, 1.6664399, -2.6178732)
-shadow_enabled = true
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=604953112]
+
+[node name="Light1" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=754906177]
+transform = Transform3D(0.9602888, 0, 0.27900788, -0.022740155, 0.99667305, 0.07826702, -0.27807963, -0.08150363, 0.957094, -1.6530561, 0.44015473, -0.7829002)
+
+[node name="Light2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1545974734]
+transform = Transform3D(0.97107184, 0, 0.23878773, -0.019462066, 0.99667305, 0.07914588, -0.23799329, -0.08150363, 0.96784115, 0.35306072, 0.3809529, -1.5068542)
+light_energy = 0.0
+
+[node name="Light3" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=2142931865]
+transform = Transform3D(0.88681734, 0, -0.46212012, 0.037664466, 0.99667305, 0.072278835, 0.46058267, -0.08150363, 0.88386697, 1.3350463, 0.42186376, -1.006573)
+light_energy = 0.0
+
+[node name="DeskLight" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=631617107]
+transform = Transform3D(1, 0, 0, 0, 0.9295643, 0.36866, 0, -0.36866, 0.9295643, 1.1207142, 0, 0.6131129)
+light_energy = 0.0
+
+[node name="Fog" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=2023903485]
+
+[node name="Fog1" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Fog" unique_id=102444236]
+transform = Transform3D(5.2080154, 0, 0, 0, 2.2757156, 0, 0, 0, 1, -1.4907209, 0, -0.45328808)
+visible = false
+mesh = SubResource("QuadMesh_50der")
+
+[node name="Fog2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Fog" unique_id=184988683]
+transform = Transform3D(5.2080154, 0, 0, 0, 2.2757156, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_50der")
+
+[node name="Fog3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Fog" unique_id=1050954346]
+transform = Transform3D(5.2080154, 0, 0, 0, 2.2757156, 0, 0, 0, 1, 1.7356813, 0, -0.45328808)
+visible = false
+mesh = SubResource("QuadMesh_50der")
 
 [node name="Environment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1835907796]
 environment = SubResource("Environment_i4xxx")
 
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1842307672]
+[node name="Objects" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1842307672]
 
-[node name="Slot" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1714795726]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082675934, 0, -0.86594343)
+[node name="Slot" type="Node3D" parent="SubViewportContainer/SubViewport/Objects" unique_id=448845458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0249062, 0.19550681, -2.636619)
 
-[node name="Slot2" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=448845458]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1440959, 0, -0.30855453)
+[node name="lighter" parent="SubViewportContainer/SubViewport/Objects/Slot" unique_id=1060009113 instance=ExtResource("5_ja34e")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 
-[node name="Slot3" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1833175981]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8094969, 0, -0.24945474)
+[node name="Slot2" type="Node3D" parent="SubViewportContainer/SubViewport/Objects" unique_id=1714795726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082675934, 0.20973927, -3.1940079)
+
+[node name="carnet" parent="SubViewportContainer/SubViewport/Objects/Slot2" unique_id=687022676 instance=ExtResource("3_s7xj3")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="Slot3" type="Node3D" parent="SubViewportContainer/SubViewport/Objects" unique_id=1833175981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9500897, 0.28359103, -2.694835)
+
+[node name="trumpet" parent="SubViewportContainer/SubViewport/Objects/Slot3" unique_id=1353931598 instance=ExtResource("7_kefhw")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Stand" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=408551430]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Stand" unique_id=1976967531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6149744, -3.1465588)
+mesh = SubResource("CylinderMesh_8omca")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Stand" unique_id=1474488793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6368103, -1.6149744, -2.6445177)
+mesh = SubResource("CylinderMesh_8omca")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Stand" unique_id=190760446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.576802, -1.6149744, -2.796338)
+mesh = SubResource("CylinderMesh_8omca")
+
+[node name="Desk" parent="SubViewportContainer/SubViewport" unique_id=1485273648 instance=ExtResource("9_50der")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.80889916, -1.1661608, -1.9940147)
+
+[node name="Desk_001" parent="SubViewportContainer/SubViewport/Desk" index="1" unique_id=219638349]
+transform = Transform3D(100.00002, 7.1525574e-07, 8.526513e-14, 0, -1.1920929e-05, 99.99999, 7.1525574e-07, -100.000015, -1.1920932e-05, 0, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1894664908]
+transform = Transform3D(64.68, 0, 0, 0, 9.311899, 0, 0, 0, 57.455997, 1, -2, -1)
+mesh = SubResource("PlaneMesh_uqpra")
+
+[node name="Carnet" parent="." unique_id=1972186688 instance=ExtResource("2_7t0yn")]
+transform = Transform3D(-0.77086914, 0, 0.6369936, 0, 1, 0, -0.6369936, 0, -0.77086914, -0.14382267, 0.7739902, 3.0511632)
+visible = false
+object_name = "carnet"
+object_to_scan = ExtResource("3_s7xj3")
+scale_2d_view = 1.8
+inspect_scale = 2.5
+default_inspect_rotation = Vector3(90, 0, 0)
+dialog_audio = ExtResource("4_uqpra")
+dialog_subtitle = "res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-1 ENG.srt"
+
+[node name="Haiku" type="Label" parent="." unique_id=1569982730]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -351.0
+offset_top = 67.0
+offset_right = 349.0
+offset_bottom = 253.0
+grow_horizontal = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 161
+clip_text = true
+script = ExtResource("10_ydepa")
+
+[node name="AudioBack" type="AudioStreamPlayer" parent="." unique_id=1607937711]
+stream = ExtResource("10_kefhw")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="AudioClick" type="AudioStreamPlayer" parent="." unique_id=1292214045]
+stream = ExtResource("12_ytkeu")
+bus = &"SFX"
+
+[node name="Subtitles" parent="." unique_id=1516935989 instance=ExtResource("13_wutmx")]
+layout_mode = 1
+
+[node name="Anim" type="Node" parent="." unique_id=1084123067]
+
+[node name="1stObj" type="AnimationPlayer" parent="Anim" unique_id=1164372486]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_ytkeu")
+autoplay = &"Start"
+
+[node name="2ndObj" type="AnimationPlayer" parent="Anim" unique_id=508017100]
+libraries/ = SubResource("AnimationLibrary_2ydly")
+
+[node name="3rdObj" type="AnimationPlayer" parent="Anim" unique_id=1352601090]
+libraries/ = SubResource("AnimationLibrary_i13qe")
+
+[node name="Button1" type="AnimationPlayer" parent="Anim" unique_id=1280713151]
+libraries/ = SubResource("AnimationLibrary_ag7rs")
+
+[node name="Button2" type="AnimationPlayer" parent="Anim" unique_id=1561171945]
+libraries/ = SubResource("AnimationLibrary_gib7m")
+
+[node name="Button3" type="AnimationPlayer" parent="Anim" unique_id=1150084392]
+libraries/ = SubResource("AnimationLibrary_flbg3")
+
+[node name="ExitButton" type="AnimationPlayer" parent="Anim" unique_id=136126303]
+libraries/ = SubResource("AnimationLibrary_tvilf")
+
+[node name="ExitHover" type="AnimationPlayer" parent="Anim" unique_id=1011457636]
+libraries/ = SubResource("AnimationLibrary_ti6a7")
+
+[node name="Leeeeave" type="AnimationPlayer" parent="Anim" unique_id=974477883]
+libraries/ = SubResource("AnimationLibrary_nd8fg")
+
+[node name="ObjButton" type="Control" parent="." unique_id=933434071]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Obj1" type="TextureButton" parent="ObjButton" unique_id=979759723]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 161.0
+offset_right = 371.0
+offset_bottom = 452.0
+
+[node name="Obj2" type="TextureButton" parent="ObjButton" unique_id=260039056]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 171.0
+offset_right = 679.0
+offset_bottom = 462.0
+
+[node name="Obj3" type="TextureButton" parent="ObjButton" unique_id=167434823]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 160.0
+offset_right = 1005.0
+offset_bottom = 451.0
+
+[node name="ExitButton" type="TextureButton" parent="." unique_id=758125039]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 474.0
+offset_right = 1001.0
+offset_bottom = 631.0
+
+[node name="Exit" type="Label3D" parent="ExitButton" unique_id=1982386671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.508564, -0.6451671, -0.9147045)
+visible = false
+outline_modulate = Color(0.3327473, 0.2216936, 0.14757648, 1)
+text = "Leave..."
+font_size = 41
+outline_size = 19
+
+[node name="FadeTransitionManager" type="ColorRect" parent="." unique_id=2140055581]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_ayjh5")
+next_scene = SubResource("PackedScene_2ydly")
+metadata/_custom_type_script = "uid://c6215vuol8ms2"
+
+[connection signal="dialog_finished" from="Subtitles" to="." method="_on_subtitles_dialog_finished"]
+[connection signal="mouse_entered" from="ObjButton/Obj1" to="." method="_on_obj_1_mouse_entered"]
+[connection signal="mouse_exited" from="ObjButton/Obj1" to="." method="_on_obj_1_mouse_exited"]
+[connection signal="pressed" from="ObjButton/Obj1" to="." method="_on_obj_1_pressed"]
+[connection signal="mouse_entered" from="ObjButton/Obj2" to="." method="_on_obj_2_mouse_entered"]
+[connection signal="mouse_exited" from="ObjButton/Obj2" to="." method="_on_obj_2_mouse_exited"]
+[connection signal="pressed" from="ObjButton/Obj2" to="." method="_on_obj_2_pressed"]
+[connection signal="mouse_entered" from="ObjButton/Obj3" to="." method="_on_obj_3_mouse_entered"]
+[connection signal="mouse_exited" from="ObjButton/Obj3" to="." method="_on_obj_3_mouse_exited"]
+[connection signal="pressed" from="ObjButton/Obj3" to="." method="_on_obj_3_pressed"]
+[connection signal="mouse_entered" from="ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+
+[editable path="SubViewportContainer/SubViewport/Objects/Slot/lighter"]
+[editable path="SubViewportContainer/SubViewport/Objects/Slot2/carnet"]
+[editable path="SubViewportContainer/SubViewport/Objects/Slot3/trumpet"]
+[editable path="SubViewportContainer/SubViewport/Desk"]
