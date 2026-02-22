@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://bme3qagw22mny"]
+[gd_scene format=3 uid="uid://dpxoysx32ydd2"]
 
 [ext_resource type="Script" uid="uid://8deqcv03lovl" path="res://scripts/menus/title_scene.gd" id="1_duloj"]
 [ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="2_rkk5p"]
 [ext_resource type="PackedScene" uid="uid://ceauub3uvaq3b" path="res://scenes/MainScene.tscn" id="3_rkk5p"]
+[ext_resource type="PackedScene" uid="uid://c75mpd4nm0j8t" path="res://scenes/menus/settings_menu.tscn" id="4_jgedf"]
 
 [sub_resource type="Theme" id="Theme_yhdlg"]
 
@@ -82,6 +83,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="fade" type="Panel" parent="Credits" unique_id=2097368771]
+visible = false
 material = SubResource("ShaderMaterial_k2kpb")
 layout_mode = 1
 anchors_preset = 15
@@ -100,4 +102,9 @@ script = ExtResource("2_rkk5p")
 next_scene = ExtResource("3_rkk5p")
 metadata/_custom_type_script = "uid://c6215vuol8ms2"
 
+[node name="SettingsMenu" parent="." unique_id=2087371895 instance=ExtResource("4_jgedf")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]

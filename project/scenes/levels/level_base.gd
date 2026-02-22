@@ -200,8 +200,8 @@ func link_next_room():
 	_link_portals(next_room)
 
 func set_layer_2():
-	var room_parent = $Room/Interactable/Static/room
 	for object in _static_objects.get_children():
 		_set_layer_recursive(object, 2)
 		
+	var room_parent = $Room/Interactable/Static/room
 	_set_layer_recursive(room_parent, 2)

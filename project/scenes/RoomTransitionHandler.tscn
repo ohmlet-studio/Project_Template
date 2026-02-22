@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://d1h1miuyx6dab" path="res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.mp3" id="6_2e2dh"]
 [ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit de fond (loop).mp3" id="6_7ddg7"]
 [ext_resource type="PackedScene" uid="uid://q2dg4rnvsjat" path="res://scenes/levels/LevelOutro.tscn" id="10_cywug"]
+[ext_resource type="PackedScene" uid="uid://bdfmfs7wvx1em" path="res://scenes/levels/LevelTest.tscn" id="11_v5yp2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mus4g"]
 albedo_texture = ExtResource("3_6s3e6")
@@ -91,6 +92,12 @@ shape = SubResource("BoxShape3D_2e2dh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.507214, 0, 0)
 next_room = NodePath("../LevelAdulte")
 
+[node name="PortalDoorMain" parent="Rooms/LevelIntro/Room/Interactable/Static" parent_id_path=PackedInt32Array(1125609813, 1037730109) index="0" unique_id=1476560424]
+visible = true
+
+[node name="PortalDoorBed" parent="Rooms/LevelIntro/Room/Interactable/Static" parent_id_path=PackedInt32Array(1125609813, 1037730109) index="1" unique_id=322101260]
+visible = true
+
 [node name="LevelAdulte" parent="Rooms" unique_id=804273654 node_paths=PackedStringArray("next_room") instance=ExtResource("4_ehv8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6134987, 0, -0.009850562)
 next_room = NodePath("../LevelAdo")
@@ -112,6 +119,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.208813, 0, 0)
 [node name="LevelOutro" parent="Rooms" unique_id=1580783062 node_paths=PackedStringArray("credits_scene_door") instance=ExtResource("10_cywug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.41407, 0.09147453, 0)
 credits_scene_door = NodePath("../CorridorEnd/PortalDoor")
+
+[node name="LevelTest" parent="Rooms" unique_id=831764015 instance=ExtResource("11_v5yp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.384, 0, -12.951)
+dont_link_portals = true
 
 [node name="CorridorEnd" type="Node3D" parent="Rooms" unique_id=1028949147]
 transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 108.92533, 0.055626035, 1.5978918)
@@ -164,7 +175,7 @@ bus = &"SFX"
 
 [node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.551256, 1.1589148, -0.68980336)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.942333, 1.1589148, -11.711437)
 floor_stop_on_slope = false
 SPEED = 1.0
 HEAD_BOB_AMPLITUDE = 0.007
