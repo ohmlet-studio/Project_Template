@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bak80uergkxsf"
-path="res://.godot/imported/Affichage objets et haïku (loop).mp3-d157480c82c79d9145bdb0a6f4828b60.mp3str"
+path="res://.godot/imported/Affichage objets et haïku (loop).mp3-9cd19e342c272ca701c817f0bec40c9f.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/OUTRO/MUSIC/Affichage objets et haïku (loop).mp3"
-dest_files=["res://.godot/imported/Affichage objets et haïku (loop).mp3-d157480c82c79d9145bdb0a6f4828b60.mp3str"]
+source_file="res://assets/audio/OUTRO/MUSIC/Affichage objets et haïku (loop).mp3"
+dest_files=["res://.godot/imported/Affichage objets et haïku (loop).mp3-9cd19e342c272ca701c817f0bec40c9f.mp3str"]
 
 [params]
 

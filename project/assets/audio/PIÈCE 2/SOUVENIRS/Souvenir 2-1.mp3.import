@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d3ybg14jwxat0"
-path="res://.godot/imported/Souvenir 2-1.mp3-43d81fc4ab8599aa954e3146ebb00a8c.mp3str"
+path="res://.godot/imported/Souvenir 2-1.mp3-f414df9f04c3938cd967df010d6caf86.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/PIÈCE 2/SOUVENIRS/Souvenir 2-1.mp3"
-dest_files=["res://.godot/imported/Souvenir 2-1.mp3-43d81fc4ab8599aa954e3146ebb00a8c.mp3str"]
+source_file="res://assets/audio/PIÈCE 2/SOUVENIRS/Souvenir 2-1.mp3"
+dest_files=["res://.godot/imported/Souvenir 2-1.mp3-f414df9f04c3938cd967df010d6caf86.mp3str"]
 
 [params]
 

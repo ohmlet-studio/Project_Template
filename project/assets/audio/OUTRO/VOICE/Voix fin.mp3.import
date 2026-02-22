@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Voix fin.mp3-eeb69273b43df53794065cf3744cdead
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

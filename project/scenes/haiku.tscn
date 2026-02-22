@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bkbynldbtdni2"]
+
+[node name="Haiku" type="Node2D" unique_id=1223768425]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=104253936]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 1161.0
+offset_bottom = 668.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1218698559]
+offset_left = 311.0
+offset_top = 95.0
+offset_right = 833.0
+offset_bottom = 572.0
+theme_override_font_sizes/font_size = 32
+text = "Credits:
+Code: Retronyme & ollig 
+
+Level design: la virgule & nispouli
+Environnement: nispouli
+Modeling: Retronyme
+
+Music, SFX & mixage: la virgule 
+Voice acting: la virgule
+Writing: la virgule, nispouli & ollig "
+horizontal_alignment = 1
