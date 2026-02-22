@@ -75,6 +75,7 @@ func _ready() -> void:
 	_set_object_to_scan(object_to_scan)
 	_base_radius = color_radius
 
+
 	if Engine.is_editor_hint():
 		return
 		
@@ -88,6 +89,8 @@ func _ready() -> void:
 	self.has_been_scanned = skip_inspect
 	if interactable_3d:
 		interactable_3d.scannable = not has_been_scanned
+		
+	handObjView.hide()
 
 func _set_object_name(value: String) -> void:
 	if not is_node_ready():
