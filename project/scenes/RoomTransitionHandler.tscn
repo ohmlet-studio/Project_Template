@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://crhxqnua2w0dp" path="res://scenes/levels/LevelIntro.tscn" id="4_7ddg7"]
 [ext_resource type="PackedScene" uid="uid://c2hburnp68gfh" path="res://scenes/levels/LevelAdulte.tscn" id="4_ehv8f"]
 [ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="5_h6gdu"]
-[ext_resource type="AudioStream" uid="uid://d1h1miuyx6dab" path="res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.mp3" id="6_2e2dh"]
-[ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit de fond (loop).mp3" id="6_7ddg7"]
+[ext_resource type="AudioStream" uid="uid://d1h1miuyx6dab" path="res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1.mp3" id="6_2e2dh"]
+[ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit_de_fond_loop.mp3" id="6_7ddg7"]
 [ext_resource type="PackedScene" uid="uid://q2dg4rnvsjat" path="res://scenes/levels/LevelOutro.tscn" id="10_cywug"]
 [ext_resource type="PackedScene" uid="uid://bdfmfs7wvx1em" path="res://scenes/levels/LevelTest.tscn" id="11_v5yp2"]
 
@@ -175,7 +175,7 @@ bus = &"SFX"
 
 [node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.942333, 1.1589148, -11.711437)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 53.82843, 1.1589148, -0.68980336)
 floor_stop_on_slope = false
 SPEED = 1.0
 HEAD_BOB_AMPLITUDE = 0.007

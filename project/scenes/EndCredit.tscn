@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cq6rmmfltogvf"]
+
+[ext_resource type="Texture2D" uid="uid://de30jyus41cdr" path="res://assets/rock_bottom.png" id="1_6o6y6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4rxl"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="EndCredit" type="Control" unique_id=358828160]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=405945765]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d4rxl")
+
+[node name="RockBottom" type="Sprite2D" parent="." unique_id=655758401]
+position = Vector2(381, 289)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_6o6y6")
