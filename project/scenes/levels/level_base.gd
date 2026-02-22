@@ -22,7 +22,7 @@ class_name LevelRoom
 @export var level_musics: Array[AudioStream]
 
 const AIDE_AUDIO_PATH := "res://assets/audio/AUTRES/Aide.mp3"
-const AIDE_SUBTITLE_PATH := "res://assets/audio/AUTRES/Aide ENG.srt"
+const AIDE_SUBTITLE_PATH := "res://assets/audio/AUTRES/Aide_ENG.srt"
 
 @export_category("DEBUG")
 @export var ready_direct: bool = false
@@ -75,7 +75,7 @@ func _on_teleport():
 			set_layer_2()
 		
 		if not subtitles_path:
-			subtitles_path = entering_sound.resource_path.replace(".mp3", " ENG.srt")
+			subtitles_path = entering_sound.resource_path.replace(".mp3", "_ENG.srt")
 		
 		_set_grabbables_interaction_enabled(false)
 		SubtitlesScene.sub_load_from_file(subtitles_path)

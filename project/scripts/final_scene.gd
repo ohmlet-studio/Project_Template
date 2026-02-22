@@ -111,8 +111,8 @@ func _on_obj_1_pressed() -> void:
 		print("Pressed obj1")
 		$AudioBack.volume_db = audioback_db_lvl
 		if DEBUG:
-			$Subtitles.sub_load_from_file("res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-2 ENG.srt")
-			$Subtitles.play_dialog(load("res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-2.mp3"))
+			$Subtitles.sub_load_from_file("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2_ENG.srt")
+			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2.mp3"))
 		else:
 			$Subtitles.sub_load_from_file(pickable_slot.dialog_subtitle)
 			$Subtitles.play_dialog(pickable_slot.dialog_audio)
@@ -123,8 +123,8 @@ func _on_obj_2_pressed() -> void:
 		print("Pressed obj2")
 		$AudioBack.volume_db = audioback_db_lvl
 		if DEBUG:
-			$Subtitles.sub_load_from_file("res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-1 ENG.srt")
-			$Subtitles.play_dialog(load("res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-1.mp3"))
+			$Subtitles.sub_load_from_file("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1_ENG.srt")
+			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1.mp3"))
 		else:
 			$Subtitles.sub_load_from_file(pickable_slot2.dialog_subtitle)
 			$Subtitles.play_dialog(pickable_slot2.dialog_audio)
@@ -134,8 +134,8 @@ func _on_obj_3_pressed() -> void:
 		print("Pressed obj2")
 		$AudioBack.volume_db = audioback_db_lvl
 		if DEBUG:
-			$Subtitles.sub_load_from_file("res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-3 ENG.srt")
-			$Subtitles.play_dialog(load("res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-3.mp3"))
+			$Subtitles.sub_load_from_file("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3_ENG.srt")
+			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3.mp3"))
 		else:
 			$Subtitles.sub_load_from_file(pickable_slot3.dialog_subtitle)
 			$Subtitles.play_dialog(pickable_slot3.dialog_audio)
