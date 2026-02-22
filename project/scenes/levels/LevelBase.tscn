@@ -504,12 +504,3 @@ libraries/ = SubResource("AnimationLibrary_28yxk")
 transform = Transform3D(-0.43905747, -0.6908063, -0.57446945, 0.2985795, -0.715241, 0.6318865, -0.84739536, 0.10590968, 0.5202925, 0.38255215, 1.7802589, 0.8435733)
 light_color = Color(1, 0.85882354, 0.7294118, 1)
 omni_range = 5.2279162
-
-[node name="Sun" type="DirectionalLight3D" parent="Node3D" unique_id=1306269618]
-transform = Transform3D(-0.4390576, -0.69080615, -0.5744697, 0.2985795, -0.7152413, 0.63188624, -0.8473953, 0.10590956, 0.5202927, -0.16747856, 4.0459704, 0.93632317)
-light_color = Color(1, 0.85882354, 0.7294118, 1)
-light_volumetric_fog_energy = 4.349
-light_bake_mode = 1
-light_cull_mask = 4294967293
-shadow_enabled = true
-shadow_caster_mask = 4294967293

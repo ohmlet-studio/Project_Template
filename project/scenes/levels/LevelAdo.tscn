@@ -284,5 +284,5 @@ transform = Transform3D(-1.3731929e-07, 2.5450623e-08, -3.1949997, 0.5822424, 3.
 material_override = SubResource("StandardMaterial3D_u65tb")
 mesh = SubResource("QuadMesh_3owl0")
 
-[node name="room" parent="." index="3" unique_id=952250540]
+[node name="room" parent="Room/Interactable/Static" parent_id_path=PackedInt32Array(1037730109) index="4" unique_id=879325613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010465384, 1.1920929e-07, 0.77542)

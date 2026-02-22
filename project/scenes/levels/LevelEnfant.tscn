@@ -47,7 +47,7 @@ albedo_texture = ExtResource("14_p0520")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvvhd"]
 albedo_texture = ExtResource("21_1ey66")
-uv1_scale = Vector3(10, 10, 10)
+uv1_scale = Vector3(8, 8, 8)
 
 [node name="LevelEnfant" unique_id=1125609813 instance=ExtResource("1_vjdto")]
 

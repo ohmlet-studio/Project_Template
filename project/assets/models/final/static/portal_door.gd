@@ -25,7 +25,7 @@ func _ready() -> void:
 	if not Engine.is_editor_hint() and Manager.globPlayer:
 		portal.player_camera = Manager.globPlayer.get_camera()
 
-	portal.on_teleport.connect(_on_portal_teleport)
+	portal.on_teleport_receive.connect(_on_portal_teleport)
 
 	_connect_portals.call_deferred(other_door)
 

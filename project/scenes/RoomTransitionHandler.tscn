@@ -3,13 +3,31 @@
 [ext_resource type="Script" uid="uid://cd3wxqq2iks3x" path="res://scenes/room_transition_handler.gd" id="1_h6gdu"]
 [ext_resource type="PackedScene" uid="uid://btfc2xv0asp01" path="res://scenes/levels/LevelAdo.tscn" id="1_wks6e"]
 [ext_resource type="PackedScene" uid="uid://4y0tiqlqpf8s" path="res://scenes/levels/LevelEnfant.tscn" id="2_ilqm7"]
+[ext_resource type="PackedScene" uid="uid://byac8f8k1u372" path="res://assets/models/final/static/PortalDoor.tscn" id="2_j22r2"]
+[ext_resource type="Texture2D" uid="uid://ce7kds7l22ohd" path="res://assets/models/final/room.fbm/plaster.jpg" id="3_6s3e6"]
 [ext_resource type="PackedScene" uid="uid://c1slrw45k6y3h" path="res://scenes/levels/LevelSpecial.tscn" id="3_ehv8f"]
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/Player.tscn" id="3_t0nsw"]
+[ext_resource type="PackedScene" uid="uid://crhxqnua2w0dp" path="res://scenes/levels/LevelIntro.tscn" id="4_7ddg7"]
 [ext_resource type="PackedScene" uid="uid://c2hburnp68gfh" path="res://scenes/levels/LevelAdulte.tscn" id="4_ehv8f"]
 [ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="5_h6gdu"]
+[ext_resource type="AudioStream" uid="uid://k03sl1uekow0" path="res://assets/audio/INTRO/MUSIC/Bruit de fond (loop).mp3" id="6_7ddg7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mus4g"]
+albedo_texture = ExtResource("3_6s3e6")
+uv1_scale = Vector3(30, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7w20u"]
+flip_faces = true
+size = Vector3(2.75, 3.25, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j22r2"]
+size = Vector3(3.025, 3.575, 11)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n8bhm"]
+data = PackedVector3Array(1.25, 1.625, 5, -1.25, 1.625, 5, -1.25, -1.625, 5, 1.25, -1.625, 5, 1.25, 1.625, 5, -1.25, -1.625, 5, -1.25, 1.625, -5, 1.25, 1.625, -5, 1.25, -1.625, -5, -1.25, -1.625, -5, -1.25, 1.625, -5, 1.25, -1.625, -5, 1.25, 1.625, -5, 1.25, 1.625, 5, 1.25, -1.625, 5, 1.25, -1.625, -5, 1.25, 1.625, -5, 1.25, -1.625, 5, -1.25, 1.625, 5, -1.25, 1.625, -5, -1.25, -1.625, -5, -1.25, -1.625, 5, -1.25, 1.625, 5, -1.25, -1.625, -5, -1.25, 1.625, 5, 1.25, 1.625, 5, 1.25, 1.625, -5, -1.25, 1.625, -5, -1.25, 1.625, 5, 1.25, 1.625, -5, 1.25, -1.625, 5, -1.25, -1.625, 5, -1.25, -1.625, -5, 1.25, -1.625, -5, 1.25, -1.625, 5, -1.25, -1.625, -5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dhyot"]
-size = Vector3(181.38867, 0, 50)
+size = Vector3(95.76404, 0, 50)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j22r2"]
 
@@ -27,9 +45,55 @@ script = ExtResource("1_h6gdu")
 
 [node name="Rooms" type="Node3D" parent="." unique_id=1259779974]
 
-[node name="LevelAdulte" parent="Rooms" unique_id=1125609813 node_paths=PackedStringArray("next_room") instance=ExtResource("4_ehv8f")]
+[node name="Corridor" type="Node3D" parent="Rooms" unique_id=157357895]
+transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, -22.068504, 0.055626035, 1.5978918)
+
+[node name="PortalDoor" parent="Rooms/Corridor" unique_id=322101260 node_paths=PackedStringArray("other_door") instance=ExtResource("2_j22r2")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5.427178, 1.2313936, -0.04310891)
+other_door = NodePath("../../LevelIntro/Room/Interactable/Static/PortalDoorMain")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/Corridor" unique_id=1415073415]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.8066234, 0, 0.06608677)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Corridor/StaticBody3D" unique_id=767240517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6377952, 0)
+material_override = SubResource("StandardMaterial3D_mus4g")
+cast_shadow = 2
+mesh = SubResource("BoxMesh_7w20u")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Rooms/Corridor/StaticBody3D" unique_id=78150040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6377952, 0)
+material_override = SubResource("StandardMaterial3D_mus4g")
+cast_shadow = 2
+mesh = SubResource("BoxMesh_j22r2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Corridor/StaticBody3D" unique_id=776819569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6377952, 0)
+shape = SubResource("ConcavePolygonShape3D_n8bhm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/Corridor" unique_id=510477130]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.152301, 3.1025357, 0)
+
+[node name="SpotLight3D2" type="OmniLight3D" parent="Rooms/Corridor" unique_id=1981392268]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.6822529, 1.6394705, 0)
+light_energy = 0.5
+light_negative = true
+omni_range = 5.9774766
+
+[node name="LevelIntro" parent="Rooms" unique_id=1125609813 node_paths=PackedStringArray("next_room") instance=ExtResource("4_7ddg7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
+next_room = NodePath("../LevelAdulte")
+
+[node name="LevelAdulte" parent="Rooms" unique_id=804273654 node_paths=PackedStringArray("next_room") instance=ExtResource("4_ehv8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16581333, 0, -0.009850562)
 next_room = NodePath("../LevelAdo")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Rooms/LevelAdulte" unique_id=997516505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.97068, 1.4663391, -1.5493975)
+stream = ExtResource("6_7ddg7")
+attenuation_model = 3
+autoplay = true
+max_distance = 10.0
 
 [node name="LevelAdo" parent="Rooms" unique_id=542756532 node_paths=PackedStringArray("next_room", "teleports_to") instance=ExtResource("1_wks6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
@@ -45,14 +109,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.487831, 0, 0)
 
 [node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39165497, 1.1589148, 1.6350849)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -23.476204, 1.1589148, -2.0226858)
 SPEED = 1.0
 HEAD_BOB_AMPLITUDE = 0.007
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1915962777]
 
 [node name="Collider" type="CollisionShape3D" parent="Floor" unique_id=1223602291]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.694336, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.882019, 0, 0)
 shape = SubResource("BoxShape3D_dhyot")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1301622396]
@@ -67,3 +131,5 @@ shadow_caster_mask = 4294967293
 [node name="Environment" type="WorldEnvironment" parent="." unique_id=1567210214]
 environment = SubResource("Environment_6s3e6")
 script = ExtResource("5_h6gdu")
+
+[editable path="Rooms/LevelIntro"]

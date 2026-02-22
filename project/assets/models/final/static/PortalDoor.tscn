@@ -186,3 +186,7 @@ script = ExtResource("2_hhy8b")
 interactable = NodePath("../Pivot/lid/Interactable3D")
 pivot_point = NodePath("../Pivot")
 metadata/_custom_type_script = "uid://cby7cfgiecmtb"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=576439669]
+transform = Transform3D(26.000002, 0, 0, 0, -1.1364962e-06, 26.000004, 0, -26.000004, -1.1364962e-06, 0.11324024, 0.09126985, -0.4696203)
+shape = SubResource("BoxShape3D_ycg47")

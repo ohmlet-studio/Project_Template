@@ -45,6 +45,8 @@ func _ready() -> void:
 	
 	for child: Pickable in pickable_parent.get_children():
 		child.scan_ended.connect(_on_scan_ended.bind(child))
+		child.on_picked.connect(_on_object_picked)
+		child.on_unpicked.connect(_on_object_unpicked)
 
 func _on_teleport():
 	# level finished
@@ -55,9 +57,14 @@ func _on_teleport():
 		if ready_direct:
 			set_layer_2()
 		
+		if not subtitles_path:
+			subtitles_path = entering_sound.resource_path.replace(".mp3", " ENG.srt")
+			
 		SubtitlesScene.sub_load_from_file(subtitles_path)
 		SubtitlesScene.play_dialog(entering_sound)
-		CrossfadePlayer.play(level_musics[0], 0.0)
+		
+		if level_musics.size() > 0:
+			CrossfadePlayer.play(level_musics[0], 0.0)
 		
 		is_player_never_entered = false
 		
@@ -141,7 +148,16 @@ func _bring_color_back():
 	
 	await $AnimationPlayer.animation_finished
 	set_layer_2()
+
+func _on_object_picked():
 	link_next_room()
+
+func _on_object_unpicked():
+	unlink_next_room()
+
+func unlink_next_room():
+	teleports_to = null
+	_link_portals(self)
 
 func link_next_room():
 	teleports_to = next_room

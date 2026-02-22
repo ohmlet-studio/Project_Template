@@ -3,6 +3,8 @@ extends Node
 class_name Pickable
 
 signal scan_ended
+signal on_picked
+signal on_unpicked
 
 var object_material : Material
 var clone_2d_view: Node3D
@@ -129,8 +131,14 @@ func _set_object_to_scan(value: PackedScene) -> void:
 func _on_interact() -> void:
 	if has_been_scanned and Manager.current_room.all_objects_scanned():
 		picked = not picked
+		if picked:
+			on_picked.emit()
+		else:
+			on_unpicked.emit()
+
 		_origin_obj_transparency(picked)
 		_show_hand_obj(picked)
+
 	if picked:
 		if not Manager.is_one_picked:
 			Manager.is_one_picked = true
@@ -174,6 +182,10 @@ func _on_scan_started() -> void:
 	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 
 	CrossfadePlayer.stop(2.0)
+
+	if not dialog_subtitle:
+		dialog_subtitle = dialog_audio.resource_path.replace(".mp3", " ENG.srt")
+	
 	SubtitlesScene.sub_load_from_file(dialog_subtitle)
 	SubtitlesScene.play_dialog(dialog_audio)
 
