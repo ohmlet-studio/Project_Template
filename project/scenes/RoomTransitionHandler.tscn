@@ -170,7 +170,7 @@ shape = SubResource("BoxShape3D_2e2dh")
 
 [node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 74.91295, 1.1589148, -0.95781016)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -39.666054, 1.1589148, -0.95781016)
 floor_stop_on_slope = false
 SPEED = 1.0
 HEAD_BOB_AMPLITUDE = 0.007
