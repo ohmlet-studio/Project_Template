@@ -298,6 +298,9 @@ transform = Transform3D(-1.3731929e-07, 2.5450623e-08, -3.1949997, 0.5822424, 3.
 material_override = SubResource("StandardMaterial3D_u65tb")
 mesh = SubResource("QuadMesh_3owl0")
 
+[node name="Window C" parent="Room/Interactable/Static/Window C" parent_id_path=PackedInt32Array(1567670714) index="0" unique_id=1939163916]
+surface_material_override/0 = null
+
 [node name="DVD game" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="0" unique_id=235584916 instance=ExtResource("40_ul5uw")]
 transform = Transform3D(0.01351912, -0.8346785, 0.5505714, 0.99985653, 0.0056643244, -0.015963912, 0.010206101, 0.55070835, 0.8346353, -2.1142302, 0.11921954, 0.703228)
 object_name = "DVD"
@@ -305,6 +308,7 @@ object_to_scan = ExtResource("41_phtah")
 inspect_scale = 2.1
 dialog_audio = ExtResource("42_gd4k1")
 dialog_subtitle = "res://assets/audio/PIECE_2/SOUVENIRS/Souvenir_2-1_ENG.srt"
+haiku = "and I’m an open world that no onewants to play in, "
 
 [node name="Hat" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="1" unique_id=1972186688 instance=ExtResource("40_ul5uw")]
 transform = Transform3D(0.42552945, 0.10575777, 0.8987436, 0.9028814, 0.017413577, -0.42953724, -0.06107716, 0.9942396, -0.08807671, -0.6027794, 0.15444309, 4.41091)
@@ -313,6 +317,7 @@ object_to_scan = ExtResource("40_fics4")
 inspect_scale = 2.0
 dialog_audio = ExtResource("49_jrgwe")
 dialog_subtitle = "res://assets/audio/PIECE_2/SOUVENIRS/Souvenir_2-2_ENG.srt"
+haiku = "and sometimes it’s hard to wrap my head around the fact that tightly woven connexions can just break, "
 
 [node name="Dice" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="2" unique_id=1158368153 instance=ExtResource("40_ul5uw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010465384, 1.1920929e-07, 0.77542)
@@ -321,3 +326,4 @@ object_to_scan = ExtResource("45_i4hk8")
 inspect_scale = 4.0
 dialog_audio = ExtResource("51_nhast")
 dialog_subtitle = "res://assets/audio/PIECE_2/SOUVENIRS/Souvenir_2-3_ENG.srt"
+haiku = "and each collective movement is the result of our dice colliding with each other, "
