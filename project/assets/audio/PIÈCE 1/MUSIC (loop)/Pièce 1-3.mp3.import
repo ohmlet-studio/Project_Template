@@ -2,18 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://dukxrlr1i8k0t"
-path="res://.godot/imported/Pièce 1-3.mp3-688e495fbff40549d297ff2c156d42bb.mp3str"
+uid="uid://c1ud35fpy6eio"
+path="res://.godot/imported/Pièce 1-3.mp3-30c931e146bd4dc5073ecd28dc4878b4.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-3.mp3"
-dest_files=["res://.godot/imported/Pièce 1-3.mp3-688e495fbff40549d297ff2c156d42bb.mp3str"]
+source_file="res://assets/audio/PIÈCE 1/MUSIC (loop)/Pièce 1-3.mp3"
+dest_files=["res://.godot/imported/Pièce 1-3.mp3-30c931e146bd4dc5073ecd28dc4878b4.mp3str"]
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

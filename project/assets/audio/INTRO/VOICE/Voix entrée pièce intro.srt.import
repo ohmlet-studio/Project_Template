@@ -2,13 +2,13 @@
 
 importer="rubonnek.subtitle_importer"
 type="Resource"
-uid="uid://darfhn3p3yadv"
-path="res://.godot/imported/Voix entrée pièce intro.srt-8fa2d2e0084d264583b4fe0ac830903a.res"
+uid="uid://bkbvj0yuk6bv1"
+path="res://.godot/imported/Voix entrée pièce intro.srt-8096e365fe905681000f1ee226260022.res"
 
 [deps]
 
-source_file="res://assets/audio/INTRO/VOICE/Voix entrée pièce intro.srt"
-dest_files=["res://.godot/imported/Voix entrée pièce intro.srt-8fa2d2e0084d264583b4fe0ac830903a.res"]
+source_file="res://assets/audio/INTRO/VOICE/Voix entrée pièce intro.srt"
+dest_files=["res://.godot/imported/Voix entrée pièce intro.srt-8096e365fe905681000f1ee226260022.res"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://d1h1miuyx6dab"
-path="res://.godot/imported/Voix entrée pièce 1.mp3-54b98cc547a6fb82d201830c35adb850.mp3str"
+uid="uid://gfj4x1723c5r"
+path="res://.godot/imported/Voix entrée pièce 1.mp3-3f2c7f091a5f1e54d4782469527ff93e.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.mp3"
-dest_files=["res://.godot/imported/Voix entrée pièce 1.mp3-54b98cc547a6fb82d201830c35adb850.mp3str"]
+source_file="res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.mp3"
+dest_files=["res://.godot/imported/Voix entrée pièce 1.mp3-3f2c7f091a5f1e54d4782469527ff93e.mp3str"]
 
 [params]
 

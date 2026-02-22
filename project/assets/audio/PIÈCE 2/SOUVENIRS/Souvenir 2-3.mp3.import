@@ -2,13 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://lif7fnlohoe2"
-path="res://.godot/imported/Souvenir 2-3.mp3-1fea548fc7264a691c148d63d2d2344b.mp3str"
+uid="uid://bxdhxw3wkkrl1"
+path="res://.godot/imported/Souvenir 2-3.mp3-13c8edc8aa55443499ef6bd04071be30.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/PIÈCE 2/SOUVENIRS/Souvenir 2-3.mp3"
-dest_files=["res://.godot/imported/Souvenir 2-3.mp3-1fea548fc7264a691c148d63d2d2344b.mp3str"]
+source_file="res://assets/audio/PIÈCE 2/SOUVENIRS/Souvenir 2-3.mp3"
+dest_files=["res://.godot/imported/Souvenir 2-3.mp3-13c8edc8aa55443499ef6bd04071be30.mp3str"]
 
 [params]
 
