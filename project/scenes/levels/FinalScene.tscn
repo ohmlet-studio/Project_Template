@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://dima7ycw5mpo3"]
 
 [ext_resource type="Script" uid="uid://ghrtttggnl0t" path="res://scripts/final_scene.gd" id="1_rq84w"]
-[ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="2_7t0yn"]
 [ext_resource type="PackedScene" uid="uid://wj2f3dnal8wr" path="res://assets/models/memory_objects/carnet.fbx" id="3_s7xj3"]
-[ext_resource type="AudioStream" uid="uid://b1h3fg1ve503h" path="res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-1.mp3" id="4_uqpra"]
 [ext_resource type="Texture2D" uid="uid://73sk3xesg448" path="res://assets/textures/misc/volumetric_fog_quad_mesh_texture.webp" id="5_8omca"]
 [ext_resource type="Texture2D" uid="uid://qec580l8t1r8" path="res://assets/models/final/room.fbm/parket.jpg" id="5_50der"]
 [ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="5_ja34e"]
 [ext_resource type="PackedScene" uid="uid://dlsymbkqwsx2t" path="res://assets/models/memory_objects/trumpet.fbx" id="7_kefhw"]
 [ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="9_50der"]
-[ext_resource type="AudioStream" uid="uid://bak80uergkxsf" path="res://assets/audio/OUTRO/MUSIC/Affichage objets et haïku (loop).mp3" id="10_kefhw"]
 [ext_resource type="Script" uid="uid://dy5lobbq15mcu" path="res://scripts/label_anim.gd" id="10_ydepa"]
+[ext_resource type="AudioStream" uid="uid://bak80uergkxsf" path="res://assets/audio/OUTRO/MUSIC/Affichage_objets_et_haiku_loop.mp3" id="11_ayjh5"]
 [ext_resource type="AudioStream" uid="uid://1uu0xo4oamru" path="res://assets/audio/AUTRES/FX/Clic.mp3" id="12_ytkeu"]
 [ext_resource type="PackedScene" uid="uid://bciil8v6ykx2e" path="res://scenes/global/subtitles.tscn" id="13_wutmx"]
 [ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="14_ayjh5"]
@@ -625,7 +623,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rq84w")
-pickable_slot3 = NodePath("Carnet")
+pickable_slot3 = NodePath("")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=809016304]
 layout_mode = 1
@@ -720,23 +718,12 @@ mesh = SubResource("CylinderMesh_8omca")
 [node name="Desk" parent="SubViewportContainer/SubViewport" unique_id=1485273648 instance=ExtResource("9_50der")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.80889916, -1.1661608, -1.9940147)
 
-[node name="Desk_001" parent="SubViewportContainer/SubViewport/Desk" index="1" unique_id=219638349]
+[node name="Desk_001" parent="SubViewportContainer/SubViewport/Desk" index="1" unique_id=1468955348]
 transform = Transform3D(100.00002, 7.1525574e-07, 8.526513e-14, 0, -1.1920929e-05, 99.99999, 7.1525574e-07, -100.000015, -1.1920932e-05, 0, 0, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1894664908]
 transform = Transform3D(64.68, 0, 0, 0, 9.311899, 0, 0, 0, 57.455997, 1, -2, -1)
 mesh = SubResource("PlaneMesh_uqpra")
-
-[node name="Carnet" parent="." unique_id=1972186688 instance=ExtResource("2_7t0yn")]
-transform = Transform3D(-0.77086914, 0, 0.6369936, 0, 1, 0, -0.6369936, 0, -0.77086914, -0.14382267, 0.7739902, 3.0511632)
-visible = false
-object_name = "carnet"
-object_to_scan = ExtResource("3_s7xj3")
-scale_2d_view = 1.8
-inspect_scale = 2.5
-default_inspect_rotation = Vector3(90, 0, 0)
-dialog_audio = ExtResource("4_uqpra")
-dialog_subtitle = "res://assets/audio/PIÈCE 1/SOUVENIRS/Souvenir 1-1 ENG.srt"
 
 [node name="Haiku" type="Label" parent="." unique_id=1569982730]
 layout_mode = 1
@@ -756,7 +743,7 @@ clip_text = true
 script = ExtResource("10_ydepa")
 
 [node name="AudioBack" type="AudioStreamPlayer" parent="." unique_id=1607937711]
-stream = ExtResource("10_kefhw")
+stream = ExtResource("11_ayjh5")
 autoplay = true
 bus = &"Music"
 parameters/looping = true

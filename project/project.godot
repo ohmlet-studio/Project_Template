@@ -34,7 +34,6 @@ CrossfadePlayer="*uid://ly46awrd01is"
 
 [display]
 
-window/size/mode=2
 window/stretch/mode="viewport"
 
 [editor]

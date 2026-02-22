@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_eattb"]
 [ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="2_5dao2"]
-[ext_resource type="AudioStream" uid="uid://ocqbh024p6i" path="res://assets/audio/INTRO/VOICE/Voix entrée pièce intro.mp3" id="2_pj4h7"]
+[ext_resource type="AudioStream" path="res://assets/audio/INTRO/VOICE/Voix entrée pièce intro.mp3" id="2_pj4h7"]
 [ext_resource type="PackedScene" uid="uid://bqyddhi6x2moy" path="res://assets/models/memory_objects/backpack.fbx" id="3_5n37q"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="9_86lm8"]
 [ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="13_yvmva"]
 [ext_resource type="Texture2D" uid="uid://bsdt8edpn0xgo" path="res://assets/models/final/posters/Pink_Floyd_The_Wall.jpg" id="14_ucmf1"]
 [ext_resource type="Texture2D" uid="uid://fb6h3jbticc" path="res://assets/models/final/posters/mcr.png" id="15_qxd4m"]
 [ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="16_8b2hh"]
-[ext_resource type="AudioStream" uid="uid://dpg0mjtgx0gog" path="res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac.mp3" id="16_pj4h7"]
-[ext_resource type="AudioStream" uid="uid://dvgk6ekh5u4r1" path="res://assets/audio/INTRO/MUSIC/N&B (loop).mp3" id="17_oinjl"]
+[ext_resource type="AudioStream" uid="uid://dpg0mjtgx0gog" path="res://assets/audio/INTRO/VOICE/Voix_NB_bis_sans_sac.mp3" id="16_pj4h7"]
+[ext_resource type="AudioStream" uid="uid://dvgk6ekh5u4r1" path="res://assets/audio/INTRO/MUSIC/NB_loop.mp3" id="17_oinjl"]
 [ext_resource type="Script" uid="uid://bi5s6edrypi63" path="res://scenes/levels/backpack_logic_intro.gd" id="17_q1s6e"]
 [ext_resource type="PackedScene" uid="uid://d3k2vidgd2m2k" path="res://assets/models/final/smolthings/carton1.fbx" id="19_7reoc"]
-[ext_resource type="AudioStream" uid="uid://ldxg27p1posq" path="res://assets/audio/INTRO/VOICE/Voix sac.mp3" id="20_k6t52"]
+[ext_resource type="AudioStream" uid="uid://ldxg27p1posq" path="res://assets/audio/INTRO/VOICE/Voix_sac.mp3" id="20_k6t52"]
 [ext_resource type="PackedScene" uid="uid://dxenntoejob6r" path="res://assets/models/final/commode/commode3.fbx" id="20_w8mug"]
 [ext_resource type="PackedScene" uid="uid://clqxls1t5rgxi" path="res://assets/models/final/commode/commode4.fbx" id="21_80bfr"]
 [ext_resource type="PackedScene" uid="uid://c5kq47url5vdc" path="res://assets/models/final/smolthings/carton2.fbx" id="22_tlt7u"]
@@ -94,7 +94,7 @@ object_to_scan = ExtResource("3_5n37q")
 inspect_scale = 2.0
 default_inspect_rotation = Vector3(0, 180, 0)
 dialog_audio = ExtResource("20_k6t52")
-dialog_subtitle = "res://assets/audio/INTRO/VOICE/Voix sac ENG.srt"
+dialog_subtitle = "res://assets/audio/INTRO/VOICE/Voix_sac_ENG.srt"
 
 [node name="Node" type="Node" parent="Room/Interactable/Grabbable/Backpack" index="3" unique_id=1287432901]
 script = ExtResource("17_q1s6e")
