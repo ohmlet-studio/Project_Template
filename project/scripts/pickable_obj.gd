@@ -2,14 +2,18 @@
 extends Node
 class_name Pickable
 
+signal scan_started
 signal scan_ended
+signal on_picked
+signal on_unpicked
 
 var object_material : Material
 var clone_2d_view: Node3D
 var clone_inspect_view: Node3D
 var scanned_object_instance: Node3D # never scale this, scale in blender and apply transform
 var picked: bool = false
-var scanned: bool 
+var is_being_scanned: bool = false 
+var scanned: bool
 
 @onready var handObjView = $inHandUI
 @onready var subviewport: SubViewport = $inHandUI/SubViewport
@@ -49,6 +53,8 @@ var scanned: bool
 
 @export var color_radius: float = 1.0
 
+@export_category("Dialog when inspected")
+
 @export var dialog_audio: AudioStream:
 	set(value):
 		dialog_audio = value
@@ -65,9 +71,6 @@ var _interact_tween: Tween
 func _ready() -> void:
 	_set_object_name(object_name)
 	_set_object_to_scan(object_to_scan)
-	clone_inspect_view.scale = Vector3.ONE * inspect_scale
-	clone_2d_view.scale = Vector3.ONE * scale_2d_view
-	clone_inspect_view.rotation = default_inspect_rotation
 	_base_radius = color_radius
 
 	if Engine.is_editor_hint():
@@ -76,6 +79,8 @@ func _ready() -> void:
 	interactable_3d.interacted.connect(_on_interact)
 	ScanInteractableLayer.scan_ended.connect(_on_scan_ended)
 	interactable_3d.scanned.connect(_on_scan_started)
+	if SubtitlesScene and not SubtitlesScene.dialog_finished.is_connected(_on_dialog_finished):
+		SubtitlesScene.dialog_finished.connect(_on_dialog_finished)
 	picked = false
 
 func _set_object_name(value: String) -> void:
@@ -104,33 +109,41 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	if not value:
 		return
 
+	print("ICI: ", scanned_object_instance)
+
 	scanned_object_instance = value.instantiate()
 	self.add_child(scanned_object_instance)
 
 	var origMesh = scanned_object_instance.get_child(0)
-	print(origMesh)
 	object_material = origMesh.get_active_material(0).duplicate()
-	origMesh.set_layer_mask_value(2, true)
+	origMesh.set_layer_mask_value(1, true)
 
-	clone_2d_view = scanned_object_instance.duplicate()
-	subviewport.add_child(clone_2d_view)
-	clone_2d_view.scale = Vector3.ONE * scale_2d_view
+	if not Engine.is_editor_hint():
+		clone_2d_view = scanned_object_instance.duplicate()
+		subviewport.add_child(clone_2d_view)
+		clone_2d_view.scale = Vector3.ONE * scale_2d_view
 
-	clone_inspect_view = scanned_object_instance.duplicate()
-	self.add_child(clone_inspect_view)
-	clone_inspect_view.scale = Vector3.ONE * inspect_scale
-	clone_inspect_view.position = Vector3.DOWN * 100
-	clone_inspect_view.set_meta("scan_owner", self)
-	interactable_3d.target_scannable_object = clone_inspect_view
+		clone_inspect_view = scanned_object_instance.duplicate()
+		self.add_child(clone_inspect_view)
+		clone_inspect_view.scale = Vector3.ONE * inspect_scale
+		clone_inspect_view.position = Vector3.DOWN * 100
+		clone_inspect_view.rotation = default_inspect_rotation
+		clone_inspect_view.set_meta("scan_owner", self)
+		interactable_3d.target_scannable_object = clone_inspect_view
 
 func _on_interact() -> void:
-	if has_been_scanned and Manager.current_room.all_room_object_scanned():
+	if has_been_scanned and Manager.current_room.all_objects_scanned():
 		picked = not picked
+		if picked:
+			on_picked.emit()
+		else:
+			on_unpicked.emit()
+
 		_origin_obj_transparency(picked)
 		_show_hand_obj(picked)
+
 	if picked:
-		if not Manager.is_one_picked:
-			Manager.is_one_picked = true
+		Manager.is_one_picked = true
 		Manager.pick_obj_name = object_name
 
 func _origin_obj_transparency(pick: bool) -> void:
@@ -158,6 +171,7 @@ func _show_hand_obj(pick: bool) -> void:
 func _on_scan_started() -> void:
 	scanned = true
 	has_been_scanned = true
+	is_being_scanned = true
 	
 	if scan_tween:
 		scan_tween.kill()
@@ -170,11 +184,19 @@ func _on_scan_started() -> void:
 			color_radius, _base_radius * 20.0, 2.0
 	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 
+	CrossfadePlayer.stop(2.0)
+
+	if not dialog_subtitle:
+		dialog_subtitle = dialog_audio.resource_path.replace(".mp3", " ENG.srt")
+	
 	SubtitlesScene.sub_load_from_file(dialog_subtitle)
 	SubtitlesScene.play_dialog(dialog_audio)
+	
+	scan_started.emit()
 
 func _on_scan_ended(scanned_object: Node3D) -> void:
 	if scanned_object and scanned_object.get_meta("scan_owner", null) == self:
+		is_being_scanned = false
 		if scan_tween:
 			scan_tween.kill()
 		scan_tween = create_tween()
@@ -183,7 +205,13 @@ func _on_scan_ended(scanned_object: Node3D) -> void:
 			_base_radius * 20.0, 0.0, 1.0
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	
-	scan_ended.emit()
+		scan_ended.emit()
+
+
+func _on_dialog_finished() -> void:
+	if not is_being_scanned:
+		return
+	ScanInteractableLayer.scan_interactable.end_scan()
 	
 
 func _process(delta: float) -> void:
@@ -197,7 +225,10 @@ func _process(delta: float) -> void:
 		var proximity_factor = clamp(dist / 1.5, 0.0, 1.0) if not has_been_scanned else 1.0
 		var breath = sin(_breath_time * 2.0) * 0.1 + 0.9
 
-		color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
+		if dist > 10:
+			color_sphere.scale = Vector3.ZERO
+		else:
+			color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
 		
 	## Check if another object is picked and if it is self
 	if Manager.is_one_picked and not Manager.pick_obj_name.is_empty():

@@ -1,0 +1,36 @@
+﻿1
+00:00:03,822 --> 00:00:06,648
+Waouh, c'est la boîte de Ultimate Fighting Warrior !
+
+2
+00:00:07,057 --> 00:00:09,680
+J'ai codé tout le jeu en solo pendant une game jam.
+
+3
+00:00:10,302 --> 00:00:10,746
+Ouais...
+
+4
+00:00:11,182 --> 00:00:12,924
+J'ai trouvé personne pour travailler avec moi.
+
+5
+00:00:13,555 --> 00:00:14,764
+Mais je me suis trop amusé,
+
+6
+00:00:14,760 --> 00:00:16,008
+j'ai créé tout un univers autour
+
+7
+00:00:16,010 --> 00:00:17,742
+et j'ai même customisé une boîte de jeu.
+
+8
+00:00:18,610 --> 00:00:20,871
+Bon, malheureusement, je crois que personne n'y a jamais joué 
+
+9
+00:00:20,870 --> 00:00:22,000
+à part mon crush de l'époque.
+

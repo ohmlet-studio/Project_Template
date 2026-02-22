@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://dn47wwo2uw6vb"
+path="res://.godot/imported/Validation.srt-fee3a41ddb5769887ec1f34d74172d62.res"
+
+[deps]
+
+source_file="res://assets/audio/AUTRES/Validation.srt"
+dest_files=["res://.godot/imported/Validation.srt-fee3a41ddb5769887ec1f34d74172d62.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

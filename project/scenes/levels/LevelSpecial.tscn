@@ -1,5 +1,63 @@
 [gd_scene format=3 uid="uid://c1slrw45k6y3h"]
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_lj5w1"]
+[ext_resource type="AudioStream" uid="uid://dqmg5nwjuuoca" path="res://assets/audio/PIÈCE 3/VOICE/Voix entrée pièce 3.mp3" id="2_jiy5a"]
+[ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="2_ujb11"]
+[ext_resource type="AudioStream" uid="uid://cqwrr7ddfpcoj" path="res://assets/audio/PIÈCE 3/MUSIC (loop)/Pièce 3.mp3" id="3_mvxjg"]
+[ext_resource type="PackedScene" uid="uid://djlnjve157q5n" path="res://assets/models/final/commode/commode.fbx" id="3_nl07q"]
+[ext_resource type="PackedScene" uid="uid://btclnnmx0t1e0" path="res://assets/models/final/bed/enfant_lit.fbx" id="4_jiy5a"]
+[ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="5_mvxjg"]
+[ext_resource type="PackedScene" uid="uid://dkwjm7vdtjqpp" path="res://assets/models/final/commode/commode2.fbx" id="6_2qvgq"]
+[ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="7_tkv8u"]
+[ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="8_slopm"]
+[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="9_o3aqa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1tyqt"]
+render_priority = 0
+shader = ExtResource("2_ujb11")
+shader_parameter/affine_mapping = false
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/jitter = 0.800000038
+shader_parameter/resolution = Vector2i(160, 120)
 
 [node name="LevelSpecial" unique_id=1125609813 instance=ExtResource("1_lj5w1")]
+entering_sound = ExtResource("2_jiy5a")
+subtitles_path = "res://assets/audio/PIÈCE 3/VOICE/Voix entrée pièce 3 ENG.srt"
+level_musics = Array[AudioStream]([ExtResource("3_mvxjg")])
+
+[node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
+apply_shaders = true
+material = SubResource("ShaderMaterial_1tyqt")
+
+[node name="commode" parent="Room/Furniture" index="0" unique_id=745347276 instance=ExtResource("3_nl07q")]
+transform = Transform3D(-0.28851372, 0.2195676, -0.93195987, 1.002386e-08, 0.9733509, 0.22931921, 0.9574753, 0.06616177, -0.28082523, 10.369864, 2.3586304, 6.173694)
+
+[node name="enfant_lit" parent="Room/Furniture" index="1" unique_id=1156863885 instance=ExtResource("4_jiy5a")]
+transform = Transform3D(-2.2610836, 1.3073567, -2.0657234, 1.6502562, 2.8922255, 0.024109147, 1.8036209, -1.0073457, -2.6117234, -3.8281255, 2.6079056, 13.026557)
+
+[node name="Chair D" parent="Room/Furniture" index="2" unique_id=2112596216 instance=ExtResource("5_mvxjg")]
+transform = Transform3D(1.5984344, 0.97648096, -0.7010648, -1.108767, 1.6482413, -0.2322397, 0.4643732, 0.5742688, 1.858648, -4.416337, 0.44142452, -4.393711)
+
+[node name="commode2" parent="Room/Furniture" index="3" unique_id=1603479504 instance=ExtResource("6_2qvgq")]
+transform = Transform3D(0.7822323, 0, 0.98139507, 0.5442364, 1.0443445, -0.43379006, -0.8166656, 0.69596475, 0.65093285, -5.968667, 4.88366, 1.0998156)
+
+[node name="Radiator B" parent="Room/Furniture" index="4" unique_id=991242463 instance=ExtResource("7_tkv8u")]
+transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -5.1444683, 2.249854, -11.244384)
+
+[node name="Chair A" parent="Room/Furniture" index="5" unique_id=48454487 instance=ExtResource("8_slopm")]
+transform = Transform3D(0.4031684, 0.5641745, 0.7205284, 0.4201768, 0.58533233, -0.6934235, -0.81296086, 0.5823163, -0.0010654577, -2.031929, 5.6397357, -4.2542872)
+
+[node name="Chair A2" parent="Room/Furniture" index="6" unique_id=870987908 instance=ExtResource("8_slopm")]
+transform = Transform3D(0.114934124, 0.15866317, -0.9806193, 0.47624326, 0.8575171, 0.19456379, 0.8717689, -0.4893756, 0.022995764, 6.734458, 5.0880437, 2.560053)
+
+[node name="Chair A3" parent="Room/Furniture" index="7" unique_id=385537090 instance=ExtResource("8_slopm")]
+transform = Transform3D(0.11221367, -0.70445365, 0.70082164, -0.6033399, 0.5120878, 0.6113468, -0.78954905, -0.4914359, -0.36756206, -3.2533312, 5.658159, 5.6326275)
+
+[node name="Chair A5" parent="Room/Furniture" index="8" unique_id=205410164 instance=ExtResource("8_slopm")]
+transform = Transform3D(-0.2739685, -0.9142868, 0.2983599, -0.95986855, 0.24061243, -0.14406921, 0.059931174, -0.32585728, -0.9435157, 5.4207067, 0.8624872, 5.6326275)
+
+[node name="Chair A4" parent="Room/Furniture" index="9" unique_id=141050811 instance=ExtResource("8_slopm")]
+transform = Transform3D(0.8859007, -0.2041556, -0.41653156, -0.43927965, -0.65772074, -0.61191094, -0.1490366, 0.7250667, -0.67235696, -1.3376541, 1.692239, 9.798371)
+
+[node name="Desk" parent="Room/Furniture" index="10" unique_id=16451197 instance=ExtResource("9_o3aqa")]
+transform = Transform3D(0.6110404, -0.39011687, -0.33828694, 0.34130293, 0.6984327, -0.18895373, 0.387481, 0, 0.6998986, 9.628497, 2.0057454, -0.40777197)

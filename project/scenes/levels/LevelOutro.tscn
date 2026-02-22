@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://q2dg4rnvsjat"]
+
+[ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_f8lvr"]
+[ext_resource type="AudioStream" uid="uid://d1qxw47wq6o22" path="res://assets/audio/OUTRO/VOICE/Voix entrée pièce outro.mp3" id="2_f8lvr"]
+[ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="3_eodmt"]
+[ext_resource type="AudioStream" uid="uid://cd73gp7o030r7" path="res://assets/audio/OUTRO/MUSIC/Bruit de fond fin (loop).mp3" id="3_s3dok"]
+[ext_resource type="Texture2D" uid="uid://bsdt8edpn0xgo" path="res://assets/models/final/posters/Pink_Floyd_The_Wall.jpg" id="4_ih7ir"]
+[ext_resource type="Texture2D" uid="uid://fb6h3jbticc" path="res://assets/models/final/posters/mcr.png" id="5_xnixj"]
+[ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="6_bxji0"]
+[ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="7_jltcm"]
+[ext_resource type="PackedScene" uid="uid://d3k2vidgd2m2k" path="res://assets/models/final/smolthings/carton1.fbx" id="8_k6yro"]
+[ext_resource type="PackedScene" uid="uid://dxenntoejob6r" path="res://assets/models/final/commode/commode3.fbx" id="9_37oct"]
+[ext_resource type="PackedScene" uid="uid://clqxls1t5rgxi" path="res://assets/models/final/commode/commode4.fbx" id="10_c3qal"]
+[ext_resource type="PackedScene" uid="uid://c5kq47url5vdc" path="res://assets/models/final/smolthings/carton2.fbx" id="11_xrbog"]
+[ext_resource type="PackedScene" uid="uid://ctjlx7kjvfh2w" path="res://assets/models/final/smolthings/carton3.fbx" id="12_y0hua"]
+[ext_resource type="PackedScene" uid="uid://drwkw7dxe6tcg" path="res://assets/models/final/bed/adulte_lit.fbx" id="13_hxyh0"]
+[ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="14_23o7r"]
+[ext_resource type="PackedScene" uid="uid://bqyddhi6x2moy" path="res://assets/models/memory_objects/backpack.fbx" id="15_fc8bl"]
+[ext_resource type="AudioStream" uid="uid://ldxg27p1posq" path="res://assets/audio/INTRO/VOICE/Voix sac.mp3" id="16_mtr0a"]
+[ext_resource type="Script" uid="uid://mcro2rybv31f" path="res://scenes/pickable_object/levelAdulte/pickable_backpack.gd" id="17_cxd3y"]
+[ext_resource type="AudioStream" uid="uid://dpg0mjtgx0gog" path="res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac.mp3" id="18_vakk1"]
+[ext_resource type="AudioStream" uid="uid://dvgk6ekh5u4r1" path="res://assets/audio/INTRO/MUSIC/N&B (loop).mp3" id="19_oej27"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l035v"]
+albedo_texture = ExtResource("4_ih7ir")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ul5uw"]
+albedo_texture = ExtResource("5_xnixj")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jfxol"]
+material = SubResource("StandardMaterial3D_ul5uw")
+size = Vector2(0.795, 1)
+center_offset = Vector3(0, -0.01, 0)
+
+[node name="LevelOutro" unique_id=1125609813 instance=ExtResource("1_f8lvr")]
+entering_sound = ExtResource("2_f8lvr")
+subtitles_path = "res://assets/audio/OUTRO/VOICE/Voix entrée pièce outro.srt"
+level_musics = Array[AudioStream]([ExtResource("3_s3dok")])
+no_anim_color = true
+
+[node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
+script = null
+
+[node name="Chair A" parent="Room/Furniture" index="0" unique_id=1447814586 instance=ExtResource("3_eodmt")]
+transform = Transform3D(0.7717243, 0, 0.6359568, 0, 0.99999976, 0, -0.6359568, 0, 0.7717243, -5.529076, 1.9513532, -8.165542)
+
+[node name="thewall" type="MeshInstance3D" parent="Room/Furniture" index="1" unique_id=483732180]
+transform = Transform3D(3.641836, 0.707901, 0, -0.707901, 3.641836, 0, 0, 0, 3.709999, -9.535963, 8.029026, -5.06075)
+material_override = SubResource("StandardMaterial3D_l035v")
+mesh = SubResource("QuadMesh_jfxol")
+
+[node name="Lamp B" parent="Room/Furniture" index="2" unique_id=1726968374 instance=ExtResource("6_bxji0")]
+transform = Transform3D(0.93571496, 0, -0.35275626, 0, 0.99999976, 0, 0.35275626, 0, 0.93571496, 9.747842, 4.9454675, -1.1137842)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Furniture/Lamp B" index="1" unique_id=433037440]
+transform = Transform3D(3.3333337, 0, 0, 0, 3.3333337, 0, 0, 0, 3.3333337, -0.10495806, 3.0873594, 0.23753071)
+light_color = Color(0.8910537, 0.6656812, 0.43832183, 1)
+light_energy = 0.2
+light_cull_mask = 4294967293
+shadow_enabled = true
+
+[node name="Radiator B" parent="Room/Furniture" index="3" unique_id=1144257814 instance=ExtResource("7_jltcm")]
+transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -4.996886, 2.249854, -11.069493)
+
+[node name="carton1" parent="Room/Furniture" index="4" unique_id=286019381 instance=ExtResource("8_k6yro")]
+transform = Transform3D(2.4969428, 0, -2.2082536, 0, 3.3333325, 0, 2.2082536, 0, 2.4969428, 10.029813, 0.6673268, -0.3103975)
+
+[node name="commode3" parent="Room/Furniture" index="5" unique_id=343250214 instance=ExtResource("9_37oct")]
+transform = Transform3D(-0.048151035, 0, 1.2120441, 0, 1.213, 0, -1.2120441, 0, -0.048151035, -5.1151156, 2.1328943, 11.250354)
+
+[node name="carton2" parent="Room/Furniture/commode3" index="8" unique_id=382380046 instance=ExtResource("8_k6yro")]
+transform = Transform3D(-0.851384, 0, 4.0331273, 0, 4.12201, 0, -4.0331273, 0, -0.851384, -0.5932746, 2.0707626, -0.5613973)
+
+[node name="commode4" parent="Room/Furniture" index="6" unique_id=1817300773 instance=ExtResource("10_c3qal")]
+transform = Transform3D(-0.79999983, 0, 0, 0, 0.79999983, 0, 0, 0, -0.79999983, -9.112889, 4.2216477, 3.4262443)
+
+[node name="carton2" parent="Room/Furniture/commode4" index="3" unique_id=499506477 instance=ExtResource("11_xrbog")]
+transform = Transform3D(-1.4770075e-07, 0, 3.378999, 0, 3.378999, 0, -3.378999, 0, -1.4770075e-07, 1.861423, 6.250925, -0.5684166)
+
+[node name="carton3" parent="Room/Furniture/commode4" index="4" unique_id=2123540825 instance=ExtResource("12_y0hua")]
+transform = Transform3D(0.3668385, 0, 1.0855242, 0, 1.1458335, 0, -1.0855242, 0, 0.3668385, 0.13094568, 6.005083, -0.7727413)
+
+[node name="adulte_lit" parent="Room/Furniture" index="7" unique_id=1005375489 instance=ExtResource("13_hxyh0")]
+transform = Transform3D(-3.3333325, 0, -2.9140924e-07, 0, 3.3333325, 0, 2.9140924e-07, 0, -3.3333325, 0.7220904, 1.8656405, 12.523289)
+
+[node name="Window C" parent="Room/Interactable/Static/Window C" parent_id_path=PackedInt32Array(1567670714) index="0" unique_id=1939163916]
+surface_material_override/0 = null
+
+[node name="Room" parent="Room/Interactable/Static/room" parent_id_path=PackedInt32Array(879325613) index="0" unique_id=958283466]
+transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0.011911869, -0.0077438354, -0.00087046623)
+
+[node name="Backpack" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="0" unique_id=1972186688 instance=ExtResource("14_23o7r")]
+transform = Transform3D(1, 0, 0, 0, 0.9827971, -0.18468902, 0, 0.18468902, 0.9827971, -0.06369221, 0.33905542, 1.5152414)
+object_name = "Backpack"
+object_to_scan = ExtResource("15_fc8bl")
+inspect_scale = 2.0
+default_inspect_rotation = Vector3(0, 180, 0)
+dialog_audio = ExtResource("16_mtr0a")
+dialog_subtitle = "res://assets/audio/INTRO/VOICE/Voix sac ENG.srt"
+
+[node name="Node" type="Node" parent="Room/Interactable/Grabbable/Backpack" index="3" unique_id=441035484]
+script = ExtResource("17_cxd3y")
+sound_after = ExtResource("18_vakk1")
+music_after = ExtResource("19_oej27")
+subs_path = "res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac ENG.srt"

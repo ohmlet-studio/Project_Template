@@ -1,0 +1,36 @@
+﻿1
+00:00:00,968 --> 00:00:02,462
+Oh ! C'est Godot ?!
+
+2
+00:00:02,951 --> 00:00:04,364
+Elle me manque trop...
+
+3
+00:00:04,675 --> 00:00:07,217
+Je lui ai fait vivre toutes les aventures possibles et imaginables !
+
+4
+00:00:07,511 --> 00:00:09,573
+J'inventais des histoires incroyables.
+
+5
+00:00:10,160 --> 00:00:10,915
+Enfin...
+
+6
+00:00:11,235 --> 00:00:12,506
+Incroyables pour moi.
+
+7
+00:00:13,180 --> 00:00:14,773
+Quand je les partageait avec les autres,
+
+8
+00:00:14,770 --> 00:00:16,000
+parfois on se moquait de moi,
+
+9
+00:00:16,302 --> 00:00:18,355
+mais le plus souvent les gens avaient surtout peur.
+

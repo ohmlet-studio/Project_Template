@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvjt1t1grnmmu"
+path="res://.godot/imported/Souvenir 4-1.mp3-781407d85f2b5c8e32046112bc58ec0e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-1.mp3"
+dest_files=["res://.godot/imported/Souvenir 4-1.mp3-781407d85f2b5c8e32046112bc58ec0e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

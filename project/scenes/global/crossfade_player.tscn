@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ly46awrd01is"]
+
+[ext_resource type="Script" uid="uid://dx5y3e3lpfyrd" path="res://scenes/global/crossfade_player.gd" id="1_mf0ol"]
+
+[node name="CrossfadePlayer" type="Node" unique_id=1811178945]
+script = ExtResource("1_mf0ol")
+
+[node name="Player1" type="AudioStreamPlayer" parent="." unique_id=1834057020]
+bus = &"Music"
+
+[node name="Player2" type="AudioStreamPlayer" parent="." unique_id=1111609606]
+bus = &"Music"

@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://c8m3tqrf3w3he"
+path="res://.godot/imported/Aide ENG.srt-9e1e8d48c7d7908ede01a9f8ec1ebd61.res"
+
+[deps]
+
+source_file="res://assets/audio/AUTRES/Aide ENG.srt"
+dest_files=["res://.godot/imported/Aide ENG.srt-9e1e8d48c7d7908ede01a9f8ec1ebd61.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

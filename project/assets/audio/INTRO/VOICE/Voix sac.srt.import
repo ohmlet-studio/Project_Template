@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://d3t7dss07fyob"
+path="res://.godot/imported/Voix sac.srt-da4b3d159e89a88e7234e080f4532ddc.res"
+
+[deps]
+
+source_file="res://assets/audio/INTRO/VOICE/Voix sac.srt"
+dest_files=["res://.godot/imported/Voix sac.srt-da4b3d159e89a88e7234e080f4532ddc.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

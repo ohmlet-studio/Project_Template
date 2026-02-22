@@ -14,16 +14,13 @@ func _ready():
 	GlobalInteractionEvents.interactable_focused.connect(_on_interactable_focused)
 	GlobalInteractionEvents.interactable_unfocused.connect(_on_interactable_unfocused)
 	GlobalInteractionEvents.interactable_interacted.connect(_on_interactable_interacted)
+	ScanInteractableLayer.scan_ended.connect(_on_scan_ended)
 	
 	Manager.globPlayer.action_back.connect(_on_game_paused)
 	%SettingsMenu.closed.connect(_on_pause_menu_closed)
 
 func _input(event):
 	if viewport and is_inside_tree():
-		if is_scanning and event.is_action_pressed("interact"):
-			_unscan()
-			get_viewport().set_input_as_handled()
-			return
 		viewport.push_input(event)
 
 
@@ -49,8 +46,8 @@ func _on_interactable_focused(interactable: Interactable3D) -> void:
 
 		if "has_been_scanned" in interactable.get_parent():
 			if not interactable.get_parent().has_been_scanned:
-				interactable_information.text = "[font_size=35][i][E] to scan %s[/i][/font_size]" % interactable.title
-			elif interactable.get_parent().has_been_scanned and Manager.current_room.all_room_object_scanned():
+				interactable_information.text = "[font_size=35][i][E] to interact with %s[/i][/font_size]" % interactable.title
+			elif interactable.get_parent().has_been_scanned and Manager.current_room.all_objects_scanned():
 				interactable_information.text = "[font_size=35][i][E] to pick %s[/i][/font_size]" % interactable.title
 
 func _on_interactable_unfocused(_interactable: Interactable3D) -> void:
@@ -71,7 +68,15 @@ func _on_interactable_interacted(interactable: Interactable3D) -> void:
 	interactable_information.text = ""
 
 func _unscan() -> void:
+	ScanInteractableLayer.scan_interactable.end_scan()
+	_finish_scan_state()
+
+
+func _on_scan_ended(_target: Node3D) -> void:
+	_finish_scan_state()
+
+
+func _finish_scan_state() -> void:
 	is_scanning = false
 	current_scanned_interactable = null
-	ScanInteractableLayer.scan_interactable.end_scan()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

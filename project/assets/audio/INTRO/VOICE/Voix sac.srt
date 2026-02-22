@@ -1,8 +1,12 @@
-1
-00:00:00,001 --> 00:00:03,500
-Mon bon vieux sac de la fac, il en a vécu des choses hein ?
+﻿1
+00:00:00,066 --> 00:00:01,666
+Mon bon vieux sac de la fac...
 
 2
-00:00:03,500 --> 00:00:06,000
+00:00:02,060 --> 00:00:03,346
+il en a vécu des choses hein ?
+
+3
+00:00:04,153 --> 00:00:05,813
 Eh ben il va encore en vivre un paquet.
 

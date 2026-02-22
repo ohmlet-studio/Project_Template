@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd73gp7o030r7"
+path="res://.godot/imported/Bruit de fond fin (loop).mp3-78b52659e832fc4260acfd72fe4263f4.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/OUTRO/MUSIC/Bruit de fond fin (loop).mp3"
+dest_files=["res://.godot/imported/Bruit de fond fin (loop).mp3-78b52659e832fc4260acfd72fe4263f4.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

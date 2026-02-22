@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://cg0xqc1rdhmcr"
+path="res://.godot/imported/Voix entrée pièce 1.srt-f001e5963ab99a85b4ae3d136a37d2e8.res"
+
+[deps]
+
+source_file="res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.srt"
+dest_files=["res://.godot/imported/Voix entrée pièce 1.srt-f001e5963ab99a85b4ae3d136a37d2e8.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

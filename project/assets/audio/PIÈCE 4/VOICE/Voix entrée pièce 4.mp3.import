@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8o53e4dsvyum"
+path="res://.godot/imported/Voix entrée pièce 4.mp3-16ad85d8181cada886ab4e768440e69b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/PIÈCE 4/VOICE/Voix entrée pièce 4.mp3"
+dest_files=["res://.godot/imported/Voix entrée pièce 4.mp3-16ad85d8181cada886ab4e768440e69b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

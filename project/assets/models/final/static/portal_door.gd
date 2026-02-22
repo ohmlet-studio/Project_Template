@@ -4,6 +4,10 @@ class_name PortalDoor
 signal opened
 signal closed
 
+var is_opened = false
+
+signal teleported_player
+
 @onready var portal = $Portal
 @onready var door = $Door3D
 @onready var door_lid = $Pivot/lid
@@ -15,19 +19,31 @@ signal closed
 		other_door = value
 		if is_node_ready():
 			_connect_portals.call_deferred(value)
+			_apply_other_state.call_deferred(is_opened)
 
 func _ready() -> void:
-	door.opened.connect(func(): opened.emit())
-	door.closed.connect(func(): closed.emit())
+	door.opened.connect(
+		func():
+			opened.emit()
+			is_opened = true
+	)
+	
+	door.closed.connect(
+		func():
+			closed.emit()
+			is_opened = false
+	)
 
 	if not Engine.is_editor_hint() and Manager.globPlayer:
 		portal.player_camera = Manager.globPlayer.get_camera()
 
-	portal.on_teleport.connect(_on_portal_teleport)
+	portal.on_teleport_receive.connect(_on_portal_teleport)
 
 	_connect_portals.call_deferred(other_door)
+	_apply_other_state.call_deferred(is_opened)
 
 func _on_portal_teleport(teleportable: Node3D) -> void:
+	teleported_player.emit()
 	await get_tree().create_timer(1.5).timeout
 	close()
 	other_door.close_instant()
@@ -61,12 +77,23 @@ func close_instant():
 	door_lid.visible = true
 	collision_shape.disabled = false
 
+func _apply_other_state(opened: bool) -> void:
+	if not other_door:
+		return
+	if not other_door.is_node_ready():
+		await other_door.ready
+
+	if opened:
+		other_door.open_instant()
+	else:
+		other_door.close_instant()
+
 func open() -> void:
 	door.open()
-	other_door.open_instant()
+	_apply_other_state.call_deferred(true)
 	collision_shape.disabled = true
 
 func close() -> void:
 	door.close()
-	other_door.close_instant()
+	_apply_other_state.call_deferred(false)
 	collision_shape.disabled = false

@@ -1,3 +1,8 @@
-1
-00:00:00,001 --> 00:00:04,500
-Maintenant que j'ai tous ces souvenirs dans mon sac, je crois qu'il est temps d'avancer.
+﻿1
+00:00:00,853 --> 00:00:02,780
+Maintenant que j'ai tous ces souvenirs dans mon sac,
+
+2
+00:00:03,200 --> 00:00:04,706
+je crois qu'il est temps d'avancer.
+

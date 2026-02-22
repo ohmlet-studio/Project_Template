@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://dr2rcvagmvjit"
+path="res://.godot/imported/Voix N&B bis sans sac.srt-9e72d32b53546dd4ce2b2b32e49284c8.res"
+
+[deps]
+
+source_file="res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac.srt"
+dest_files=["res://.godot/imported/Voix N&B bis sans sac.srt-9e72d32b53546dd4ce2b2b32e49284c8.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

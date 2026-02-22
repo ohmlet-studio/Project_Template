@@ -1,0 +1,8 @@
+﻿1
+00:00:00,044 --> 00:00:01,177
+Est-ce que c'est vraiment ça
+
+2
+00:00:01,180 --> 00:00:02,652
+que j'ai envie de garder de cette époque ?
+

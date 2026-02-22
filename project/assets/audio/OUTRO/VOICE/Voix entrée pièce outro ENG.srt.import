@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://bsw2j20qg3avn"
+path="res://.godot/imported/Voix entrée pièce outro ENG.srt-dc45a986640b6e171c06bde023b1ab4f.res"
+
+[deps]
+
+source_file="res://assets/audio/OUTRO/VOICE/Voix entrée pièce outro ENG.srt"
+dest_files=["res://.godot/imported/Voix entrée pièce outro ENG.srt-dc45a986640b6e171c06bde023b1ab4f.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

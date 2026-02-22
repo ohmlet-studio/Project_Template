@@ -1,0 +1,8 @@
+﻿1
+00:00:00,102 --> 00:00:00,875
+Hmm...
+
+2
+00:00:01,680 --> 00:00:03,737
+Peut-être qu'il faudrait que j'emporte un objet avec moi ?
+

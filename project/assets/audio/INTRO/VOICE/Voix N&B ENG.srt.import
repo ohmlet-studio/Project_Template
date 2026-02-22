@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://c4j7b16vpicxt"
+path="res://.godot/imported/Voix N&B ENG.srt-7f3cc0c97fdc2cb3e8593c6f1131d53d.res"
+
+[deps]
+
+source_file="res://assets/audio/INTRO/VOICE/Voix N&B ENG.srt"
+dest_files=["res://.godot/imported/Voix N&B ENG.srt-7f3cc0c97fdc2cb3e8593c6f1131d53d.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

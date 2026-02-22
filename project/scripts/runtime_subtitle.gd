@@ -16,7 +16,14 @@ func _ready() -> void:
 	#je sais c'est moche et je devrai créer un audio controller
 	#self.subtitle_label = get_child(0)
 	#audio_player = get_child(1)
-	pass
+	if audio_player and not audio_player.finished.is_connected(_on_dialog_finished):
+		audio_player.finished.connect(_on_dialog_finished)
+
+
+func _on_dialog_finished() -> void:
+	if subtitle_label:
+		subtitle_label.text = ""
+	dialog_finished.emit()
 
 # Load and play audio dialog
 func play_dialog(dialog : AudioStream) -> void:
@@ -25,6 +32,7 @@ func play_dialog(dialog : AudioStream) -> void:
 	if dialog == null:
 		print("Runtime subtitle: failed to load audio stream", )
 		return
+
 	audio_player.stream = dialog
 	audio_player.play()
 	#await audio_player.finished

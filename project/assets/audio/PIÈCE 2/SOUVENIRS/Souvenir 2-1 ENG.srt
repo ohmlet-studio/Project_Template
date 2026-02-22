@@ -1,0 +1,36 @@
+1
+00:00:03,822 --> 00:00:06,648
+Wow, it's the Ultimate Fighting Warrior box!
+
+2
+00:00:07,057 --> 00:00:09,680
+I coded the whole game by myself during a game jam.
+
+3
+00:00:10,302 --> 00:00:10,746
+Yeah...
+
+4
+00:00:11,182 --> 00:00:12,924
+I couldn't find anyone that wanted to work with me.
+
+5
+00:00:13,555 --> 00:00:14,764
+But I had SOOOOOO much fun,
+
+6
+00:00:14,760 --> 00:00:16,008
+I created a whole universe
+
+7
+00:00:16,010 --> 00:00:17,742
+and I even customized a game box.
+
+8
+00:00:18,610 --> 00:00:20,871
+Unfortunately, I don't think anyone ever played it in the end
+
+9
+00:00:20,870 --> 00:00:22,000
+except for my crush at the time.
+
