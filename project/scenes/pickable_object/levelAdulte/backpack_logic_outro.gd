@@ -11,10 +11,11 @@ func _ready():
 
 func _on_scan_ended() -> void:
 	backpack.pick()
-	level._connect_portals_to_end()
+	backpack.hide()
 	level.portal_door_1.close_instant()
 	level.portal_door_2.close_instant()
-	
+
+	level._connect_portals_to_end()
 	for portal in [level.portal_door_1, level.portal_door_2]:
 		portal.opened.connect(_on_portal_opened)
 

@@ -52,7 +52,7 @@ current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1441221660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36940753, -0.25314653)
-layers = 2
+layers = 0
 mesh = SubResource("SphereMesh_3li8b")
 
 [editable path="Head"]

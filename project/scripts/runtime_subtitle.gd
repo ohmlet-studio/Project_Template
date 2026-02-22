@@ -1,6 +1,7 @@
 extends Node
 
 signal dialog_finished
+signal dialog_started
 
 #@export var audio_player: AudioStreamPlayer
 #@export var subtitle_label: Label
@@ -11,13 +12,13 @@ signal dialog_finished
 var subtitle_data: Subtitles = Subtitles.new()
 var current_time: float = 0.0
 
-
 func _ready() -> void:
+	pass
 	#je sais c'est moche et je devrai créer un audio controller
 	#self.subtitle_label = get_child(0)
 	#audio_player = get_child(1)
-	if audio_player and not audio_player.finished.is_connected(_on_dialog_finished):
-		audio_player.finished.connect(_on_dialog_finished)
+	#if audio_player and not audio_player.finished.is_connected(_on_dialog_finished):
+	#	audio_player.finished.connect(_on_dialog_finished)
 
 
 func _on_dialog_finished() -> void:
@@ -35,8 +36,10 @@ func play_dialog(dialog : AudioStream) -> void:
 
 	audio_player.stream = dialog
 	audio_player.play()
-	#await audio_player.finished
-	#dialog_finished.emit()
+	
+	dialog_started.emit()
+	await audio_player.finished
+	dialog_finished.emit()
 	
 
 # Load and parse a subtitle file at runtime

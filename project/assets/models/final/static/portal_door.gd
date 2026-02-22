@@ -88,6 +88,9 @@ func _apply_other_state(opened: bool) -> void:
 	else:
 		other_door.close_instant()
 
+func activate():
+	portal.activate()
+
 func open() -> void:
 	door.open()
 	_apply_other_state.call_deferred(true)

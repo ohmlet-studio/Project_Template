@@ -10,13 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://crhxqnua2w0dp" path="res://scenes/levels/LevelIntro.tscn" id="4_7ddg7"]
 [ext_resource type="PackedScene" uid="uid://c2hburnp68gfh" path="res://scenes/levels/LevelAdulte.tscn" id="4_ehv8f"]
 [ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="5_h6gdu"]
-[ext_resource type="AudioStream" uid="uid://d1h1miuyx6dab" path="res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.mp3" id="6_2e2dh"]
+[ext_resource type="AudioStream" uid="uid://d1h1miuyx6dab" path="res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.mp3" id="6_2e2dh"]
 [ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit de fond (loop).mp3" id="6_7ddg7"]
 [ext_resource type="PackedScene" uid="uid://q2dg4rnvsjat" path="res://scenes/levels/LevelOutro.tscn" id="10_cywug"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mus4g"]
 albedo_texture = ExtResource("3_6s3e6")
-uv1_scale = Vector3(30, 10, 10)
+uv1_scale = Vector3(10, 3.333, 3.333)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7w20u"]
 flip_faces = true
@@ -41,6 +41,7 @@ sky_material = SubResource("ProceduralSkyMaterial_j22r2")
 
 [sub_resource type="Environment" id="Environment_6s3e6"]
 sky = SubResource("Sky_7ddg7")
+ambient_light_color = Color(1, 0.85882354, 0.7294118, 1)
 fog_light_color = Color(1, 1, 1, 1)
 fog_light_energy = 0.25
 volumetric_fog_density = 0.02
@@ -51,45 +52,39 @@ script = ExtResource("1_h6gdu")
 [node name="Rooms" type="Node3D" parent="." unique_id=1259779974]
 
 [node name="Corridor" type="Node3D" parent="Rooms" unique_id=157357895]
-transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, -22.068504, 0.055626035, 1.5978918)
+transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, -22.068504, 0.055626035, 2.9176397)
 
 [node name="PortalDoor" parent="Rooms/Corridor" unique_id=322101260 node_paths=PackedStringArray("other_door") instance=ExtResource("2_j22r2")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5.4271784, 1.2313936, -17.655281)
 other_door = NodePath("../../LevelIntro/Room/Interactable/Static/PortalDoorMain")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/Corridor" unique_id=1415073415]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.8066234, 0, 0.06608677)
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.80662376, 0, -17.244968)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Corridor/StaticBody3D" unique_id=767240517]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.612167, 1.6377952, -2.9206276e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26869583, 1.6377952, -1.1920929e-07)
 material_override = SubResource("StandardMaterial3D_mus4g")
 cast_shadow = 2
 mesh = SubResource("BoxMesh_7w20u")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Rooms/Corridor/StaticBody3D" unique_id=78150040]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.596226, 1.6377952, -2.861023e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2527542, 1.6377952, -5.9604645e-08)
 material_override = SubResource("StandardMaterial3D_mus4g")
 cast_shadow = 2
 mesh = SubResource("BoxMesh_j22r2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Corridor/StaticBody3D" unique_id=776819569]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.612167, 1.6377952, -2.9206276e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26869583, 1.6377952, -1.1920929e-07)
 shape = SubResource("ConcavePolygonShape3D_n8bhm")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/Corridor" unique_id=510477130]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.152301, 3.1025357, -17.612167)
 light_color = Color(1, 0.85882354, 0.7294118, 1)
 
-[node name="SpotLight3D2" type="OmniLight3D" parent="Rooms/Corridor" unique_id=1981392268]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.6822524, 1.6394705, -17.596226)
-light_energy = 0.5
-light_negative = true
-omni_range = 5.9774766
-
 [node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/Corridor" unique_id=469360190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 0, -17.47602)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Corridor/StaticBody3D2" unique_id=2016099450]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1089206, 1.61203, -17.678593)
 shape = SubResource("BoxShape3D_2e2dh")
 
 [node name="LevelIntro" parent="Rooms" unique_id=1125609813 node_paths=PackedStringArray("next_room") instance=ExtResource("4_7ddg7")]
@@ -111,45 +106,37 @@ teleports_to = NodePath("../LevelSpecial")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.547333, 0, 0)
 next_room = NodePath("../LevelEnfant")
 
-[node name="LevelEnfant" parent="Rooms" unique_id=47264178 node_paths=PackedStringArray("next_room") instance=ExtResource("2_ilqm7")]
+[node name="LevelEnfant" parent="Rooms" unique_id=47264178 instance=ExtResource("2_ilqm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.208813, 0, 0)
-next_room = NodePath("../LevelOutro")
 
 [node name="LevelOutro" parent="Rooms" unique_id=1580783062 node_paths=PackedStringArray("credits_scene_door") instance=ExtResource("10_cywug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.41407, 0.09147453, 0)
 credits_scene_door = NodePath("../CorridorEnd/PortalDoor")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Rooms" unique_id=997516505]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.74415, 0.4663391, 0.17668462)
-stream = ExtResource("6_7ddg7")
-autoplay = true
-max_distance = 15.0
-bus = &"SFX"
-
 [node name="CorridorEnd" type="Node3D" parent="Rooms" unique_id=1028949147]
-transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 105.931496, 0.055626035, 1.5978918)
+transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 108.92533, 0.055626035, 1.5978918)
 
 [node name="PortalDoor" parent="Rooms/CorridorEnd" unique_id=615861041 node_paths=PackedStringArray("other_door") instance=ExtResource("2_j22r2")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5.4271784, 1.2313936, -17.655281)
 other_door = NodePath("../../LevelIntro/Room/Interactable/Static/PortalDoorMain")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/CorridorEnd" unique_id=719595006]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.8066234, 0, 0.06608677)
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.8066239, 0, -17.628082)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/CorridorEnd/StaticBody3D" unique_id=1379793070]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.612167, 1.6377952, -2.9206276e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.059181213, 1.6377952, -5.9604645e-08)
 material_override = SubResource("StandardMaterial3D_mus4g")
 cast_shadow = 2
 mesh = SubResource("BoxMesh_7w20u")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Rooms/CorridorEnd/StaticBody3D" unique_id=2006734030]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.596226, 1.6377952, -2.861023e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04324341, 1.6377952, 0)
 material_override = SubResource("StandardMaterial3D_mus4g")
 cast_shadow = 2
 mesh = SubResource("BoxMesh_j22r2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/CorridorEnd/StaticBody3D" unique_id=453489466]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.612167, 1.6377952, -2.9206276e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.059181213, 1.6377952, -5.9604645e-08)
 shape = SubResource("ConcavePolygonShape3D_n8bhm")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/CorridorEnd" unique_id=71161032]
@@ -168,9 +155,16 @@ omni_range = 5.9774766
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1089206, 1.61203, -17.678593)
 shape = SubResource("BoxShape3D_2e2dh")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Rooms" unique_id=997516505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.458708, 0.4663391, 0.17668462)
+stream = ExtResource("6_7ddg7")
+autoplay = true
+max_distance = 17.0
+bus = &"SFX"
+
 [node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -39.666054, 1.1589148, -0.95781016)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.551256, 1.1589148, -0.68980336)
 floor_stop_on_slope = false
 SPEED = 1.0
 HEAD_BOB_AMPLITUDE = 0.007
@@ -193,3 +187,5 @@ shadow_caster_mask = 4294967293
 [node name="Environment" type="WorldEnvironment" parent="." unique_id=1567210214]
 environment = SubResource("Environment_6s3e6")
 script = ExtResource("5_h6gdu")
+
+[editable path="Rooms/LevelIntro"]

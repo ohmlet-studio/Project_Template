@@ -31,7 +31,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 shape = SubResource("SphereShape3D_g7mpl")
 
 [node name="inHandUI" type="Control" parent="." unique_id=1167937798]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,17 +40,8 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="inHandUI" unique_id=1292005186]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -205.0
-offset_top = -203.0
-offset_right = 307.0
-offset_bottom = 309.0
-grow_horizontal = 0
-grow_vertical = 0
+offset_right = 512.0
+offset_bottom = 512.0
 scale = Vector2(0.4, 0.4)
 texture = SubResource("ViewportTexture_r8wao")
 

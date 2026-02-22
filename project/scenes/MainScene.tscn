@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c75mpd4nm0j8t" path="res://scenes/menus/settings_menu.tscn" id="3_k24pf"]
 [ext_resource type="Environment" uid="uid://bywldyytpakno" path="res://ressources/mask_camera_env.tres" id="5_1wiy7"]
 [ext_resource type="Script" path="res://scripts/dot_cursor.gd" id="5_u1u68"]
+[ext_resource type="Script" uid="uid://cwe1xwwfhcdle" path="res://scenes/inter_info.gd" id="6_1wiy7"]
 [ext_resource type="Shader" uid="uid://c3sudo22dlh0m" path="res://shaders/sobel.gdshader" id="8_u1u68"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x537r"]
@@ -26,12 +27,12 @@ script = ExtResource("1_c6dvc")
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
-size = Vector2i(720, 406)
+size = Vector2i(1280, 720)
 
 [node name="RoomTransitionHandler" parent="CanvasLayer/SubViewport" unique_id=724203233 instance=ExtResource("2_ygjfp")]
 
 [node name="MaskViewport" type="SubViewport" parent="CanvasLayer" unique_id=632110184]
-size = Vector2i(600, 339)
+size = Vector2i(1280, 720)
 
 [node name="ColorMaskCamera3D" type="Camera3D" parent="CanvasLayer/MaskViewport" unique_id=1126684017]
 unique_name_in_owner = true
@@ -93,6 +94,7 @@ bbcode_enabled = true
 text = "ITEM INFO HERE"
 fit_content = true
 autowrap_mode = 0
+script = ExtResource("6_1wiy7")
 
 [node name="Settings" type="CanvasLayer" parent="." unique_id=755685338]
 layer = 3

@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_vjdto"]
 [ext_resource type="PackedScene" uid="uid://djlnjve157q5n" path="res://assets/models/final/commode/commode.fbx" id="2_cvd65"]
-[ext_resource type="AudioStream" uid="uid://cur2c7bi0j68t" path="res://assets/audio/PIÈCE 4/VOICE/Voix entrée pièce 4.mp3" id="2_i63wf"]
+[ext_resource type="AudioStream" uid="uid://cur2c7bi0j68t" path="res://assets/audio/PIÈCE 4/VOICE/Voix entrée pièce 4.mp3" id="2_i63wf"]
 [ext_resource type="PackedScene" uid="uid://btclnnmx0t1e0" path="res://assets/models/final/bed/enfant_lit.fbx" id="3_w00vy"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="4_8qlrg"]
 [ext_resource type="PackedScene" uid="uid://df2xyiccdro13" path="res://assets/models/final/carpet/enfant_carpet.fbx" id="4_cvd65"]
 [ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="5_ugcos"]
-[ext_resource type="AudioStream" uid="uid://c6xjn0lr7y8od" path="res://assets/audio/PIÈCE 4/MUSIC (loop)/Pièce 4-0.mp3" id="7_aqxcr"]
+[ext_resource type="AudioStream" uid="uid://d1dl1op2frnu4" path="res://assets/audio/PIÈCE 4/MUSIC (loop)/Pièce 4-0.mp3" id="7_aqxcr"]
 [ext_resource type="PackedScene" uid="uid://dkwjm7vdtjqpp" path="res://assets/models/final/commode/commode2.fbx" id="7_dyyc4"]
 [ext_resource type="PackedScene" uid="uid://ctyoh3dflcmp1" path="res://assets/models/final/smolthings/dino.fbx" id="7_glxvj"]
-[ext_resource type="AudioStream" uid="uid://c0l6buwkdbcya" path="res://assets/audio/PIÈCE 4/MUSIC (loop)/Pièce 4-1.mp3" id="8_3kdax"]
+[ext_resource type="AudioStream" uid="uid://3mk03tatkwxd" path="res://assets/audio/PIÈCE 4/MUSIC (loop)/Pièce 4-1.mp3" id="8_3kdax"]
 [ext_resource type="PackedScene" uid="uid://fv6wlm56vh0s" path="res://assets/models/final/lamp/small_lamp.fbx" id="8_dyyc4"]
-[ext_resource type="AudioStream" uid="uid://cbk2ona7um45g" path="res://assets/audio/PIÈCE 4/MUSIC (loop)/Pièce 4-2.mp3" id="9_37br2"]
-[ext_resource type="AudioStream" uid="uid://dx51kph3u7xt7" path="res://assets/audio/PIÈCE 4/MUSIC (loop)/Pièce 4-3.mp3" id="10_7k1p1"]
+[ext_resource type="AudioStream" uid="uid://b00fbjnmouvvo" path="res://assets/audio/PIÈCE 4/MUSIC (loop)/Pièce 4-2.mp3" id="9_37br2"]
+[ext_resource type="AudioStream" uid="uid://1jdg1rgdnlyv" path="res://assets/audio/PIÈCE 4/MUSIC (loop)/Pièce 4-3.mp3" id="10_7k1p1"]
 [ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="10_jy1lg"]
 [ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="11_h8kw8"]
 [ext_resource type="Texture2D" uid="uid://cyt7m85om0ifk" path="res://assets/models/final/posters/lapin.jpg" id="11_w00vy"]
@@ -28,10 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://bp6q74of32gcm" path="res://assets/models/final/room.fbm/vintagepapierpeint.png" id="21_1ey66"]
 [ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="21_bvvhd"]
 [ext_resource type="PackedScene" uid="uid://pumiv3sg56b" path="res://assets/models/memory_objects/bear.fbx" id="22_f1gog"]
-[ext_resource type="AudioStream" uid="uid://bvjt1t1grnmmu" path="res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-1.mp3" id="23_qmgq3"]
-[ext_resource type="PackedScene" uid="uid://cx073i0utatxk" path="res://assets/models/memory_objects/ammo.fbx" id="24_exy4l"]
-[ext_resource type="AudioStream" uid="uid://8becpf5r2h5s" path="res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-2.mp3" id="24_f1gog"]
-[ext_resource type="AudioStream" uid="uid://b2agy5w04pm0n" path="res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-3.mp3" id="25_qmgq3"]
+[ext_resource type="AudioStream" uid="uid://kwoogg5fh7e0" path="res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-1.mp3" id="23_qmgq3"]
+[ext_resource type="AudioStream" uid="uid://cvtd55wlnkaay" path="res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-2.mp3" id="24_f1gog"]
+[ext_resource type="AudioStream" uid="uid://c3djw5la8e1xa" path="res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-3.mp3" id="25_qmgq3"]
+[ext_resource type="PackedScene" uid="uid://b5bh1afrikmet" path="res://assets/models/memory_objects/cube.fbx" id="30_avigs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glxvj"]
 albedo_texture = ExtResource("11_w00vy")
@@ -114,7 +114,7 @@ mesh = SubResource("QuadMesh_a564u")
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.872921, 5.8583474, -4.995762)
 
 [node name="Art2" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="14" unique_id=1269683074]
-transform = Transform3D(-0.004931888, -0.0009708895, -1.636985, -0.22422998, 0.7639152, -0.00080856704, 1.2063273, 0.14199126, -0.006843016, 10.111749, 5.2905993, 7.262966)
+transform = Transform3D(-0.008038891, -0.0015831565, -2.6679764, -0.36549306, 1.2456636, -0.0013178699, 1.9663036, 0.23153527, -0.01115252, 10.111749, 5.2905993, 7.262966)
 material_override = SubResource("StandardMaterial3D_p0520")
 mesh = SubResource("QuadMesh_a564u")
 
@@ -145,7 +145,7 @@ dialog_subtitle = "res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-1 ENG.srt"
 [node name="feteforaine" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="1" unique_id=2101745634 instance=ExtResource("21_bvvhd")]
 transform = Transform3D(-0.0817827, -0.030623188, -0.9961794, -0.015323906, 0.9994488, -0.029465694, 0.99653244, 0.012855308, -0.08220664, 2.8826897, 1.3048229, -1.1442995)
 object_name = "Duck"
-object_to_scan = ExtResource("24_exy4l")
+object_to_scan = ExtResource("30_avigs")
 inspect_scale = 2.0
 dialog_audio = ExtResource("24_f1gog")
 dialog_subtitle = "res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-2 ENG.srt"
@@ -153,7 +153,7 @@ dialog_subtitle = "res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-2 ENG.srt"
 [node name="Tambour" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="2" unique_id=824976173 instance=ExtResource("21_bvvhd")]
 transform = Transform3D(-0.49489844, -0.013658626, 0.8688432, -0.006052228, 0.9999072, 0.0122718355, -0.8689295, 0.00081483345, -0.4949345, -0.34949476, 0.70314395, 4.302678)
 object_name = "Drums"
-object_to_scan = ExtResource("24_exy4l")
+object_to_scan = ExtResource("30_avigs")
 inspect_scale = 2.0
 dialog_audio = ExtResource("25_qmgq3")
 dialog_subtitle = "res://assets/audio/PIÈCE 4/SOUVENIRS/Souvenir 4-3 ENG.srt"

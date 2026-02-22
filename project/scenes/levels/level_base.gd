@@ -10,8 +10,9 @@ class_name LevelRoom
 		if is_node_ready():
 			_static_objects.visible = value
 
+@export_category("TELEPORT")
+@export var dont_link_portals: bool = false
 @export var next_room: LevelRoom
-
 @export var teleports_to: LevelRoom = null
 
 @export_category("audio")
@@ -27,8 +28,8 @@ const AIDE_SUBTITLE_PATH := "res://assets/audio/AUTRES/Aide ENG.srt"
 @export var ready_direct: bool = false
 @export var no_anim_color: bool = false
 
-@onready var portal_door_1: PortalDoor = $Room/Interactable/Static/PortalDoorMain
-@onready var portal_door_2: PortalDoor = $Room/Interactable/Static/PortalDoorBed
+@onready var portal_door_1: PortalDoor = %PortalDoorMain
+@onready var portal_door_2: PortalDoor = %PortalDoorBed
 @onready var pickable_parent = $Room/Interactable/Grabbable
 
 var number_of_object_scanned = 0
@@ -43,7 +44,8 @@ func _ready() -> void:
 	#Manager.is_all_picked = false
 	
 	_create_furniture_collisions()
-	_link_portals(teleports_to)
+	if not dont_link_portals:
+		_link_portals(teleports_to)
 	
 	empty_level = pickable_parent.get_children().size() == 0
 	
@@ -198,5 +200,8 @@ func link_next_room():
 	_link_portals(next_room)
 
 func set_layer_2():
+	var room_parent = $Room/Interactable/Static/room
 	for object in _static_objects.get_children():
 		_set_layer_recursive(object, 2)
+		
+	_set_layer_recursive(room_parent, 2)
