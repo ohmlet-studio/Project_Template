@@ -64,6 +64,10 @@ var scanned: bool
 @export var dialog_subtitle: String :
 	set(value):
 		dialog_subtitle = value
+		
+@export var haiku: String :
+	set(value):
+		haiku = value
 
 var _base_radius: float = 0.0
 var _breath_time: float = 0.0
@@ -74,7 +78,6 @@ func _ready() -> void:
 	_set_object_name(object_name)
 	_set_object_to_scan(object_to_scan)
 	_base_radius = color_radius
-
 
 	if Engine.is_editor_hint():
 		return
@@ -89,8 +92,6 @@ func _ready() -> void:
 	self.has_been_scanned = skip_inspect
 	if interactable_3d:
 		interactable_3d.scannable = not has_been_scanned
-		
-	handObjView.hide()
 
 func _set_object_name(value: String) -> void:
 	if not is_node_ready():
