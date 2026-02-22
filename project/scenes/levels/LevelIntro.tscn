@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_eattb"]
 [ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="2_5dao2"]
-[ext_resource type="AudioStream" uid="uid://dbe5jx5gqa1ux" path="res://assets/audio/INTRO/VOICE/Voix entrée pièce intro.mp3" id="2_pj4h7"]
+[ext_resource type="AudioStream" uid="uid://ocqbh024p6i" path="res://assets/audio/INTRO/VOICE/Voix entrée pièce intro.mp3" id="2_pj4h7"]
 [ext_resource type="PackedScene" uid="uid://bqyddhi6x2moy" path="res://assets/models/memory_objects/backpack.fbx" id="3_5n37q"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="9_86lm8"]
 [ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="13_yvmva"]
@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://mcro2rybv31f" path="res://scenes/pickable_object/levelAdulte/pickable_backpack.gd" id="15_q1s6e"]
 [ext_resource type="Texture2D" uid="uid://fb6h3jbticc" path="res://assets/models/final/posters/mcr.png" id="15_qxd4m"]
 [ext_resource type="PackedScene" uid="uid://c5blcedglahfs" path="res://assets/models/placeholders/Low Poly Furniture/Miscellaneous/Radiator B.fbx" id="16_8b2hh"]
-[ext_resource type="AudioStream" uid="uid://dpg0mjtgx0gog" path="res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac.mp3" id="16_pj4h7"]
-[ext_resource type="AudioStream" uid="uid://bnxrj2o22yvjn" path="res://assets/audio/INTRO/MUSIC/N&B (loop).mp3" id="17_oinjl"]
+[ext_resource type="AudioStream" uid="uid://byvoy7tojtqpf" path="res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac.mp3" id="16_pj4h7"]
+[ext_resource type="AudioStream" uid="uid://dj8pce1xyuww7" path="res://assets/audio/INTRO/MUSIC/N&B (loop).mp3" id="17_oinjl"]
 [ext_resource type="PackedScene" uid="uid://d3k2vidgd2m2k" path="res://assets/models/final/smolthings/carton1.fbx" id="19_7reoc"]
 [ext_resource type="AudioStream" uid="uid://ldxg27p1posq" path="res://assets/audio/INTRO/VOICE/Voix sac.mp3" id="20_k6t52"]
 [ext_resource type="PackedScene" uid="uid://dxenntoejob6r" path="res://assets/models/final/commode/commode3.fbx" id="20_w8mug"]
@@ -31,16 +31,10 @@ material = SubResource("StandardMaterial3D_ul5uw")
 size = Vector2(0.795, 1)
 center_offset = Vector3(0, -0.01, 0)
 
-[sub_resource type="BoxMesh" id="BoxMesh_k6t52"]
-flip_faces = true
-size = Vector3(9, 4, 9)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hue0c"]
-shading_mode = 0
-
 [node name="LevelIntro" unique_id=1125609813 instance=ExtResource("1_eattb")]
 entering_sound = ExtResource("2_pj4h7")
 subtitles_path = "res://assets/audio/INTRO/VOICE/Voix entrée pièce intro ENG.srt"
+no_anim_color = true
 
 [node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
 script = null
@@ -87,14 +81,14 @@ transform = Transform3D(0.3668385, 0, 1.0855242, 0, 1.1458335, 0, -1.0855242, 0,
 [node name="adulte_lit" parent="Room/Furniture" index="7" unique_id=1005375489 instance=ExtResource("24_jqc6n")]
 transform = Transform3D(-3.3333325, 0, -2.9140924e-07, 0, 3.3333325, 0, 2.9140924e-07, 0, -3.3333325, 0.7220904, 1.8656405, 12.523289)
 
+[node name="Window C" parent="Room/Interactable/Static/Window C" parent_id_path=PackedInt32Array(1567670714) index="0" unique_id=1939163916]
+surface_material_override/0 = null
+
 [node name="Room" parent="Room/Interactable/Static/room" parent_id_path=PackedInt32Array(879325613) index="0" unique_id=958283466]
 transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0.011911869, -0.0077438354, -0.00087046623)
 
-[node name="Backpack" parent="Room/Interactable" parent_id_path=PackedInt32Array(1217517487) index="2" unique_id=1972186688 instance=ExtResource("2_5dao2")]
+[node name="Backpack" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="0" unique_id=1972186688 instance=ExtResource("2_5dao2")]
 transform = Transform3D(1, 0, 0, 0, 0.9827971, -0.18468902, 0, 0.18468902, 0.9827971, -0.06369221, 0.33905542, 1.5152414)
-script = ExtResource("15_q1s6e")
-sound_after = ExtResource("16_pj4h7")
-music_after = ExtResource("17_oinjl")
 object_name = "Backpack"
 object_to_scan = ExtResource("3_5n37q")
 inspect_scale = 2.0
@@ -102,8 +96,8 @@ default_inspect_rotation = Vector3(0, 180, 0)
 dialog_audio = ExtResource("20_k6t52")
 dialog_subtitle = "res://assets/audio/INTRO/VOICE/Voix sac ENG.srt"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="6" unique_id=860213462]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7105606, 0.8422675)
-cast_shadow = 0
-mesh = SubResource("BoxMesh_k6t52")
-surface_material_override/0 = SubResource("StandardMaterial3D_hue0c")
+[node name="Node" type="Node" parent="Room/Interactable/Grabbable/Backpack" index="3" unique_id=441035484]
+script = ExtResource("15_q1s6e")
+sound_after = ExtResource("16_pj4h7")
+music_after = ExtResource("17_oinjl")
+subs_path = "res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac ENG.srt"

@@ -1,6 +1,6 @@
 1
 00:00:00,968 --> 00:00:02,462
-Oh! Is that Godot?!
+OH! Is that Godot?!
 
 2
 00:00:02,951 --> 00:00:04,364
@@ -8,7 +8,7 @@ I miss her so much...
 
 3
 00:00:04,675 --> 00:00:07,217
-I made her live every adventure imaginable!
+I made her live all kinds of adventures!
 
 4
 00:00:07,511 --> 00:00:09,573
@@ -20,7 +20,7 @@ Well...
 
 6
 00:00:11,235 --> 00:00:12,506
-Incredible for me.
+Incredible for ME.
 
 7
 00:00:13,180 --> 00:00:14,773

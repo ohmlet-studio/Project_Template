@@ -4,6 +4,8 @@ class_name PortalDoor
 signal opened
 signal closed
 
+var is_opened = false
+
 signal teleported_player
 
 @onready var portal = $Portal
@@ -19,8 +21,17 @@ signal teleported_player
 			_connect_portals.call_deferred(value)
 
 func _ready() -> void:
-	door.opened.connect(func(): opened.emit())
-	door.closed.connect(func(): closed.emit())
+	door.opened.connect(
+		func():
+			opened.emit()
+			is_opened = true
+	)
+	
+	door.closed.connect(
+		func():
+			closed.emit()
+			is_opened = false
+	)
 
 	if not Engine.is_editor_hint() and Manager.globPlayer:
 		portal.player_camera = Manager.globPlayer.get_camera()

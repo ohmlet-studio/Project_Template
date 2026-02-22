@@ -24,6 +24,8 @@ script = ExtResource("1_c6dvc")
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer" unique_id=1387275179]
 canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
 size = Vector2i(720, 406)
 
 [node name="RoomTransitionHandler" parent="CanvasLayer/SubViewport" unique_id=724203233 instance=ExtResource("2_ygjfp")]

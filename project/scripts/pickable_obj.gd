@@ -2,6 +2,7 @@
 extends Node
 class_name Pickable
 
+signal scan_started
 signal scan_ended
 signal on_picked
 signal on_unpicked
@@ -70,9 +71,6 @@ var _interact_tween: Tween
 func _ready() -> void:
 	_set_object_name(object_name)
 	_set_object_to_scan(object_to_scan)
-	clone_inspect_view.scale = Vector3.ONE * inspect_scale
-	clone_2d_view.scale = Vector3.ONE * scale_2d_view
-	clone_inspect_view.rotation = default_inspect_rotation
 	_base_radius = color_radius
 
 	if Engine.is_editor_hint():
@@ -109,11 +107,12 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	if not value:
 		return
 
+	print("ICI: ", scanned_object_instance)
+
 	scanned_object_instance = value.instantiate()
 	self.add_child(scanned_object_instance)
 
 	var origMesh = scanned_object_instance.get_child(0)
-	print(origMesh)
 	object_material = origMesh.get_active_material(0).duplicate()
 	origMesh.set_layer_mask_value(1, true)
 
@@ -125,6 +124,7 @@ func _set_object_to_scan(value: PackedScene) -> void:
 	self.add_child(clone_inspect_view)
 	clone_inspect_view.scale = Vector3.ONE * inspect_scale
 	clone_inspect_view.position = Vector3.DOWN * 100
+	clone_inspect_view.rotation = default_inspect_rotation
 	clone_inspect_view.set_meta("scan_owner", self)
 	interactable_3d.target_scannable_object = clone_inspect_view
 
@@ -188,6 +188,8 @@ func _on_scan_started() -> void:
 	
 	SubtitlesScene.sub_load_from_file(dialog_subtitle)
 	SubtitlesScene.play_dialog(dialog_audio)
+	
+	scan_started.emit()
 
 func _on_scan_ended(scanned_object: Node3D) -> void:
 	if scanned_object and scanned_object.get_meta("scan_owner", null) == self:

@@ -22,6 +22,12 @@ func _enter_tree():
 ## PLAYER MOVMENT SCRIPT ##
 ###########################
 
+@export var color_view: bool = false:
+	set(value):
+		color_view = value
+		if $MeshInstance3D:
+			$MeshInstance3D.visible = value
+
 @export_category("Mouse Capture")
 @export var CAPTURE_ON_START := true
 

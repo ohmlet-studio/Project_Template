@@ -25,6 +25,7 @@ func play_dialog(dialog : AudioStream) -> void:
 	if dialog == null:
 		print("Runtime subtitle: failed to load audio stream", )
 		return
+
 	audio_player.stream = dialog
 	audio_player.play()
 	#await audio_player.finished

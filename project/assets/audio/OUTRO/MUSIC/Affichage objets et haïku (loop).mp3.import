@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://dvackmwcmp4ip"
+uid="uid://dypdqheyk731d"
 path="res://.godot/imported/Affichage objets et haïku (loop).mp3-9cd19e342c272ca701c817f0bec40c9f.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Affichage objets et haïku (loop).mp3-9cd19e
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

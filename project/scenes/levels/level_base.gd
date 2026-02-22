@@ -22,6 +22,7 @@ class_name LevelRoom
 
 @export_category("DEBUG")
 @export var ready_direct: bool = false
+@export var no_anim_color: bool = false
 
 @onready var portal_door_1: PortalDoor = $Room/Interactable/Static/PortalDoorMain
 @onready var portal_door_2: PortalDoor = $Room/Interactable/Static/PortalDoorBed
@@ -47,6 +48,9 @@ func _ready() -> void:
 		child.scan_ended.connect(_on_scan_ended.bind(child))
 		child.on_picked.connect(_on_object_picked)
 		child.on_unpicked.connect(_on_object_unpicked)
+		
+	portal_door_1.open_instant()
+	portal_door_2.open_instant()
 
 func _on_teleport():
 	# level finished
@@ -91,10 +95,15 @@ func _link_portals(other_room: LevelRoom):
 	print("Link portal 1 to ", other_room.portal_door_2)
 	self.portal_door_1.other_door = other_room.portal_door_2
 	self.portal_door_1.teleported_player.connect(_on_teleport)
+	if self.portal_door_1.is_opened:
+		other_room.portal_door_2.open_instant()
 	
 	print("Link portal 2 to ", other_room.portal_door_2)
 	self.portal_door_2.other_door = other_room.portal_door_1
 	self.portal_door_2.teleported_player.connect(_on_teleport)
+	if self.portal_door_2.is_opened:
+		other_room.portal_door_1.open_instant()
+
 	
 func _create_furniture_collisions() -> void:
 	for node in _furniture.get_children():
@@ -126,7 +135,10 @@ func _on_scan_ended(pickable: Pickable):
 	print("_on_scan_ended")
 	
 	number_of_object_scanned += 1
-	CrossfadePlayer.play(level_musics[number_of_object_scanned], 1.0)
+	number_of_object_scanned = min(number_of_object_scanned, level_musics.size() - 1)
+	
+	if number_of_object_scanned >= 0:
+		CrossfadePlayer.play(level_musics[number_of_object_scanned], 1.0)
 	
 	if all_objects_scanned():
 		_bring_color_back()
@@ -144,6 +156,9 @@ func _remove_layer_recursive(node: Node, layer_mask: int):
 		_remove_layer_recursive(child, layer_mask)
 
 func _bring_color_back():
+	if no_anim_color:
+		return
+		
 	$AnimationPlayer.play("bring_color")
 	
 	await $AnimationPlayer.animation_finished

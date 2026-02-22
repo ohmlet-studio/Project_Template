@@ -49,7 +49,7 @@ func _on_interactable_focused(interactable: Interactable3D) -> void:
 
 		if "has_been_scanned" in interactable.get_parent():
 			if not interactable.get_parent().has_been_scanned:
-				interactable_information.text = "[font_size=35][i][E] to interact %s[/i][/font_size]" % interactable.title
+				interactable_information.text = "[font_size=35][i][E] to interact with %s[/i][/font_size]" % interactable.title
 			elif interactable.get_parent().has_been_scanned and Manager.current_room.all_objects_scanned():
 				interactable_information.text = "[font_size=35][i][E] to pick %s[/i][/font_size]" % interactable.title
 
