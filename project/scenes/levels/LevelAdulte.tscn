@@ -123,6 +123,7 @@ inspect_scale = 2.5
 default_inspect_rotation = Vector3(90, 0, 0)
 dialog_audio = ExtResource("26_y8cxe")
 dialog_subtitle = "res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1_ENG.srt"
+haiku = "so I prefer drawing my own cards even if they end up kinda sketchy."
 
 [node name="Lighter" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="1" unique_id=1803530018 instance=ExtResource("14_wx5tf")]
 transform = Transform3D(-0.07550129, -0.80772585, 0.5847039, 0.99199396, -0.0013138428, 0.12627862, -0.10123028, 0.5895571, 0.80135816, -2.6091168, 1.0543598, -1.1408888)
@@ -133,6 +134,7 @@ inspect_scale = 6.0
 default_inspect_rotation = Vector3(0, 90, 0)
 dialog_audio = ExtResource("28_lgacn")
 dialog_subtitle = "res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2_ENG.srt"
+haiku = "but even when sparks die out, the warmth of the past fires remain."
 
 [node name="Trumpet" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="2" unique_id=812892577 instance=ExtResource("14_wx5tf")]
 transform = Transform3D(0.15692325, -0.38699013, -0.908633, 0.98406774, -0.016593222, 0.17701815, -0.08358139, -0.92193466, 0.3782206, 1.715733, 1.1790702, -1.0509461)
@@ -143,3 +145,4 @@ inspect_scale = 1.5
 default_inspect_rotation = Vector3(0, 90, 0)
 dialog_audio = ExtResource("30_upqbh")
 dialog_subtitle = "res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3_ENG.srt"
+haiku = "but I’m glad I found a matching harmony by tuning in to the right people."
