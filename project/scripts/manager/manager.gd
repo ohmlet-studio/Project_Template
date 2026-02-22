@@ -3,6 +3,7 @@ extends Node
 var curCamera: Camera3D
 var globPlayer: CharacterBody3D
 var current_room: LevelRoom
+var playing_view_rect: TextureRect
 
 ## Object pick handle
 signal object_picked

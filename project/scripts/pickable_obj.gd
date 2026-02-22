@@ -172,11 +172,17 @@ func _origin_obj_transparency(pick: bool) -> void:
 		material.albedo_color.a = 0.5 if pick else 1.0
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 
+
 func _show_hand_obj(pick: bool) -> void:
 	if pick:
 		handObjView.show()
 	else:
 		handObjView.hide()
+
+
+func _hide_hand_obj():
+	handObjView.hide()
+
 
 func _on_scan_started() -> void:
 	if has_been_scanned:

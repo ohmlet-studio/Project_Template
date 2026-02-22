@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bkbynldbtdni2"]
 
+[ext_resource type="Script" uid="uid://cn54fgjoet0x1" path="res://scenes/haiku.gd" id="1_y67ds"]
+
 [node name="Haiku" type="Node2D" unique_id=1223768425]
+script = ExtResource("1_y67ds")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=104253936]
 offset_left = -10.0
@@ -10,11 +13,18 @@ offset_bottom = 668.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=1218698559]
-offset_left = 311.0
-offset_top = 95.0
-offset_right = 833.0
-offset_bottom = 572.0
-theme_override_font_sizes/font_size = 32
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 324.0
+offset_top = 130.0
+offset_right = 846.0
+offset_bottom = 607.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
 text = "Credits:
 Code: Retronyme & ollig 
 

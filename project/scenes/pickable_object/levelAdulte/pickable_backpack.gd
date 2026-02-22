@@ -25,7 +25,7 @@ func _on_portal_opened() -> void:
 	var tween = create_tween()
 	tree.paused = false
 	tween.tween_method(
-		func(v: float): tree.root.get_viewport().canvas_item.modulate.a = v,
+		func(v: float): Manager.playing_view_rect.modulate.a = v,
 		1.0, 0.0, 2.0
 	)
 	await tween.finished

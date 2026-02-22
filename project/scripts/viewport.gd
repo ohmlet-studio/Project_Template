@@ -18,6 +18,8 @@ func _ready():
 	
 	Manager.globPlayer.action_back.connect(_on_game_paused)
 	%SettingsMenu.closed.connect(_on_pause_menu_closed)
+	
+	Manager.playing_view_rect = $PlayingView
 
 func _input(event):
 	if viewport and is_inside_tree():
