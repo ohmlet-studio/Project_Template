@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://q2dg4rnvsjat"]
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_f8lvr"]
-[ext_resource type="AudioStream" uid="uid://d1qxw47wq6o22" path="res://assets/audio/OUTRO/VOICE/Voix_entree_piece_outro.mp3" id="uid://d1qxw47wq6o22"]
 [ext_resource type="Script" uid="uid://5k1v4u2sftu3" path="res://scenes/levels/level_outro.gd" id="2_mfdfc"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="3_eodmt"]
 [ext_resource type="Texture2D" uid="uid://bsdt8edpn0xgo" path="res://assets/models/final/posters/Pink_Floyd_The_Wall.jpg" id="4_ih7ir"]
@@ -17,10 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="14_23o7r"]
 [ext_resource type="PackedScene" uid="uid://bqyddhi6x2moy" path="res://assets/models/memory_objects/backpack.fbx" id="15_fc8bl"]
 [ext_resource type="Script" uid="uid://mcro2rybv31f" path="res://scenes/pickable_object/levelAdulte/backpack_logic_outro.gd" id="17_cxd3y"]
+[ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit_de_fond_loop.mp3" id="uid://b0qoce63n3tul"]
 [ext_resource type="AudioStream" uid="uid://bxmo1825fqcoj" path="res://assets/audio/OUTRO/VOICE/Voix_fin.mp3" id="uid://bxmo1825fqcoj"]
+[ext_resource type="AudioStream" uid="uid://d1qxw47wq6o22" path="res://assets/audio/OUTRO/VOICE/Voix_entree_piece_outro.mp3" id="uid://d1qxw47wq6o22"]
 [ext_resource type="AudioStream" uid="uid://dpg0mjtgx0gog" path="res://assets/audio/INTRO/VOICE/Voix_NB_bis_sans_sac.mp3" id="uid://dpg0mjtgx0gog"]
 [ext_resource type="AudioStream" uid="uid://dvgk6ekh5u4r1" path="res://assets/audio/INTRO/MUSIC/NB_loop.mp3" id="uid://dvgk6ekh5u4r1"]
-[ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit_de_fond_loop.mp3" id="uid://b0qoce63n3tul"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l035v"]
 albedo_texture = ExtResource("4_ih7ir")

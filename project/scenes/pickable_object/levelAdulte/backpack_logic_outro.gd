@@ -32,4 +32,4 @@ func _on_portal_opened() -> void:
 	await tween.finished
 	
 	# Teleport to haiku scene
-	tree.change_scene_to_file("res://scenes/haiku.tscn")
+	tree.change_scene_to_file("res://scenes/end/FinalScene.tscn")
