@@ -307,6 +307,7 @@ transform = Transform3D(0.01351912, -0.8346785, 0.5505714, 0.99985653, 0.0056643
 object_name = "DVD"
 object_to_scan = ExtResource("41_phtah")
 inspect_scale = 2.1
+default_inspect_rotation = Vector3(0, -10, 0)
 dialog_audio = ExtResource("uid://d3ybg14jwxat0")
 dialog_subtitle = "res://assets/audio/PIECE_2/SOUVENIRS/Souvenir_2-1_ENG.srt"
 haiku = "and I’m an open world that no onewants to play in, "
