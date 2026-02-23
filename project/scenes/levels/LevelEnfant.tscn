@@ -117,15 +117,15 @@ mesh = SubResource("QuadMesh_a564u")
 [node name="Desk" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="13" unique_id=660806617 instance=ExtResource("12_0i7gq")]
 transform = Transform3D(-3.49691e-08, 0, 0.79999983, 0, 0.79999983, 0, -0.79999983, 0, -3.49691e-08, -9.429562, 2.2028737, -1.9940147)
 
-[node name="Art" type="MeshInstance3D" parent="Room/Furniture/Desk" index="4" unique_id=1228589637]
+[node name="Art" type="MeshInstance3D" parent="Room/Furniture/Desk" index="3" unique_id=1228589637]
 transform = Transform3D(2.1875398, -0.30527702, -0.0072197635, 0.00528462, -0.014367172, 2.2086973, -0.30531672, -2.1875045, -0.013498757, -4.5088263, 1.5909262, -0.3227768)
 material_override = SubResource("StandardMaterial3D_l8lak")
 mesh = SubResource("QuadMesh_a564u")
 
-[node name="small_lamp" parent="Room/Furniture/Desk" index="5" unique_id=1052416340 instance=ExtResource("8_dyyc4")]
+[node name="small_lamp" parent="Room/Furniture/Desk" index="4" unique_id=1052416340 instance=ExtResource("8_dyyc4")]
 transform = Transform3D(-5.463923e-08, 0, -1.2499999, 0, 1.2499999, 0, 1.2499999, 0, -5.463923e-08, 1.4882257, 3.0369315, -1.1268959)
 
-[node name="Chair A" parent="Room/Furniture/Desk" index="6" unique_id=1447814586 instance=ExtResource("4_8qlrg")]
+[node name="Chair A" parent="Room/Furniture/Desk" index="5" unique_id=1447814586 instance=ExtResource("4_8qlrg")]
 transform = Transform3D(-1.2499999, 0, 1.09278446e-07, 0, 1.2499999, 0, -1.09278446e-07, 0, -1.2499999, -2.9740956, -0.31440067, 1.8469582)
 
 [node name="books" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="14" unique_id=1607287762 instance=ExtResource("20_a564u")]
@@ -155,7 +155,7 @@ object_to_scan = ExtResource("30_1i0o6")
 inspect_scale = 2.0
 dialog_audio = ExtResource("uid://cvtd55wlnkaay")
 dialog_subtitle = "res://assets/audio/PIECE_4/SOUVENIRS/Souvenir_4-2_ENG.srt"
-haiku = "When relationships are hard to keep afloat, ducking usually only makes you drown "
+haiku = "When relationships are hard to keep afloat, ducking the problems usually makes you drown "
 
 [node name="Tambour" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="2" unique_id=824976173 instance=ExtResource("21_bvvhd")]
 transform = Transform3D(-0.37117398, -0.010243985, 0.65163255, -0.004539172, 0.7499298, 0.009203726, -0.6516972, 0.00061108195, -0.37120122, -0.16489327, 0.6045463, 4.36679)
