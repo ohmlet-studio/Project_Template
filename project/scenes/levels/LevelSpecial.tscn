@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_lj5w1"]
 [ext_resource type="AudioStream" uid="uid://dqmg5nwjuuoca" path="res://assets/audio/PIECE_3/VOICE/Voix_entree_piece_3.mp3" id="2_jiy5a"]
 [ext_resource type="Shader" uid="uid://c06y30trocfwf" path="res://shaders/vertex_snapping.gdshader" id="2_ujb11"]
-[ext_resource type="AudioStream" path="res://assets/audio/PIÈCE 3/MUSIC (loop)/Pièce 3.mp3" id="3_mvxjg"]
+[ext_resource type="AudioStream" uid="uid://dow8vus0s1v1q" path="res://assets/audio/PIECE_3/MUSIC_loop/Piece_3.mp3" id="3_mvxjg"]
 [ext_resource type="PackedScene" uid="uid://djlnjve157q5n" path="res://assets/models/final/commode/commode.fbx" id="3_nl07q"]
 [ext_resource type="PackedScene" uid="uid://btclnnmx0t1e0" path="res://assets/models/final/bed/enfant_lit.fbx" id="4_jiy5a"]
 [ext_resource type="PackedScene" uid="uid://7y45uptn6p45" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair D.fbx" id="5_mvxjg"]

@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://dima7ycw5mpo3"]
 
-[ext_resource type="Script" uid="uid://ghrtttggnl0t" path="res://scripts/final_scene.gd" id="1_rq84w"]
-[ext_resource type="PackedScene" uid="uid://wj2f3dnal8wr" path="res://assets/models/memory_objects/carnet.fbx" id="3_s7xj3"]
-[ext_resource type="Texture2D" uid="uid://73sk3xesg448" path="res://assets/textures/misc/volumetric_fog_quad_mesh_texture.webp" id="5_8omca"]
-[ext_resource type="Texture2D" uid="uid://qec580l8t1r8" path="res://assets/models/final/room.fbm/parket.jpg" id="5_50der"]
-[ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="5_ja34e"]
-[ext_resource type="PackedScene" uid="uid://dlsymbkqwsx2t" path="res://assets/models/memory_objects/trumpet.fbx" id="7_kefhw"]
-[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="9_50der"]
-[ext_resource type="Script" uid="uid://dy5lobbq15mcu" path="res://scripts/label_anim.gd" id="10_ydepa"]
-[ext_resource type="AudioStream" uid="uid://bak80uergkxsf" path="res://assets/audio/OUTRO/MUSIC/Affichage_objets_et_haiku_loop.mp3" id="11_ayjh5"]
-[ext_resource type="AudioStream" uid="uid://1uu0xo4oamru" path="res://assets/audio/AUTRES/FX/Clic.mp3" id="12_ytkeu"]
-[ext_resource type="PackedScene" uid="uid://bciil8v6ykx2e" path="res://scenes/global/subtitles.tscn" id="13_wutmx"]
-[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="14_ayjh5"]
+[ext_resource type="Script" uid="uid://ghrtttggnl0t" path="res://scripts/final_scene.gd" id="1_6lte8"]
+[ext_resource type="Texture2D" uid="uid://73sk3xesg448" path="res://assets/textures/misc/volumetric_fog_quad_mesh_texture.webp" id="2_gcgmc"]
+[ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="3_xfndb"]
+[ext_resource type="PackedScene" uid="uid://wj2f3dnal8wr" path="res://assets/models/memory_objects/carnet.fbx" id="4_tkg12"]
+[ext_resource type="PackedScene" uid="uid://dlsymbkqwsx2t" path="res://assets/models/memory_objects/trumpet.fbx" id="5_cteac"]
+[ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="6_bdusw"]
+[ext_resource type="Texture2D" uid="uid://qec580l8t1r8" path="res://assets/models/final/room.fbm/parket.jpg" id="7_mun5o"]
+[ext_resource type="Script" uid="uid://dy5lobbq15mcu" path="res://scripts/label_anim.gd" id="8_2q5ln"]
+[ext_resource type="AudioStream" uid="uid://bak80uergkxsf" path="res://assets/audio/OUTRO/MUSIC/Affichage_objets_et_haiku_loop.mp3" id="9_m6e1q"]
+[ext_resource type="AudioStream" uid="uid://1uu0xo4oamru" path="res://assets/audio/AUTRES/FX/Clic.mp3" id="10_448ic"]
+[ext_resource type="PackedScene" uid="uid://bciil8v6ykx2e" path="res://scenes/global/subtitles.tscn" id="11_oftaf"]
+[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="12_elb6t"]
+[ext_resource type="PackedScene" uid="uid://cq6rmmfltogvf" path="res://scenes/end/EndCredit.tscn" id="13_inboq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja34e"]
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("5_8omca")
+albedo_texture = ExtResource("2_gcgmc")
 billboard_mode = 1
 proximity_fade_enabled = true
 distance_fade_mode = 1
@@ -33,7 +34,7 @@ background_mode = 1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kefhw"]
 resource_name = "Floor"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_50der")
+albedo_texture = ExtResource("7_mun5o")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -613,17 +614,14 @@ _data = {
 &"anim": SubResource("Animation_3umha")
 }
 
-[sub_resource type="PackedScene" id="PackedScene_2ydly"]
-
-[node name="FinalScene" type="Control" unique_id=86593980 node_paths=PackedStringArray("pickable_slot3")]
+[node name="FinalScene" type="Control" unique_id=86593980]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rq84w")
-pickable_slot3 = NodePath("")
+script = ExtResource("1_6lte8")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=809016304]
 layout_mode = 1
@@ -635,7 +633,7 @@ grow_vertical = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=946011789]
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1779409992]
@@ -685,19 +683,19 @@ environment = SubResource("Environment_i4xxx")
 [node name="Slot" type="Node3D" parent="SubViewportContainer/SubViewport/Objects" unique_id=448845458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0249062, 0.19550681, -2.636619)
 
-[node name="lighter" parent="SubViewportContainer/SubViewport/Objects/Slot" unique_id=1060009113 instance=ExtResource("5_ja34e")]
+[node name="lighter" parent="SubViewportContainer/SubViewport/Objects/Slot" unique_id=1060009113 instance=ExtResource("3_xfndb")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 
 [node name="Slot2" type="Node3D" parent="SubViewportContainer/SubViewport/Objects" unique_id=1714795726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082675934, 0.20973927, -3.1940079)
 
-[node name="carnet" parent="SubViewportContainer/SubViewport/Objects/Slot2" unique_id=687022676 instance=ExtResource("3_s7xj3")]
+[node name="carnet" parent="SubViewportContainer/SubViewport/Objects/Slot2" unique_id=687022676 instance=ExtResource("4_tkg12")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 
 [node name="Slot3" type="Node3D" parent="SubViewportContainer/SubViewport/Objects" unique_id=1833175981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9500897, 0.28359103, -2.694835)
 
-[node name="trumpet" parent="SubViewportContainer/SubViewport/Objects/Slot3" unique_id=1353931598 instance=ExtResource("7_kefhw")]
+[node name="trumpet" parent="SubViewportContainer/SubViewport/Objects/Slot3" unique_id=1353931598 instance=ExtResource("5_cteac")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="Stand" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=408551430]
@@ -715,7 +713,7 @@ mesh = SubResource("CylinderMesh_8omca")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.576802, -1.6149744, -2.796338)
 mesh = SubResource("CylinderMesh_8omca")
 
-[node name="Desk" parent="SubViewportContainer/SubViewport" unique_id=1485273648 instance=ExtResource("9_50der")]
+[node name="Desk" parent="SubViewportContainer/SubViewport" unique_id=1485273648 instance=ExtResource("6_bdusw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.80889916, -1.1661608, -1.9940147)
 
 [node name="Desk_001" parent="SubViewportContainer/SubViewport/Desk" index="1" unique_id=1468955348]
@@ -735,24 +733,25 @@ offset_top = 67.0
 offset_right = 349.0
 offset_bottom = 253.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
 horizontal_alignment = 1
 autowrap_mode = 3
 justification_flags = 161
 clip_text = true
-script = ExtResource("10_ydepa")
+script = ExtResource("8_2q5ln")
 
 [node name="AudioBack" type="AudioStreamPlayer" parent="." unique_id=1607937711]
-stream = ExtResource("11_ayjh5")
+stream = ExtResource("9_m6e1q")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
 [node name="AudioClick" type="AudioStreamPlayer" parent="." unique_id=1292214045]
-stream = ExtResource("12_ytkeu")
+stream = ExtResource("10_448ic")
 bus = &"SFX"
 
-[node name="Subtitles" parent="." unique_id=1516935989 instance=ExtResource("13_wutmx")]
+[node name="Subtitles" parent="." unique_id=1516935989 instance=ExtResource("11_oftaf")]
 layout_mode = 1
 
 [node name="Anim" type="Node" parent="." unique_id=1084123067]
@@ -795,29 +794,29 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_left = 143.0
 offset_top = 161.0
-offset_right = 371.0
-offset_bottom = 452.0
+offset_right = 400.0
+offset_bottom = 489.0
 
 [node name="Obj2" type="TextureButton" parent="ObjButton" unique_id=260039056]
 layout_mode = 0
-offset_left = 451.0
-offset_top = 171.0
-offset_right = 679.0
-offset_bottom = 462.0
+offset_left = 483.0
+offset_top = 186.0
+offset_right = 779.0
+offset_bottom = 520.0
 
 [node name="Obj3" type="TextureButton" parent="ObjButton" unique_id=167434823]
 layout_mode = 0
-offset_left = 777.0
-offset_top = 160.0
-offset_right = 1005.0
-offset_bottom = 451.0
+offset_left = 867.0
+offset_top = 184.0
+offset_right = 1133.0
+offset_bottom = 490.0
 
 [node name="ExitButton" type="TextureButton" parent="." unique_id=758125039]
 layout_mode = 0
-offset_left = 724.0
-offset_top = 474.0
-offset_right = 1001.0
-offset_bottom = 631.0
+offset_left = 764.0
+offset_top = 505.0
+offset_right = 1090.0
+offset_bottom = 695.0
 
 [node name="Exit" type="Label3D" parent="ExitButton" unique_id=1982386671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.508564, -0.6451671, -0.9147045)
@@ -831,8 +830,8 @@ outline_size = 19
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("14_ayjh5")
-next_scene = SubResource("PackedScene_2ydly")
+script = ExtResource("12_elb6t")
+next_scene = ExtResource("13_inboq")
 metadata/_custom_type_script = "uid://c6215vuol8ms2"
 
 [connection signal="dialog_finished" from="Subtitles" to="." method="_on_subtitles_dialog_finished"]
