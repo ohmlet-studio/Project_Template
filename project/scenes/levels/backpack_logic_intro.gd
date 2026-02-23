@@ -20,6 +20,8 @@ func _on_scan_ended() -> void:
 	print("BACKPACK SCAN ENDED")
 	SubtitleScene.sub_load_from_file(subs_path)
 	SubtitleScene.play_dialog(sound_after)
+	
+	backpack.pickable = true
 
 	CrossfadePlayer.play(music_after, 2.0)
 	level.link_next_room()
