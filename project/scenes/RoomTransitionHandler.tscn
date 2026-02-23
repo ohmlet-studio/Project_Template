@@ -128,6 +128,7 @@ next_room = NodePath("../LevelOutro")
 [node name="LevelOutro" parent="Rooms" unique_id=1580783062 node_paths=PackedStringArray("credits_scene_door") instance=ExtResource("10_cywug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.41407, 0.09147453, 0)
 credits_scene_door = NodePath("../CorridorEnd/PortalDoor")
+dont_link_portals = true
 
 [node name="CorridorEnd" type="Node3D" parent="Rooms" unique_id=1028949147]
 transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 108.92533, 0.055626035, 1.5978918)
