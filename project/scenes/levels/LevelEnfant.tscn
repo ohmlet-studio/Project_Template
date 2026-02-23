@@ -155,6 +155,7 @@ object_to_scan = ExtResource("30_1i0o6")
 inspect_scale = 2.0
 dialog_audio = ExtResource("24_f1gog")
 dialog_subtitle = "res://assets/audio/PIECE_4/SOUVENIRS/Souvenir_4-2_ENG.srt"
+haiku = "When relationships are hard to keep afloat, ducking usually only makes you drown "
 
 [node name="Tambour" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="2" unique_id=824976173 instance=ExtResource("21_bvvhd")]
 transform = Transform3D(-0.3959189, -0.010926917, 0.69507474, -0.0048417835, 0.79992515, 0.009817309, -0.6951437, 0.00065182074, -0.395948, -0.13048118, 0.70314395, 4.3686013)
@@ -163,3 +164,4 @@ object_to_scan = ExtResource("31_avigs")
 inspect_scale = 2.0
 dialog_audio = ExtResource("25_qmgq3")
 dialog_subtitle = "res://assets/audio/PIECE_4/SOUVENIRS/Souvenir_4-3_ENG.srt"
+haiku = "Our synchronized rhythms can grow into a power both reassuring and terrifying "
