@@ -44,6 +44,9 @@ size = Vector2(0.795, 1)
 center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
+is_intro = null
+is_outro = null
+is_special_lvl = null
 entering_sound = ExtResource("2_y8cxe")
 subtitles_path = "res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1_ENG.srt"
 level_musics = Array[AudioStream]([ExtResource("uid://cjrl7sp8mbud8"), ExtResource("uid://dogp88dj26h68"), ExtResource("uid://bys2w4txdkdro"), ExtResource("uid://dhckeaxmhnlca")])
@@ -149,3 +152,6 @@ default_inspect_rotation = Vector3(0, 90, 0)
 dialog_audio = ExtResource("uid://d2187vvng34ef")
 dialog_subtitle = "res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3_ENG.srt"
 haiku = "but I’m glad I found a matching harmony by tuning in to the right people."
+
+[node name="OmniLight3D" parent="Node3D" parent_id_path=PackedInt32Array(1632869468) index="0" unique_id=1913222362]
+transform = Transform3D(-0.44224417, -0.6885674, -0.57471305, 0.30321497, -0.7178346, 0.626717, -0.84408575, 0.102900304, 0.52624214, 0.38255215, 1.7802589, 0.8435733)

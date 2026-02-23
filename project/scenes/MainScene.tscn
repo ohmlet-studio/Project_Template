@@ -46,6 +46,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0717633, 0)
 cull_mask = 2
 environment = ExtResource("5_1wiy7")
+far = 10.0
 
 [node name="Blurring" type="ColorRect" parent="." unique_id=1380853970]
 unique_name_in_owner = true

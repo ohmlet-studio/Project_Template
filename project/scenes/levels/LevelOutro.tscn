@@ -35,7 +35,8 @@ center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelOutro" unique_id=1125609813 instance=ExtResource("1_f8lvr")]
 script = ExtResource("2_mfdfc")
-is_intro_outro = null
+is_intro = null
+is_outro = null
 is_special_lvl = null
 entering_sound = ExtResource("uid://d1qxw47wq6o22")
 subtitles_path = "res://assets/audio/OUTRO/VOICE/Voix_entree_piece_outro_ENG.srt"
