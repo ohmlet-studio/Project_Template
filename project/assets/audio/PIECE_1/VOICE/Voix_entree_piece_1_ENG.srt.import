@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://dkpruq0iba8f5"
+path="res://.godot/imported/Voix_entree_piece_1_ENG.srt-8e116f2243048673337705f34f0688c3.res"
+
+[deps]
+
+source_file="res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1_ENG.srt"
+dest_files=["res://.godot/imported/Voix_entree_piece_1_ENG.srt-8e116f2243048673337705f34f0688c3.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

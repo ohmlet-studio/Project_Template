@@ -94,6 +94,7 @@ func _ready():
 	head_start_pos = $Head.position
 	
 	set_meta("teleport_root", ".")
+	get_camera.make_current()
 	
 	Manager.globPlayer = self
 	Manager.curCamera = get_camera

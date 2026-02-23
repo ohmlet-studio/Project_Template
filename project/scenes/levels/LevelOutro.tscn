@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://q2dg4rnvsjat"]
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_f8lvr"]
-[ext_resource type="AudioStream" uid="uid://d1qxw47wq6o22" path="res://assets/audio/OUTRO/VOICE/Voix entrée pièce outro.mp3" id="2_f8lvr"]
+[ext_resource type="Script" uid="uid://5k1v4u2sftu3" path="res://scenes/levels/level_outro.gd" id="2_mfdfc"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="3_eodmt"]
-[ext_resource type="AudioStream" uid="uid://cd73gp7o030r7" path="res://assets/audio/OUTRO/MUSIC/Bruit de fond fin (loop).mp3" id="3_s3dok"]
 [ext_resource type="Texture2D" uid="uid://bsdt8edpn0xgo" path="res://assets/models/final/posters/Pink_Floyd_The_Wall.jpg" id="4_ih7ir"]
 [ext_resource type="Texture2D" uid="uid://fb6h3jbticc" path="res://assets/models/final/posters/mcr.png" id="5_xnixj"]
 [ext_resource type="PackedScene" uid="uid://bphqbjpqaugyp" path="res://assets/models/placeholders/Low Poly Furniture/Lights/Lamp B.fbx" id="6_bxji0"]
@@ -16,10 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://drwkw7dxe6tcg" path="res://assets/models/final/bed/adulte_lit.fbx" id="13_hxyh0"]
 [ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="14_23o7r"]
 [ext_resource type="PackedScene" uid="uid://bqyddhi6x2moy" path="res://assets/models/memory_objects/backpack.fbx" id="15_fc8bl"]
-[ext_resource type="AudioStream" uid="uid://ldxg27p1posq" path="res://assets/audio/INTRO/VOICE/Voix sac.mp3" id="16_mtr0a"]
-[ext_resource type="Script" uid="uid://mcro2rybv31f" path="res://scenes/pickable_object/levelAdulte/pickable_backpack.gd" id="17_cxd3y"]
-[ext_resource type="AudioStream" uid="uid://dpg0mjtgx0gog" path="res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac.mp3" id="18_vakk1"]
-[ext_resource type="AudioStream" uid="uid://dvgk6ekh5u4r1" path="res://assets/audio/INTRO/MUSIC/N&B (loop).mp3" id="19_oej27"]
+[ext_resource type="Script" uid="uid://mcro2rybv31f" path="res://scenes/pickable_object/levelAdulte/backpack_logic_outro.gd" id="17_cxd3y"]
+[ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit_de_fond_loop.mp3" id="uid://b0qoce63n3tul"]
+[ext_resource type="AudioStream" uid="uid://bxmo1825fqcoj" path="res://assets/audio/OUTRO/VOICE/Voix_fin.mp3" id="uid://bxmo1825fqcoj"]
+[ext_resource type="AudioStream" uid="uid://d1qxw47wq6o22" path="res://assets/audio/OUTRO/VOICE/Voix_entree_piece_outro.mp3" id="uid://d1qxw47wq6o22"]
+[ext_resource type="AudioStream" uid="uid://dpg0mjtgx0gog" path="res://assets/audio/INTRO/VOICE/Voix_NB_bis_sans_sac.mp3" id="uid://dpg0mjtgx0gog"]
+[ext_resource type="AudioStream" uid="uid://dvgk6ekh5u4r1" path="res://assets/audio/INTRO/MUSIC/NB_loop.mp3" id="uid://dvgk6ekh5u4r1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l035v"]
 albedo_texture = ExtResource("4_ih7ir")
@@ -33,10 +34,17 @@ size = Vector2(0.795, 1)
 center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelOutro" unique_id=1125609813 instance=ExtResource("1_f8lvr")]
-entering_sound = ExtResource("2_f8lvr")
-subtitles_path = "res://assets/audio/OUTRO/VOICE/Voix entrée pièce outro.srt"
-level_musics = Array[AudioStream]([ExtResource("3_s3dok")])
+script = ExtResource("2_mfdfc")
+entering_sound = ExtResource("uid://d1qxw47wq6o22")
+subtitles_path = "res://assets/audio/OUTRO/VOICE/Voix_entree_piece_outro_ENG.srt"
 no_anim_color = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0" unique_id=2100994642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25584984, 0.4663391, 0.17668462)
+stream = ExtResource("uid://b0qoce63n3tul")
+autoplay = true
+max_distance = 7.0
+bus = &"SFX"
 
 [node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
 script = null
@@ -95,11 +103,11 @@ object_name = "Backpack"
 object_to_scan = ExtResource("15_fc8bl")
 inspect_scale = 2.0
 default_inspect_rotation = Vector3(0, 180, 0)
-dialog_audio = ExtResource("16_mtr0a")
-dialog_subtitle = "res://assets/audio/INTRO/VOICE/Voix sac ENG.srt"
+dialog_audio = ExtResource("uid://bxmo1825fqcoj")
+dialog_subtitle = "res://assets/audio/OUTRO/VOICE/Voix_fin_ENG.srt"
 
-[node name="Node" type="Node" parent="Room/Interactable/Grabbable/Backpack" index="3" unique_id=441035484]
+[node name="Node" type="Node" parent="Room/Interactable/Grabbable/Backpack" index="3" unique_id=1778581346]
 script = ExtResource("17_cxd3y")
-sound_after = ExtResource("18_vakk1")
-music_after = ExtResource("19_oej27")
-subs_path = "res://assets/audio/INTRO/VOICE/Voix N&B bis sans sac ENG.srt"
+sound_after = ExtResource("uid://dpg0mjtgx0gog")
+music_after = ExtResource("uid://dvgk6ekh5u4r1")
+subs_path = "res://assets/audio/INTRO/VOICE/Voix_NB_bis_sans_sac_ENG.srt"

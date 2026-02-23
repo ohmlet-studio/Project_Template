@@ -1,6 +1,7 @@
 extends Node
 
 signal dialog_finished
+signal dialog_started
 
 #@export var audio_player: AudioStreamPlayer
 #@export var subtitle_label: Label
@@ -11,13 +12,13 @@ signal dialog_finished
 var subtitle_data: Subtitles = Subtitles.new()
 var current_time: float = 0.0
 
-
 func _ready() -> void:
+	pass
 	#je sais c'est moche et je devrai créer un audio controller
 	#self.subtitle_label = get_child(0)
 	#audio_player = get_child(1)
-	if audio_player and not audio_player.finished.is_connected(_on_dialog_finished):
-		audio_player.finished.connect(_on_dialog_finished)
+	#if audio_player and not audio_player.finished.is_connected(_on_dialog_finished):
+	#	audio_player.finished.connect(_on_dialog_finished)
 
 
 func _on_dialog_finished() -> void:
@@ -35,21 +36,25 @@ func play_dialog(dialog : AudioStream) -> void:
 
 	audio_player.stream = dialog
 	audio_player.play()
-	#await audio_player.finished
-	#dialog_finished.emit()
+	
+	dialog_started.emit()
+	await audio_player.finished
+	dialog_finished.emit()
 	
 
 # Load and parse a subtitle file at runtime
 func sub_load_from_file(srt_path : String) -> void:
 	var subtitle_path: String = srt_path
-	var error: Error = subtitle_data.load_from_file(subtitle_path)
 
-	if error == OK:
-		print("Successfully loaded subtitle file")
+	# loadng subs for web
+	var loaded_resource: Resource = ResourceLoader.load(subtitle_path)
+	if loaded_resource != null and loaded_resource is Subtitles:
+		subtitle_data = loaded_resource
+		_last_entry_id = -1
+		print("Successfully loaded subtitle resource")
 		print("  Entries: ", subtitle_data.get_entry_count())
 		print("  Duration: ", subtitle_data.get_total_duration(), " seconds")
-	else:
-		printerr("Failed to load subtitle file: ", error)
+		return
 
 
 

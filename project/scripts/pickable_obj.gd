@@ -14,6 +14,9 @@ var scanned_object_instance: Node3D # never scale this, scale in blender and app
 var picked: bool = false
 var is_being_scanned: bool = false 
 var scanned: bool
+var pickable: bool = true
+
+@onready var room: LevelRoom = $"../../../.."
 
 @onready var handObjView = $inHandUI
 @onready var subviewport: SubViewport = $inHandUI/SubViewport
@@ -55,6 +58,8 @@ var scanned: bool
 
 @export_category("Dialog when inspected")
 
+@export var skip_inspect: bool = false
+
 @export var dialog_audio: AudioStream:
 	set(value):
 		dialog_audio = value
@@ -62,6 +67,10 @@ var scanned: bool
 @export var dialog_subtitle: String :
 	set(value):
 		dialog_subtitle = value
+		
+@export var haiku: String :
+	set(value):
+		haiku = value
 
 var _base_radius: float = 0.0
 var _breath_time: float = 0.0
@@ -79,10 +88,15 @@ func _ready() -> void:
 	interactable_3d.interacted.connect(_on_interact)
 	ScanInteractableLayer.scan_ended.connect(_on_scan_ended)
 	interactable_3d.scanned.connect(_on_scan_started)
-	if SubtitlesScene and not SubtitlesScene.dialog_finished.is_connected(_on_dialog_finished):
-		SubtitlesScene.dialog_finished.connect(_on_dialog_finished)
+	if SubtitleScene and not SubtitleScene.dialog_finished.is_connected(_on_dialog_finished):
+		SubtitleScene.dialog_finished.connect(_on_dialog_finished)
+	
 	picked = false
-
+	self.has_been_scanned = skip_inspect
+	if interactable_3d:
+		interactable_3d.scannable = not has_been_scanned
+	_hide_hand_obj()
+	
 func _set_object_name(value: String) -> void:
 	if not is_node_ready():
 		return
@@ -131,16 +145,24 @@ func _set_object_to_scan(value: PackedScene) -> void:
 		clone_inspect_view.set_meta("scan_owner", self)
 		interactable_3d.target_scannable_object = clone_inspect_view
 
-func _on_interact() -> void:
-	if has_been_scanned and Manager.current_room.all_objects_scanned():
-		picked = not picked
-		if picked:
-			on_picked.emit()
-		else:
-			on_unpicked.emit()
 
-		_origin_obj_transparency(picked)
-		_show_hand_obj(picked)
+func _on_interact() -> void:
+	if has_been_scanned and room.all_objects_scanned() or room.ready_direct:
+		pick()
+
+func pick():
+	if not pickable:
+		print(self.object_name, " is not pickable!")
+		return
+		
+	picked = not picked
+	if picked:
+		on_picked.emit()
+	else:
+		on_unpicked.emit()
+
+	_origin_obj_transparency(picked)
+	_show_hand_obj(picked)
 
 	if picked:
 		Manager.is_one_picked = true
@@ -162,13 +184,21 @@ func _origin_obj_transparency(pick: bool) -> void:
 		material.albedo_color.a = 0.5 if pick else 1.0
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 
+
 func _show_hand_obj(pick: bool) -> void:
 	if pick:
 		handObjView.show()
 	else:
 		handObjView.hide()
 
+
+func _hide_hand_obj():
+	handObjView.hide()
+
+
 func _on_scan_started() -> void:
+	if has_been_scanned:
+		return
 	scanned = true
 	has_been_scanned = true
 	is_being_scanned = true
@@ -189,8 +219,8 @@ func _on_scan_started() -> void:
 	if not dialog_subtitle:
 		dialog_subtitle = dialog_audio.resource_path.replace(".mp3", " ENG.srt")
 	
-	SubtitlesScene.sub_load_from_file(dialog_subtitle)
-	SubtitlesScene.play_dialog(dialog_audio)
+	SubtitleScene.sub_load_from_file(dialog_subtitle)
+	SubtitleScene.play_dialog(dialog_audio)
 	
 	scan_started.emit()
 

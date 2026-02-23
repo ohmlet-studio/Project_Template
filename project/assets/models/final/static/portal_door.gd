@@ -7,6 +7,7 @@ signal closed
 var is_opened = false
 
 signal teleported_player
+signal teleported_player_sent
 
 @onready var portal = $Portal
 @onready var door = $Door3D
@@ -37,12 +38,16 @@ func _ready() -> void:
 	if not Engine.is_editor_hint() and Manager.globPlayer:
 		portal.player_camera = Manager.globPlayer.get_camera()
 
-	portal.on_teleport_receive.connect(_on_portal_teleport)
+	portal.on_teleport_receive.connect(_on_portal_teleport_receive)
+	portal.on_teleport.connect(_on_portal_teleport_sent)
 
 	_connect_portals.call_deferred(other_door)
 	_apply_other_state.call_deferred(is_opened)
 
-func _on_portal_teleport(teleportable: Node3D) -> void:
+func _on_portal_teleport_sent(teleportable: Node3D) -> void:
+	teleported_player_sent.emit()
+
+func _on_portal_teleport_receive(teleportable: Node3D) -> void:
 	teleported_player.emit()
 	await get_tree().create_timer(1.5).timeout
 	close()
@@ -87,6 +92,9 @@ func _apply_other_state(opened: bool) -> void:
 		other_door.open_instant()
 	else:
 		other_door.close_instant()
+
+func activate():
+	portal.activate()
 
 func open() -> void:
 	door.open()

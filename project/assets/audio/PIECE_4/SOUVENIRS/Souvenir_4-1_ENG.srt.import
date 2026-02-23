@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://b3tvdbeodrwbo"
+path="res://.godot/imported/Souvenir_4-1_ENG.srt-b92db69a99c52e46333f063eeae6d13b.res"
+
+[deps]
+
+source_file="res://assets/audio/PIECE_4/SOUVENIRS/Souvenir_4-1_ENG.srt"
+dest_files=["res://.godot/imported/Souvenir_4-1_ENG.srt-b92db69a99c52e46333f063eeae6d13b.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

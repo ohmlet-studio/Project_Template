@@ -161,7 +161,7 @@ rigidbody_boost = 0.0
 teleport_tolerance = 0.5
 teleport_interactions = 3
 teleport_collision_mask = 32768
-start_deactivated = false
+start_deactivated = true
 metadata/_custom_type_script = "uid://cw1r4c1d7beyv"
 metadata/_edit_group_ = true
 

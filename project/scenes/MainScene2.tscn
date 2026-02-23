@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://c7ic6wyphfhxl"]
+
+[ext_resource type="Script" uid="uid://osw2ian0pmx4" path="res://scenes/main_scene_2.gd" id="1_i2dtl"]
+[ext_resource type="PackedScene" uid="uid://c0thskp5m6kuc" path="res://scenes/RoomTransitionHandler.tscn" id="2_5quc1"]
+[ext_resource type="Environment" uid="uid://bywldyytpakno" path="res://ressources/mask_camera_env.tres" id="3_54mqg"]
+[ext_resource type="Shader" uid="uid://c3sudo22dlh0m" path="res://shaders/sobel.gdshader" id="4_kujov"]
+[ext_resource type="Script" path="res://scripts/dot_cursor.gd" id="5_c7u4a"]
+[ext_resource type="Script" uid="uid://cwe1xwwfhcdle" path="res://scenes/inter_info.gd" id="6_2tn8e"]
+[ext_resource type="PackedScene" uid="uid://c75mpd4nm0j8t" path="res://scenes/menus/settings_menu.tscn" id="7_fmoxk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x537r"]
+shader = ExtResource("4_kujov")
+shader_parameter/outline_thickness = 0.5
+shader_parameter/outline_strength = 1.0000000475
+shader_parameter/bw_mix = 1.0
+shader_parameter/outline_color = Color(0.0654345, 0.028325817, 0.021821236, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mjkpp"]
+viewport_path = NodePath("CanvasLayer/SubViewport")
+
+[node name="Viewport" type="Node2D" unique_id=1316760191]
+script = ExtResource("1_i2dtl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1440051683]
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer" unique_id=1387275179]
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(1280, 720)
+
+[node name="RoomTransitionHandler" parent="CanvasLayer/SubViewport" unique_id=724203233 instance=ExtResource("2_5quc1")]
+
+[node name="MaskViewport" type="SubViewport" parent="CanvasLayer" unique_id=632110184]
+size = Vector2i(1280, 720)
+
+[node name="ColorMaskCamera3D" type="Camera3D" parent="CanvasLayer/MaskViewport" unique_id=1126684017]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0717633, 0)
+cull_mask = 2
+environment = ExtResource("3_54mqg")
+
+[node name="PlayingView" type="TextureRect" parent="." unique_id=1925727974]
+z_index = -4096
+material = SubResource("ShaderMaterial_x537r")
+offset_right = 1152.0
+offset_bottom = 648.0
+scale = Vector2(1, 1.0020664)
+mouse_filter = 2
+texture = SubResource("ViewportTexture_mjkpp")
+stretch_mode = 5
+
+[node name="InteractableInfo" type="CanvasLayer" parent="." unique_id=1836249769]
+visible = false
+
+[node name="Control" type="Control" parent="InteractableInfo" unique_id=2083149148]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="InteractableInfo/Control" unique_id=942237872]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DotCursor" type="Control" parent="InteractableInfo/Control/CenterContainer" unique_id=441371766]
+layout_mode = 2
+script = ExtResource("5_c7u4a")
+
+[node name="MarginContainer" type="MarginContainer" parent="InteractableInfo/Control" unique_id=1964718261]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.5
+offset_top = -40.0
+offset_right = 112.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="InterInfo" type="RichTextLabel" parent="InteractableInfo/Control/MarginContainer" unique_id=2057951549]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "ITEM INFO HERE"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("6_2tn8e")
+
+[node name="Settings" type="CanvasLayer" parent="." unique_id=755685338]
+layer = 3
+
+[node name="Control" type="Control" parent="Settings" unique_id=263671933]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsMenu" parent="Settings/Control" unique_id=2087371895 instance=ExtResource("7_fmoxk")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -5.0
+offset_top = -1.0
+offset_right = 1275.0
+offset_bottom = 719.0
+grow_horizontal = 1
+grow_vertical = 1

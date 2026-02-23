@@ -21,7 +21,7 @@ func scan(target: Node3D) -> void:
 	Manager.globPlayer.set_physics_process(false)
 	
 	original_mouse_mode = Input.mouse_mode
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	scan_started.emit(target)
 	control.mouse_filter = Control.MOUSE_FILTER_PASS

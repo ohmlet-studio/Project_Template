@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://cq6rmmfltogvf"]
+
+[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="1_2ywrl"]
+[ext_resource type="Texture2D" uid="uid://de30jyus41cdr" path="res://assets/rock_bottom.png" id="1_ti2yx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4rxl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_2vexo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jl140"]
+resource_name = "anim"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 5.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 5.4333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivrmu"]
+_data = {
+&"RESET": SubResource("Animation_2vexo"),
+&"anim": SubResource("Animation_jl140")
+}
+
+[node name="EndCredit" type="Control" unique_id=358828160]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=405945765]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d4rxl")
+
+[node name="Label" type="Label" parent="." unique_id=1547324141]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "Code:     Retronyme & ollig
+
+Level design:     la virgule & nispouli
+Environment:     nispouli
+Modeling:     Retronyme
+
+Music, SFX & mixing:     la virgule
+Voice acting:     la virgule
+Writing:      la virgule & nispouli & ollig
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1519790596]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RockBottom" type="Sprite2D" parent="Control" unique_id=121333143]
+position = Vector2(635, 449)
+scale = Vector2(0.28145045, 0.28145045)
+texture = ExtResource("1_ti2yx")
+
+[node name="Label2" type="Label" parent="Control" unique_id=1645727131]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 434.0
+offset_top = 144.0
+offset_right = 803.0
+offset_bottom = 269.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Thank you for playing !"
+horizontal_alignment = 1
+
+[node name="FadeTransitionManager" type="ColorRect" parent="." unique_id=1811600374]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2ywrl")
+metadata/_custom_type_script = "uid://c6215vuol8ms2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=527216340]
+libraries/ = SubResource("AnimationLibrary_ivrmu")
+autoplay = &"anim"

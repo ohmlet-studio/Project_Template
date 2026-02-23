@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://qlnnfus6r05q"
+path="res://.godot/imported/Voix_NB.srt-5accbc33ae000083d918d03b18ebeacb.res"
+
+[deps]
+
+source_file="res://assets/audio/INTRO/VOICE/Voix_NB.srt"
+dest_files=["res://.godot/imported/Voix_NB.srt-5accbc33ae000083d918d03b18ebeacb.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0

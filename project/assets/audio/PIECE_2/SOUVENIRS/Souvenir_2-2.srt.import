@@ -1,0 +1,17 @@
+[remap]
+
+importer="rubonnek.subtitle_importer"
+type="Resource"
+uid="uid://dw48gqt8uofdv"
+path="res://.godot/imported/Souvenir_2-2.srt-c037a96725cf09dfa674a1b07af571c7.res"
+
+[deps]
+
+source_file="res://assets/audio/PIECE_2/SOUVENIRS/Souvenir_2-2.srt"
+dest_files=["res://.godot/imported/Souvenir_2-2.srt-c037a96725cf09dfa674a1b07af571c7.res"]
+
+[params]
+
+remove_html_tags=true
+remove_ass_tags=true
+framerate=25.0
