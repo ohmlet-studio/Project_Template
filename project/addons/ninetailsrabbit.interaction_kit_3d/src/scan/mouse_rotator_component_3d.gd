@@ -30,7 +30,7 @@ func _input(event: InputEvent) -> void:
 			var motion: InputEventMouseMotion = event.xformed_by(get_tree().root.get_final_transform())
 			var mouse_sens: float = mouse_sensitivity / 1000.0 # radians/pixel, 3 becomes 0.003
 			
-			target.rotate_x(motion.relative.y * mouse_sens)
+			#target.rotate_x(motion.relative.y * mouse_sens)
 			target.rotate_y(motion.relative.x * mouse_sens)
 		
 		if mouse_release_detected(event):

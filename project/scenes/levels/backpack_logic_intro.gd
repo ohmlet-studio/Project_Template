@@ -10,6 +10,7 @@ extends Node
 func _ready():
 	backpack.scan_started.connect(_on_scan_started)
 	backpack.scan_ended.connect(_on_scan_ended)
+	backpack.pickable = false
 
 func _on_scan_started() -> void:
 	await get_tree().create_timer(2.0).timeout

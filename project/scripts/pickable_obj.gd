@@ -14,6 +14,7 @@ var scanned_object_instance: Node3D # never scale this, scale in blender and app
 var picked: bool = false
 var is_being_scanned: bool = false 
 var scanned: bool
+var pickable: bool = true
 
 @onready var room: LevelRoom = $"../../../.."
 
@@ -150,6 +151,10 @@ func _on_interact() -> void:
 		pick()
 
 func pick():
+	if not pickable:
+		print(self.object_name, " is not pickable!")
+		return
+		
 	picked = not picked
 	if picked:
 		on_picked.emit()
