@@ -46,6 +46,10 @@ movie_writer/movie_file="/home/ruben/Desktop/brackeys/video.avi"
 
 enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/ninetailsrabbit.interaction_kit_3d/plugin.cfg", "res://addons/portals/plugin.cfg", "res://addons/rubonnek.subtitles_importer/plugin.cfg", "res://addons/sudden_fade_plugin/plugin.cfg")
 
+[gui]
+
+theme/custom_font="uid://dgtga1ihqlseh"
+
 [input]
 
 up={
