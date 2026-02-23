@@ -439,13 +439,11 @@ script = ExtResource("1_4cq84")
 [node name="PortalDoorMain" parent="Room/Interactable/Static" unique_id=1476560424 node_paths=PackedStringArray("other_door") instance=ExtResource("19_jxjyj")]
 unique_name_in_owner = true
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0.42835802, 1.308633, -2.3876684)
-visible = false
 other_door = NodePath("../PortalDoorBed")
 
 [node name="PortalDoorBed" parent="Room/Interactable/Static" unique_id=322101260 node_paths=PackedStringArray("other_door") instance=ExtResource("19_jxjyj")]
 unique_name_in_owner = true
 transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, 2.6860678, 1.3334157, 3.7548685)
-visible = false
 other_door = NodePath("../PortalDoorMain")
 
 [node name="Window C" type="Node3D" parent="Room/Interactable/Static" unique_id=1567670714]
