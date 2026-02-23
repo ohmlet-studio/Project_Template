@@ -9,10 +9,6 @@ radius = 0.45248723
 [sub_resource type="ViewportTexture" id="ViewportTexture_r8wao"]
 viewport_path = NodePath("inHandUI/SubViewport")
 
-[sub_resource type="Environment" id="Environment_8kydj"]
-ambient_light_source = 2
-ambient_light_color = Color(0.74558026, 0.7455802, 0.7455802, 1)
-
 [sub_resource type="SphereMesh" id="SphereMesh_s5pbp"]
 flip_faces = true
 
@@ -54,15 +50,11 @@ scale = Vector2(0.8502802, 0.8502802)
 texture = SubResource("ViewportTexture_r8wao")
 
 [node name="SubViewport" type="SubViewport" parent="inHandUI" unique_id=1844445340]
-own_world_3d = true
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="inHandUI/SubViewport" unique_id=1115116186]
 transform = Transform3D(0.006513669, -0.1128796, 0.9935874, 0.021458438, 0.9933954, 0.11271712, -0.9997486, 0.020586628, 0.008892869, 0.7675929, 0.6601874, 0.4117597)
 cull_mask = 1048573
-environment = SubResource("Environment_8kydj")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="inHandUI/SubViewport" unique_id=684546716]
 
 [node name="ColorSphere" type="MeshInstance3D" parent="." unique_id=375854603]
 layers = 2

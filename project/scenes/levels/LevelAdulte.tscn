@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://c2hburnp68gfh"]
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_6rgy2"]
-[ext_resource type="AudioStream" uid="uid://cjrl7sp8mbud8" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-0.mp3" id="uid://cjrl7sp8mbud8"]
-[ext_resource type="AudioStream" uid="uid://bfnoqx6qkmn50" path="res://assets/audio/INTRO/VOICE/Voix_NB.mp3" id="uid://bfnoqx6qkmn50"]
 [ext_resource type="PackedScene" uid="uid://b01pwdfvsow80" path="res://assets/models/final/carpet/adulte_carpet.fbx" id="2_ox3cy"]
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="3_7sakj"]
-[ext_resource type="AudioStream" uid="uid://dogp88dj26h68" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-1.mp3" id="uid://dogp88dj26h68"]
-[ext_resource type="AudioStream" uid="uid://bys2w4txdkdro" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-2.mp3" id="uid://bys2w4txdkdro"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="4_ck67t"]
 [ext_resource type="PackedScene" uid="uid://dxenntoejob6r" path="res://assets/models/final/commode/commode3.fbx" id="5_7sakj"]
-[ext_resource type="AudioStream" uid="uid://dhckeaxmhnlca" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-3.mp3" id="uid://dhckeaxmhnlca"]
 [ext_resource type="PackedScene" uid="uid://h7fer3yu8lmd" path="res://assets/models/final/smolthings/cactus.fbx" id="6_ck67t"]
 [ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="7_b5sfl"]
 [ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="8_l035v"]
@@ -29,8 +24,13 @@
 [ext_resource type="PackedScene" uid="uid://ctjlx7kjvfh2w" path="res://assets/models/final/smolthings/carton3.fbx" id="17_l035v"]
 [ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="17_ox3cy"]
 [ext_resource type="AudioStream" uid="uid://b1h3fg1ve503h" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1.mp3" id="uid://b1h3fg1ve503h"]
+[ext_resource type="AudioStream" uid="uid://bfnoqx6qkmn50" path="res://assets/audio/INTRO/VOICE/Voix_NB.mp3" id="uid://bfnoqx6qkmn50"]
+[ext_resource type="AudioStream" uid="uid://bys2w4txdkdro" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-2.mp3" id="uid://bys2w4txdkdro"]
 [ext_resource type="AudioStream" uid="uid://cetlm6umu0rt0" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2.mp3" id="uid://cetlm6umu0rt0"]
+[ext_resource type="AudioStream" uid="uid://cjrl7sp8mbud8" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-0.mp3" id="uid://cjrl7sp8mbud8"]
 [ext_resource type="AudioStream" uid="uid://d2187vvng34ef" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3.mp3" id="uid://d2187vvng34ef"]
+[ext_resource type="AudioStream" uid="uid://dhckeaxmhnlca" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-3.mp3" id="uid://dhckeaxmhnlca"]
+[ext_resource type="AudioStream" uid="uid://dogp88dj26h68" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-1.mp3" id="uid://dogp88dj26h68"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l035v"]
 albedo_texture = ExtResource("13_l035v")
@@ -45,7 +45,7 @@ center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
 entering_sound = ExtResource("uid://bfnoqx6qkmn50")
-subtitles_path = "res://assets/audio/INTRO/VOICE/Voix_NB.srt"
+subtitles_path = "res://assets/audio/INTRO/VOICE/Voix_NB_ENG.srt"
 level_musics = Array[AudioStream]([ExtResource("uid://cjrl7sp8mbud8"), ExtResource("uid://dogp88dj26h68"), ExtResource("uid://bys2w4txdkdro"), ExtResource("uid://dhckeaxmhnlca")])
 
 [node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
@@ -110,6 +110,9 @@ transform = Transform3D(0.3668385, 0, 1.0855242, 0, 1.1458335, 0, -1.0855242, 0,
 
 [node name="adulte_lit" parent="Room/Furniture" index="13" unique_id=1005375489 instance=ExtResource("16_y8cxe")]
 transform = Transform3D(-0.0100650415, 0, 3.333317, 0, 3.3333325, 0, -3.333317, 0, -0.0100650415, -3.6979697, 1.5795779, 12.28808)
+
+[node name="PortalDoorBed" parent="Room/Interactable/Static" parent_id_path=PackedInt32Array(1037730109) index="1" unique_id=322101260]
+visible = false
 
 [node name="Window C" parent="Room/Interactable/Static/Window C" parent_id_path=PackedInt32Array(1567670714) index="0" unique_id=1939163916]
 surface_material_override/0 = null

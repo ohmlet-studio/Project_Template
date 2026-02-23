@@ -45,14 +45,16 @@ func play_dialog(dialog : AudioStream) -> void:
 # Load and parse a subtitle file at runtime
 func sub_load_from_file(srt_path : String) -> void:
 	var subtitle_path: String = srt_path
-	var error: Error = subtitle_data.load_from_file(subtitle_path)
 
-	if error == OK:
-		print("Successfully loaded subtitle file")
+	# loadng subs for web
+	var loaded_resource: Resource = ResourceLoader.load(subtitle_path)
+	if loaded_resource != null and loaded_resource is Subtitles:
+		subtitle_data = loaded_resource
+		_last_entry_id = -1
+		print("Successfully loaded subtitle resource")
 		print("  Entries: ", subtitle_data.get_entry_count())
 		print("  Duration: ", subtitle_data.get_total_duration(), " seconds")
-	else:
-		printerr("Failed to load subtitle file: ", error)
+		return
 
 
 

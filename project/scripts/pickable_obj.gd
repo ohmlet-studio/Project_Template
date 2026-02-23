@@ -85,14 +85,15 @@ func _ready() -> void:
 	interactable_3d.interacted.connect(_on_interact)
 	ScanInteractableLayer.scan_ended.connect(_on_scan_ended)
 	interactable_3d.scanned.connect(_on_scan_started)
-	if SubtitlesScene and not SubtitlesScene.dialog_finished.is_connected(_on_dialog_finished):
-		SubtitlesScene.dialog_finished.connect(_on_dialog_finished)
+	if SubtitleScene and not SubtitleScene.dialog_finished.is_connected(_on_dialog_finished):
+		SubtitleScene.dialog_finished.connect(_on_dialog_finished)
 	
 	picked = false
 	self.has_been_scanned = skip_inspect
 	if interactable_3d:
 		interactable_3d.scannable = not has_been_scanned
-
+	_hide_hand_obj()
+	
 func _set_object_name(value: String) -> void:
 	if not is_node_ready():
 		return
@@ -211,8 +212,8 @@ func _on_scan_started() -> void:
 	if not dialog_subtitle:
 		dialog_subtitle = dialog_audio.resource_path.replace(".mp3", " ENG.srt")
 	
-	SubtitlesScene.sub_load_from_file(dialog_subtitle)
-	SubtitlesScene.play_dialog(dialog_audio)
+	SubtitleScene.sub_load_from_file(dialog_subtitle)
+	SubtitleScene.play_dialog(dialog_audio)
 	
 	scan_started.emit()
 

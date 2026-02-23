@@ -44,8 +44,7 @@ func _ready() -> void:
 	#Manager.is_all_picked = false
 	
 	_create_furniture_collisions()
-	if not dont_link_portals:
-		_link_portals(teleports_to)
+	_link_portals(teleports_to)
 	
 	empty_level = pickable_parent.get_children().size() == 0
 	
@@ -64,13 +63,17 @@ func _set_grabbables_interaction_enabled(enabled: bool) -> void:
 			child.interactable_3d.can_be_interacted = enabled
 
 func _on_teleport():
-	# level finished
+		# level finished
 	if teleports_to == next_room:
 		await get_tree().create_timer(1.0)
 		_remove_layer_recursive(self, 2) # remove all things colored
 	elif is_player_never_entered:
 		is_player_never_entered = false
 		
+		if level_musics.size() > 0:
+			CrossfadePlayer.play(level_musics[0], 0.0)
+		
+
 		if ready_direct:
 			set_layer_2()
 		
@@ -78,10 +81,9 @@ func _on_teleport():
 			subtitles_path = entering_sound.resource_path.replace(".mp3", "_ENG.srt")
 		
 		_set_grabbables_interaction_enabled(false)
-		SubtitlesScene.sub_load_from_file(subtitles_path)
-		SubtitlesScene.play_dialog(entering_sound)
-		if SubtitlesScene:
-			await SubtitlesScene.dialog_finished
+		SubtitleScene.sub_load_from_file(subtitles_path)
+		SubtitleScene.play_dialog(entering_sound)
+		await SubtitleScene.dialog_finished
 		_set_grabbables_interaction_enabled(true)
 		
 		if level_musics.size() > 0:
@@ -91,6 +93,7 @@ func _on_teleport():
 		if empty_level or ready_direct:
 			link_next_room()
 	else:
+		await SubtitleScene.dialog_finished
 		if not Manager.is_one_picked:
 			_play_aide_dialog()
 
@@ -102,29 +105,28 @@ func all_objects_scanned():
 
 func _play_aide_dialog() -> void:
 	var aide_audio := load(AIDE_AUDIO_PATH) as AudioStream
-	SubtitlesScene.sub_load_from_file(AIDE_SUBTITLE_PATH)
-	SubtitlesScene.play_dialog(aide_audio)
+	SubtitleScene.sub_load_from_file(AIDE_SUBTITLE_PATH)
+	SubtitleScene.play_dialog(aide_audio)
 
 func _link_portals(other_room: LevelRoom):
+	if dont_link_portals:
+		return
+		
 	await get_tree().process_frame
 	
 	if other_room == null:
 		other_room = self
 		
 	print("Linking room ", self.name, " to ", other_room.name)
-	
-	print("Link portal 1 to ", other_room.portal_door_2)
-	self.portal_door_1.other_door = other_room.portal_door_2
-	self.portal_door_1.teleported_player.connect(_on_teleport)
-	if self.portal_door_1.is_opened:
-		other_room.portal_door_2.open_instant()
-	
-	print("Link portal 2 to ", other_room.portal_door_2)
-	self.portal_door_2.other_door = other_room.portal_door_1
-	self.portal_door_2.teleported_player.connect(_on_teleport)
-	if self.portal_door_2.is_opened:
-		other_room.portal_door_1.open_instant()
 
+	for portal: PortalDoor in [portal_door_1, portal_door_2]:
+		portal.show()
+		var other_portal = other_room.portal_door_2 if portal == portal_door_1 else other_room.portal_door_1
+		portal.other_door = other_portal
+		portal.teleported_player.connect(_on_teleport)
+
+		if portal.is_opened:
+			other_portal.open_instant()
 	
 func _create_furniture_collisions() -> void:
 	for node in _furniture.get_children():

@@ -57,7 +57,7 @@ func _on_interactable_interacted(interactable: Interactable3D) -> void:
 	is_scanning = true
 	
 	current_scanned_interactable = interactable
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	interactable_information.clear()
 	interactable_information.text = ""
 

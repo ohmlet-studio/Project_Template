@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ulmi6uj7knqj" path="res://scenes/pickable_object/levelAdulte/Pickable.tscn" id="21_bvvhd"]
 [ext_resource type="PackedScene" uid="uid://pumiv3sg56b" path="res://assets/models/memory_objects/bear.fbx" id="22_f1gog"]
 [ext_resource type="PackedScene" uid="uid://diasp1xlybhs4" path="res://assets/models/memory_objects/duck.fbx" id="30_1i0o6"]
-[ext_resource type="PackedScene" uid="uid://b5bh1afrikmet" path="res://assets/models/memory_objects/cube.fbx" id="30_avigs"]
+[ext_resource type="PackedScene" uid="uid://qc0oinrdwsnb" path="res://assets/models/memory_objects/instrument.fbx" id="32_1i0o6"]
 [ext_resource type="AudioStream" uid="uid://1jdg1rgdnlyv" path="res://assets/audio/PIECE_4/MUSIC_loop/Piece_4-3.mp3" id="uid://1jdg1rgdnlyv"]
 [ext_resource type="AudioStream" uid="uid://3mk03tatkwxd" path="res://assets/audio/PIECE_4/MUSIC_loop/Piece_4-1.mp3" id="uid://3mk03tatkwxd"]
 [ext_resource type="AudioStream" uid="uid://b00fbjnmouvvo" path="res://assets/audio/PIECE_4/MUSIC_loop/Piece_4-2.mp3" id="uid://b00fbjnmouvvo"]
@@ -153,9 +153,8 @@ dialog_audio = ExtResource("uid://cvtd55wlnkaay")
 dialog_subtitle = "res://assets/audio/PIECE_4/SOUVENIRS/Souvenir_4-2_ENG.srt"
 
 [node name="Tambour" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="2" unique_id=824976173 instance=ExtResource("21_bvvhd")]
-transform = Transform3D(-0.49489844, -0.013658626, 0.8688432, -0.006052228, 0.9999072, 0.0122718355, -0.8689295, 0.00081483345, -0.4949345, -0.34949476, 0.70314395, 4.302678)
+transform = Transform3D(-0.37117398, -0.010243985, 0.65163255, -0.004539172, 0.7499298, 0.009203726, -0.6516972, 0.00061108195, -0.37120122, -0.16489327, 0.6045463, 4.36679)
 object_name = "Drums"
-object_to_scan = ExtResource("30_avigs")
-inspect_scale = 2.0
+object_to_scan = ExtResource("32_1i0o6")
 dialog_audio = ExtResource("uid://c3djw5la8e1xa")
 dialog_subtitle = "res://assets/audio/PIECE_4/SOUVENIRS/Souvenir_4-3_ENG.srt"

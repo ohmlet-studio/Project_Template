@@ -60,7 +60,8 @@ func _on_interactable_interacted(interactable: Interactable3D) -> void:
 	is_scanning = true
 	
 	current_scanned_interactable = interactable
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	%Blurring.visible = true
 	interactable_information.clear()
 	interactable_information.text = ""
 
@@ -76,4 +77,5 @@ func _on_scan_ended(_target: Node3D) -> void:
 func _finish_scan_state() -> void:
 	is_scanning = false
 	current_scanned_interactable = null
+	%Blurring.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

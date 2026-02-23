@@ -134,7 +134,7 @@ albedo_texture = ExtResource("22_2thrm")
 
 [node name="LevelAdo" unique_id=1125609813 instance=ExtResource("1_nxnrf")]
 entering_sound = ExtResource("uid://3ia2g41wnuj4")
-subtitles_path = "res://assets/audio/PIECE_2/VOICE/Voix_entree_piece_2.srt"
+subtitles_path = "res://assets/audio/PIECE_2/VOICE/Voix_entree_piece_2_ENG.srt"
 level_musics = Array[AudioStream]([ExtResource("3_jrgwe"), ExtResource("4_nhast"), ExtResource("5_1e2y7"), ExtResource("6_k7h6r")])
 
 [node name="blackcarpet" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="0" unique_id=434238784 instance=ExtResource("3_nxnrf")]

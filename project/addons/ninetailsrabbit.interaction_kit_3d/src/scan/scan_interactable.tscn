@@ -11,6 +11,8 @@ script = ExtResource("1_s2ldf")
 
 [node name="MouseRotatorComponent3D" type="Node3D" parent="." unique_id=1932417512]
 script = ExtResource("2_eav8f")
+mouse_sensitivity = 3.0
+keep_pressed_to_rotate = false
 metadata/_custom_type_script = "uid://46mwg4nyw8ns"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=27487211]
