@@ -55,7 +55,12 @@ func _ready() -> void:
 		
 	portal_door_1.open_instant()
 	portal_door_2.open_instant()
-
+	
+	if not dont_link_portals and empty_level or ready_direct:
+		link_next_room()
+		for child: Pickable in pickable_parent.get_children():
+			child.scanned = true
+		
 func _set_grabbables_interaction_enabled(enabled: bool) -> void:
 	for child: Pickable in pickable_parent.get_children():
 		child.color_radius = 1.0 if enabled else 0.0
@@ -72,7 +77,6 @@ func _on_teleport():
 		
 		if level_musics.size() > 0:
 			CrossfadePlayer.play(level_musics[0], 0.0)
-		
 
 		if ready_direct:
 			set_layer_2()
@@ -159,7 +163,6 @@ func _on_scan_ended(pickable: Pickable):
 	
 	number_of_object_scanned += 1
 	number_of_object_scanned = min(number_of_object_scanned, level_musics.size() - 1)
-	
 	if number_of_object_scanned >= 0:
 		CrossfadePlayer.play(level_musics[number_of_object_scanned], 1.0)
 	

@@ -16,7 +16,7 @@ config/ninetailsrabbit.interaction_kit_3d/grabbables_collision_layer=7
 [application]
 
 config/name="Brackeys"
-run/main_scene="uid://ceauub3uvaq3b"
+run/main_scene="uid://dpxoysx32ydd2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

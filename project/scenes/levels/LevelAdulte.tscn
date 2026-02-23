@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_6rgy2"]
 [ext_resource type="PackedScene" uid="uid://b01pwdfvsow80" path="res://assets/models/final/carpet/adulte_carpet.fbx" id="2_ox3cy"]
+[ext_resource type="AudioStream" uid="uid://d1h1miuyx6dab" path="res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1.mp3" id="2_y8cxe"]
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="3_7sakj"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="4_ck67t"]
 [ext_resource type="PackedScene" uid="uid://dxenntoejob6r" path="res://assets/models/final/commode/commode3.fbx" id="5_7sakj"]
@@ -24,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://ctjlx7kjvfh2w" path="res://assets/models/final/smolthings/carton3.fbx" id="17_l035v"]
 [ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="17_ox3cy"]
 [ext_resource type="AudioStream" uid="uid://b1h3fg1ve503h" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1.mp3" id="uid://b1h3fg1ve503h"]
-[ext_resource type="AudioStream" uid="uid://bfnoqx6qkmn50" path="res://assets/audio/INTRO/VOICE/Voix_NB.mp3" id="uid://bfnoqx6qkmn50"]
 [ext_resource type="AudioStream" uid="uid://bys2w4txdkdro" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-2.mp3" id="uid://bys2w4txdkdro"]
 [ext_resource type="AudioStream" uid="uid://cetlm6umu0rt0" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2.mp3" id="uid://cetlm6umu0rt0"]
 [ext_resource type="AudioStream" uid="uid://cjrl7sp8mbud8" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-0.mp3" id="uid://cjrl7sp8mbud8"]
@@ -44,8 +44,8 @@ size = Vector2(0.795, 1)
 center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
-entering_sound = ExtResource("uid://bfnoqx6qkmn50")
-subtitles_path = "res://assets/audio/INTRO/VOICE/Voix_NB_ENG.srt"
+entering_sound = ExtResource("2_y8cxe")
+subtitles_path = "res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1_ENG.srt"
 level_musics = Array[AudioStream]([ExtResource("uid://cjrl7sp8mbud8"), ExtResource("uid://dogp88dj26h68"), ExtResource("uid://bys2w4txdkdro"), ExtResource("uid://dhckeaxmhnlca")])
 
 [node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]

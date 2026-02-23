@@ -15,6 +15,8 @@ var picked: bool = false
 var is_being_scanned: bool = false 
 var scanned: bool
 
+@onready var room: LevelRoom = $"../../../.."
+
 @onready var handObjView = $inHandUI
 @onready var subviewport: SubViewport = $inHandUI/SubViewport
 @onready var interactable_3d: Interactable3D = $Interactable3D
@@ -144,7 +146,7 @@ func _set_object_to_scan(value: PackedScene) -> void:
 
 
 func _on_interact() -> void:
-	if has_been_scanned and Manager.current_room.all_objects_scanned():
+	if has_been_scanned and room.all_objects_scanned() or room.ready_direct:
 		pick()
 
 func pick():

@@ -16,10 +16,15 @@ func _ready():
 	GlobalInteractionEvents.interactable_interacted.connect(_on_interactable_interacted)
 	ScanInteractableLayer.scan_ended.connect(_on_scan_ended)
 	
+	get_window().focus_exited.connect(_on_game_paused)
+	
 	Manager.globPlayer.action_back.connect(_on_game_paused)
 	%SettingsMenu.closed.connect(_on_pause_menu_closed)
 	
 	Manager.playing_view_rect = $PlayingView
+
+func _on_window_focus_exited() -> void:
+	_on_game_paused()
 
 func _input(event):
 	if viewport and is_inside_tree():
@@ -44,7 +49,7 @@ func _on_interactable_focused(interactable: Interactable3D) -> void:
 		if "has_been_scanned" in interactable.get_parent():
 			if not interactable.get_parent().has_been_scanned:
 				interactable_information.text = "[font_size=35][i][E] to interact with %s[/i][/font_size]" % interactable.title
-			elif interactable.get_parent().has_been_scanned and Manager.current_room.all_objects_scanned():
+			elif interactable.get_parent().has_been_scanned and interactable.get_parent().room.all_objects_scanned():
 				interactable_information.text = "[font_size=35][i][E] to pick %s[/i][/font_size]" % interactable.title
 
 func _on_interactable_unfocused(_interactable: Interactable3D) -> void:
@@ -79,3 +84,10 @@ func _finish_scan_state() -> void:
 	current_scanned_interactable = null
 	%Blurring.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_IN:
+		_on_game_paused()
+		
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		_on_game_paused()
