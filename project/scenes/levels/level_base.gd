@@ -69,6 +69,9 @@ func _set_grabbables_interaction_enabled(enabled: bool) -> void:
 
 func _on_teleport():
 		# level finished
+	print(next_room)
+	if next_room == $"../LevelAdulte":
+		%LabelCorridor.visible = false
 	if teleports_to == next_room:
 		await get_tree().create_timer(1.0)
 		_remove_layer_recursive(self, 2) # remove all things colored
