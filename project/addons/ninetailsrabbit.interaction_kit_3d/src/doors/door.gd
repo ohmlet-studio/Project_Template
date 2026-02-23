@@ -139,6 +139,7 @@ func try_open():
 		open()
 
 func on_tried_to_open_locked_door() -> void:
-	if is_locked and animation_player.has_animation(locked_door_animation) and can_be_interacted():
-		animation_player.play(locked_door_animation)
+	#if is_locked and animation_player.has_animation(locked_door_animation) and can_be_interacted():
+		#animation_player.play(locked_door_animation)
+	pass
 #endregion

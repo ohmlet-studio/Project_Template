@@ -1,15 +1,15 @@
 extends Control
 
-const DEBUG: bool = true
+const DEBUG: bool = false
 
 const text_speed = 0.08
 const timer = 1.5
 const timer_dial = 0.5
 const audioback_db_lvl = -25
 
-@export var pickable_slot: Pickable
-@export var pickable_slot2: Pickable
-@export var pickable_slot3: Pickable
+@onready var pickable_slot: Pickable
+@onready var pickable_slot2: Pickable
+@onready var pickable_slot3: Pickable
 @onready var slots = [$SubViewportContainer/SubViewport/Objects/Slot, $SubViewportContainer/SubViewport/Objects/Slot2, $SubViewportContainer/SubViewport/Objects/Slot3]
 @onready var haiku_label: Label = $Haiku
 @onready var anim1: AnimationPlayer = $"Anim/1stObj"
@@ -32,21 +32,25 @@ func _ready() -> void:
 	var debug_string3: String = " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 	
 	haiku_label.text = ""
+
+	pickable_slot = Manager.all_picked_object[2]
+	pickable_slot2 = Manager.all_picked_object[1]
+	pickable_slot3 = Manager.all_picked_object[0]
 	
 	if not DEBUG:
 		## Clear slots
-		$SubViewportContainer/SubViewport/Objects/Slot/carnet.queue_free()
-		$SubViewportContainer/SubViewport/Objects/Slot2/lighter.queue_free()
-		$SubViewportContainer/SubViewport/Objects/Slot3/trumpet.queue_free()
-		
-	for memory in [pickable_slot, pickable_slot2, pickable_slot3]:
-		if not memory or DEBUG:
-			continue
-		var path = memory.object_to_scan.resource_path
-		var object_room1: Node3D = load(path).instantiate()
-		object_room1.scale = Vector3.ONE * memory.inspect_scale
-		slots[slot_id].add_child(object_room1)
-		slot_id += 1
+		for slot in slots:
+			for n in slot.get_children():
+				slot.remove_child(n)
+				n.queue_free() 
+		for memory in [pickable_slot, pickable_slot2, pickable_slot3]:
+			if not memory or DEBUG:
+				continue
+			var path = memory.object_to_scan.resource_path
+			var object_room1: Node3D = load(path).instantiate()
+			object_room1.scale = Vector3.ONE * memory.inspect_scale
+			slots[slot_id].add_child(object_room1)
+			slot_id += 1
 
 	# Play 1st haiku
 	if DEBUG:
@@ -112,10 +116,10 @@ func _on_obj_1_pressed() -> void:
 		$AudioBack.volume_db = audioback_db_lvl
 		if DEBUG:
 			$Subtitles.sub_load_from_file("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2_ENG.srt")
-			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2.mp3"))
+			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2.mp3"), false)
 		else:
 			$Subtitles.sub_load_from_file(pickable_slot.dialog_subtitle)
-			$Subtitles.play_dialog(pickable_slot.dialog_audio)
+			$Subtitles.play_dialog(pickable_slot.dialog_audio, false)
 		
 
 func _on_obj_2_pressed() -> void:
@@ -124,10 +128,10 @@ func _on_obj_2_pressed() -> void:
 		$AudioBack.volume_db = audioback_db_lvl
 		if DEBUG:
 			$Subtitles.sub_load_from_file("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1_ENG.srt")
-			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1.mp3"))
+			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1.mp3"), false)
 		else:
 			$Subtitles.sub_load_from_file(pickable_slot2.dialog_subtitle)
-			$Subtitles.play_dialog(pickable_slot2.dialog_audio)
+			$Subtitles.play_dialog(pickable_slot2.dialog_audio, false)
 
 func _on_obj_3_pressed() -> void:
 	if is_haiku_finished or DEBUG:
@@ -135,10 +139,10 @@ func _on_obj_3_pressed() -> void:
 		$AudioBack.volume_db = audioback_db_lvl
 		if DEBUG:
 			$Subtitles.sub_load_from_file("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3_ENG.srt")
-			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3.mp3"))
+			$Subtitles.play_dialog(load("res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3.mp3"), false)
 		else:
 			$Subtitles.sub_load_from_file(pickable_slot3.dialog_subtitle)
-			$Subtitles.play_dialog(pickable_slot3.dialog_audio)
+			$Subtitles.play_dialog(pickable_slot3.dialog_audio, false)
 
 func _on_subtitles_dialog_finished() -> void:
 	await get_tree().create_timer(timer_dial).timeout

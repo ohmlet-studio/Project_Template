@@ -19,7 +19,7 @@ func _on_scan_started() -> void:
 func _on_scan_ended() -> void:
 	print("BACKPACK SCAN ENDED")
 	SubtitleScene.sub_load_from_file(subs_path)
-	SubtitleScene.play_dialog(sound_after)
+	SubtitleScene.play_dialog(sound_after, false)
 
 
 	CrossfadePlayer.play(music_after, 2.0)

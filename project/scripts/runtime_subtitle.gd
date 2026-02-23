@@ -3,6 +3,8 @@ extends Node
 signal dialog_finished
 signal dialog_started
 
+@onready var skip_dialog: bool = false
+
 #@export var audio_player: AudioStreamPlayer
 #@export var subtitle_label: Label
 
@@ -27,19 +29,30 @@ func _on_dialog_finished() -> void:
 	dialog_finished.emit()
 
 # Load and play audio dialog
-func play_dialog(dialog : AudioStream) -> void:
+func play_dialog(dialog : AudioStream, is_entering_lvl: bool) -> void:
 	if audio_player == null:
 		return
 	if dialog == null:
-		print("Runtime subtitle: failed to load audio stream", )
+		print("Dialog : failed to load audio stream", )
 		return
 
 	audio_player.stream = dialog
-	audio_player.play()
+	if not skip_dialog:
+		audio_player.play()
+	
+	print("Dialog : Playing ", audio_player.stream)
+	#if is_entering_lvl:
+		#Manager.lock_door.emit()
 	
 	dialog_started.emit()
-	await audio_player.finished
+	if not skip_dialog:
+		await audio_player.finished
+	else:
+		await get_tree().create_timer(1).timeout
 	dialog_finished.emit()
+	
+	#if is_entering_lvl:
+		#Manager.unlock_door.emit()
 	
 
 # Load and parse a subtitle file at runtime
@@ -51,9 +64,9 @@ func sub_load_from_file(srt_path : String) -> void:
 	if loaded_resource != null and loaded_resource is Subtitles:
 		subtitle_data = loaded_resource
 		_last_entry_id = -1
-		print("Successfully loaded subtitle resource")
-		print("  Entries: ", subtitle_data.get_entry_count())
-		print("  Duration: ", subtitle_data.get_total_duration(), " seconds")
+		print("Sub : Successfully loaded subtitle resource")
+		#print("  Entries: ", subtitle_data.get_entry_count())
+		#print("  Duration: ", subtitle_data.get_total_duration(), " seconds")
 		return
 
 
