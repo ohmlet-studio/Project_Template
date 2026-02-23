@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dlsymbkqwsx2t" path="res://assets/models/memory_objects/trumpet.fbx" id="7_kefhw"]
 [ext_resource type="PackedScene" uid="uid://b3uutcrx4ayr0" path="res://assets/models/placeholders/Low Poly Furniture/Tables/Desk.fbx" id="9_50der"]
 [ext_resource type="Script" uid="uid://dy5lobbq15mcu" path="res://scripts/label_anim.gd" id="10_ydepa"]
-[ext_resource type="AudioStream" uid="uid://bak80uergkxsf" path="res://assets/audio/OUTRO/MUSIC/Affichage_objets_et_haiku_loop.mp3" id="11_ayjh5"]
-[ext_resource type="AudioStream" uid="uid://1uu0xo4oamru" path="res://assets/audio/AUTRES/FX/Clic.mp3" id="12_ytkeu"]
+[ext_resource type="AudioStream" uid="uid://bak80uergkxsf" path="res://assets/audio/OUTRO/MUSIC/Affichage_objets_et_haiku_loop.mp3" id="uid://bak80uergkxsf"]
+[ext_resource type="AudioStream" uid="uid://1uu0xo4oamru" path="res://assets/audio/AUTRES/FX/Clic.mp3" id="uid://1uu0xo4oamru"]
 [ext_resource type="PackedScene" uid="uid://bciil8v6ykx2e" path="res://scenes/global/subtitles.tscn" id="13_wutmx"]
 [ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="14_ayjh5"]
 
@@ -743,13 +743,13 @@ clip_text = true
 script = ExtResource("10_ydepa")
 
 [node name="AudioBack" type="AudioStreamPlayer" parent="." unique_id=1607937711]
-stream = ExtResource("11_ayjh5")
+stream = ExtResource("uid://bak80uergkxsf")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
 [node name="AudioClick" type="AudioStreamPlayer" parent="." unique_id=1292214045]
-stream = ExtResource("12_ytkeu")
+stream = ExtResource("uid://1uu0xo4oamru")
 bus = &"SFX"
 
 [node name="Subtitles" parent="." unique_id=1516935989 instance=ExtResource("13_wutmx")]

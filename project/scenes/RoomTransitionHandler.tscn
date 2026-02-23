@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://crhxqnua2w0dp" path="res://scenes/levels/LevelIntro.tscn" id="4_7ddg7"]
 [ext_resource type="PackedScene" uid="uid://c2hburnp68gfh" path="res://scenes/levels/LevelAdulte.tscn" id="4_ehv8f"]
 [ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="5_h6gdu"]
-[ext_resource type="AudioStream" uid="uid://d1h1miuyx6dab" path="res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1.mp3" id="6_2e2dh"]
-[ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit_de_fond_loop.mp3" id="6_7ddg7"]
 [ext_resource type="PackedScene" uid="uid://q2dg4rnvsjat" path="res://scenes/levels/LevelOutro.tscn" id="10_cywug"]
 [ext_resource type="PackedScene" uid="uid://bdfmfs7wvx1em" path="res://scenes/levels/LevelTest.tscn" id="11_v5yp2"]
+[ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit_de_fond_loop.mp3" id="uid://b0qoce63n3tul"]
+[ext_resource type="AudioStream" uid="uid://d1h1miuyx6dab" path="res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1.mp3" id="uid://d1h1miuyx6dab"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mus4g"]
 albedo_texture = ExtResource("3_6s3e6")
@@ -101,8 +101,8 @@ visible = true
 [node name="LevelAdulte" parent="Rooms" unique_id=804273654 node_paths=PackedStringArray("next_room") instance=ExtResource("4_ehv8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6134987, 0, -0.009850562)
 next_room = NodePath("../LevelAdo")
-entering_sound = ExtResource("6_2e2dh")
-subtitles_path = "res://assets/audio/PIÈCE 1/VOICE/Voix entrée pièce 1.srt"
+entering_sound = ExtResource("uid://d1h1miuyx6dab")
+subtitles_path = "res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1.srt"
 
 [node name="LevelAdo" parent="Rooms" unique_id=542756532 node_paths=PackedStringArray("next_room", "teleports_to") instance=ExtResource("1_wks6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.76418, 0, 0)
@@ -168,7 +168,7 @@ shape = SubResource("BoxShape3D_2e2dh")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Rooms" unique_id=997516505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.458708, 0.4663391, 0.17668462)
-stream = ExtResource("6_7ddg7")
+stream = ExtResource("uid://b0qoce63n3tul")
 autoplay = true
 max_distance = 17.0
 bus = &"SFX"

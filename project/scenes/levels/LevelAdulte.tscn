@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://c2hburnp68gfh"]
 
 [ext_resource type="PackedScene" uid="uid://bsc1y6im53tww" path="res://scenes/levels/LevelBase.tscn" id="1_6rgy2"]
-[ext_resource type="AudioStream" uid="uid://cjrl7sp8mbud8" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-0.mp3" id="2_4dapm"]
-[ext_resource type="AudioStream" uid="uid://bfnoqx6qkmn50" path="res://assets/audio/INTRO/VOICE/Voix_NB.mp3" id="2_gxi1g"]
+[ext_resource type="AudioStream" uid="uid://cjrl7sp8mbud8" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-0.mp3" id="uid://cjrl7sp8mbud8"]
+[ext_resource type="AudioStream" uid="uid://bfnoqx6qkmn50" path="res://assets/audio/INTRO/VOICE/Voix_NB.mp3" id="uid://bfnoqx6qkmn50"]
 [ext_resource type="PackedScene" uid="uid://b01pwdfvsow80" path="res://assets/models/final/carpet/adulte_carpet.fbx" id="2_ox3cy"]
 [ext_resource type="PackedScene" uid="uid://b04lr54bw0h6v" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair E.fbx" id="3_7sakj"]
-[ext_resource type="AudioStream" uid="uid://dogp88dj26h68" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-1.mp3" id="3_gxi1g"]
-[ext_resource type="AudioStream" uid="uid://bys2w4txdkdro" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-2.mp3" id="4_5micf"]
+[ext_resource type="AudioStream" uid="uid://dogp88dj26h68" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-1.mp3" id="uid://dogp88dj26h68"]
+[ext_resource type="AudioStream" uid="uid://bys2w4txdkdro" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-2.mp3" id="uid://bys2w4txdkdro"]
 [ext_resource type="PackedScene" uid="uid://cugmn2sdsft55" path="res://assets/models/placeholders/Low Poly Furniture/Chairs/Chair A.fbx" id="4_ck67t"]
 [ext_resource type="PackedScene" uid="uid://dxenntoejob6r" path="res://assets/models/final/commode/commode3.fbx" id="5_7sakj"]
-[ext_resource type="AudioStream" uid="uid://dhckeaxmhnlca" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-3.mp3" id="5_y8cxe"]
+[ext_resource type="AudioStream" uid="uid://dhckeaxmhnlca" path="res://assets/audio/PIECE_1/MUSIC_loop/Piece_1-3.mp3" id="uid://dhckeaxmhnlca"]
 [ext_resource type="PackedScene" uid="uid://h7fer3yu8lmd" path="res://assets/models/final/smolthings/cactus.fbx" id="6_ck67t"]
 [ext_resource type="PackedScene" uid="uid://d0q3k8iiq1hjb" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Monitor.fbx" id="7_b5sfl"]
 [ext_resource type="PackedScene" uid="uid://dn1xwipqyrsjf" path="res://assets/models/placeholders/Low Poly Furniture/Electronics/Pc.fbx" id="8_l035v"]
@@ -28,9 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://drwkw7dxe6tcg" path="res://assets/models/final/bed/adulte_lit.fbx" id="16_y8cxe"]
 [ext_resource type="PackedScene" uid="uid://ctjlx7kjvfh2w" path="res://assets/models/final/smolthings/carton3.fbx" id="17_l035v"]
 [ext_resource type="PackedScene" uid="uid://8fmt0ouw3ji6" path="res://assets/models/memory_objects/lighter.fbx" id="17_ox3cy"]
-[ext_resource type="AudioStream" uid="uid://b1h3fg1ve503h" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1.mp3" id="26_y8cxe"]
-[ext_resource type="AudioStream" uid="uid://cetlm6umu0rt0" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2.mp3" id="28_lgacn"]
-[ext_resource type="AudioStream" uid="uid://d2187vvng34ef" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3.mp3" id="30_upqbh"]
+[ext_resource type="AudioStream" uid="uid://b1h3fg1ve503h" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1.mp3" id="uid://b1h3fg1ve503h"]
+[ext_resource type="AudioStream" uid="uid://cetlm6umu0rt0" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2.mp3" id="uid://cetlm6umu0rt0"]
+[ext_resource type="AudioStream" uid="uid://d2187vvng34ef" path="res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3.mp3" id="uid://d2187vvng34ef"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l035v"]
 albedo_texture = ExtResource("13_l035v")
@@ -44,9 +44,9 @@ size = Vector2(0.795, 1)
 center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
-entering_sound = ExtResource("2_gxi1g")
-subtitles_path = "res://assets/audio/INTRO/VOICE/Voix N&B.srt"
-level_musics = Array[AudioStream]([ExtResource("2_4dapm"), ExtResource("3_gxi1g"), ExtResource("4_5micf"), ExtResource("5_y8cxe")])
+entering_sound = ExtResource("uid://bfnoqx6qkmn50")
+subtitles_path = "res://assets/audio/INTRO/VOICE/Voix_NB.srt"
+level_musics = Array[AudioStream]([ExtResource("uid://cjrl7sp8mbud8"), ExtResource("uid://dogp88dj26h68"), ExtResource("uid://bys2w4txdkdro"), ExtResource("uid://dhckeaxmhnlca")])
 
 [node name="Furniture" parent="Room" parent_id_path=PackedInt32Array(938973325) index="0" unique_id=51728901]
 script = null
@@ -121,7 +121,7 @@ object_to_scan = ExtResource("15_yg4ca")
 scale_2d_view = 1.8
 inspect_scale = 2.5
 default_inspect_rotation = Vector3(90, 0, 0)
-dialog_audio = ExtResource("26_y8cxe")
+dialog_audio = ExtResource("uid://b1h3fg1ve503h")
 dialog_subtitle = "res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-1_ENG.srt"
 haiku = "so I prefer drawing my own cards even if they end up kinda sketchy."
 
@@ -132,7 +132,7 @@ object_to_scan = ExtResource("17_ox3cy")
 scale_2d_view = 7.0
 inspect_scale = 6.0
 default_inspect_rotation = Vector3(0, 90, 0)
-dialog_audio = ExtResource("28_lgacn")
+dialog_audio = ExtResource("uid://cetlm6umu0rt0")
 dialog_subtitle = "res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-2_ENG.srt"
 haiku = "but even when sparks die out, the warmth of the past fires remain."
 
@@ -143,6 +143,6 @@ object_to_scan = ExtResource("16_6rgy2")
 scale_2d_view = 2.0
 inspect_scale = 1.5
 default_inspect_rotation = Vector3(0, 90, 0)
-dialog_audio = ExtResource("30_upqbh")
+dialog_audio = ExtResource("uid://d2187vvng34ef")
 dialog_subtitle = "res://assets/audio/PIECE_1/SOUVENIRS/Souvenir_1-3_ENG.srt"
 haiku = "but I’m glad I found a matching harmony by tuning in to the right people."
