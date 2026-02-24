@@ -1,16 +1,16 @@
 1
 00:00:01,327 --> 00:00:02,545
-Oh my...
+Euh ...
 
 2
 00:00:03,076 --> 00:00:04,105
-That's weird!
+What's going on?
 
 3
 00:00:04,930 --> 00:00:07,040
-Maybe I need a nap because I ate too much?
+Maybe I ate too much and need a nap?
 
 4
-00:00:07,789 --> 00:00:09,720
-No, okay, I'm going to go downstairs and join the others.
+00:00:07,789 --> 00:00:11
+It's probably nothing. I'll go back downstairs and join the others.
 

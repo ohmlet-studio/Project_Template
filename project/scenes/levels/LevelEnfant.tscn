@@ -62,9 +62,6 @@ albedo_texture = ExtResource("26_1i0o6")
 uv1_scale = Vector3(13, 13, 13)
 
 [node name="LevelEnfant" unique_id=1125609813 instance=ExtResource("1_vjdto")]
-is_intro = null
-is_outro = null
-is_special_lvl = null
 entering_sound = ExtResource("uid://cur2c7bi0j68t")
 subtitles_path = "res://assets/audio/PIECE_4/VOICE/Voix_entree_piece_4_ENG.srt"
 level_musics = Array[AudioStream]([ExtResource("uid://d1dl1op2frnu4"), ExtResource("uid://3mk03tatkwxd"), ExtResource("uid://b00fbjnmouvvo"), ExtResource("uid://1jdg1rgdnlyv")])
@@ -90,7 +87,7 @@ transform = Transform3D(1.2549998, 0, 0, 0, 1.2549998, 0, 0, 0, 1.2549998, 7.814
 [node name="Lamp B" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="6" unique_id=1726968374 instance=ExtResource("10_jy1lg")]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 3.7181776, 5.082739, 14.891414)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Room/Furniture/Lamp B" index="2" unique_id=113972351]
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Furniture/Lamp B" index="1" unique_id=113972351]
 transform = Transform3D(3.3333337, 0, 0, 0, 3.3333337, 0, 0, 0, 3.3333337, 0, 1.7677469, 0)
 light_color = Color(0.8910537, 0.6656812, 0.43832183, 1)
 light_energy = 0.2
@@ -114,7 +111,7 @@ mesh = SubResource("QuadMesh_a564u")
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.872921, 5.8583474, -4.995762)
 
 [node name="Art2" type="MeshInstance3D" parent="Room/Furniture" parent_id_path=PackedInt32Array(51728901) index="11" unique_id=1269683074]
-transform = Transform3D(-0.008038891, -0.0015831565, -2.6679764, -0.36549306, 1.2456636, -0.0013178699, 1.9663036, 0.23153527, -0.01115252, 10.111749, 5.2905993, 7.262966)
+transform = Transform3D(-0.004964015, -0.0009771339, -1.6469853, -0.225692, 0.7688311, -0.0008135425, 1.2141925, 0.142905, -0.0068846326, 10.111749, 5.2905993, 7.262966)
 material_override = SubResource("StandardMaterial3D_p0520")
 mesh = SubResource("QuadMesh_a564u")
 

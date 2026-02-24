@@ -48,7 +48,7 @@ material_override = SubResource("StandardMaterial3D_l035v")
 mesh = SubResource("QuadMesh_jfxol")
 
 [node name="Lamp B" parent="Room/Furniture" index="2" unique_id=1726968374 instance=ExtResource("13_yvmva")]
-transform = Transform3D(0.93571496, 0, -0.35275626, 0, 0.99999976, 0, 0.35275626, 0, 0.93571496, 9.747842, 4.9454675, -1.1137842)
+transform = Transform3D(0.93571496, 0, -0.35275626, 0, 0.99999976, 0, 0.35275626, 0, 0.93571496, 9.747841, 4.9454675, 5.6249623)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Room/Furniture/Lamp B" index="1" unique_id=433037440]
 transform = Transform3D(3.3333337, 0, 0, 0, 3.3333337, 0, 0, 0, 3.3333337, -0.10495806, 3.0873594, 0.23753071)
@@ -61,25 +61,28 @@ shadow_enabled = true
 transform = Transform3D(0.99999976, 0, 2.9605942e-15, 0, 0.99999976, 0, -2.9605942e-15, 0, 0.99999976, -4.996886, 2.249854, -11.069493)
 
 [node name="carton1" parent="Room/Furniture" index="4" unique_id=286019381 instance=ExtResource("19_7reoc")]
-transform = Transform3D(2.4969428, 0, -2.2082536, 0, 3.3333325, 0, 2.2082536, 0, 2.4969428, 10.029813, 0.6673268, -0.3103975)
+transform = Transform3D(2.4969428, 0, -2.2082536, 0, 3.3333325, 0, 2.2082536, 0, 2.4969428, 10.029813, 0.6673268, 3.2812285)
 
 [node name="commode3" parent="Room/Furniture" index="5" unique_id=343250214 instance=ExtResource("20_w8mug")]
-transform = Transform3D(-0.048151035, 0, 1.2120441, 0, 1.213, 0, -1.2120441, 0, -0.048151035, -5.1151156, 2.1328943, 11.250354)
+transform = Transform3D(-0.048151035, 0, 1.212044, 0, 1.213, 0, -1.212044, 0, -0.048151035, -8.85239, 2.1328943, -0.004372596)
 
-[node name="carton2" parent="Room/Furniture/commode3" index="8" unique_id=382380046 instance=ExtResource("19_7reoc")]
+[node name="carton3" parent="Room/Furniture/commode3" index="0" unique_id=499506477 instance=ExtResource("22_tlt7u")]
+transform = Transform3D(2.33, 0, 2.9802322e-08, 0, 2.3299997, 0, -2.9802322e-08, 0, 2.33, 1.0569832, 1.8259892, -0.6256671)
+
+[node name="carton2" parent="Room/Furniture/commode3" index="9" unique_id=382380046 instance=ExtResource("19_7reoc")]
 transform = Transform3D(-0.851384, 0, 4.0331273, 0, 4.12201, 0, -4.0331273, 0, -0.851384, -0.5932746, 2.0707626, -0.5613973)
 
 [node name="commode4" parent="Room/Furniture" index="6" unique_id=1817300773 instance=ExtResource("21_80bfr")]
-transform = Transform3D(-0.79999983, 0, 0, 0, 0.79999983, 0, 0, 0, -0.79999983, -9.112889, 4.2216477, 3.4262443)
+transform = Transform3D(-0.017382124, 0, -0.7998109, 0, 0.79999983, 0, 0.7998109, 0, -0.017382124, 10.024925, 4.2216477, -2.5166228)
 
-[node name="carton2" parent="Room/Furniture/commode4" index="3" unique_id=499506477 instance=ExtResource("22_tlt7u")]
+[node name="carton2" parent="Room/Furniture/commode4" index="3" unique_id=1882088818 instance=ExtResource("22_tlt7u")]
 transform = Transform3D(-1.4770075e-07, 0, 3.378999, 0, 3.378999, 0, -3.378999, 0, -1.4770075e-07, 1.861423, 6.250925, -0.5684166)
 
 [node name="carton3" parent="Room/Furniture/commode4" index="4" unique_id=2123540825 instance=ExtResource("23_kr1qg")]
 transform = Transform3D(0.3668385, 0, 1.0855242, 0, 1.1458335, 0, -1.0855242, 0, 0.3668385, 0.13094568, 6.005083, -0.7727413)
 
 [node name="adulte_lit" parent="Room/Furniture" index="7" unique_id=1005375489 instance=ExtResource("24_jqc6n")]
-transform = Transform3D(-3.3333325, 0, -2.9140924e-07, 0, 3.3333325, 0, 2.9140924e-07, 0, -3.3333325, 0.7220904, 1.8656405, 12.523289)
+transform = Transform3D(-3.3333325, 0, -2.9140924e-07, 0, 3.3333325, 0, 2.9140924e-07, 0, -3.3333325, -0.014545072, 1.8656405, 12.523289)
 
 [node name="Window C" parent="Room/Interactable/Static/Window C" parent_id_path=PackedInt32Array(1567670714) index="0" unique_id=1939163916]
 surface_material_override/0 = null
@@ -88,10 +91,11 @@ surface_material_override/0 = null
 transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0.011911869, -0.0077438354, -0.00087046623)
 
 [node name="Backpack" parent="Room/Interactable/Grabbable" parent_id_path=PackedInt32Array(736710538) index="0" unique_id=1972186688 instance=ExtResource("2_5dao2")]
-transform = Transform3D(1, 0, 0, 0, 0.9827971, -0.18468902, 0, 0.18468902, 0.9827971, -0.06369221, 0.33905542, 1.5152414)
+transform = Transform3D(0.9634904, -0.04944917, -0.26313692, 0, 0.9827971, -0.18468902, 0.26774287, 0.17794609, 0.94691557, -0.8036004, 0.33905542, 1.5152414)
 object_name = "Backpack"
 object_to_scan = ExtResource("3_5n37q")
-inspect_scale = 2.0
+scale_2d_view = 0.85
+inspect_scale = 1.615
 default_inspect_rotation = Vector3(0, 180, 0)
 dialog_audio = ExtResource("uid://ldxg27p1posq")
 dialog_subtitle = "res://assets/audio/INTRO/VOICE/Voix_sac_ENG.srt"
