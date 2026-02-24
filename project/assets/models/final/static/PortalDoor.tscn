@@ -106,8 +106,11 @@ _surfaces = [{
 script = ExtResource("5_ituva")
 size = Vector3(1.15, 2.7, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gn61q"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_krffb"]
 size = Vector3(1.15, 2.7, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5sphs"]
+size = Vector3(0.28305817, 0.017822266, 0.24851885)
 
 [node name="PortalDoor" type="Node3D" unique_id=322101260]
 script = ExtResource("1_hhy8b")
@@ -131,7 +134,7 @@ id = "door"
 metadata/_custom_type_script = "uid://v8xxtslsavt7"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/lid/Interactable3D" unique_id=1279115860]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -2.285596, 5.146361, 0.0019712418)
+transform = Transform3D(99.999985, 0, 0, 0, -1.1920929e-05, 99.99998, 0, -99.99998, -1.1920929e-05, -2.2855954, 5.14636, 0.89395297)
 shape = SubResource("BoxShape3D_ycg47")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Pivot/lid" unique_id=623095290]
@@ -172,14 +175,10 @@ material_override = ExtResource("4_5sphs")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_ftjik")
 
-[node name="TeleportArea" type="Area3D" parent="Portal" unique_id=33476983]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52582884)
-collision_layer = 32768
-collision_mask = 32768
+[node name="TeleportArea" type="Area3D" parent="Portal" unique_id=1636652287]
 
-[node name="Collider" type="CollisionShape3D" parent="Portal/TeleportArea" unique_id=698988886]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-shape = SubResource("BoxShape3D_gn61q")
+[node name="Collider" type="CollisionShape3D" parent="Portal/TeleportArea" unique_id=1533224265]
+shape = SubResource("BoxShape3D_krffb")
 
 [node name="Door3D" type="Node3D" parent="." unique_id=394730194 node_paths=PackedStringArray("interactable", "pivot_point")]
 script = ExtResource("2_hhy8b")
@@ -187,6 +186,13 @@ interactable = NodePath("../Pivot/lid/Interactable3D")
 pivot_point = NodePath("../Pivot")
 metadata/_custom_type_script = "uid://cby7cfgiecmtb"
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=576439669]
-transform = Transform3D(26.000002, 0, 0, 0, -1.1364962e-06, 26.000004, 0, -26.000004, -1.1364962e-06, 0.11324024, 0.09126985, -0.4696203)
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1492133225]
+input_ray_pickable = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=576439669]
+transform = Transform3D(26.000002, 0, 0, 0, -26.000004, -2.2729923e-06, 0, 2.2729923e-06, -26.000004, 0.013363857, -1.4790137, -0.9954047)
+shape = SubResource("BoxShape3D_5sphs")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=502421033]
+transform = Transform3D(26.000002, 0, 0, 0, -1.1364959e-06, 26.000004, 0, -26.000004, -1.1364959e-06, 0.11324024, -0.101089, -0.8069844)
 shape = SubResource("BoxShape3D_ycg47")

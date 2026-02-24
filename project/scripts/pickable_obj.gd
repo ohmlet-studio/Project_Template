@@ -16,6 +16,8 @@ var is_being_scanned: bool = false
 var scanned: bool
 var pickable: bool = true
 
+var player_head_rotation
+
 @onready var room: LevelRoom = $"../../../.."
 
 @onready var handObjView = $inHandUI
@@ -212,6 +214,9 @@ func _hide_hand_obj():
 func _on_scan_started() -> void:
 	if has_been_scanned:
 		return
+	
+	player_head_rotation = Manager.globPlayer.head_rotation
+	
 	scanned = true
 	has_been_scanned = true
 	is_being_scanned = true
@@ -247,6 +252,8 @@ func _on_scan_ended(scanned_object: Node3D) -> void:
 			func(v): color_radius = v,
 			_base_radius * 20.0, 0.0, 1.0
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	
+		Manager.globPlayer.head_rotation = player_head_rotation
 	
 		scan_ended.emit()
 

@@ -8,8 +8,8 @@ signal dialog_started
 #@export var audio_player: AudioStreamPlayer
 #@export var subtitle_label: Label
 
-@onready var audio_player: AudioStreamPlayer = $DialogPlayer
-@onready var subtitle_label: Label = $SubLabel
+@onready var audio_player: AudioStreamPlayer = %DialogPlayer
+@onready var subtitle_label: Label = %SubLabel
 
 var subtitle_data: Subtitles = Subtitles.new()
 var current_time: float = 0.0

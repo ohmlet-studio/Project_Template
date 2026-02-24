@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 
 func char2char(text: String, char_display_speed: float):
 	#$".".text = ""
-	
+	$".".text += "\n\n"
 	for i in range(text.length()):
 		$".".text += text[i]
 		await get_tree().create_timer(char_display_speed).timeout

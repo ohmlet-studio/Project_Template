@@ -35,6 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
 
 [node name="Camera3D" parent="Head" index="0" unique_id=18288272]
 attributes = SubResource("CameraAttributesPractical_mdl7e")
+far = 10.0
 
 [node name="RayCastInteractor3D" type="RayCast3D" parent="Head/Camera3D" index="0" unique_id=1756534528]
 target_position = Vector3(0, 0, -1.2)

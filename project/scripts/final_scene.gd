@@ -1,6 +1,6 @@
 extends Control
 
-const DEBUG: bool = false
+@export var DEBUG: bool = false
 
 const text_speed = 0.08
 const timer = 1.5
@@ -43,12 +43,13 @@ func _ready() -> void:
 			for n in slot.get_children():
 				slot.remove_child(n)
 				n.queue_free() 
-		for memory in [pickable_slot, pickable_slot2, pickable_slot3]:
+		for memory: Pickable in [pickable_slot, pickable_slot2, pickable_slot3]:
 			if not memory or DEBUG:
 				continue
 			var path = memory.object_to_scan.resource_path
 			var object_room1: Node3D = load(path).instantiate()
 			object_room1.scale = Vector3.ONE * memory.inspect_scale
+			object_room1.rotation = memory.default_inspect_rotation
 			slots[slot_id].add_child(object_room1)
 			slot_id += 1
 

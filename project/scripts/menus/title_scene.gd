@@ -17,3 +17,11 @@ func _on_start_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	$SettingsMenu.show()
+
+
+func _on_credits_pressed() -> void:
+	$Credits.show()
+
+
+func _on_back_pressed() -> void:
+	$Credits.hide()

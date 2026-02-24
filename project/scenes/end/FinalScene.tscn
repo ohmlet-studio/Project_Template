@@ -622,6 +622,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6lte8")
+DEBUG = true
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=809016304]
 layout_mode = 1
@@ -716,7 +717,7 @@ mesh = SubResource("CylinderMesh_8omca")
 [node name="Desk" parent="SubViewportContainer/SubViewport" unique_id=1485273648 instance=ExtResource("6_bdusw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.80889916, -1.1661608, -1.9940147)
 
-[node name="Desk_001" parent="SubViewportContainer/SubViewport/Desk" index="1" unique_id=1468955348]
+[node name="Desk_001" parent="SubViewportContainer/SubViewport/Desk" index="1" unique_id=1225727716]
 transform = Transform3D(100.00002, 7.1525574e-07, 8.526513e-14, 0, -1.1920929e-05, 99.99999, 7.1525574e-07, -100.000015, -1.1920932e-05, 0, 0, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1894664908]

@@ -92,16 +92,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 23
-text = "Code:     Retronyme & ollig
+text = "Music, SFX & mixing:         la virgule
+                Voice acting:         la virgule
 
-Level design:     la virgule & nispouli
-Environment:     nispouli
-Modeling:     Retronyme
+                          Writing:          la virgule
+                                                     nispouli
+                                                     ollig
 
-Music, SFX & mixing:     la virgule
-Voice acting:     la virgule
-Writing:      la virgule & nispouli & ollig
-"
+               Environment:          nispouli
+                3D Modeling:           retronyme
+
+               Level design:          la virgule
+                                                     nispouli
+
+
+             Programming:          retronyme
+                                                     ollig"
 horizontal_alignment = 1
 vertical_alignment = 1
 
