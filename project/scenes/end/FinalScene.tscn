@@ -622,7 +622,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6lte8")
-DEBUG = true
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=809016304]
 layout_mode = 1
