@@ -80,6 +80,7 @@ func _on_teleport():
 	print("\n \n In room ", self.name)
 	if next_room == $"../LevelAdulte":
 		%LabelCorridor.visible = false
+	
 	if teleports_to == next_room:
 		await get_tree().create_timer(1.0)
 		_remove_layer_recursive(self, 2) # remove all things colored
@@ -103,6 +104,7 @@ func _on_teleport():
 		_set_grabbables_interaction_enabled(false)
 		SubtitleScene.sub_load_from_file(subtitles_path)
 		SubtitleScene.play_dialog(entering_sound, true)
+
 		await SubtitleScene.dialog_finished
 		_set_grabbables_interaction_enabled(true)
 		
@@ -113,7 +115,10 @@ func _on_teleport():
 		if empty_level or ready_direct:
 			link_next_room()
 	else:
-		await SubtitleScene.dialog_finished
+		print("playing help audio")
+		if SubtitleScene.audio_player.playing:
+			await SubtitleScene.dialog_finished
+		
 		if not Manager.is_one_picked or not is_special_lvl:
 			_play_aide_dialog()
 
@@ -129,6 +134,7 @@ func _play_aide_dialog() -> void:
 	SubtitleScene.play_dialog(aide_audio, false)
 
 func _link_portals(other_room: LevelRoom):
+	print("LINKING ?")
 	if dont_link_portals:
 		return
 	
@@ -136,7 +142,6 @@ func _link_portals(other_room: LevelRoom):
 	
 	if other_room == null:
 		other_room = self
-		
 	print("Link : ", self.name, " --> ", other_room.name)
 
 	for portal: PortalDoor in [portal_door_1, portal_door_2]:
@@ -207,12 +212,15 @@ func _bring_color_back():
 	set_layer_2()
 
 func _on_object_picked():
+	print("PICKED")
 	#if not is_intro_outro:
 		#Manager.all_picked_object.append(Manager.pick_obj)
 		#print("On pick / All obj : ", Manager.all_picked_object)
 	link_next_room()
 
 func _on_object_unpicked():
+	print("UNPICKED")
+
 	#if not is_intro_outro:
 		#Manager.all_picked_object.pop_back()
 		#print("On unpick / All obj : ", Manager.all_picked_object)
