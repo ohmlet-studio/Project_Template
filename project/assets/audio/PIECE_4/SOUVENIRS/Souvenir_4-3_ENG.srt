@@ -1,5 +1,5 @@
 1
-00:00:01,262 --> 00:00:03,840
+00:00:01,262 --> 00:00:04
 Every week, I went to an 'introduction to music' class.
 
 2
@@ -8,7 +8,7 @@ It's been a while, but...
 
 3
 00:00:05,250 --> 00:00:07,280
-I remember that at first, I had NOOOO social skills.
+I remember at first I had NO social skills.
 
 4
 00:00:07,608 --> 00:00:09,040
@@ -24,7 +24,7 @@ with activities to do.
 
 7
 00:00:12,870 --> 00:00:13,860
-I could learn the 'codes' 
+I could learn the 'rules' 
 
 8
 00:00:13,860 --> 00:00:15,555
@@ -32,13 +32,13 @@ by observing others without too much pressure.
 
 9
 00:00:15,933 --> 00:00:17,684
-However, there was one ' social code' I never understood.
+However, there was one 'social code' I never understood:
 
 10
 00:00:17,777 --> 00:00:19,355
-It's why some people were
+Why are some people humiliated,
 
 11
 00:00:19,360 --> 00:00:21,702
-humiliated, beaten, or excluded by others.
+beaten, or excluded by others.
 

@@ -44,9 +44,6 @@ size = Vector2(0.795, 1)
 center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelAdulte" unique_id=1125609813 instance=ExtResource("1_6rgy2")]
-is_intro = null
-is_outro = null
-is_special_lvl = null
 entering_sound = ExtResource("2_y8cxe")
 subtitles_path = "res://assets/audio/PIECE_1/VOICE/Voix_entree_piece_1_ENG.srt"
 level_musics = Array[AudioStream]([ExtResource("uid://cjrl7sp8mbud8"), ExtResource("uid://dogp88dj26h68"), ExtResource("uid://bys2w4txdkdro"), ExtResource("uid://dhckeaxmhnlca")])
