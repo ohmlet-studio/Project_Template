@@ -16,6 +16,8 @@ var is_being_scanned: bool = false
 var scanned: bool
 var pickable: bool = true
 
+var player_head_rotation
+
 @onready var room: LevelRoom = $"../../../.."
 
 @onready var handObjView = $inHandUI
@@ -148,26 +150,39 @@ func _set_object_to_scan(value: PackedScene) -> void:
 
 func _on_interact() -> void:
 	if has_been_scanned and room.all_objects_scanned() or room.ready_direct:
-		pick()
+		pick(false)
 
-func pick():
+func pick(is_backpack_outro: bool):
 	if not pickable:
 		print(self.object_name, " is not pickable!")
 		return
+	## check if last item
+	if is_backpack_outro:
+		Manager.all_picked_object.append(Manager.pick_obj.duplicate())
+		print("OBJ : Picked obj array : ", Manager.all_picked_object)
+		
+	##  Update manager
+	if Manager.is_one_picked and Manager.pick_obj == self:
+		Manager.is_one_picked = false
+		Manager.pick_obj = null
+		on_unpicked.emit()
 		
 	picked = not picked
 	if picked:
 		on_picked.emit()
-	else:
-		on_unpicked.emit()
 
 	_origin_obj_transparency(picked)
 	_show_hand_obj(picked)
-
+	print("	Obj:")
 	if picked:
 		Manager.is_one_picked = true
-		Manager.pick_obj_name = object_name
-
+		Manager.pick_obj = self
+		print("		Picked ", self.name)
+	else:
+		print("		Unpicked ", self.name)
+	print("		manager is picked :", Manager.is_one_picked)
+	print("		manager cur obj :", Manager.pick_obj)
+	
 func _origin_obj_transparency(pick: bool) -> void:
 	# legacy code for older shader
 	# var mesh = scanned_object_instance.get_child(0)
@@ -199,6 +214,9 @@ func _hide_hand_obj():
 func _on_scan_started() -> void:
 	if has_been_scanned:
 		return
+	
+	player_head_rotation = Manager.globPlayer.head_rotation
+	
 	scanned = true
 	has_been_scanned = true
 	is_being_scanned = true
@@ -220,7 +238,7 @@ func _on_scan_started() -> void:
 		dialog_subtitle = dialog_audio.resource_path.replace(".mp3", " ENG.srt")
 	
 	SubtitleScene.sub_load_from_file(dialog_subtitle)
-	SubtitleScene.play_dialog(dialog_audio)
+	SubtitleScene.play_dialog(dialog_audio, false)
 	
 	scan_started.emit()
 
@@ -234,6 +252,8 @@ func _on_scan_ended(scanned_object: Node3D) -> void:
 			func(v): color_radius = v,
 			_base_radius * 20.0, 0.0, 1.0
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	
+		Manager.globPlayer.head_rotation = player_head_rotation
 	
 		scan_ended.emit()
 
@@ -261,7 +281,7 @@ func _process(delta: float) -> void:
 			color_sphere.scale = Vector3.ONE * (color_radius * proximity_factor * breath)
 		
 	## Check if another object is picked and if it is self
-	if Manager.is_one_picked and not Manager.pick_obj_name.is_empty():
+	if Manager.is_one_picked:
 		## double check picked in case, just to make sure there's no knots in code
-		if picked and Manager.pick_obj_name != object_name:
+		if picked and Manager.pick_obj != self:
 			_on_interact()

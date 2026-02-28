@@ -10,10 +10,14 @@ class_name LevelRoom
 		if is_node_ready():
 			_static_objects.visible = value
 
+@export var is_intro: bool = false
+@export var is_outro: bool = false
+
 @export_category("TELEPORT")
 @export var dont_link_portals: bool = false
 @export var next_room: LevelRoom
 @export var teleports_to: LevelRoom = null
+@export var is_special_lvl: bool = false
 
 @export_category("audio")
 
@@ -42,6 +46,7 @@ func _ready() -> void:
 	# Set no picked object at beginning
 	# commented out as it was causing crashes, on it now
 	#Manager.is_all_picked = false
+	print("ready room ", self)
 	
 	_create_furniture_collisions()
 	_link_portals(teleports_to)
@@ -53,10 +58,13 @@ func _ready() -> void:
 		child.on_picked.connect(_on_object_picked)
 		child.on_unpicked.connect(_on_object_unpicked)
 		
+	#Manager.lock_door.connect(_lock_door_on_entry)
+	#Manager.unlock_door.connect(_unlock_door_on_entry)
+	
 	portal_door_1.open_instant()
 	portal_door_2.open_instant()
 	
-	if not dont_link_portals and empty_level or ready_direct:
+	if not dont_link_portals and not is_special_lvl and empty_level or ready_direct:
 		link_next_room()
 		for child: Pickable in pickable_parent.get_children():
 			child.scanned = true
@@ -68,15 +76,21 @@ func _set_grabbables_interaction_enabled(enabled: bool) -> void:
 			child.interactable_3d.can_be_interacted = enabled
 
 func _on_teleport():
-		# level finished
-	print(next_room)
+	# level finished
+	print("\n \n In room ", self.name)
 	if next_room == $"../LevelAdulte":
 		%LabelCorridor.visible = false
+	
 	if teleports_to == next_room:
 		await get_tree().create_timer(1.0)
 		_remove_layer_recursive(self, 2) # remove all things colored
 	elif is_player_never_entered:
 		is_player_never_entered = false
+		
+		if not (is_intro or is_special_lvl):
+			if Manager.pick_obj:
+				Manager.all_picked_object.append(Manager.pick_obj.duplicate())
+				print("OBJ : Picked obj array : ", Manager.all_picked_object)
 		
 		if level_musics.size() > 0:
 			CrossfadePlayer.play(level_musics[0], 0.0)
@@ -89,7 +103,8 @@ func _on_teleport():
 		
 		_set_grabbables_interaction_enabled(false)
 		SubtitleScene.sub_load_from_file(subtitles_path)
-		SubtitleScene.play_dialog(entering_sound)
+		SubtitleScene.play_dialog(entering_sound, true)
+
 		await SubtitleScene.dialog_finished
 		_set_grabbables_interaction_enabled(true)
 		
@@ -100,8 +115,11 @@ func _on_teleport():
 		if empty_level or ready_direct:
 			link_next_room()
 	else:
-		await SubtitleScene.dialog_finished
-		if not Manager.is_one_picked:
+		print("playing help audio")
+		if SubtitleScene.audio_player.playing:
+			await SubtitleScene.dialog_finished
+		
+		if not Manager.is_one_picked or not is_special_lvl:
 			_play_aide_dialog()
 
 func all_objects_scanned():
@@ -113,18 +131,18 @@ func all_objects_scanned():
 func _play_aide_dialog() -> void:
 	var aide_audio := load(AIDE_AUDIO_PATH) as AudioStream
 	SubtitleScene.sub_load_from_file(AIDE_SUBTITLE_PATH)
-	SubtitleScene.play_dialog(aide_audio)
+	SubtitleScene.play_dialog(aide_audio, false)
 
 func _link_portals(other_room: LevelRoom):
+	print("LINKING ?")
 	if dont_link_portals:
 		return
-		
+	
 	await get_tree().process_frame
 	
 	if other_room == null:
 		other_room = self
-		
-	print("Linking room ", self.name, " to ", other_room.name)
+	print("Link : ", self.name, " --> ", other_room.name)
 
 	for portal: PortalDoor in [portal_door_1, portal_door_2]:
 		portal.show()
@@ -194,10 +212,33 @@ func _bring_color_back():
 	set_layer_2()
 
 func _on_object_picked():
+	print("PICKED")
+	#if not is_intro_outro:
+		#Manager.all_picked_object.append(Manager.pick_obj)
+		#print("On pick / All obj : ", Manager.all_picked_object)
 	link_next_room()
 
 func _on_object_unpicked():
+	print("UNPICKED")
+
+	#if not is_intro_outro:
+		#Manager.all_picked_object.pop_back()
+		#print("On unpick / All obj : ", Manager.all_picked_object)
 	unlink_next_room()
+	
+func _lock_door_on_entry():
+	for door in _static_objects.get_children():
+		for child in door.get_children():
+			if child is Door3D:
+				print("lock door")
+				child.is_locked = true
+
+func _unlock_door_on_entry():
+	for door: PortalDoor in _static_objects.get_children():
+		for child in door.get_children():
+			if child is Door3D:
+				print("unlock door")
+				child.is_locked = false
 
 func unlink_next_room():
 	teleports_to = null

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpxoysx32ydd2"]
 
 [ext_resource type="Script" uid="uid://8deqcv03lovl" path="res://scripts/menus/title_scene.gd" id="1_duloj"]
+[ext_resource type="Texture2D" uid="uid://cf7go2iaj7cm5" path="res://assets/textures/Emotional_baggage2.webp" id="2_3mdg3"]
 [ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="2_rkk5p"]
 [ext_resource type="PackedScene" uid="uid://ceauub3uvaq3b" path="res://scenes/MainScene.tscn" id="3_rkk5p"]
 [ext_resource type="PackedScene" uid="uid://c75mpd4nm0j8t" path="res://scenes/menus/settings_menu.tscn" id="4_jgedf"]
@@ -33,6 +34,8 @@ void fragment(){
 shader = SubResource("Shader_yhdlg")
 shader_parameter/lod = 3.5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mdg3"]
+
 [node name="TitleScene" type="Control" unique_id=839849655]
 layout_mode = 3
 anchors_preset = 15
@@ -42,13 +45,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_duloj")
 
-[node name="background" type="Panel" parent="." unique_id=1428979622]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="EmotionalBaggage2" type="TextureRect" parent="." unique_id=1828916626]
+layout_mode = 0
+offset_left = 0.00012207031
+offset_top = 3.0517578e-05
+offset_right = 1376.0001
+offset_bottom = 774.0
+scale = Vector2(0.9338662, 0.9302326)
+texture = ExtResource("2_3mdg3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2143244152]
 layout_mode = 1
@@ -57,42 +61,95 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.75
-offset_top = -59.75
-offset_right = 96.75
-offset_bottom = 59.75
+offset_left = -498.0
+offset_top = -17.0
+offset_right = -120.0
+offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_yhdlg")
+theme_override_constants/separation = 30
 
 [node name="start" type="Button" parent="VBoxContainer" unique_id=1257293123]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-text = "start"
+theme_override_font_sizes/font_size = 40
+text = "Start"
 
 [node name="settings" type="Button" parent="VBoxContainer" unique_id=1320571876]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-text = "settings"
+theme_override_font_sizes/font_size = 40
+text = "Settings"
 
 [node name="credits" type="Button" parent="VBoxContainer" unique_id=158698122]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-text = "credits"
+theme_override_font_sizes/font_size = 40
+text = "Credits"
 
 [node name="Credits" type="Control" parent="." unique_id=1808715601]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="fade" type="Panel" parent="Credits" unique_id=2097368771]
-visible = false
 material = SubResource("ShaderMaterial_k2kpb")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1171.0
-offset_bottom = 666.0
+offset_right = 1240.0
+offset_bottom = 680.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="Credits" unique_id=10753750]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 145.0
+offset_right = 833.0
+offset_bottom = 574.0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 23
+text = "Music, SFX & mixing:         la virgule
+                Voice acting:         la virgule
+
+                          Writing:          la virgule
+                                                     nispouli
+                                                     ollig
+
+               Environment:          nispouli
+                3D Modeling:           retronyme
+
+               Level design:          la virgule
+                                                     nispouli
+
+
+             Programming:          retronyme
+                                                     ollig"
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Credits" unique_id=2004765359]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 0
+offset_left = 1104.0
+offset_top = 83.0
+offset_right = 1178.0
+offset_bottom = 153.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3mdg3")
+text = "X"
 
 [node name="FadeTransitionManager" type="ColorRect" parent="." unique_id=991963967]
 layout_mode = 0
@@ -108,3 +165,5 @@ layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]

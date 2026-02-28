@@ -1,6 +1,6 @@
 1
 00:00:03,822 --> 00:00:06,648
-Wow, it's the Ultimate Fighting Warrior box!
+Wow, it's my 'Ultimate Fighting Warrior' box!
 
 2
 00:00:07,057 --> 00:00:09,680
@@ -24,10 +24,10 @@ I created a whole universe
 
 7
 00:00:16,010 --> 00:00:17,742
-and I even customized a game box.
+and even customized a game box.
 
 8
-00:00:18,610 --> 00:00:20,871
+00:00:18,610 --> 00:00:20,870
 Unfortunately, I don't think anyone ever played it in the end
 
 9

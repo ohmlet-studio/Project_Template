@@ -54,7 +54,7 @@ func _on_portal_teleport_receive(teleportable: Node3D) -> void:
 	other_door.close_instant()
 
 func _connect_portals(target: PortalDoor) -> void:
-	print("connect portal")
+	#print("connect portal")
 	if not target:
 		return
 	if not target.is_node_ready():
@@ -68,7 +68,7 @@ func _connect_portals(target: PortalDoor) -> void:
 	portal.exit_portal = target_portal
 	portal.activate()
 
-	print(self.name, " connecting portal ", portal, " to ", target_portal)
+	#print(self.name, " connecting portal ", portal, " to ", target_portal)
 
 
 func open_instant():

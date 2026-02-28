@@ -35,9 +35,11 @@ center_offset = Vector3(0, -0.01, 0)
 
 [node name="LevelOutro" unique_id=1125609813 instance=ExtResource("1_f8lvr")]
 script = ExtResource("2_mfdfc")
+is_intro = null
+is_outro = null
+is_special_lvl = null
 entering_sound = ExtResource("uid://d1qxw47wq6o22")
 subtitles_path = "res://assets/audio/OUTRO/VOICE/Voix_entree_piece_outro_ENG.srt"
-no_anim_color = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0" unique_id=2100994642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25584984, 0.4663391, 0.17668462)

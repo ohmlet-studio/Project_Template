@@ -2,29 +2,35 @@
 
 [ext_resource type="Script" uid="uid://cynrh7cb6dv3t" path="res://scripts/runtime_subtitle.gd" id="1_0cb4r"]
 
-[node name="Subtitles" type="Control" unique_id=1516935989]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1138385999]
+layer = 3
+script = ExtResource("1_0cb4r")
+
+[node name="Subtitles" type="Control" parent="." unique_id=1516935989]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0cb4r")
+mouse_filter = 2
 
-[node name="SubLabel" type="Label" parent="." unique_id=576510109]
+[node name="SubLabel" type="Label" parent="Subtitles" unique_id=576510109]
+unique_name_in_owner = true
 z_index = 100
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -28.0
+offset_top = -67.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 
-[node name="DialogPlayer" type="AudioStreamPlayer" parent="." unique_id=461900810]
+[node name="DialogPlayer" type="AudioStreamPlayer" parent="Subtitles" unique_id=461900810]
+unique_name_in_owner = true
 bus = &"Voice"

@@ -4,6 +4,13 @@ extends CharacterBody3D
 var BasicFPSPlayerScene : PackedScene = preload("basic_player_head.tscn")
 var addedHead = false
 
+var head_rotation: Quaternion:
+	set(value):
+		$Head.quaternion = value
+	
+	get():
+		return $Head.quaternion
+
 var get_camera: Camera3D:
 	get():
 		return $Head.get_node("Camera3D")
@@ -158,7 +165,7 @@ func rotate_player(delta):
 		# If mouse accel is turned off, simply set to target
 		quaternion = Quaternion(Vector3.UP, rotation_target_player)
 		$Head.quaternion = Quaternion(Vector3.RIGHT, rotation_target_head)
-	
+
 func move_player(delta):
 	# Check if not on floor
 	if not is_on_floor():

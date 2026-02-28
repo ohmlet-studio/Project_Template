@@ -6,13 +6,16 @@ var current_room: LevelRoom
 var playing_view_rect: TextureRect
 var subtitles: Control
 
+signal lock_door
+signal unlock_door
+
 ## Object pick handle
 signal object_picked
 var pickObj_count = 0
 
 ## Current pick object name
 var is_one_picked: bool
-var pick_obj_name: String:
+var pick_obj: Pickable:
 	set(value):
-		pick_obj_name = value
-var all_picked_object: Array[String] = []
+		pick_obj = value
+var all_picked_object: Array[Pickable] = []

@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c2hburnp68gfh" path="res://scenes/levels/LevelAdulte.tscn" id="4_ehv8f"]
 [ext_resource type="Script" uid="uid://1t7dhn51sw57" path="res://scripts/activate_environment.gd" id="5_h6gdu"]
 [ext_resource type="PackedScene" uid="uid://q2dg4rnvsjat" path="res://scenes/levels/LevelOutro.tscn" id="10_cywug"]
+[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="13_v5yp2"]
+[ext_resource type="PackedScene" uid="uid://dima7ycw5mpo3" path="res://scenes/end/FinalScene.tscn" id="14_bpjp7"]
 [ext_resource type="AudioStream" uid="uid://b0qoce63n3tul" path="res://assets/audio/INTRO/MUSIC/Bruit_de_fond_loop.mp3" id="uid://b0qoce63n3tul"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mus4g"]
@@ -103,7 +105,7 @@ theme_override_font_sizes/font_size = 30
 text = "[E] to open door"
 
 [node name="LevelIntro" parent="Rooms" unique_id=1125609813 node_paths=PackedStringArray("next_room") instance=ExtResource("4_7ddg7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.507214, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.331268, 0, 0)
 next_room = NodePath("../LevelAdulte")
 
 [node name="PortalDoorBed" parent="Rooms/LevelIntro/Room/Interactable/Static" parent_id_path=PackedInt32Array(1125609813, 1037730109) index="1" unique_id=322101260]
@@ -111,27 +113,41 @@ visible = false
 
 [node name="LevelAdulte" parent="Rooms" unique_id=804273654 node_paths=PackedStringArray("next_room") instance=ExtResource("4_ehv8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6134987, 0, -0.009850562)
+is_intro = false
+is_outro = false
 next_room = NodePath("../LevelAdo")
+is_special_lvl = false
 
 [node name="LevelAdo" parent="Rooms" unique_id=542756532 node_paths=PackedStringArray("next_room") instance=ExtResource("1_wks6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.76418, 0, 0)
+is_intro = false
+is_outro = false
 next_room = NodePath("../LevelSpecial")
+is_special_lvl = false
 
 [node name="LevelSpecial" parent="Rooms" unique_id=1292554290 node_paths=PackedStringArray("next_room") instance=ExtResource("3_ehv8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.547333, 0, 0)
 next_room = NodePath("../LevelEnfant")
+is_special_lvl = true
 
 [node name="LevelEnfant" parent="Rooms" unique_id=47264178 node_paths=PackedStringArray("next_room") instance=ExtResource("2_ilqm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.208813, 0, 0)
+is_intro = false
+is_outro = false
 next_room = NodePath("../LevelOutro")
+is_special_lvl = false
 
 [node name="LevelOutro" parent="Rooms" unique_id=1580783062 node_paths=PackedStringArray("credits_scene_door") instance=ExtResource("10_cywug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.41407, 0.09147453, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.41407, 0, 0)
 credits_scene_door = NodePath("../CorridorEnd/PortalDoor")
+is_intro = false
+is_outro = false
 dont_link_portals = true
+is_special_lvl = false
+no_anim_color = true
 
 [node name="CorridorEnd" type="Node3D" parent="Rooms" unique_id=1028949147]
-transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 108.92533, 0.055626035, 1.5978918)
+transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 108.925, 0, 1.598)
 
 [node name="PortalDoor" parent="Rooms/CorridorEnd" unique_id=615861041 node_paths=PackedStringArray("other_door") instance=ExtResource("2_j22r2")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5.4271784, 1.2313936, -17.655281)
@@ -160,12 +176,6 @@ shape = SubResource("ConcavePolygonShape3D_n8bhm")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.152301, 3.1025357, -17.612167)
 light_color = Color(1, 0.85882354, 0.7294118, 1)
 
-[node name="SpotLight3D2" type="OmniLight3D" parent="Rooms/CorridorEnd" unique_id=1225460494]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.6822524, 1.6394705, -17.596226)
-light_energy = 0.5
-light_negative = true
-omni_range = 5.9774766
-
 [node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/CorridorEnd" unique_id=1858316719]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/CorridorEnd/StaticBody3D2" unique_id=2107166063]
@@ -181,7 +191,7 @@ bus = &"SFX"
 
 [node name="Player" parent="." unique_id=1596461741 instance=ExtResource("3_t0nsw")]
 unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -39.649433, 1.1589148, 0.66091275)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -39.66885, 0.9835423, 0.27821374)
 floor_stop_on_slope = false
 SPEED = 1.0
 HEAD_BOB_AMPLITUDE = 0.007
@@ -204,5 +214,13 @@ shadow_caster_mask = 4294967293
 [node name="Environment" type="WorldEnvironment" parent="." unique_id=1567210214]
 environment = SubResource("Environment_6s3e6")
 script = ExtResource("5_h6gdu")
+
+[node name="FadeTransitionManager" type="ColorRect" parent="." unique_id=329538446]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_v5yp2")
+next_scene = ExtResource("14_bpjp7")
+metadata/_custom_type_script = "uid://c6215vuol8ms2"
 
 [editable path="Rooms/LevelIntro"]
